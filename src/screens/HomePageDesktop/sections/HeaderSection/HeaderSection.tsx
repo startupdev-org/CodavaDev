@@ -15,6 +15,7 @@ import {
   DropdownMenuGroup,
 } from "../../../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { 
   FadeIn, 
   GlowButton,
@@ -24,6 +25,8 @@ import {
 } from "../../../../components/ui/animated-elements";
 
 export const HeaderSection = (): JSX.Element => {
+  const navigate = useNavigate();
+
   // Navigation menu items data
   const navItems = [
     { name: "Home", active: true, hasDropdown: false },
@@ -185,6 +188,35 @@ export const HeaderSection = (): JSX.Element => {
         </FadeIn>
 
         {/* Navigation menu */}
+        <NavigationMenu className="mx-auto">
+          <NavigationMenuList className="flex items-center gap-[30px]">
+            {navItems.map((item, index) => (
+              <NavigationMenuItem key={index}>
+                {item.active ? (
+                  <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-grey-08 rounded-[10px] border border-solid border-neutral-800 shadow-lg">
+                    <div className="font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap">
+                      {item.name}
+                    </div>
+                  </div>
+                ) : item.hasDropdown ? (
+                  <div className="px-6 py-3.5">
+                    {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
+                    {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
+                  </div>
+                ) : (
+                  <div 
+                    className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer"
+                    onClick={() => {
+                      if (item.name === "About Us") navigate("/aboutus");
+                    }}
+                  >
+                    {item.name}
+                  </div>
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
         <FadeIn delay={0.3} direction="down">
           <NavigationMenu className="mx-auto">
             <NavigationMenuList className="flex items-center gap-[30px]">
