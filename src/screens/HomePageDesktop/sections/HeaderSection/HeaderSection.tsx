@@ -15,6 +15,13 @@ import {
   DropdownMenuGroup,
 } from "../../../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { 
+  FadeIn, 
+  GlowButton,
+  MatrixText,
+  DataStream,
+  FloatingElement
+} from "../../../../components/ui/animated-elements";
 
 export const HeaderSection = (): JSX.Element => {
   // Navigation menu items data
@@ -123,15 +130,17 @@ export const HeaderSection = (): JSX.Element => {
   );
 
   return (
-    <header className="flex flex-col w-full items-start bg-transparent border-b border-neutral-800">
+    <header className="flex flex-col w-full items-start bg-transparent border-b border-purple-60/20 backdrop-blur-sm">
       {/* Announcement bar */}
-      <div className="flex items-center justify-center gap-2.5 px-40 py-[18px] relative w-full bg-grey-10 overflow-hidden border-b border-neutral-800">
+      <div className="flex items-center justify-center gap-2.5 px-40 py-[18px] relative w-full bg-gradient-to-r from-grey-10 via-purple-900/10 to-grey-10 overflow-hidden border-b border-purple-60/30">
+        {/* Background Effects */}
+        <DataStream />
         <div className="absolute w-full h-[1282px] top-[-610px] left-0">
           <div className="relative w-full h-[1279px] top-px left-px">
             <div className="h-[1279px]">
               <div className="relative w-full h-[1279px]">
                 <img
-                  className="absolute w-full h-[63px] top-[609px] left-0"
+                  className="absolute w-full h-[63px] top-[609px] left-0 opacity-60"
                   alt="Group"
                   src="/group.png"
                 />
@@ -140,64 +149,80 @@ export const HeaderSection = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-white text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap">
-          🚀 Transform Your Business with Cutting-Edge IT Solutions
-        </div>
+        <FadeIn delay={0.3} direction="down">
+          <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-transparent bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap animate-gradient-shift bg-[length:200%_auto]">
+            🚀 <MatrixText text="Transform Your Business with Cutting-Edge IT Solutions" />
+          </div>
+        </FadeIn>
 
-        <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-white text-lg text-center tracking-[0] leading-[27px] underline whitespace-nowrap">
-          Learn More
-        </div>
+        <FadeIn delay={0.5} direction="down">
+          <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-purple-300 hover:text-purple-100 text-lg text-center tracking-[0] leading-[27px] underline whitespace-nowrap cursor-pointer transition-colors duration-300">
+            Learn More
+          </div>
+        </FadeIn>
 
-        <div className="inline-flex items-center justify-center gap-2.5 p-1 absolute top-[15px] right-16 bg-[#ffffff1a] rounded-[75px]">
-          <img className="relative w-6 h-6" alt="Icon" src="/icon.svg" />
-        </div>
+        <FloatingElement intensity={5} duration={3}>
+          <div className="inline-flex items-center justify-center gap-2.5 p-1 absolute top-[15px] right-16 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-[75px] border border-purple-60/30 backdrop-blur-sm">
+            <img className="relative w-6 h-6 filter hue-rotate-[280deg] brightness-125" alt="Icon" src="/icon.svg" />
+          </div>
+        </FloatingElement>
       </div>
 
       {/* Main navigation */}
-      <div className="flex items-center justify-between px-[162px] py-5 relative w-full bg-grey-10">
+      <div className="flex items-center justify-between px-[162px] py-5 relative w-full bg-gradient-to-r from-grey-10 via-purple-900/5 to-grey-10 backdrop-blur-sm">
         {/* Logo */}
-        <div className="relative w-40 h-12 flex items-center">
-          <div className="w-12 h-12 bg-purple-60 rounded-lg flex items-center justify-center mr-3 shadow-lg">
-            <span className="text-white font-bold text-xl">T</span>
+        <FadeIn delay={0.1} direction="right">
+          <div className="relative w-40 h-12 flex items-center group cursor-pointer">
+            <FloatingElement intensity={3} duration={2}>
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-purple-600/25 group-hover:shadow-purple-600/40 transition-all duration-300 group-hover:scale-110">
+                <span className="text-white font-bold text-xl group-hover:animate-pulse">T</span>
+              </div>
+            </FloatingElement>
+            <span className="font-bold text-transparent bg-gradient-to-r from-white to-purple-200 bg-clip-text text-xl group-hover:from-purple-100 group-hover:to-white transition-all duration-300">
+              TechFlow
+            </span>
           </div>
-          <span className="font-bold text-white text-xl">TechFlow</span>
-        </div>
+        </FadeIn>
 
         {/* Navigation menu */}
-        <NavigationMenu className="mx-auto">
-          <NavigationMenuList className="flex items-center gap-[30px]">
-            {navItems.map((item, index) => (
-              <NavigationMenuItem key={index}>
-                {item.active ? (
-                  <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-grey-08 rounded-[10px] border border-solid border-neutral-800 shadow-lg">
-                    <div className="font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap">
-                      {item.name}
-                    </div>
-                  </div>
-                ) : item.hasDropdown ? (
-                  <div className="px-6 py-3.5">
-                    {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
-                    {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
-                  </div>
-                ) : (
-                  <div className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer">
-                    {item.name}
-                  </div>
-                )}
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+        <FadeIn delay={0.3} direction="down">
+          <NavigationMenu className="mx-auto">
+            <NavigationMenuList className="flex items-center gap-[30px]">
+              {navItems.map((item, index) => (
+                <NavigationMenuItem key={index}>
+                  <FadeIn delay={0.4 + index * 0.1} direction="down">
+                    {item.active ? (
+                      <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-[10px] border border-solid border-purple-60/50 shadow-lg backdrop-blur-sm">
+                        <div className="font-['Urbanist',Helvetica] font-medium text-purple-200 text-lg tracking-[0] leading-[27px] whitespace-nowrap">
+                          <MatrixText text={item.name} />
+                        </div>
+                      </div>
+                    ) : item.hasDropdown ? (
+                      <div className="px-6 py-3.5">
+                        {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
+                        {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
+                      </div>
+                    ) : (
+                      <div className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-300 transition-all duration-300 cursor-pointer relative group">
+                        {item.name}
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-purple-400 group-hover:w-full transition-all duration-300"></div>
+                      </div>
+                    )}
+                  </FadeIn>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </FadeIn>
 
         {/* Contact button */}
-        <Button
-          variant="outline"
-          className="px-6 py-4 bg-grey-08 rounded-[10px] border border-solid border-neutral-800 h-auto hover:bg-purple-60 hover:border-purple-60 transition-all duration-200 transform hover:scale-105 shadow-lg"
-        >
-          <span className="font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap">
-            Get Quote
-          </span>
-        </Button>
+        <FadeIn delay={0.7} direction="left">
+          <GlowButton className="px-6 py-4 bg-gradient-to-r from-grey-08 to-purple-900/20 rounded-[10px] border border-solid border-purple-60/50 h-auto hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-purple-700/20 hover:border-purple-60 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-600/10 backdrop-blur-sm">
+            <span className="font-['Urbanist',Helvetica] font-medium text-purple-200 hover:text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap transition-colors duration-300">
+              Get Quote
+            </span>
+          </GlowButton>
+        </FadeIn>
       </div>
     </header>
   );

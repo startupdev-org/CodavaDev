@@ -252,8 +252,8 @@ export const ParallaxElement = ({
   );
 };
 
-// Glitch effect text
-export const GlitchText = ({ 
+// Simple text wrapper (replaces GlitchText)
+export const SimpleText = ({ 
   children, 
   className = "" 
 }: {
@@ -261,19 +261,9 @@ export const GlitchText = ({
   className?: string;
 }) => {
   return (
-    <motion.div
-      className={`relative ${className}`}
-      whileHover={{
-        textShadow: [
-          '0 0 0 transparent',
-          '2px 2px 0 #ff00ff, -2px -2px 0 #00ffff',
-          '0 0 0 transparent',
-        ],
-      }}
-      transition={{ duration: 0.3, repeat: 2 }}
-    >
+    <div className={`relative ${className}`}>
       {children}
-    </motion.div>
+    </div>
   );
 };
 

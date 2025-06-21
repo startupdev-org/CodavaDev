@@ -14,8 +14,7 @@ import {
   GlowButton,
   FloatingElement,
   ParallaxElement,
-  MatrixText,
-  GlitchText
+  MatrixText
 } from "../../../../components/ui/animated-elements";
 
 export const FeaturedPropertiesSection = (): JSX.Element => {
@@ -61,11 +60,9 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
       <FadeIn delay={0.2} direction="up">
         <div className="flex items-end justify-between w-full">
           <div className="flex flex-col items-start gap-3.5 relative flex-1">
-            <GlitchText>
-              <h2 className="relative self-stretch mt-[-1.00px] font-['Urbanist',Helvetica] font-semibold text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-5xl tracking-[0] leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
-                <MatrixText text="Featured IT Solutions" />
-              </h2>
-            </GlitchText>
+            <h2 className="relative self-stretch mt-[-1.00px] font-['Urbanist',Helvetica] font-semibold text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-5xl tracking-[0] leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
+              <MatrixText text="Featured IT Solutions" />
+            </h2>
 
             <FadeIn delay={0.6} direction="up">
               <p className="font-medium text-grey-60 tracking-[0] relative self-stretch font-['Urbanist',Helvetica] text-lg leading-[27px]">
@@ -110,11 +107,9 @@ export const FeaturedPropertiesSection = (): JSX.Element => {
 
                   <CardContent className="flex flex-col items-start gap-[30px] p-0 w-full">
                     <div className="flex flex-col items-start gap-1.5 w-full">
-                      <GlitchText>
-                        <h3 className="font-['Urbanist',Helvetica] font-semibold text-transparent bg-gradient-to-r from-white to-purple-200 bg-clip-text group-hover:from-purple-100 group-hover:to-white text-2xl leading-9 mt-[-1.00px] transition-all duration-300">
-                          <MatrixText text={service.title} />
-                        </h3>
-                      </GlitchText>
+                      <h3 className="font-['Urbanist',Helvetica] font-semibold text-transparent bg-gradient-to-r from-white to-purple-200 bg-clip-text group-hover:from-purple-100 group-hover:to-white text-2xl leading-9 mt-[-1.00px] transition-all duration-300">
+                        <MatrixText text={service.title} />
+                      </h3>
 
                       <p className="font-medium text-grey-60 group-hover:text-grey-40 tracking-[0] font-['Urbanist',Helvetica] text-lg leading-[27px] transition-colors duration-300">
                         <span className="text-[#999999] group-hover:text-[#bbbbbb] transition-colors duration-300">

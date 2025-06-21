@@ -11,7 +11,7 @@ import {
   DigitalRain,
   CircuitAnimation,
   ParallaxElement,
-  GlitchText,
+  SimpleText,
   MatrixText,
   DataStream
 } from "../../../../components/ui/animated-elements";
@@ -237,14 +237,12 @@ export const HeroSection = (): JSX.Element => {
         <div className="flex flex-col items-start justify-center gap-[60px] pl-[162px] pr-0 py-0 relative flex-1 self-stretch z-[1]">
           <div className="flex flex-col items-end gap-6 relative self-stretch w-full">
             <FadeIn delay={0.2} direction="up">
-              <GlitchText>
-                <h1 className="font-semibold text-white text-6xl leading-[72px] relative self-stretch mt-[-1px] [font-family:'Urbanist',Helvetica] tracking-[0] bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto]">
-                  <TypewriterText 
-                    text="Accelerate Your Digital Future with TechFlow" 
-                    speed={0.03}
-                  />
-                </h1>
-              </GlitchText>
+              <h1 className="font-semibold text-white text-6xl leading-[72px] relative self-stretch mt-[-1px] [font-family:'Urbanist',Helvetica] tracking-[0] bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto]">
+                <TypewriterText 
+                  text="Accelerate Your Digital Future with TechFlow" 
+                  speed={0.03}
+                />
+              </h1>
             </FadeIn>
 
             <FadeIn delay={0.8} direction="up">
