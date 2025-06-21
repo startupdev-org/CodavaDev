@@ -37,11 +37,12 @@ export const TeamSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full max-w-[1596px] items-start gap-20 mx-auto relative overflow-hidden py-20">
+    <section className="flex flex-col w-full max-w-[1596px] items-start gap-10 mx-auto relative overflow-hidden py-200">
       {/* Section Header */}
       <FadeIn delay={0.2} direction="up">
         <div className="flex flex-col items-start gap-4 relative self-stretch w-full">
           <div className="flex items-center gap-3">
+            {/* <div className="w-12 h-12 bg-purple-60 rounded-lg flex items-center justify-center shadow-lg"></div> */}
             <MatrixText text="Our Team" />
           </div>
           

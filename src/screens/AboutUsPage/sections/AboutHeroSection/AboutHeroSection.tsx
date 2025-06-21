@@ -99,24 +99,28 @@ export const AboutHeroSection = (): JSX.Element => {
   // Core values data
   const coreValues = [
     {
-      icon: "🚀",
-      title: "Innovation",
-      description: "Pushing boundaries with cutting-edge technology"
+      title: "Innovation & Creativity",
+      description: "We are driven by a passion for fresh ideas and groundbreaking solutions. Our team constantly explores new technologies and approaches to ensure we deliver unique, cutting-edge results. By challenging the status quo, we aim to create impactful software that pushes boundaries."
     },
     {
-      icon: "🤝",
-      title: "Partnership",
-      description: "Building lasting relationships with our clients"
+      title: "Customer-Centric Focus",
+      description: "We prioritize our clients in every aspect of our work. By truly understanding their needs, we create tailored solutions that not only meet but exceed their expectations. Our goal is to build long-lasting relationships through exceptional service and results."
     },
     {
-      icon: "⚡",
-      title: "Excellence",
-      description: "Delivering quality that exceeds expectations"
+      title: "Integrity & Transparency",
+      description: "We value honesty and open communication in all our interactions. By adhering to ethical practices and providing clear, transparent processes, we build trust with our clients. Our commitment to consistency ensures reliability and long-term partnerships."
     },
     {
-      icon: "🔒",
-      title: "Security",
-      description: "Protecting your digital assets with advanced security"
+      title: "Excellence in Execution",
+      description: "We strive for perfection in every project, delivering high-quality solutions that meet deadlines and stay within budget. Our focus is on ensuring optimal results and exceeding client expectations."
+    },
+    {
+      title: "Collaboration & Teamwork",
+      description: "We believe that great ideas come from working together. By fostering a collaborative environment, both internally and with our clients, we encourage creativity and problem-solving to achieve shared success."
+    },
+    {
+      title: "Agility & Adaptability",
+      description: "We embrace change and remain flexible in an ever-evolving industry. Our ability to quickly respond to new challenges and opportunities ensures that our solutions stay relevant and scalable."
     },
   ];
 
@@ -230,9 +234,9 @@ export const AboutHeroSection = (): JSX.Element => {
             </div>
             <div className="relative">
               <PatternGraphic />
-              <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border-2 border-purple-60 flex items-center justify-center bg-grey-08">
+              {/* <div className="absolute -bottom-4 -right-4 w-12 h-12 rounded-full border-2 border-purple-60 flex items-center justify-center bg-grey-08">
                   <div className="w-4 h-4 rounded-full bg-purple-60"></div>
-              </div>
+              </div> */}
             </div>
           </div>
         </FadeIn>
@@ -242,49 +246,54 @@ export const AboutHeroSection = (): JSX.Element => {
           <div className="flex items-center justify-center gap-16 w-full">
             <div className="relative">
               <PatternGraphic />
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border-2 border-purple-60 flex items-center justify-center bg-grey-08">
+              {/* <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-full border-2 border-purple-60 flex items-center justify-center bg-grey-08">
                   <div className="w-4 h-4 rounded-full bg-purple-60"></div>
-              </div>
+              </div> */}
             </div>
-            <div className="max-w-2xl">
+            <div className="max-w-2xl text-right">
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 uppercase">Our Vision</h2>
               <p className="font-medium text-grey-60 text-lg leading-[27px] [font-family:'Urbanist',Helvetica]">
                 Our vision is to be a global leader in software development, driving digital transformation and innovation across industries. We strive to create cutting-edge solutions that empower businesses, enhance user experiences, and set new standards in technology. Our goal is to continuously evolve, adapt to emerging trends, and build a future where technology seamlessly integrates with business success, making a lasting impact worldwide.
               </p>
             </div>
-          </div>
+          </div>  
         </FadeIn>
       </div>
 
       {/* Core Values */}
       <FadeIn delay={1.4} direction="up">
         <div className="flex flex-col items-start gap-12 relative self-stretch w-full">
-          <div className="flex flex-col items-start gap-4">
-            <h2 className="font-semibold text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-4xl tracking-[0] leading-[56px] [font-family:'Urbanist',Helvetica]">
-              <MatrixText text="Our Core Values" />
-            </h2>
-            <p className="font-medium text-grey-60 tracking-[0] text-lg leading-[27px] [font-family:'Urbanist',Helvetica] max-w-[600px]">
-              These principles guide everything we do and shape our relationships with clients, partners, and each other.
-            </p>
+          {/* Header */}
+          <div className="flex justify-between items-center w-full">
+            <h2 className="text-5xl font-bold text-white uppercase">Our Values</h2>
+            <div className="flex items-center gap-6">
+              {/* <p className="font-medium text-grey-60 text-lg leading-[27px] [font-family:'Urbanist',Helvetica] max-w-[600px]">
+                Our team prioritizes customer satisfaction above all, ensuring their needs always come first.
+              </p> */}
+              <GlowButton className="px-10 py-4 h-auto bg-purple-600 hover:bg-purple-700 rounded-full text-white font-bold whitespace-nowrap -ml-4">
+                Free Consultation
+              </GlowButton>
+            </div>
           </div>
 
-          <StaggerContainer staggerDelay={0.2}>
-            <div className="grid grid-cols-2 gap-6 w-full">
+          {/* Grid */}
+          <StaggerContainer staggerDelay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
               {coreValues.map((value, index) => (
                 <StaggerItem key={index}>
-                  <Card className="bg-gradient-to-br from-grey-08 to-grey-10 rounded-xl border border-solid border-purple-60/30 hover:border-purple-60/60 transition-all duration-500 shadow-lg shadow-purple-600/10 hover:shadow-purple-600/25 backdrop-blur-sm group">
-                    <CardContent className="flex flex-col items-start gap-4 p-8">
-                      <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                        {value.icon}
-                      </div>
-                      <div className="flex flex-col items-start gap-2">
-                        <h3 className="font-semibold text-white text-xl [font-family:'Urbanist',Helvetica] group-hover:text-purple-200 transition-colors duration-300">
+                  <Card className="bg-grey-10 p-8 rounded-2xl border border-solid border-neutral-800 h-full hover:border-purple-600/50 transition-colors duration-300">
+                    <CardContent className="flex flex-col items-start gap-4 p-0">
+                      <div className="flex items-center gap-3">
+                        <div className="w-5 h-5 rounded-full border-2 border-purple-600 flex items-center justify-center">
+                          <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+                        </div>
+                        <h3 className="font-bold text-xl text-white">
                           {value.title}
                         </h3>
-                        <p className="font-medium text-grey-60 text-base leading-[24px] [font-family:'Urbanist',Helvetica] group-hover:text-grey-40 transition-colors duration-300">
-                          {value.description}
-                        </p>
                       </div>
+                      <p className="font-medium text-grey-60 text-lg leading-[27px] [font-family:'Urbanist',Helvetica]">
+                        {value.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </StaggerItem>
