@@ -15,12 +15,14 @@ import {
   DropdownMenuGroup,
 } from "../../../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const HeaderSection = (): JSX.Element => {
+  const navigate = useNavigate();
   // Navigation menu items data
   const navItems = [
-    { name: "Home", active: true, hasDropdown: false },
-    { name: "About Us", active: false, hasDropdown: false },
+    { name: "Home", active: false, hasDropdown: false },
+    { name: "About", active: true, hasDropdown: false },
     { name: "Services", active: false, hasDropdown: true },
     { name: "Solutions", active: false, hasDropdown: true },
   ];
@@ -186,9 +188,12 @@ export const HeaderSection = (): JSX.Element => {
                 );
               } else {
                 menuContent = (
-                  <div className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer">
+                  <button 
+                    onClick={() => item.name === "Home" && navigate("/")}
+                    className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer bg-transparent border-none"
+                  >
                     {item.name}
-                  </div>
+                  </button>
                 );
               }
 
