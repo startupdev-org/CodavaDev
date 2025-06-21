@@ -16,12 +16,15 @@ import {
 } from "../../../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { 
   FadeIn, 
   GlowButton,
   MatrixText,
   DataStream,
-  FloatingElement
+  FloatingElement,
+  StaggerContainer,
+  StaggerItem
 } from "../../../../components/ui/animated-elements";
 
 export const HeaderSection = (): JSX.Element => {
@@ -40,25 +43,25 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Development Services",
       items: [
-        { name: "Web Development", description: "Custom web applications" },
-        { name: "Mobile App Development", description: "iOS & Android apps" },
-        { name: "SaaS Development", description: "Scalable software solutions" },
+        { name: "Web Development", description: "Custom web applications", icon: "🌐" },
+        { name: "Mobile App Development", description: "iOS & Android apps", icon: "📱" },
+        { name: "SaaS Development", description: "Scalable software solutions", icon: "⚡" },
       ]
     },
     {
       category: "Infrastructure & Security",
       items: [
-        { name: "Cloud Solutions", description: "AWS, Azure, GCP migration" },
-        { name: "Cybersecurity", description: "Advanced threat protection" },
-        { name: "DevOps & Automation", description: "CI/CD pipeline setup" },
+        { name: "Cloud Solutions", description: "AWS, Azure, GCP migration", icon: "☁️" },
+        { name: "Cybersecurity", description: "Advanced threat protection", icon: "🔒" },
+        { name: "DevOps & Automation", description: "CI/CD pipeline setup", icon: "🔧" },
       ]
     },
     {
       category: "Emerging Technologies",
       items: [
-        { name: "AI & Machine Learning", description: "Intelligent automation" },
-        { name: "Blockchain Solutions", description: "Decentralized applications" },
-        { name: "IoT Integration", description: "Connected device solutions" },
+        { name: "AI & Machine Learning", description: "Intelligent automation", icon: "🤖" },
+        { name: "Blockchain Solutions", description: "Decentralized applications", icon: "⛓️" },
+        { name: "IoT Integration", description: "Connected device solutions", icon: "📡" },
       ]
     }
   ];
@@ -68,193 +71,179 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Business Solutions",
       items: [
-        { name: "Digital Transformation", description: "End-to-end modernization" },
-        { name: "Process Automation", description: "Workflow optimization" },
-        { name: "Data Analytics", description: "Business intelligence" },
+        { name: "Digital Transformation", description: "End-to-end modernization", icon: "🚀" },
+        { name: "Process Automation", description: "Workflow optimization", icon: "⚙️" },
+        { name: "Data Analytics", description: "Business intelligence", icon: "📊" },
       ]
     },
     {
       category: "Industry Specific",
       items: [
-        { name: "Healthcare IT", description: "HIPAA compliant solutions" },
-        { name: "FinTech Solutions", description: "Financial technology" },
-        { name: "E-commerce Platforms", description: "Online retail solutions" },
+        { name: "Healthcare IT", description: "HIPAA compliant solutions", icon: "🏥" },
+        { name: "FinTech Solutions", description: "Financial technology", icon: "💰" },
+        { name: "E-commerce Platforms", description: "Online retail solutions", icon: "🛒" },
       ]
     }
   ];
 
-  const renderDropdownMenu = (items: typeof servicesDropdown, triggerName: string) => (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-1 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 group">
-          {triggerName}
-          <ChevronDown className="w-4 h-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent 
-        className="w-[600px] bg-grey-08 border border-neutral-800 rounded-xl p-6 shadow-2xl backdrop-blur-sm"
-        sideOffset={8}
+  const renderDropdownMenu = (items: typeof servicesDropdown, triggerName: string, uniqueId: string) => (
+    <div className={`relative dropdown-${uniqueId}`}>
+      <button 
+        className="flex items-center gap-1 font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-purple-300 transition-colors duration-200"
+        onMouseEnter={() => {
+          const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
+          if (dropdown) {
+            dropdown.classList.remove('opacity-0', 'invisible');
+            dropdown.classList.add('opacity-100', 'visible');
+          }
+        }}
+        onMouseLeave={() => {
+          setTimeout(() => {
+            const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
+            const isHovered = dropdown?.matches(':hover');
+            if (!isHovered && dropdown) {
+              dropdown.classList.add('opacity-0', 'invisible');
+              dropdown.classList.remove('opacity-100', 'visible');
+            }
+          }, 100);
+        }}
       >
-        <div className="grid grid-cols-2 gap-6">
-          {items.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-3">
-              <DropdownMenuLabel className="text-purple-60 font-semibold text-sm uppercase tracking-wider">
-                {category.category}
-              </DropdownMenuLabel>
-              <DropdownMenuGroup>
-                {category.items.map((item, itemIndex) => (
-                  <DropdownMenuItem 
+          {triggerName}
+        </button>
+      
+      <div 
+        className="dropdown-content absolute top-full left-0 mt-2 w-[240px] bg-grey-08 border border-white/10 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 z-50"
+        onMouseEnter={() => {
+          const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
+          if (dropdown) {
+            dropdown.classList.remove('opacity-0', 'invisible');
+            dropdown.classList.add('opacity-100', 'visible');
+          }
+        }}
+        onMouseLeave={() => {
+          const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
+          if (dropdown) {
+            dropdown.classList.add('opacity-0', 'invisible');
+            dropdown.classList.remove('opacity-100', 'visible');
+          }
+        }}
+      >
+        <div className="p-2">
+          {items.map((category) => 
+            category.items.map((item, itemIndex) => (
+              <div 
                     key={itemIndex}
-                    className="flex flex-col items-start p-3 rounded-lg hover:bg-grey-10 transition-all duration-200 cursor-pointer group border border-transparent hover:border-purple-60/20"
+                className="flex items-center gap-3 px-3 py-2 text-white text-sm hover:bg-white/5 rounded transition-colors duration-150 cursor-pointer"
                   >
-                    <div className="font-medium text-white text-base group-hover:text-purple-60 transition-colors duration-200">
-                      {item.name}
+                <span className="text-base">{item.icon}</span>
+                <span className="font-medium">{item.name}</span>
                     </div>
-                    <div className="text-grey-60 text-sm mt-1">
-                      {item.description}
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuGroup>
-              {categoryIndex < items.length - 1 && (
-                <DropdownMenuSeparator className="bg-neutral-800" />
-              )}
-            </div>
-          ))}
+            ))
+          )}
         </div>
-        <DropdownMenuSeparator className="bg-neutral-800 my-4" />
-        <div className="flex justify-center">
-          <Button className="bg-purple-60 hover:bg-purple-75 text-white px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
-            View All {triggerName}
-          </Button>
+      </div>
         </div>
-      </DropdownMenuContent>
-    </DropdownMenu>
   );
 
   return (
-    <header className="flex flex-col w-full items-start bg-transparent border-b border-purple-60/20 backdrop-blur-sm">
-      {/* Announcement bar */}
-      <div className="flex items-center justify-center gap-2.5 px-40 py-[18px] relative w-full bg-gradient-to-r from-grey-10 via-purple-900/10 to-grey-10 overflow-hidden border-b border-purple-60/30">
-        {/* Background Effects */}
-        <DataStream />
-        <div className="absolute w-full h-[1282px] top-[-610px] left-0">
-          <div className="relative w-full h-[1279px] top-px left-px">
-            <div className="h-[1279px]">
-              <div className="relative w-full h-[1279px]">
-                <img
-                  className="absolute w-full h-[63px] top-[609px] left-0 opacity-60"
-                  alt="Group"
-                  src="/group.png"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <FadeIn delay={0.3} direction="down">
-          <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-transparent bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap animate-gradient-shift bg-[length:200%_auto]">
-            🚀 <MatrixText text="Transform Your Business with Cutting-Edge IT Solutions" />
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.5} direction="down">
-          <div className="relative w-fit mt-[-1.00px] font-['Urbanist',Helvetica] font-medium text-purple-300 hover:text-purple-100 text-lg text-center tracking-[0] leading-[27px] underline whitespace-nowrap cursor-pointer transition-colors duration-300">
-            Learn More
-          </div>
-        </FadeIn>
-
-        <FloatingElement intensity={5} duration={3}>
-          <div className="inline-flex items-center justify-center gap-2.5 p-1 absolute top-[15px] right-16 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-[75px] border border-purple-60/30 backdrop-blur-sm">
-            <img className="relative w-6 h-6 filter hue-rotate-[280deg] brightness-125" alt="Icon" src="/icon.svg" />
-          </div>
-        </FloatingElement>
-      </div>
-
-      {/* Main navigation */}
-      <div className="flex items-center justify-between px-[162px] py-5 relative w-full bg-gradient-to-r from-grey-10 via-purple-900/5 to-grey-10 backdrop-blur-sm">
-        {/* Logo */}
-        <FadeIn delay={0.1} direction="right">
-          <div className="relative w-40 h-12 flex items-center group cursor-pointer">
+    <header className="fixed top-10 left-[90px] right-[90px] z-50 bg-grey-08/90 backdrop-blur-xl rounded-3xl border border-purple-60/30 shadow-2xl shadow-purple-900/20">
+      {/* Main Navigation */}
+      <div className="w-full px-6 py-5 relative">
+        <div className="flex justify-between items-center w-full">
+          {/* Logo - Left */}
+          <motion.div 
+            className="flex items-center group cursor-pointer"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <FloatingElement intensity={3} duration={2}>
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-purple-600/25 group-hover:shadow-purple-600/40 transition-all duration-300 group-hover:scale-110">
-                <span className="text-white font-bold text-xl group-hover:animate-pulse">T</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-purple-600/25 group-hover:shadow-purple-600/40 transition-all duration-300 group-hover:scale-110">
+                <span className="text-white font-bold text-lg group-hover:animate-pulse">T</span>
               </div>
             </FloatingElement>
-            <span className="font-bold text-transparent bg-gradient-to-r from-white to-purple-200 bg-clip-text text-xl group-hover:from-purple-100 group-hover:to-white transition-all duration-300">
-              TechFlow
-            </span>
-          </div>
-        </FadeIn>
+            <div className="flex flex-col">
+              <span className="font-bold text-white text-xl group-hover:text-purple-100 transition-all duration-300 leading-none">
+                TechFlow
+              </span>
+              <span className="text-purple-400 text-xs font-medium">IT Solutions</span>
+            </div>
+          </motion.div>
 
-        {/* Navigation menu */}
-        <NavigationMenu className="mx-auto">
-          <NavigationMenuList className="flex items-center gap-[30px]">
+          {/* Navigation Menu - Center */}
+          <motion.div 
+            className="hidden lg:flex"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <NavigationMenu>
+              <NavigationMenuList className="flex flex-row items-center gap-6">
+                <StaggerContainer staggerDelay={0.1}>
+                  <div className="flex flex-row items-center gap-6">
             {navItems.map((item, index) => (
-              <NavigationMenuItem key={index}>
+                      <StaggerItem key={index}>
+                        <NavigationMenuItem className="flex">
                 {item.active ? (
-                  <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-grey-08 rounded-[10px] border border-solid border-neutral-800 shadow-lg">
-                    <div className="font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap">
+                            <div className="flex flex-row items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-2xl border border-purple-60/30 backdrop-blur-sm">
+                              <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
+                              <div className="font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap">
                       {item.name}
                     </div>
                   </div>
                 ) : item.hasDropdown ? (
-                  <div className="px-6 py-3.5">
-                    {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
-                    {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
+                          <div className="flex px-3 py-2">
+                            {renderDropdownMenu(
+                              item.name === "Services" ? servicesDropdown : solutionsDropdown,
+                              item.name,
+                              item.name.toLowerCase()
+                            )}
                   </div>
                 ) : (
-                  <div 
-                    className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer"
-                    onClick={() => {
-                      if (item.name === "About Us") navigate("/aboutus");
-                    }}
-                  >
+                            <button 
+                              className="flex font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-purple-300 transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-600/10"
+                              onClick={() => {
+                                if (item.name === "About Us") navigate("/aboutus");
+                              }}
+                            >
                     {item.name}
+                            </button>
+                          )}
+                        </NavigationMenuItem>
+                      </StaggerItem>
+                    ))}
                   </div>
-                )}
-              </NavigationMenuItem>
-            ))}
+                </StaggerContainer>
           </NavigationMenuList>
         </NavigationMenu>
-        <FadeIn delay={0.3} direction="down">
-          <NavigationMenu className="mx-auto">
-            <NavigationMenuList className="flex items-center gap-[30px]">
-              {navItems.map((item, index) => (
-                <NavigationMenuItem key={index}>
-                  <FadeIn delay={0.4 + index * 0.1} direction="down">
-                    {item.active ? (
-                      <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-[10px] border border-solid border-purple-60/50 shadow-lg backdrop-blur-sm">
-                        <div className="font-['Urbanist',Helvetica] font-medium text-purple-200 text-lg tracking-[0] leading-[27px] whitespace-nowrap">
-                          <MatrixText text={item.name} />
-                        </div>
-                      </div>
-                    ) : item.hasDropdown ? (
-                      <div className="px-6 py-3.5">
-                        {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
-                        {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
-                      </div>
-                    ) : (
-                      <div className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-300 transition-all duration-300 cursor-pointer relative group">
-                        {item.name}
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-purple-400 group-hover:w-full transition-all duration-300"></div>
-                      </div>
-                    )}
-                  </FadeIn>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </FadeIn>
+          </motion.div>
 
-        {/* Contact button */}
-        <FadeIn delay={0.7} direction="left">
-          <GlowButton className="px-6 py-4 bg-gradient-to-r from-grey-08 to-purple-900/20 rounded-[10px] border border-solid border-purple-60/50 h-auto hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-purple-700/20 hover:border-purple-60 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-600/10 backdrop-blur-sm">
-            <span className="font-['Urbanist',Helvetica] font-medium text-purple-200 hover:text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap transition-colors duration-300">
-              Get Quote
-            </span>
-          </GlowButton>
-        </FadeIn>
+          {/* CTA Button - Right */}
+          <motion.div 
+            className="flex"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <GlowButton className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-lg font-medium text-white text-base [font-family:'Urbanist',Helvetica] shadow-lg shadow-purple-600/25 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+              <span>Get Quote</span>
+              <div className="w-4 h-4 rounded-full bg-purple-400/20 flex items-center justify-center">
+                <div className="w-0 h-0 border-l-[3px] border-l-purple-200 border-t-[2px] border-t-transparent border-b-[2px] border-b-transparent ml-0.5" />
+              </div>
+            </GlowButton>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden ml-4">
+              <button className="w-9 h-9 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-lg border border-purple-60/30 flex items-center justify-center">
+                <div className="space-y-1">
+                  <div className="w-4 h-0.5 bg-purple-200"></div>
+                  <div className="w-4 h-0.5 bg-purple-200"></div>
+                  <div className="w-4 h-0.5 bg-purple-200"></div>
+                </div>
+              </button>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </header>
   );
