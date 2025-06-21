@@ -15,11 +15,8 @@ import {
   DropdownMenuGroup,
 } from "../../../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export const HeaderSection = (): JSX.Element => {
-  const navigate = useNavigate();
-
   // Navigation menu items data
   const navItems = [
     { name: "Home", active: true, hasDropdown: false },
@@ -89,15 +86,15 @@ export const HeaderSection = (): JSX.Element => {
         sideOffset={8}
       >
         <div className="grid grid-cols-2 gap-6">
-          {items.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-3">
+          {items.map((category) => (
+            <div key={category.category} className="space-y-3">
               <DropdownMenuLabel className="text-purple-60 font-semibold text-sm uppercase tracking-wider">
                 {category.category}
               </DropdownMenuLabel>
               <DropdownMenuGroup>
-                {category.items.map((item, itemIndex) => (
+                {category.items.map((item) => (
                   <DropdownMenuItem 
-                    key={itemIndex}
+                    key={item.name}
                     className="flex flex-col items-start p-3 rounded-lg hover:bg-grey-10 transition-all duration-200 cursor-pointer group border border-transparent hover:border-purple-60/20"
                   >
                     <div className="font-medium text-white text-base group-hover:text-purple-60 transition-colors duration-200">
@@ -109,7 +106,8 @@ export const HeaderSection = (): JSX.Element => {
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuGroup>
-              {categoryIndex < items.length - 1 && (
+              {/* Use indexOf to determine if this is not the last category */}
+              {items.indexOf(category) < items.length - 1 && (
                 <DropdownMenuSeparator className="bg-neutral-800" />
               )}
             </div>
@@ -169,31 +167,37 @@ export const HeaderSection = (): JSX.Element => {
         {/* Navigation menu */}
         <NavigationMenu className="mx-auto">
           <NavigationMenuList className="flex items-center gap-[30px]">
-            {navItems.map((item, index) => (
-              <NavigationMenuItem key={index}>
-                {item.active ? (
+            {navItems.map((item) => {
+              let menuContent;
+              if (item.active) {
+                menuContent = (
                   <div className="inline-flex items-start gap-2.5 px-6 py-3.5 bg-grey-08 rounded-[10px] border border-solid border-neutral-800 shadow-lg">
                     <div className="font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap">
                       {item.name}
                     </div>
                   </div>
-                ) : item.hasDropdown ? (
+                );
+              } else if (item.hasDropdown) {
+                menuContent = (
                   <div className="px-6 py-3.5">
                     {item.name === "Services" && renderDropdownMenu(servicesDropdown, item.name)}
                     {item.name === "Solutions" && renderDropdownMenu(solutionsDropdown, item.name)}
                   </div>
-                ) : (
-                  <div 
-                    className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer"
-                    onClick={() => {
-                      if (item.name === "About Us") navigate("/aboutus");
-                    }}
-                  >
+                );
+              } else {
+                menuContent = (
+                  <div className="px-6 py-3.5 font-['Urbanist',Helvetica] font-medium text-white text-lg tracking-[0] leading-[27px] whitespace-nowrap hover:text-purple-60 transition-colors duration-200 cursor-pointer">
                     {item.name}
                   </div>
-                )}
-              </NavigationMenuItem>
-            ))}
+                );
+              }
+
+              return (
+                <NavigationMenuItem key={item.name}>
+                  {menuContent}
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
 
