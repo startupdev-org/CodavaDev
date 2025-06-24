@@ -52,7 +52,7 @@ export const AboutCallToActionSection = (): JSX.Element => {
       {/* Main CTA Card */}
       <FadeIn delay={0.4} direction="up">
         <Card className="w-full bg-gradient-to-br from-grey-08 to-grey-10 rounded-2xl border border-solid border-purple-60/30 hover:border-purple-60/60 transition-all duration-500 shadow-lg shadow-purple-600/10 hover:shadow-purple-600/25 backdrop-blur-sm relative overflow-hidden">
-          <CardContent className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 sm:gap-10 lg:gap-12 p-4 sm:p-8 lg:p-12 relative z-10">
+          <CardContent className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 sm:gap-10 lg:gap-12 p-4 sm:p-8 lg:p-12 relative z-10 max-w-3xl mx-auto w-full">
             {/* Left Content */}
             <div className="flex flex-col items-start gap-6 sm:gap-8 flex-1 w-full">
               <div className="flex flex-col items-start gap-2 sm:gap-4">
@@ -65,7 +65,7 @@ export const AboutCallToActionSection = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col xs:flex-row items-start gap-3 sm:gap-4 w-full">
-                <GlowButton className="min-w-0 w-auto px-4 sm:px-6 py-2 sm:py-3 h-auto bg-gradient-to-r from-purple-60 to-purple-70 rounded-[10px] border border-solid border-purple-60 hover:border-purple-75 hover:shadow-lg hover:shadow-purple-600/25 transition-all duration-300">
+                <GlowButton className="w-full xs:w-auto min-w-[160px] max-w-[220px] px-4 sm:px-6 py-2 sm:py-3 h-auto bg-gradient-to-r from-purple-60 to-purple-70 rounded-[10px] border border-solid border-purple-60 hover:border-purple-75 hover:shadow-lg hover:shadow-purple-600/25 transition-all duration-300 text-center">
                   <span className="[font-family:'Urbanist',Helvetica] font-medium text-white text-sm sm:text-base tracking-[0] leading-[22px] sm:leading-[27px]">
                     Schedule a Consultation
                   </span>
@@ -80,9 +80,9 @@ export const AboutCallToActionSection = (): JSX.Element => {
 
             {/* Right Content - Contact Methods */}
             <div className="flex flex-col items-start gap-4 sm:gap-6 flex-1 w-full">
-              <h4 className="font-semibold text-white text-lg sm:text-xl [font-family:'Urbanist',Helvetica]">
+              {/* <h4 className="font-semibold text-white text-lg sm:text-xl [font-family:'Urbanist',Helvetica]">
                 Get in Touch
-              </h4>
+              </h4> */}
               <StaggerContainer staggerDelay={0.1}>
                 <div className="flex flex-col gap-3 sm:gap-4 w-full">
                   {contactMethods.map((method, index) => (
