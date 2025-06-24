@@ -19,6 +19,18 @@ const typingTexts = [
   "Beyond Limits",
 ];
 
+function scrollToTeamLeadership() {
+  const el = document.getElementById("team-leadership");
+  if (el) {
+    const yOffset = -80; // adjust for sticky headers if needed
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
+  }
+}
+
 const PatternGraphic = ({ className }: { className?: string }) => (
   <div
     className={`w-[320px] h-[180px] md:w-[450px] md:h-[250px] flex items-center justify-center ${className}`}
@@ -183,7 +195,10 @@ export const AboutHeroSection = (): JSX.Element => {
                   Our Story
                 </span>
               </GlowButton>
-              <GlowButton className="px-6 sm:px-8 py-3 sm:py-4 h-auto bg-gradient-to-r from-grey-10 to-grey-08 rounded-[10px] border border-solid border-purple-60/50 hover:border-purple-60 hover:shadow-md hover:shadow-purple-600/20 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto">
+              <GlowButton
+                className="px-6 sm:px-8 py-3 sm:py-4 h-auto bg-gradient-to-r from-grey-10 to-grey-08 rounded-[10px] border border-solid border-purple-60/50 hover:border-purple-60 hover:shadow-md hover:shadow-purple-600/20 transition-all duration-300 backdrop-blur-sm w-full sm:w-auto"
+                onClick={scrollToTeamLeadership}
+              >
                 <span className="[font-family:'Urbanist',Helvetica] font-medium text-purple-200 hover:text-white text-base sm:text-lg tracking-[0] leading-[27px] transition-colors duration-300">
                   Meet Our Team
                 </span>

@@ -65,8 +65,8 @@ export const AboutCallToActionSection = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col xs:flex-row items-start gap-3 sm:gap-4 w-full">
-                <GlowButton className="w-full xs:w-auto px-6 sm:px-8 py-3 sm:py-4 h-auto bg-gradient-to-r from-purple-60 to-purple-70 rounded-[10px] border border-solid border-purple-60 hover:border-purple-75 hover:shadow-lg hover:shadow-purple-600/25 transition-all duration-300">
-                  <span className="[font-family:'Urbanist',Helvetica] font-medium text-white text-base sm:text-lg tracking-[0] leading-[27px]">
+                <GlowButton className="min-w-0 w-auto px-4 sm:px-6 py-2 sm:py-3 h-auto bg-gradient-to-r from-purple-60 to-purple-70 rounded-[10px] border border-solid border-purple-60 hover:border-purple-75 hover:shadow-lg hover:shadow-purple-600/25 transition-all duration-300">
+                  <span className="[font-family:'Urbanist',Helvetica] font-medium text-white text-sm sm:text-base tracking-[0] leading-[22px] sm:leading-[27px]">
                     Schedule a Consultation
                   </span>
                 </GlowButton>

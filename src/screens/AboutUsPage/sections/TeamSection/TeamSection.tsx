@@ -37,9 +37,9 @@ export const TeamSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full max-w-[1596px] items-center gap-10 mx-auto relative overflow-hidden py-20 sm:py-28 md:py-32 lg:py-40">
+    <section id="team-leadership" className="flex flex-col w-full max-w-[1596px] items-center gap-10 mx-auto relative overflow-hidden py-20 sm:py-28 md:py-32 lg:py-40">
       {/* Section Header */}
-      <FadeIn delay={0.2} direction="up">
+      <FadeIn delay={0.2} direction="up" >
         <div className="flex flex-col items-center gap-4 relative w-full max-w-[800px] mx-auto text-center px-4">
           <div className="flex items-center gap-3 justify-center">
             <MatrixText text="Our Team" />
