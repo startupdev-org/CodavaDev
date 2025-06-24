@@ -1,9 +1,8 @@
 import { ClientTestimonialsSection } from "./sections/ClientTestimonialsSection";
 import { FAQSection } from "./sections/FAQSection";
 import { FeaturedPropertiesSection } from "./sections/FeaturedPropertiesSection";
-import { HeaderSection } from "./sections/HeaderSection";
+import { HeaderSection, FooterSection } from "../FixedComponents";
 import { HeroSection } from "./sections/HeroSection";
-import { FooterSection } from "./sections/FooterSection";
 
 export const HomePageDesktop = (): JSX.Element => {
   return (

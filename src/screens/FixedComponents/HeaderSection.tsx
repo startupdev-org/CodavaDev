@@ -1,10 +1,10 @@
 import React from "react";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "../../../../components/ui/navigation-menu";
+} from "../../components/ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,9 +13,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   DropdownMenuGroup,
-} from "../../../../components/ui/dropdown-menu";
+} from "../../components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   FadeIn, 
@@ -25,18 +25,27 @@ import {
   FloatingElement,
   StaggerContainer,
   StaggerItem
-} from "../../../../components/ui/animated-elements";
+} from "../../components/ui/animated-elements";
 
 export const HeaderSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Navigation menu items data
+  // Dynamic navigation menu items based on current location
   const navItems = [
-    { name: "Home", active: true, hasDropdown: false },
-    { name: "About Us", active: false, hasDropdown: false },
-    { name: "Services", active: false, hasDropdown: true },
-    { name: "Solutions", active: false, hasDropdown: true },
+    { name: "Home", path: "/", hasDropdown: false },
+    { name: "About Us", path: "/aboutus", hasDropdown: false },
+    { name: "Services", path: "/services", hasDropdown: true },
+    { name: "Solutions", path: "/solutions", hasDropdown: true },
   ];
+
+  // Function to check if a navigation item is active
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(path);
+  };
 
   // Services dropdown data
   const servicesDropdown = [
@@ -184,7 +193,7 @@ export const HeaderSection = (): JSX.Element => {
             {navItems.map((item, index) => (
                       <StaggerItem key={index}>
                         <NavigationMenuItem className="flex">
-                {item.active ? (
+                {isActive(item.path) ? (
                             <div className="flex flex-row items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-2xl border border-purple-60/30 backdrop-blur-sm">
                               <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
                               <div className="font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap">
@@ -202,9 +211,7 @@ export const HeaderSection = (): JSX.Element => {
                 ) : (
                             <button 
                               className="flex font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-purple-300 transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-600/10"
-                              onClick={() => {
-                                if (item.name === "About Us") navigate("/aboutus");
-                              }}
+                              onClick={() => navigate(item.path)}
                             >
                     {item.name}
                             </button>

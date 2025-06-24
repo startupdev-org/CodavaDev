@@ -1,10 +1,10 @@
 import React from "react";
-import { Input } from "../../../../components/ui/input";
+import { Input } from "../../components/ui/input";
 import { 
   FadeIn, 
   GlowButton,
   FloatingElement
-} from "../../../../components/ui/animated-elements";
+} from "../../components/ui/animated-elements";
 
 export const FooterSection = (): JSX.Element => {
   // Simplified footer navigation
