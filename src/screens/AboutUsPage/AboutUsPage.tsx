@@ -14,7 +14,7 @@ export const AboutUsPage = (): JSX.Element => {
         <TeamSection />
         <AboutCallToActionSection />
       </div>
-      <CompanyStorySection />
+      {/* <CompanyStorySection /> */}
       <FooterSection />
     </div>
   );
