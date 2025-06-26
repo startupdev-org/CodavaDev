@@ -1,160 +1,172 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
+import { Button } from "../../../../components/ui/button";
+import { Badge } from "../../../../components/ui/badge";
 import { 
   FadeIn, 
   StaggerContainer, 
   StaggerItem, 
-  GlowButton,
-  FloatingElement,
-  MatrixText,
-  ParallaxElement,
-  CircuitAnimation,
-  DataStream,
-  DigitalRain,
-  TypewriterText
+  GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const FAQSection = (): JSX.Element => {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+export const FAQSection: React.FC = () => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "How do I get started with TechFlow's IT services?",
-      answer: "Getting started is simple! Contact us for a free consultation where we'll assess your current infrastructure, understand your business goals, and recommend tailored solutions. Our team will guide you through every step of the implementation process.",
+      question: "What types of IT services does TechFlow offer?",
+      answer: "We provide comprehensive IT solutions including cloud infrastructure, cybersecurity, AI & machine learning, data analytics, digital transformation, and 24/7 IT support. Our services are designed to scale with your business needs."
     },
     {
-      question: "What makes TechFlow different from other IT service providers?",
-      answer: "We combine cutting-edge technology with personalized service. Our unique approach focuses on understanding your business first, then crafting solutions that drive real results. We offer 24/7 support, proactive monitoring, and a dedicated team that becomes an extension of your business.",
-    },
-    {
-      question: "How can I contact a TechFlow solutions architect?",
-      answer: "You can reach our solutions architects through multiple channels: schedule a call through our website, email us directly at hello@techflow.com, or call our dedicated line. We typically respond within 2 hours during business hours and offer emergency support 24/7.",
-    },
-    {
-      question: "What is your typical project timeline?",
-      answer: "Project timelines vary based on scope and complexity. Simple implementations can be completed in 2-4 weeks, while comprehensive digital transformations may take 3-6 months. We always provide detailed timelines during our initial consultation.",
+      question: "How long does a typical digital transformation project take?",
+      answer: "Project timelines vary based on scope and complexity. Small implementations can take 1-2 months, while comprehensive digital transformations typically range from 3-8 months. We provide detailed timelines during our initial consultation."
     },
     {
       question: "Do you provide ongoing support after implementation?",
-      answer: "Absolutely! We offer comprehensive support packages including 24/7 monitoring, regular maintenance, security updates, and dedicated support teams. Our goal is to be your long-term technology partner, not just a one-time service provider.",
+      answer: "Yes, we offer 24/7 ongoing support and maintenance services. This includes monitoring, updates, troubleshooting, and continuous optimization to ensure your systems perform at their best."
     },
+    {
+      question: "Can you work with our existing technology stack?",
+      answer: "Absolutely! We specialize in integrating with existing systems and can work with a wide variety of technologies. Our team conducts thorough assessments to ensure seamless integration with your current infrastructure."
+    },
+    {
+      question: "What makes TechFlow different from other IT service providers?",
+      answer: "Our unique approach combines cutting-edge technology with personalized service. We focus on understanding your business goals first, then design custom solutions that deliver measurable results. Plus, our 24/7 support ensures you're never alone."
+    },
+    {
+      question: "How do you ensure data security and compliance?",
+      answer: "Security is our top priority. We implement industry-leading security measures, conduct regular audits, and ensure compliance with regulations like GDPR, HIPAA, and SOC 2. All data is encrypted and protected with multiple layers of security."
+    }
   ];
 
   return (
-    <div className="flex flex-col w-full items-center relative overflow-hidden">
-      {/* CTA Section */}
-      <div className="flex items-center gap-16 px-8 py-20 relative w-full max-w-6xl mx-auto border-t border-b border-purple-60/20 bg-gradient-to-r from-grey-08/50 via-purple-900/5 to-grey-08/50 overflow-hidden rounded-2xl">
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-600/20 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-400/20 to-transparent rounded-full blur-3xl"></div>
-        </div>
-
-        <FadeIn delay={0.2} direction="right">
-          <div className="flex flex-col items-start gap-6 relative flex-1 z-10 max-w-2xl">
-            <div className="space-y-2">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-1 h-8 bg-gradient-to-b from-purple-600 to-purple-400 rounded-full"></div>
-                <span className="text-purple-400 font-medium text-sm uppercase tracking-wider">Get Started</span>
-              </div>
-              <h2 className="font-bold text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-4xl lg:text-5xl leading-tight">
-                <TypewriterText text="Start Your Digital Transformation Today" speed={0.04} />
-              </h2>
+    <section className="relative py-24">
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <FadeIn delay={0.1} direction="up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">SUPPORT CENTER</span>
             </div>
-            
-            <p className="text-grey-60 text-lg leading-relaxed">
-              Your next breakthrough is just a click away. Whether you're looking to modernize your infrastructure, 
-              implement AI solutions, or enhance cybersecurity, TechFlow is here to guide you every step of the way.
-            </p>
-          </div>
-        </FadeIn>
-
-        <FloatingElement intensity={8} duration={4}>
-          <FadeIn delay={0.6} direction="left">
-            <GlowButton className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-xl font-semibold text-white text-lg shadow-lg shadow-purple-600/25 transition-all duration-300 hover:scale-105 z-10 relative">
-              Explore Solutions
-            </GlowButton>
           </FadeIn>
-        </FloatingElement>
-      </div>
 
-      {/* FAQ Section */}
-      <div className="w-full max-w-6xl mx-auto px-8 py-20">
-        {/* FAQ Header */}
-        <div className="flex flex-col items-center gap-8 max-w-4xl text-center relative z-10 mx-auto">
           <FadeIn delay={0.2} direction="up">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-full border border-purple-60/30 backdrop-blur-sm">
-              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-              <span className="text-purple-200 text-sm font-medium">❓ Support</span>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.3} direction="up">
-            <h2 className="[font-family:'Urbanist',Helvetica] font-bold text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-6xl tracking-[0] leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
-              Frequently Asked Questions
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Frequently Asked
+              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                Questions
+              </span>
             </h2>
           </FadeIn>
           
-          <FadeIn delay={0.5} direction="up">
-            <p className="max-w-3xl [font-family:'Urbanist',Helvetica] font-medium text-grey-40 text-xl tracking-[0] leading-[30px]">
-              Find answers to common questions about TechFlow's IT services, digital transformation solutions, and our implementation process. We're here to provide clarity and guide you through your technology journey.
+          <FadeIn delay={0.3} direction="up">
+            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+              Find answers to common questions about our IT services and digital transformation solutions.
+              Our expert team is here to help you make informed decisions.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.7} direction="up">
-            <GlowButton className="px-8 py-4 h-auto bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-xl font-medium text-white text-lg [font-family:'Urbanist',Helvetica] shadow-lg shadow-purple-600/25 transition-all duration-300 transform hover:scale-105">
-              View All FAQ's
-            </GlowButton>
           </FadeIn>
         </div>
 
-        {/* FAQ List */}
+        {/* FAQ Accordion */}
         <StaggerContainer staggerDelay={0.1}>
-          <div className="space-y-4">
+          <div className="space-y-6 mb-20">
             {faqs.map((faq, index) => (
               <StaggerItem key={index}>
-                <ParallaxElement speed={0.02 * (index + 1)}>
-                  <Card className="bg-gradient-to-br from-grey-08 to-grey-10 border border-purple-60/20 hover:border-purple-60/40 rounded-2xl transition-all duration-300 overflow-hidden group">
-                    <CardContent className="p-0">
+                <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:border-[#194EFF]/30 hover:bg-white/[0.06] transition-all duration-500 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 group">
                       <button
-                        className="w-full p-8 text-left focus:outline-none"
-                        onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full px-10 py-8 text-left flex items-center justify-between hover:bg-white/[0.02] transition-all duration-300 group/btn"
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                       >
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-semibold text-white text-lg group-hover:text-purple-100 transition-colors duration-300 pr-4">
+                    <span className="text-xl font-semibold text-white pr-8 group-hover:text-white transition-colors duration-300">
                             {faq.question}
-                          </h3>
-                          <div className={`w-8 h-8 rounded-full bg-gradient-to-br from-purple-600/20 to-purple-800/20 flex items-center justify-center transition-transform duration-300 ${openFaq === index ? 'rotate-45' : ''}`}>
-                            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </span>
+                    <div className={`w-10 h-10 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 transition-all duration-500 group-hover:border-[#194EFF]/40 group-hover:scale-110 ${
+                      openFAQ === index ? 'rotate-180 bg-gradient-to-br from-[#194EFF]/25 to-[#194EFF]/10' : ''
+                    }`}>
+                      <svg 
+                        className="w-5 h-5 text-[#194EFF]" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                             </svg>
-                          </div>
                         </div>
                       </button>
                       
-                      <div className={`transition-all duration-300 overflow-hidden ${openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                        <div className="px-8 pb-8">
-                          <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-600/30 to-transparent mb-6"></div>
-                          <p className="text-grey-60 text-base leading-relaxed">
+                  {openFAQ === index && (
+                    <div className="px-10 pb-8 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
+                      <p className="text-white/70 leading-relaxed pt-6 text-lg font-light">
                             {faq.answer}
                           </p>
-                          <div className="mt-4">
-                            <button className="text-purple-400 hover:text-purple-300 font-medium text-sm transition-colors duration-200 group relative">
-                              Read More
-                              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-purple-400 group-hover:w-full transition-all duration-300"></div>
-                            </button>
                           </div>
-                        </div>
+                  )}
                       </div>
-                    </CardContent>
-                  </Card>
-                </ParallaxElement>
               </StaggerItem>
             ))}
           </div>
         </StaggerContainer>
+
+        {/* CTA Section */}
+        <FadeIn delay={0.5} direction="up">
+          <div className="text-center bg-white/[0.03] border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 relative overflow-hidden group">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#194EFF]/[0.03] via-transparent to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-4xl font-bold text-white mb-4">
+                Start Your Digital Transformation
+                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                  Today
+                </span>
+              </h3>
+              
+              <p className="text-white/70 text-lg mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Ready to modernize your IT infrastructure? Our experts are standing by to help you get started 
+                with a comprehensive solution tailored to your business needs.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <button className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn">
+                  <span className="relative z-10">Get Free Consultation</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+                <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
+                  <span className="relative z-10">Download Our Guide</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+              </div>
+
+              {/* Contact Support */}
+              <div className="border-t border-white/10 pt-8">
+                <h4 className="text-white font-semibold text-lg mb-4">Still have questions?</h4>
+                <p className="text-white/60 text-base mb-6 font-medium">
+                  Our support team is available 24/7 to help you find the right solution for your business.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <div className="flex items-center gap-3 text-[#194EFF] hover:text-[#194EFF]/80 transition-colors duration-300 cursor-pointer group/contact">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center group-hover/contact:scale-110 group-hover/contact:border-[#194EFF]/40 transition-all duration-300">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <span className="font-semibold">+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-[#194EFF] hover:text-[#194EFF]/80 transition-colors duration-300 cursor-pointer group/contact">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center group-hover/contact:scale-110 group-hover/contact:border-[#194EFF]/40 transition-all duration-300">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <span className="font-semibold">support@techflow.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </div>
-    </div>
+    </section>
   );
 };

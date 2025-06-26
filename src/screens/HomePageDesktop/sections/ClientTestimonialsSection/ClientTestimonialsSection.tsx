@@ -1,175 +1,181 @@
 import React from "react";
-import { Avatar } from "../../../../components/ui/avatar";
-import { Card, CardContent } from "../../../../components/ui/card";
 import { 
   FadeIn, 
   StaggerContainer, 
   StaggerItem, 
-  GlowButton,
-  FloatingElement,
-  ParallaxElement
+  GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const ClientTestimonialsSection = (): JSX.Element => {
-  // Testimonial data for mapping
+export const ClientTestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      title: "Outstanding IT Partnership!",
-      content:
-        "TechFlow transformed our entire infrastructure. Their cloud migration was seamless, and their ongoing support has been exceptional. Our productivity increased by 40%!",
+      quote: "TechFlow transformed our entire IT infrastructure in just 3 months. Their expertise in cloud migration and security implementation exceeded our expectations.",
       author: "Sarah Johnson",
       position: "CTO",
-      company: "InnovateCorp",
-      profileImg: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
-      rating: 5,
+      company: "DataCorp Solutions",
+      avatar: "SJ",
+      rating: 5
     },
     {
-      title: "Reliable & Innovative",
-      content:
-        "The cybersecurity solutions provided by TechFlow gave us peace of mind. Their proactive approach prevented multiple potential threats. Highly recommended for enterprise security.",
+      quote: "The AI solutions provided by TechFlow have revolutionized our data analysis capabilities. We've seen a 300% improvement in processing efficiency.",
       author: "Michael Chen",
-      position: "IT Director",
-      company: "SecureFinance",
-      profileImg: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
-      rating: 5,
+      position: "Head of Operations",
+      company: "InnovateTech",
+      avatar: "MC",
+      rating: 5
     },
     {
-      title: "Game-Changing AI Solutions",
-      content:
-        "The AI integration platform developed by TechFlow revolutionized our operations. Automated processes saved us 60% in operational costs while improving accuracy significantly.",
-      author: "Emily Rodriguez",
-      position: "CEO",
-      company: "DataDriven Solutions",
-      profileImg: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
-      rating: 5,
-    },
+      quote: "Outstanding cybersecurity implementation. TechFlow's team identified and resolved vulnerabilities we didn't even know existed. Truly professional service.",
+      author: "Emma Rodriguez",
+      position: "IT Director",
+      company: "SecureBase Inc",
+      avatar: "ER",
+      rating: 5
+    }
   ];
 
       return (
-      <section className="flex flex-col w-full items-center gap-16 relative overflow-hidden">
-        {/* Header Section */}
-        <div className="flex flex-col items-center gap-8 max-w-4xl text-center relative z-10 mx-auto">
-        <FadeIn delay={0.2} direction="up">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-purple-800/20 rounded-full border border-purple-60/30 backdrop-blur-sm">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-            <span className="text-purple-200 text-sm font-medium">💬 Client Success Stories</span>
+    <section className="relative py-24">
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <FadeIn delay={0.1} direction="up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">CLIENT SUCCESS</span>
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.3} direction="up">
-          <h2 className="[font-family:'Urbanist',Helvetica] font-bold text-transparent bg-gradient-to-r from-purple-400 via-white to-purple-400 bg-clip-text text-6xl tracking-[0] leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
-            What Our Clients Say
+          <FadeIn delay={0.2} direction="up">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              What Our
+              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                Clients Say
+              </span>
           </h2>
         </FadeIn>
         
-        <FadeIn delay={0.5} direction="up">
-          <p className="max-w-3xl [font-family:'Urbanist',Helvetica] font-medium text-grey-40 text-xl tracking-[0] leading-[30px]">
-            Read success stories from businesses that have transformed their operations with our IT solutions. Discover why leading companies trust TechFlow for their digital transformation needs.
+          <FadeIn delay={0.3} direction="up">
+            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+              Discover how we've helped businesses transform their technology infrastructure 
+              and achieve remarkable results through innovative solutions.
           </p>
-        </FadeIn>
-
-        <FadeIn delay={0.7} direction="up">
-          <GlowButton className="px-8 py-4 h-auto bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-xl font-medium text-white text-lg [font-family:'Urbanist',Helvetica] shadow-lg shadow-purple-600/25 transition-all duration-300 transform hover:scale-105">
-            View All Case Studies
-          </GlowButton>
         </FadeIn>
       </div>
 
       {/* Testimonials Grid */}
-      <div className="w-full">
-        <StaggerContainer staggerDelay={0.2}>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <StaggerContainer staggerDelay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {testimonials.map((testimonial, index) => (
               <StaggerItem key={index}>
-                <ParallaxElement speed={0.05 * (index + 1)}>
-                  <Card className="h-full bg-gradient-to-br from-grey-08 to-grey-10 border border-purple-60/20 hover:border-purple-60/40 rounded-2xl transition-all duration-500 hover:shadow-xl hover:shadow-purple-600/10 group overflow-hidden">
-                    <CardContent className="p-8 flex flex-col h-full">
-                      {/* Star Rating */}
-                      <div className="flex items-center gap-1 mb-6">
+                <div className="group relative p-8 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl hover:border-[#194EFF]/30 hover:bg-white/[0.06] transition-all duration-500 hover:transform hover:scale-[1.02] h-full flex flex-col shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10">
+                  {/* Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#194EFF]/[0.02] to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+
+                  {/* Quote Icon */}
+                  <div className="relative z-10 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:border-[#194EFF]/40 transition-all duration-500 shadow-lg shadow-[#194EFF]/10">
+                      <svg className="w-6 h-6 text-[#194EFF]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Rating Stars */}
+                  <div className="flex items-center gap-1 mb-6 relative z-10">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <FloatingElement key={i} intensity={2} duration={2 + i * 0.2}>
-                            <div className="w-5 h-5 text-yellow-400">
-                              <svg fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        key={i}
+                        className="w-5 h-5 text-[#194EFF] drop-shadow-sm"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                               </svg>
-                            </div>
-                          </FloatingElement>
                         ))}
                       </div>
 
-                      {/* Quote Icon */}
-                      <div className="mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-600/20 to-purple-800/20 rounded-lg flex items-center justify-center">
-                          <span className="text-purple-400 text-2xl">"</span>
-                        </div>
-                      </div>
-
-                      {/* Testimonial Content */}
-                      <div className="flex-1 space-y-4">
-                        <h3 className="font-bold text-white text-xl leading-tight group-hover:text-purple-100 transition-colors duration-300">
-                          {testimonial.title}
-                        </h3>
-                        
-                        <p className="text-grey-60 text-base leading-relaxed group-hover:text-grey-50 transition-colors duration-300">
-                          "{testimonial.content}"
-                        </p>
-                      </div>
+                  {/* Quote */}
+                  <blockquote className="text-white/80 leading-relaxed mb-8 text-lg font-light flex-1 relative z-10">
+                    "{testimonial.quote}"
+                  </blockquote>
 
                       {/* Author Info */}
-                      <div className="flex items-center gap-4 mt-8 pt-6 border-t border-purple-60/20">
-                        <FloatingElement intensity={3} duration={3}>
-                          <Avatar className="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-60/30 group-hover:border-purple-60/50 transition-colors duration-300">
-                            <img
-                              className="w-full h-full object-cover"
-                              alt={`${testimonial.author} profile`}
-                              src={testimonial.profileImg}
-                            />
-                          </Avatar>
-                        </FloatingElement>
-
-                        <div className="flex-1">
-                          <div className="font-semibold text-white text-base group-hover:text-purple-100 transition-colors duration-300">
-                            {testimonial.author}
+                  <div className="flex items-center gap-4 relative z-10">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#194EFF] to-[#194EFF]/80 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-[#194EFF]/25 group-hover:shadow-[#194EFF]/40 transition-all duration-500">
+                      {testimonial.avatar}
                           </div>
-                          <div className="text-grey-60 text-sm group-hover:text-purple-300 transition-colors duration-300">
-                            {testimonial.position}, {testimonial.company}
+                    <div>
+                      <div className="font-bold text-white text-lg mb-1">{testimonial.author}</div>
+                      <div className="text-[#194EFF] text-sm font-semibold">{testimonial.position}</div>
+                      <div className="text-white/50 text-sm font-medium">{testimonial.company}</div>
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </ParallaxElement>
               </StaggerItem>
             ))}
           </div>
         </StaggerContainer>
+
+        {/* Stats Section */}
+        <FadeIn delay={0.5} direction="up">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+            <div className="text-center group cursor-pointer">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-white via-[#194EFF]/30 to-white bg-clip-text group-hover:from-[#194EFF] group-hover:to-white transition-all duration-500">500+</div>
+              <div className="text-white/60 font-medium group-hover:text-white/80 transition-colors duration-300">Projects Completed</div>
+              <div className="w-0 h-0.5 bg-gradient-to-r from-[#194EFF] to-white mx-auto mt-2 group-hover:w-full transition-all duration-500"></div>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-white via-[#194EFF]/30 to-white bg-clip-text group-hover:from-[#194EFF] group-hover:to-white transition-all duration-500">98%</div>
+              <div className="text-white/60 font-medium group-hover:text-white/80 transition-colors duration-300">Client Satisfaction</div>
+              <div className="w-0 h-0.5 bg-gradient-to-r from-[#194EFF] to-white mx-auto mt-2 group-hover:w-full transition-all duration-500"></div>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-white via-[#194EFF]/30 to-white bg-clip-text group-hover:from-[#194EFF] group-hover:to-white transition-all duration-500">24/7</div>
+              <div className="text-white/60 font-medium group-hover:text-white/80 transition-colors duration-300">Support Available</div>
+              <div className="w-0 h-0.5 bg-gradient-to-r from-[#194EFF] to-white mx-auto mt-2 group-hover:w-full transition-all duration-500"></div>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <div className="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-white via-[#194EFF]/30 to-white bg-clip-text group-hover:from-[#194EFF] group-hover:to-white transition-all duration-500">10+</div>
+              <div className="text-white/60 font-medium group-hover:text-white/80 transition-colors duration-300">Years Experience</div>
+              <div className="w-0 h-0.5 bg-gradient-to-r from-[#194EFF] to-white mx-auto mt-2 group-hover:w-full transition-all duration-500"></div>
       </div>
-
-      {/* Pagination */}
-      <FadeIn delay={1.0} direction="up">
-        <div className="flex items-center justify-between w-full pt-8 border-t border-purple-60/20">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-transparent bg-gradient-to-r from-purple-400 to-white bg-clip-text text-xl">
-              01
-            </span>
-            <span className="text-grey-60 text-lg">of 15</span>
           </div>
+        </FadeIn>
 
-          <div className="flex items-center gap-3">
-            <GlowButton className="w-12 h-12 rounded-full border border-purple-60/30 hover:border-purple-60/50 bg-grey-10 hover:bg-purple-600/10 transition-all duration-300 flex items-center justify-center group">
-              <svg className="w-5 h-5 text-grey-60 group-hover:text-purple-300 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </GlowButton>
-
-            <GlowButton className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 transition-all duration-300 flex items-center justify-center shadow-lg shadow-purple-600/25">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </GlowButton>
+        {/* CTA Section */}
+        <FadeIn delay={0.6} direction="up">
+          <div className="text-center bg-white/[0.03] border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 relative overflow-hidden group">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#194EFF]/[0.03] via-transparent to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-4xl font-bold text-white mb-4">
+                Ready to Join Our
+                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                  Success Stories?
+                </span>
+              </h3>
+              
+              <p className="text-white/70 text-lg mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Let's discuss how we can transform your business with cutting-edge technology solutions 
+                and deliver the same exceptional results our clients experience.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn">
+                  <span className="relative z-10">Start Your Project</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+                <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
+                  <span className="relative z-10">View Case Studies</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+              </div>
+            </div>
           </div>
+        </FadeIn>
         </div>
-      </FadeIn>
     </section>
   );
 };

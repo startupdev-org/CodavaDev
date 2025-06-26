@@ -122,4 +122,53 @@
     transform: translateX(4px);
     background: linear-gradient(135deg, rgba(112, 59, 247, 0.1), rgba(166, 133, 250, 0.1));
   }
+
+  /* Marquee animations */
+  .animate-marquee {
+    animation: marquee var(--duration) infinite linear;
+  }
+  
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  /* Falling stars animation */
+  .animate-falling-star {
+    animation: falling-star var(--duration, 3s) linear infinite;
+  }
+  
+  @keyframes falling-star {
+    0% {
+      transform: translateY(-100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(50px) rotate(180deg);
+      opacity: 0;
+    }
+  }
 }
