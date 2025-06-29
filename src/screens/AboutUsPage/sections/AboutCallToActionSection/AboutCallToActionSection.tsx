@@ -52,8 +52,8 @@ export const AboutCallToActionSection = (): JSX.Element => {
 
         {/* Main CTA Card */}
         <FadeIn delay={0.4} direction="up">
-          <Card className="w-full bg-white/[0.03] border border-[#194EFF]/20 rounded-3xl backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden">
-            <CardContent className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 sm:gap-10 lg:gap-12 p-4 sm:p-8 lg:p-12 relative z-10 max-w-3xl mx-auto w-full">
+          <Card className="w-full max-w-5xl mx-auto bg-white/[0.03] border border-[#194EFF]/20 rounded-3xl backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden">
+            <CardContent className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 sm:gap-10 lg:gap-12 p-4 sm:p-8 lg:p-12 relative z-10 w-full">
               {/* Left Content */}
               <div className="flex flex-col items-start gap-6 sm:gap-8 flex-1 w-full">
                 <div className="flex flex-col items-start gap-2 sm:gap-4">
@@ -110,30 +110,7 @@ export const AboutCallToActionSection = (): JSX.Element => {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#194EFF]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-2000 rounded-3xl"></div>
           </Card>
         </FadeIn>
-
-        {/* Additional Info */}
-        <FadeIn delay={0.6} direction="up">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 w-full pt-6 sm:pt-8 border-t border-[#194EFF]/30">
-            <div className="flex flex-col items-start gap-2"></div>
-          </div>
-        </FadeIn>
       </div>
-
-      {/* Floating Elements */}
-      <FloatingElement intensity={8} duration={4}>
-        <div className="absolute top-6 sm:top-12 left-6 sm:left-20 w-[48px] sm:w-[68px] h-[22px] sm:h-[30px] opacity-50">
-          <div className="bg-[url(/group-4.png)] absolute w-[20px] sm:w-[30px] h-[20px] sm:h-[30px] top-0 left-0 bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-          <div className="bg-[url(/group-5.png)] absolute w-[12px] sm:w-[18px] h-[12px] sm:h-[18px] top-1.5 left-7 sm:left-9 bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-          <div className="bg-[url(/group-6.png)] absolute w-1.5 sm:w-2 h-1.5 sm:h-2 top-[9px] sm:top-[11px] left-[38px] sm:left-[60px] bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-        </div>
-      </FloatingElement>
-      <FloatingElement intensity={6} duration={5}>
-        <div className="absolute bottom-6 sm:bottom-20 right-6 sm:right-20 w-[48px] sm:w-[68px] h-[22px] sm:h-[30px] opacity-50">
-          <div className="bg-[url(/group-4.png)] absolute w-[20px] sm:w-[30px] h-[20px] sm:h-[30px] top-0 left-0 bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-          <div className="bg-[url(/group-5.png)] absolute w-[12px] sm:w-[18px] h-[12px] sm:h-[18px] top-1.5 left-7 sm:left-9 bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-          <div className="bg-[url(/group-6.png)] absolute w-1.5 sm:w-2 h-1.5 sm:h-2 top-[9px] sm:top-[11px] left-[38px] sm:left-[60px] bg-[100%_100%] filter hue-rotate-[280deg] brightness-125" />
-        </div>
-      </FloatingElement>
     </section>
   );
 };

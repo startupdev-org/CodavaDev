@@ -337,7 +337,7 @@ export const AboutHeroSection = (): JSX.Element => {
         </div>
 
         {/* Core Values */}
-        <div className="mt-20">
+        <div className="mt-20 mb-20">
           <FadeIn delay={0.9} direction="up">
             <div className="text-center space-y-8 mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
