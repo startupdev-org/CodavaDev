@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { Badge } from "../../../../components/ui/badge";
 import { Globe } from "../../../../components/ui/globe";
 import {
   FadeIn,
@@ -13,6 +12,8 @@ import {
   ParallaxElement,
   MatrixText,
 } from "../../../../components/ui/animated-elements";
+import { BoxReveal } from "../../../../components/magicui/box-reveal-props.tsx";
+
 
 const typingTexts = [
   "Through Technology",
@@ -84,22 +85,6 @@ export const AboutHeroSection = (): JSX.Element => {
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, textIndex]);
-
-  // Company stats data
-  const companyStats = [
-    {
-      value: "10+",
-      label: "Projects Delivered",
-    },
-    {
-      value: "100%",
-      label: "Client Satisfaction",
-    },
-    {
-      value: "24/7",
-      label: "Support Available",
-    },
-  ];
 
   // Core values data
   const coreValues = [
@@ -186,17 +171,19 @@ export const AboutHeroSection = (): JSX.Element => {
       </div>
 
       <div className="relative max-w-[1600px] mx-auto px-6 w-full">
+        
         {/* Main Hero Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-11 gap-8 lg:gap-20 items-center">
           {/* Left Content - Takes up 5 columns */}
-          <div className="lg:col-span-5 space-y-8 z-10">
+          <div className="lg:col-span-4 space-y-8 z-10">
             <FadeIn delay={0.2} direction="up">
-              <div className="space-y-8 mt-16">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.2] text-white ">
-                  <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>{" "}
+              <div className="space-y-10 mt-16 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl min-h-[470px] max-h-[470px]">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[7rem] font-bold leading-[1.10] text-white break-words">
+                  <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>
+                  <br />
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Businesses</span>
                   <br />
-                  <span className="text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300">
+                  <span className="h-44 sm:h-52 md:h-56 lg:h-64 xl:h-72 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative break-words">
                     {displayedText}
                   </span>
                 </h1>
@@ -204,7 +191,7 @@ export const AboutHeroSection = (): JSX.Element => {
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300">
                 We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
               </p>
             </FadeIn>
@@ -229,50 +216,6 @@ export const AboutHeroSection = (): JSX.Element => {
               </div>
             </FadeIn>
           </div>
-
-          {/* Right Side - Interactive Globe - Takes up 7 columns */}
-          <div className="lg:col-span-7 relative flex items-center justify-center min-h-[500px]">
-            <FadeIn delay={0.6} direction="left">
-              <div className="relative w-full max-w-2xl mx-auto">
-                {/* Interactive Globe */}
-                <div className="relative w-full h-[500px] flex items-center justify-center">
-                  <Globe className="w-full h-full" />
-                </div>
-
-                {/* Orbiting Ring around Globe */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-[#194EFF]/10 rounded-full animate-spin" style={{animationDuration: '60s'}}></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-
-        {/* Enhanced Stats Section */}
-        <div className="mt-16">
-          <FadeIn delay={0.7} direction="up">
-            <div className="bg-white/[0.03] border border-[#194EFF]/20 rounded-3xl p-8 lg:p-10 backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden">
-              {/* Stats background animation */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#194EFF]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-2000 rounded-3xl"></div>
-              
-              <StaggerContainer staggerDelay={0.1}>
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10">
-                  {companyStats.map((stat, index) => (
-                    <StaggerItem key={index}>
-                      <div className="text-center group hover:scale-105 transition-transform duration-300 cursor-pointer">
-                        <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-white to-[#194EFF] bg-clip-text text-transparent group-hover:from-[#194EFF] group-hover:to-white transition-all duration-300">
-                          {stat.value}
-                        </div>
-                        <div className="text-white/60 text-sm md:text-base font-medium group-hover:text-white/80 transition-colors duration-300">
-                          {stat.label}
-                        </div>
-                        {/* Subtle underline effect */}
-                        <div className="w-0 h-0.5 bg-gradient-to-r from-[#194EFF] to-white mx-auto mt-3 group-hover:w-full transition-all duration-500"></div>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </div>
-              </StaggerContainer>
-            </div>
-          </FadeIn>
         </div>
 
         {/* Mission & Vision Sections */}
