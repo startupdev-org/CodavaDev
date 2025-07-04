@@ -12,55 +12,76 @@ import {
 export const FeaturedPropertiesSection: React.FC = () => {
   const services = [
     {
-      icon: "💻",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
       title: "Web Development",
       description: "Custom websites and web applications built with modern technologies for optimal performance and user experience.",
       features: ["Responsive Design", "E-commerce Integration", "CMS Development", "Performance Optimization"],
-      price: "$2,499",
-      period: "/project",
       popular: true
     },
     {
-      icon: "🎨",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      title: "Bot Automation",
+      description: "Intelligent chatbots and automation solutions that streamline customer service and business processes.",
+      features: ["AI Chatbots", "Process Automation", "24/7 Support", "CRM Integration"],
+      popular: false
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+        </svg>
+      ),
       title: "Design",
       description: "Creative visual solutions including branding, UI/UX design, and graphic design that captivate your audience.",
       features: ["Brand Identity", "UI/UX Design", "Logo Design", "Print Materials"],
-      price: "$1,299",
-      period: "/project",
       popular: false
     },
     {
-      icon: "📢",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+        </svg>
+      ),
       title: "Digital Advertising",
       description: "Strategic digital marketing campaigns across multiple platforms to maximize your reach and ROI.",
       features: ["Google Ads", "Facebook Advertising", "Campaign Strategy", "Performance Analytics"],
-      price: "$999",
-      period: "/month",
       popular: false
     },
     {
-      icon: "🔍",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      ),
       title: "SEO",
       description: "Search engine optimization strategies to improve your online visibility and drive organic traffic to your website.",
       features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Monthly Reporting"],
-      price: "$799",
-      period: "/month",
       popular: false
     },
     {
-      icon: "✍️",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+        </svg>
+      ),
       title: "Copywriting",
       description: "Compelling content that converts visitors into customers through strategic messaging and storytelling.",
       features: ["Website Copy", "Blog Content", "Email Campaigns", "Sales Pages"],
-      price: "$599",
-      period: "/project",
       popular: false
     }
   ];
 
   return (
     <section className="relative py-24">
-      <div className="max-w-[1600px] mx-auto px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -81,7 +102,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
         
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-              From stunning web development to strategic digital marketing, we deliver comprehensive 
+              From stunning web development to intelligent automation, we deliver comprehensive 
               solutions that drive growth and elevate your brand presence.
           </p>
         </FadeIn>
@@ -89,65 +110,63 @@ export const FeaturedPropertiesSection: React.FC = () => {
 
       {/* Services Grid */}
         <StaggerContainer staggerDelay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10 xl:gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
             {services.map((service, index) => (
               <StaggerItem key={index}>
-                <div
-                  className={`group relative p-10 xl:p-12 bg-white/[0.03] backdrop-blur-xl border transition-all duration-500 hover:transform hover:scale-[1.02] h-full flex flex-col ${
-                    service.popular 
-                      ? 'border-[#194EFF]/40 shadow-xl shadow-[#194EFF]/15 bg-gradient-to-br from-[#194EFF]/[0.08] to-transparent' 
-                      : 'border-white/10 hover:border-[#194EFF]/30 hover:bg-white/[0.06]'
-                  } rounded-3xl relative overflow-hidden`}
-                >
+                <div className={`relative bg-white/[0.03] border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:border-[#194EFF]/30 hover:bg-white/[0.06] backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 group h-full flex flex-col ${
+                  service.popular ? 'ring-1 ring-[#194EFF]/20' : ''
+                }`}>
+                  
                   {/* Popular Badge */}
                   {service.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                      <div className="bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg shadow-[#194EFF]/25 border border-[#194EFF]/30">
+                      <div className="bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg shadow-[#194EFF]/25 border border-[#194EFF]/30">
                         Most Popular
                       </div>
                     </div>
                   )}
 
                   {/* Background Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#194EFF]/[0.02] to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-
-                  {/* Service Icon */}
-                  <div className="w-24 h-24 xl:w-28 xl:h-28 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center text-4xl xl:text-5xl mb-10 group-hover:scale-110 group-hover:border-[#194EFF]/40 transition-all duration-500 shadow-lg shadow-[#194EFF]/10 relative z-10">
-                    {service.icon}
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
 
                   {/* Content */}
-                  <div className="flex-1 relative z-10">
-                    <h3 className="text-2xl xl:text-3xl font-bold text-white mb-6 group-hover:text-white transition-colors duration-300">{service.title}</h3>
-                    <p className="text-white/60 leading-relaxed mb-10 text-base xl:text-lg">{service.description}</p>
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Service Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center text-[#194EFF] mb-6 group-hover:scale-110 group-hover:border-[#194EFF]/40 transition-all duration-500 shadow-lg shadow-[#194EFF]/10">
+                      {service.icon}
+                    </div>
 
-                    {                    /* Features */}
-                    <ul className="space-y-4 mb-10">
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
+                      {service.title}
+                  </h3>
+
+                    {/* Description */}
+                    <p className="text-white/60 leading-relaxed mb-6 text-base flex-1">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-3 mb-8">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-4 text-white/70">
-                          <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full flex-shrink-0 shadow-sm shadow-[#194EFF]/50"></div>
-                          <span className="text-sm xl:text-base font-medium">{feature}</span>
+                        <li key={idx} className="flex items-center gap-3 text-white/70">
+                          <div className="w-2 h-2 bg-[#194EFF] rounded-full flex-shrink-0 shadow-sm shadow-[#194EFF]/50"></div>
+                          <span className="text-sm font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                  </div>
 
-                  {/* Pricing */}
-                  <div className="relative z-10 mt-auto">
-                    <div className="flex items-baseline gap-3 mb-8">
-                      <span className="text-4xl xl:text-5xl font-bold text-white">{service.price}</span>
-                      <span className="text-white/50 text-base xl:text-lg font-medium">{service.period}</span>
-                </div>
-
-                    {                    /* CTA Button */}
-                    <button className={`w-full py-5 xl:py-6 px-6 rounded-2xl font-semibold text-base xl:text-lg transition-all duration-300 shadow-lg relative overflow-hidden group/btn ${
-                      service.popular
-                        ? 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40'
-                        : 'bg-white/8 text-white hover:bg-white/15 border border-white/20 hover:border-[#194EFF]/40 backdrop-blur-sm'
-                    }`}>
-                      <span className="relative z-10">Get Started</span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                    </button>
+                    {/* CTA */}
+                    <div className="mt-auto">
+                      <button className={`w-full py-4 px-6 rounded-2xl font-semibold text-base transition-all duration-300 shadow-lg relative overflow-hidden group/btn ${
+                        service.popular
+                          ? 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40'
+                          : 'bg-white/8 text-white hover:bg-white/15 border border-white/20 hover:border-[#194EFF]/40 backdrop-blur-sm'
+                      }`}>
+                        <span className="relative z-10">Learn More</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </StaggerItem>
@@ -155,25 +174,45 @@ export const FeaturedPropertiesSection: React.FC = () => {
         </div>
         </StaggerContainer>
 
-        {/* Bottom CTA */}
+                {/* Bottom CTA */}
         <FadeIn delay={0.8} direction="up">
-          <div className="text-center">
-            <div className="inline-flex flex-col sm:flex-row gap-4">
-              <button className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group">
-                <span className="relative z-10">Schedule Consultation</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              </button>
-              <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group">
-                <span className="relative z-10">View Portfolio</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              </button>
-      </div>
+          <div className="text-center bg-white/[0.03] border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 relative overflow-hidden group">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#194EFF]/[0.03] via-transparent to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-4xl font-bold text-white mb-4">
+                Ready to Start Your Project?
+                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                  Let's Work Together
+                </span>
+              </h3>
+              
+              <p className="text-white/70 text-lg mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                Transform your ideas into reality with our expert team. Get started with a free consultation 
+                and discover how we can help your business grow.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                <button className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn">
+                  <span className="relative z-10">Get Free Consultation</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+                <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
+                  <span className="relative z-10">View Portfolio</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                </button>
+              </div>
 
-            <p className="text-white/50 text-base mt-8 font-medium">
-              Need a custom package? <span className="text-[#194EFF] hover:text-[#194EFF]/80 cursor-pointer font-semibold border-b border-[#194EFF]/30 hover:border-[#194EFF]/60 transition-all duration-300">Contact our team</span>
-            </p>
-        </div>
-      </FadeIn>
+              {/* Contact Support */}
+              <div className="border-t border-white/10 pt-8">
+                <p className="text-white/50 text-base font-medium">
+                  Have questions? <span className="text-[#194EFF] hover:text-[#194EFF]/80 cursor-pointer font-semibold border-b border-[#194EFF]/30 hover:border-[#194EFF]/60 transition-all duration-300">Contact our team</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

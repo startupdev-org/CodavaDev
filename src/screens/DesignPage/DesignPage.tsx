@@ -1,11 +1,10 @@
-
-import { FAQSection } from "./sections/FAQSection";
-import { FeaturedPropertiesSection } from "./sections/FeaturedPropertiesSection";
-import { ReviewsMarqueeSection } from "./sections/ReviewsMarqueeSection";
+import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
-import { HeroSection } from "./sections/HeroSection";
+import { DesignHeroSection } from "./sections/DesignHeroSection";
+import { DesignFeaturesSection } from "./sections/DesignFeaturesSection";
+import { DesignCTASection } from "./sections/DesignCTASection";
 
-export const HomePageDesktop = (): JSX.Element => {
+export const DesignPage = (): JSX.Element => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F] relative overflow-hidden">
       {/* Enhanced Background Elements */}
@@ -35,38 +34,12 @@ export const HomePageDesktop = (): JSX.Element => {
       <HeaderSection />
       
       <main className="relative z-10">
-      <HeroSection />
-      
-      <ReviewsMarqueeSection />
-        
-
-        
-        <FeaturedPropertiesSection />
-
-        {/* Professional Section Divider 2 */}
-        <div className="relative py-16">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-full max-w-6xl px-8">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-[#194EFF]/20 to-transparent"></div>
-                </div>
-                <div className="relative flex justify-center">
-                  <div className="bg-[#00041F] px-8 py-4">
-                    
-        </div>
-            </div>
-          </div>
-            </div>
-          </div>
-        </div>
-
-        <section className="max-w-7xl mx-auto px-8">
-          <FAQSection />
-        </section>
+        <DesignHeroSection />
+        <DesignFeaturesSection />
+        <DesignCTASection />
       </main>
       
       <FooterSection />
     </div>
   );
-};
+}; 

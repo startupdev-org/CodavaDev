@@ -42,6 +42,10 @@ export const HeaderSection = (): JSX.Element => {
     if (path === "/") {
       return location.pathname === "/";
     }
+    // For services, only show as active on exact /services path, not sub-paths
+    if (path === "/services") {
+      return location.pathname === "/services";
+    }
     return location.pathname.startsWith(path);
   };
 
@@ -50,16 +54,16 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Development & Design",
       items: [
-        { name: "Web Development", description: "Custom websites & applications", icon: "💻" },
-        { name: "Design", description: "UI/UX & brand identity", icon: "🎨" },
+        { name: "Web Development", description: "Custom websites & applications", icon: "💻", path: "/services/web-development" },
+        { name: "Design", description: "UI/UX & brand identity", icon: "🎨", path: "/services/design" },
       ]
     },
     {
       category: "Marketing & Content",
       items: [
-        { name: "Digital Advertising", description: "Google & Facebook Ads", icon: "📢" },
-        { name: "SEO", description: "Search engine optimization", icon: "🔍" },
-        { name: "Copywriting", description: "Content that converts", icon: "✍️" },
+        { name: "Digital Advertising", description: "Google & Facebook Ads", icon: "📢", path: "/services/advertising" },
+        { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
+        { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
       ]
     }
   ];
@@ -84,7 +88,7 @@ export const HeaderSection = (): JSX.Element => {
     }
   ];
 
-  const renderDropdownMenu = (items: typeof servicesDropdown, triggerName: string, uniqueId: string) => (
+  const renderDropdownMenu = (items: Array<{category: string; items: Array<{name: string; description: string; icon: string; path?: string}>}>, triggerName: string, uniqueId: string) => (
     <div className={`relative dropdown-${uniqueId}`}>
       <button 
         className="flex items-center gap-1 font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-[#194EFF] transition-colors duration-200"
@@ -138,6 +142,7 @@ export const HeaderSection = (): JSX.Element => {
               <div 
                     key={itemIndex}
                   className="flex items-center gap-3 px-3 py-2 text-white text-sm hover:bg-[#194EFF]/10 rounded transition-colors duration-150 cursor-pointer group"
+                  onClick={() => item.path && navigate(item.path)}
                   >
                 <span className="text-base">{item.icon}</span>
                   <div className="flex-1">

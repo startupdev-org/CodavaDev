@@ -192,6 +192,10 @@ module.exports = {
           '0%': { strokeDashoffset: '1000' },
           '100%': { strokeDashoffset: '0' },
         },
+        'scroll-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -223,6 +227,7 @@ module.exports = {
         "matrix": "matrix 20s linear infinite",
         "data-flow": "data-flow 3s ease-in-out infinite",
         "circuit": "circuit 5s linear infinite",
+        "scroll-left": "scroll-left 30s linear infinite",
       },
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },

@@ -1,7 +1,4 @@
 import React from "react";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Badge } from "../../../../components/ui/badge";
 import { 
   FadeIn, 
   StaggerContainer, 
@@ -9,7 +6,7 @@ import {
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const HeroSection = (): JSX.Element => {
+export const DesignHeroSection = (): JSX.Element => {
   return (
     <>
       {/* CSS Animations */}
@@ -50,7 +47,7 @@ export const HeroSection = (): JSX.Element => {
       <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
-          {/* Main animated gradient - similar to Arise */}
+          {/* Main animated gradient */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
           
           {/* Secondary animated gradient */}
@@ -100,20 +97,20 @@ export const HeroSection = (): JSX.Element => {
         {/* Hero Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
           
-          {/* IT Agency Badge */}
+          {/* Service Badge */}
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">Full-Service IT Agency • Development • Design • Marketing</span>
+              <span className="text-white/80 text-sm font-medium">🎨 UI/UX Design • Brand Identity • Creative Solutions</span>
             </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Transform Your Business with
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1 h-[90px]">
-                Digital Excellence
+              Design That Captivates
+              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
+                And Converts
               </span>
             </h1>
           </FadeIn>
@@ -121,16 +118,27 @@ export const HeroSection = (): JSX.Element => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              From custom web development and stunning UI/UX design to powerful digital marketing campaigns - we deliver comprehensive IT solutions that drive real growth.
+              We create stunning user interfaces and memorable brand identities that not only look beautiful but drive engagement and conversions. Every pixel is crafted with purpose.
             </p>
           </FadeIn>
 
-          {/* CTA Buttons */}
+          {/* Design Services Preview */}
           <FadeIn delay={0.4} direction="up">
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {['UI/UX Design', 'Brand Identity', 'Logo Design', 'Prototyping', 'User Research', 'Design Systems'].map((service, index) => (
+                <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
+                  {service}
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* CTA Buttons */}
+          <FadeIn delay={0.5} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
               <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105">
                 <span className="flex items-center gap-2.5">
-                  Start Your Project
+                  Start Design Project
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -139,7 +147,7 @@ export const HeroSection = (): JSX.Element => {
               
               <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
                 <span className="flex items-center gap-2.5">
-                  View Our Work
+                  View Design Portfolio
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -150,16 +158,16 @@ export const HeroSection = (): JSX.Element => {
           </FadeIn>
 
           {/* Status & Stats */}
-          <FadeIn delay={0.5} direction="up">
+          <FadeIn delay={0.6} direction="up">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/50">
               <div className="flex items-center gap-2.5">
                 <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
                 <span>Available for new projects</span>
               </div>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>50+ Projects Delivered</span>
+              <span>50+ Brands Designed</span>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>24/7 Support</span>
+              <span>Award-Winning Designs</span>
             </div>
           </FadeIn>
 
@@ -167,4 +175,4 @@ export const HeroSection = (): JSX.Element => {
       </section>
     </>
   );
-};
+}; 
