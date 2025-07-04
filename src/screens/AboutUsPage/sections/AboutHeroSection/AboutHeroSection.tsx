@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { Badge } from "../../../../components/ui/badge";
 import { Globe } from "../../../../components/ui/globe";
 import {
   FadeIn,
@@ -13,7 +12,8 @@ import {
   ParallaxElement,
   MatrixText,
 } from "../../../../components/ui/animated-elements";
-import { AnimatedList } from "@/components/magicui/animated-list";
+import { BoxReveal } from "../../../../components/magicui/box-reveal-props.tsx";
+
 
 const typingTexts = [
   "Through Technology",
@@ -85,22 +85,6 @@ export const AboutHeroSection = (): JSX.Element => {
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, textIndex]);
-
-  // Company stats data
-  const companyStats = [
-    {
-      value: "10+",
-      label: "Projects Delivered",
-    },
-    {
-      value: "100%",
-      label: "Client Satisfaction",
-    },
-    {
-      value: "24/7",
-      label: "Support Available",
-    },
-  ];
 
   // Core values data
   const coreValues = [
@@ -193,12 +177,13 @@ export const AboutHeroSection = (): JSX.Element => {
           {/* Left Content - Takes up 5 columns */}
           <div className="lg:col-span-4 space-y-8 z-10">
             <FadeIn delay={0.2} direction="up">
-              <div className="space-y-10 mt-16 w-full max-w-[700px] min-h-[320px]">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.2] text-white whitespace-nowrap">
-                  <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>{" "} <br/>
+              <div className="space-y-10 mt-16 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl min-h-[470px] max-h-[470px]">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[7rem] font-bold leading-[1.10] text-white break-words">
+                  <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>
+                  <br />
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Businesses</span>
                   <br />
-                  <span className="h-32 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative">
+                  <span className="h-44 sm:h-52 md:h-56 lg:h-64 xl:h-72 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative break-words">
                     {displayedText}
                   </span>
                 </h1>
@@ -206,7 +191,7 @@ export const AboutHeroSection = (): JSX.Element => {
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300">
                 We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
               </p>
             </FadeIn>
@@ -232,12 +217,6 @@ export const AboutHeroSection = (): JSX.Element => {
             </FadeIn>
           </div>
         </div>
-
-        <AnimatedList>
-          <p>Item 1</p>
-          <p>Item 2</p>
-          <p>Item 3</p>
-        </AnimatedList>
 
         {/* Mission & Vision Sections */}
         <div className="mt-20 space-y-20">
