@@ -11,7 +11,7 @@ import {
 export const PortfolioGridSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filters = ["All", "Web Development", "UI/UX Design", "Digital Marketing", "Mobile Apps", "E-commerce"];
+  const filters = ["All", "Web Development", "FullStack Development", "Backend Development", "UI/UX Design", "Digital Marketing", "Mobile Apps", "E-commerce"];
 
   const projects = [
     {
