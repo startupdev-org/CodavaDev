@@ -1,8 +1,8 @@
 import React from "react";
-import { HeaderSection, FooterSection } from "../FixedComponents";
+import { HeaderSection, FooterSection, } from "../FixedComponents";
+import { CTASection } from "../FixedComponents/CTASection";
 import { PortfolioHeroSection } from "./sections/PortfolioHeroSection/PortfolioHeroSection";
 import { PortfolioGridSection } from "./sections/PortfolioGridSection/PortfolioGridSection";
-import { PortfolioCTASection } from "./sections/PortfolioCTASection/PortfolioCTASection";
 
 export const PortfolioPage = (): JSX.Element => {
   return (
@@ -36,7 +36,7 @@ export const PortfolioPage = (): JSX.Element => {
       <main className="relative z-10">
         <PortfolioHeroSection />
         <PortfolioGridSection />
-        <PortfolioCTASection />
+        <CTASection />
       </main>
       
       <FooterSection />
