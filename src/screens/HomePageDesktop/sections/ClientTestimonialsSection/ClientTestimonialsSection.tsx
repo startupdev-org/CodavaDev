@@ -9,7 +9,7 @@ import {
 export const ClientTestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      quote: "TechFlow transformed our entire IT infrastructure in just 3 months. Their expertise in cloud migration and security implementation exceeded our expectations.",
+      quote: "StartupDev transformed our entire IT infrastructure in just 3 months. Their expertise in cloud migration and security implementation exceeded our expectations.",
       author: "Sarah Johnson",
       position: "CTO",
       company: "DataCorp Solutions",
@@ -17,7 +17,7 @@ export const ClientTestimonialsSection: React.FC = () => {
       rating: 5
     },
     {
-      quote: "The AI solutions provided by TechFlow have revolutionized our data analysis capabilities. We've seen a 300% improvement in processing efficiency.",
+      quote: "The AI solutions provided by StartupDev have revolutionized our data analysis capabilities. We've seen a 300% improvement in processing efficiency.",
       author: "Michael Chen",
       position: "Head of Operations",
       company: "InnovateTech",
@@ -25,7 +25,7 @@ export const ClientTestimonialsSection: React.FC = () => {
       rating: 5
     },
     {
-      quote: "Outstanding cybersecurity implementation. TechFlow's team identified and resolved vulnerabilities we didn't even know existed. Truly professional service.",
+      quote: "Outstanding cybersecurity implementation. StartupDev's team identified and resolved vulnerabilities we didn't even know existed. Truly professional service.",
       author: "Emma Rodriguez",
       position: "IT Director",
       company: "SecureBase Inc",

@@ -14,12 +14,12 @@ export const FAQSection: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of IT services does TechFlow offer?",
+      question: "What types of IT services does we offer?",
       answer: "We provide comprehensive IT solutions including cloud infrastructure, cybersecurity, AI & machine learning, data analytics, digital transformation, and 24/7 IT support. Our services are designed to scale with your business needs."
     },
     {
       question: "How long does a typical digital transformation project take?",
-      answer: "Project timelines vary based on scope and complexity. Small implementations can take 1-2 months, while comprehensive digital transformations typically range from 3-8 months. We provide detailed timelines during our initial consultation."
+      answer: "Project timelines vary based on scope and complexity. Small implementations can take 1-2 weeks, while comprehensive digital transformations typically range from 1-4 months. We provide detailed timelines during our initial consultation."
     },
     {
       question: "Do you provide ongoing support after implementation?",
@@ -30,12 +30,8 @@ export const FAQSection: React.FC = () => {
       answer: "Absolutely! We specialize in integrating with existing systems and can work with a wide variety of technologies. Our team conducts thorough assessments to ensure seamless integration with your current infrastructure."
     },
     {
-      question: "What makes TechFlow different from other IT service providers?",
+      question: "What makes StartupDev different from other IT service providers?",
       answer: "Our unique approach combines cutting-edge technology with personalized service. We focus on understanding your business goals first, then design custom solutions that deliver measurable results. Plus, our 24/7 support ensures you're never alone."
-    },
-    {
-      question: "How do you ensure data security and compliance?",
-      answer: "Security is our top priority. We implement industry-leading security measures, conduct regular audits, and ensure compliance with regulations like GDPR, HIPAA, and SOC 2. All data is encrypted and protected with multiple layers of security."
     }
   ];
 
@@ -74,35 +70,39 @@ export const FAQSection: React.FC = () => {
             {faqs.map((faq, index) => (
               <StaggerItem key={index}>
                 <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:border-[#194EFF]/30 hover:bg-white/[0.06] transition-all duration-500 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 group">
-                      <button
+                  <button
                     className="w-full px-10 py-8 text-left flex items-center justify-between hover:bg-white/[0.02] transition-all duration-300 group/btn"
                     onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                      >
+                  >
                     <span className="text-xl font-semibold text-white pr-8 group-hover:text-white transition-colors duration-300">
-                            {faq.question}
+                      {faq.question}
                     </span>
                     <div className={`w-10 h-10 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 transition-all duration-500 group-hover:border-[#194EFF]/40 group-hover:scale-110 ${
                       openFAQ === index ? 'rotate-180 bg-gradient-to-br from-[#194EFF]/25 to-[#194EFF]/10' : ''
                     }`}>
                       <svg 
-                        className="w-5 h-5 text-[#194EFF]" 
+                        className="w-5 h-5 text-[#194EFF] transition-transform duration-300" 
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                      </button>
-                      
-                  {openFAQ === index && (
+                      </svg>
+                    </div>
+                  </button>
+                  
+                  <div 
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
                     <div className="px-10 pb-8 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
                       <p className="text-white/70 leading-relaxed pt-6 text-lg font-light">
-                            {faq.answer}
-                          </p>
-                          </div>
-                  )}
-                      </div>
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </StaggerItem>
             ))}
           </div>
@@ -132,10 +132,10 @@ export const FAQSection: React.FC = () => {
                   <span className="relative z-10">Get Free Consultation</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                 </button>
-                <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
+                {/* <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
                   <span className="relative z-10">Download Our Guide</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                </button>
+                </button> */}
               </div>
 
               {/* Contact Support */}
@@ -159,7 +159,7 @@ export const FAQSection: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span className="font-semibold">support@techflow.com</span>
+                    <span className="font-semibold">support@StartupDev.com</span>
                   </div>
                 </div>
               </div>
