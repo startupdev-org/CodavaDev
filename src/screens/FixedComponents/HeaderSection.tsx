@@ -42,9 +42,9 @@ export const HeaderSection = (): JSX.Element => {
     if (path === "/") {
       return location.pathname === "/";
     }
-    // For services, only show as active on exact /services path, not sub-paths
+    // Don't show Services as active - always show dropdown
     if (path === "/services") {
-      return location.pathname === "/services";
+      return false;
     }
     return location.pathname.startsWith(path);
   };
