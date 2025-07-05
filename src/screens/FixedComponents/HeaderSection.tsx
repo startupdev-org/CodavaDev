@@ -34,7 +34,7 @@ export const HeaderSection = (): JSX.Element => {
     { name: "Home", path: "/", hasDropdown: false },
     { name: "About Us", path: "/aboutus", hasDropdown: false },
     { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Portfolio", path: "/portfolio", hasDropdown: true },
+    { name: "Portfolio", path: "/portfolio", hasDropdown: false },
   ];
 
   // Function to check if a navigation item is active
@@ -64,26 +64,6 @@ export const HeaderSection = (): JSX.Element => {
         { name: "Digital Advertising", description: "Google & Facebook Ads", icon: "📢", path: "/services/advertising" },
         { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
         { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
-      ]
-    }
-  ];
-
-  // Portfolio dropdown data
-  const portfolioDropdown = [
-    {
-      category: "Our Work",
-      items: [
-        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐" },
-        { name: "Brand Design", description: "Identity & design work", icon: "🎨" },
-        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊" },
-      ]
-    },
-    {
-      category: "Industries",
-      items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "🛒" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "💡" },
       ]
     }
   ];
@@ -206,7 +186,7 @@ export const HeaderSection = (): JSX.Element => {
                   </div>
                 ) : item.hasDropdown ? (
                             renderDropdownMenu(
-                              item.name === "Services" ? servicesDropdown : portfolioDropdown,
+                              servicesDropdown,
                               item.name,
                               item.name.toLowerCase()
                             )
