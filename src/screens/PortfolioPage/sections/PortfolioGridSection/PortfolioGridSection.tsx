@@ -9,7 +9,7 @@ import {
 } from "../../../../components/ui/animated-elements";
 
 export const PortfolioGridSection: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilters, setActiveFilters] = useState<string[]>(["All"]);
 
   const filters = ["All", "Web Development", "FullStack Development", "Backend Development", "UI/UX Design", "Digital Marketing", "Mobile Apps", "E-commerce"];
 
@@ -62,7 +62,7 @@ export const PortfolioGridSection: React.FC = () => {
     {
       id: 6,
       title: "Healthcare Management System",
-      category: "Web Development",
+      category: "FullS  tack Development",
       description: "Secure healthcare management system with patient records, appointment scheduling, and billing integration.",
       image: "https://images.pexels.com/photos/1181679/pexels-photo-1181679.jpeg",
       technologies: ["Angular", "ASP.NET", "SQL Server", "HIPAA"],
@@ -70,9 +70,29 @@ export const PortfolioGridSection: React.FC = () => {
     }
   ];
 
-  const filteredProjects = activeFilter === "All" 
+  const handleFilterToggle = (filter: string) => {
+    if (filter === "All") {
+      setActiveFilters(["All"]);
+      return;
+    }
+
+    setActiveFilters(prev => {
+      const newFilters = prev.filter(f => f !== "All");
+      
+      if (prev.includes(filter)) {
+        // Remove filter
+        const updatedFilters = newFilters.filter(f => f !== filter);
+        return updatedFilters.length === 0 ? ["All"] : updatedFilters;
+      } else {
+        // Add filter
+        return [...newFilters, filter];
+      }
+    });
+  };
+
+  const filteredProjects = activeFilters.includes("All") 
     ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    : projects.filter(project => activeFilters.includes(project.category));
 
   return (
     <section className="relative py-24">
@@ -88,10 +108,7 @@ export const PortfolioGridSection: React.FC = () => {
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Our Featured
-              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
-                Projects
-              </span>
+              Our Featured <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Projects</span>
             </h2>
           </FadeIn>
           
@@ -104,13 +121,13 @@ export const PortfolioGridSection: React.FC = () => {
           {/* Filter Buttons */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-3 mb-16">
-              {filters.map((filter, index) => (
+              {filters.filter(filter => filter !== "All").map((filter, index) => (
                 <Button
                   key={index}
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => handleFilterToggle(filter)}
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-                    activeFilter === filter
-                      ? 'bg-[#194EFF] text-white shadow-lg shadow-[#194EFF]/25'
+                    activeFilters.includes(filter)
+                      ? 'bg-[#194EFF] text-white shadow-sm shadow-[#194EFF]/10'
                       : 'bg-white/8 text-white/70 border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40'
                   }`}
                 >
@@ -189,15 +206,6 @@ export const PortfolioGridSection: React.FC = () => {
             ))}
           </div>
         </StaggerContainer>
-
-        {/* Load More Button */}
-        <FadeIn delay={0.5} direction="up">
-          <div className="text-center mt-16">
-            <Button className="px-8 py-4 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform">
-              Load More Projects
-            </Button>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );
