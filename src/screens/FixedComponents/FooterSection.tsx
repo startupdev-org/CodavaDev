@@ -99,7 +99,7 @@ export const FooterSection = (): JSX.Element => {
                     <span className="text-white font-bold text-xl">T</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">TechFlow</span>
+                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">StartupDev</span>
                     <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export const FooterSection = (): JSX.Element => {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-sm">hello@techflow.com</span>
+                  <span className="text-sm">hello@StartupDev.com</span>
                 </div>
                 
                 <div className="flex items-center gap-3 text-white/80 hover:text-[#194EFF] transition-colors duration-300 cursor-pointer">
@@ -181,7 +181,7 @@ export const FooterSection = (): JSX.Element => {
           <FadeIn delay={0.6} direction="up">
             <div className="text-center lg:text-left">
               <p className="text-white/60 text-sm mb-2">
-                © 2024 TechFlow Digital Agency. All rights reserved.
+                © 2024 StartupDev Digital Agency. All rights reserved.
             </p>
               <div className="flex flex-wrap items-center gap-4 text-white/40 text-xs">
                 <a href="/privacy" className="hover:text-[#194EFF] transition-colors duration-300">Privacy Policy</a>

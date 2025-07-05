@@ -177,7 +177,7 @@ export const HeaderSection = (): JSX.Element => {
             </FloatingElement>
             <div className="flex flex-col">
               <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-all duration-300 leading-none">
-                TechFlow
+                StartupDev
               </span>
               <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
             </div>

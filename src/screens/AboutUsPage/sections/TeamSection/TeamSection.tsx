@@ -10,6 +10,7 @@ import {
   ParallaxElement,
   MatrixText
 } from "../../../../components/ui/animated-elements";
+import { AuroraText } from "@/components/magicui/aurora-text.tsx";
 
 export const TeamSection = (): JSX.Element => {
   // Team members data
@@ -42,8 +43,8 @@ export const TeamSection = (): JSX.Element => {
         {/* Section Header */}
         <FadeIn delay={0.2} direction="up" >
           <div className="flex flex-col items-center gap-6 relative w-full max-w-[800px] mx-auto text-center mb-16">
-            <h2 className="font-semibold text-transparent bg-gradient-to-r from-[#194EFF] via-white to-[#194EFF] bg-clip-text text-3xl sm:text-4xl md:text-5xl tracking-[0] leading-tight md:leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
-              <MatrixText text="Meet Our Leadership" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+              Meet our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text"> leadership</span>
             </h2>
             <p className="text-center font-medium text-white/80 tracking-[0] text-base sm:text-lg md:text-xl leading-[28px] md:leading-[32px] max-w-[600px] mx-auto">
               Our experienced leadership team brings together diverse expertise to drive innovation and deliver exceptional results for our clients.

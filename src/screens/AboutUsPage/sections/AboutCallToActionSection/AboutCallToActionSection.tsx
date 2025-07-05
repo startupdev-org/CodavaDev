@@ -16,8 +16,8 @@ export const AboutCallToActionSection = (): JSX.Element => {
       icon: "📧",
       title: "Email Us",
       description: "Get in touch via email for detailed inquiries",
-      action: "hello@techflow.com",
-      link: "mailto:hello@techflow.com"
+      action: "hello@StartupDev.com",
+      link: "mailto:hello@StartupDev.com"
     },
     {
       icon: "📞",
@@ -41,8 +41,8 @@ export const AboutCallToActionSection = (): JSX.Element => {
         {/* Section Header  */}
         <FadeIn delay={0.2} direction="up">
           <div className="flex flex-col items-center gap-6 sm:gap-8 relative w-full text-center mb-16">
-            <h2 className="font-semibold text-transparent bg-gradient-to-r from-[#194EFF] via-white to-[#194EFF] bg-clip-text text-3xl sm:text-4xl md:text-5xl tracking-[0] leading-[1.1] sm:leading-[60px] md:leading-[72px] animate-gradient-shift bg-[length:200%_auto]">
-              <MatrixText text="Ready to Transform Your Business?" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+              Ready to Transform  <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">  Your Business</span>
             </h2>
             <p className="font-medium text-white/80 tracking-[0] text-base sm:text-lg md:text-xl leading-[26px] sm:leading-[32px] max-w-full sm:max-w-[600px] px-2 sm:px-0">
               Let's discuss how our innovative technology solutions can drive your business forward and create lasting value.
