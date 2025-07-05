@@ -1,8 +1,8 @@
 import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
-import { PortfolioHeroSection } from "./sections/PortfolioHeroSection";
-import { PortfolioGridSection } from "./sections/PortfolioGridSection";
-import { PortfolioCTASection } from "./sections/PortfolioCTASection";
+import { PortfolioHeroSection } from "./sections/PortfolioHeroSection/PortfolioHeroSection";
+import { PortfolioGridSection } from "./sections/PortfolioGridSection/PortfolioGridSection";
+import { PortfolioCTASection } from "./sections/PortfolioCTASection/PortfolioCTASection";
 
 export const PortfolioPage = (): JSX.Element => {
   return (
