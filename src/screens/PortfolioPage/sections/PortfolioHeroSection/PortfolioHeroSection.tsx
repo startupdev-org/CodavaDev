@@ -10,9 +10,9 @@ import {
 
 export const PortfolioHeroSection: React.FC = () => {
   const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "50+", label: "Happy Clients" },
-    { number: "5+", label: "Years Experience" },
+    { number: "10+", label: "Projects Completed" },
+    { number: "10+", label: "Happy Clients" },
+    { number: "50K+", label: "Lines of code" },
     { number: "100%", label: "Client Satisfaction" }
   ];
 

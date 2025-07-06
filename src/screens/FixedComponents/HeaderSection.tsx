@@ -36,7 +36,7 @@ export const HeaderSection = (): JSX.Element => {
     { name: "Home", path: "/", hasDropdown: false },
     { name: "About Us", path: "/aboutus", hasDropdown: false },
     { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Portfolio", path: "/portfolio", hasDropdown: true },
+    { name: "Portfolio", path: "/portfolio", hasDropdown: false },
   ];
 
   // Function to check if a navigation item is active
@@ -77,17 +77,17 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Our Work",
       items: [
-        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐", path: "/portfolio" },
-        { name: "Brand Design", description: "Identity & design work", icon: "🎨", path: "/portfolio/brand" },
-        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊", path: "/case-studies" },
+        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐" },
+        { name: "Brand Design", description: "Identity & design work", icon: "🎨" },
+        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊" },
       ]
     },
     {
       category: "Industries",
       items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "🛒", path: "/portfolio/ecommerce" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥", path: "/portfolio/healthcare" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "💡", path: "/portfolio/technology" },
+        { name: "E-commerce", description: "Online retail solutions", icon: "🛒" },
+        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥" },
+        { name: "Technology", description: "Tech startups & SaaS", icon: "💡" },
       ]
     }
   ];
@@ -310,7 +310,7 @@ export const HeaderSection = (): JSX.Element => {
                   </div>
                 ) : item.hasDropdown ? (
                             renderDropdownMenu(
-                              item.name === "Services" ? servicesDropdown : portfolioDropdown,
+                              servicesDropdown,
                               item.name,
                               item.name.toLowerCase()
                             )
