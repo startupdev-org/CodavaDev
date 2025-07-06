@@ -21,7 +21,9 @@ export const FooterSection = (): JSX.Element => {
       title: "Services",
       links: [
         { name: "Web Development", href: "/services/web-development" },
+        { name: "Full Stack Development", href: "/services/full-stack-development" },
         { name: "Design", href: "/services/design" },
+        { name: "Bot Automation", href: "/services/bot-automation" },
         { name: "Digital Advertising", href: "/services/advertising" },
         { name: "SEO", href: "/services/seo" },
         { name: "Copywriting", href: "/services/copywriting" }

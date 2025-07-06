@@ -8,13 +8,17 @@ import { DesignPage } from "./screens/DesignPage";
 import { SEOPage } from "./screens/SEOPage";
 import { DigitalAdvertisingPage } from "./screens/DigitalAdvertisingPage";
 import { CopywritingPage } from "./screens/CopywritingPage";
+import { BotAutomationPage } from "./screens/BotAutomationPage";
+import { FullStackDevelopmentPage } from "./screens/FullStackDevelopmentPage";
 import { ContactPage } from "./screens/ContactPage/ContactPage";
 import { GetQuotePage } from "./screens/GetQuotePage/GetQuotePage";
 import { PortfolioPage } from "./screens/PortfolioPage/PortfolioPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePageDesktop />} />
         <Route path="/aboutus" element={<AboutUsPage />} />
@@ -23,6 +27,8 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/services/seo" element={<SEOPage />} />
         <Route path="/services/advertising" element={<DigitalAdvertisingPage />} />
         <Route path="/services/copywriting" element={<CopywritingPage />} />
+        <Route path="/services/bot-automation" element={<BotAutomationPage />} />
+        <Route path="/services/full-stack-development" element={<FullStackDevelopmentPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/quote" element={<GetQuotePage/>} />
         <Route path="/portfolio" element={<PortfolioPage/>} />

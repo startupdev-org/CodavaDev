@@ -110,10 +110,10 @@ export function ReviewsMarqueeSection() {
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
             <span className="text-[#194EFF] text-sm font-semibold tracking-wider uppercase">Client Reviews</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             What Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Clients Say</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
             Trusted by hundreds of businesses worldwide for exceptional digital solutions
           </p>
         </div>

@@ -1,11 +1,10 @@
-
-import { FAQSection } from "./sections/FAQSection";
-import { FeaturedPropertiesSection } from "./sections/FeaturedPropertiesSection";
-import { ReviewsMarqueeSection } from "./sections/ReviewsMarqueeSection";
+import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
-import { HeroSection } from "./sections/HeroSection";
+import { FullStackDevelopmentHeroSection } from "./sections/FullStackDevelopmentHeroSection/FullStackDevelopmentHeroSection";
+import { FullStackDevelopmentFeaturesSection } from "./sections/FullStackDevelopmentFeaturesSection/FullStackDevelopmentFeaturesSection";
+import { FullStackDevelopmentCTASection } from "./sections/FullStackDevelopmentCTASection/FullStackDevelopmentCTASection";
 
-export const HomePageDesktop = (): JSX.Element => {
+export const FullStackDevelopmentPage = (): JSX.Element => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F] relative overflow-hidden">
       {/* Enhanced Background Elements */}
@@ -35,22 +34,12 @@ export const HomePageDesktop = (): JSX.Element => {
       <HeaderSection />
       
       <main className="relative z-10">
-      <HeroSection />
-      
-      <ReviewsMarqueeSection />
-        
-
-        
-        <FeaturedPropertiesSection />
-
-       
-
-        <section className="max-w-7xl mx-auto px-8">
-          <FAQSection />
-        </section>
+        <FullStackDevelopmentHeroSection />
+        <FullStackDevelopmentFeaturesSection />
+        <FullStackDevelopmentCTASection />
       </main>
       
       <FooterSection />
     </div>
   );
-};
+}; 
