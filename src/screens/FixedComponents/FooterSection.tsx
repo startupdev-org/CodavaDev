@@ -35,7 +35,6 @@ export const FooterSection = (): JSX.Element => {
         { name: "Contact", href: "/contact" },
         { name: "Portfolio", href: "/portfolio" },
         { name: "Case Studies", href: "/case-studies" },
-        { name: "Get Quote", href: "/quote" }
       ],
     },
   ];
@@ -101,7 +100,7 @@ export const FooterSection = (): JSX.Element => {
                     <span className="text-white font-bold text-xl">T</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">StartupDev</span>
+                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">Codava</span>
                     <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
                   </div>
                 </div>
@@ -116,15 +115,15 @@ export const FooterSection = (): JSX.Element => {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-sm">hello@StartupDev.com</span>
+                  <span className="text-sm">support@codava.dev</span>
                 </div>
                 
-                <div className="flex items-center gap-3 text-white/80 hover:text-[#194EFF] transition-colors duration-300 cursor-pointer">
+                {/* <div className="flex items-center gap-3 text-white/80 hover:text-[#194EFF] transition-colors duration-300 cursor-pointer">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span className="text-sm">+1 (555) 123-4567</span>
-                </div>
+                </div> */}
               </div>
             </FadeIn>
           </div>
@@ -135,14 +134,14 @@ export const FooterSection = (): JSX.Element => {
               <FadeIn delay={0.2 + index * 0.1} direction="up">
                 <h4 className="font-semibold text-white text-lg mb-4 relative">
                   {category.title}
-                  <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#194EFF] rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 w-20 top-8 h-0.5 bg-[#194EFF] rounded-full"></div>
                 </h4>
                 <div className="space-y-3">
                   {category.links.map((link, linkIndex) => (
                     <a
                       key={linkIndex}
                       href={link.href}
-                      className="block text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-300 hover:translate-x-1 transform"
+                      className="block text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -166,7 +165,7 @@ export const FooterSection = (): JSX.Element => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <Input
-                    className="flex-1 bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-lg backdrop-blur-sm"
+                    className="flex-1 bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-lg backdrop-blur-sm py-6"
                     placeholder="Enter your email address"
                 />
                   <GlowButton className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 text-white font-semibold rounded-lg transition-all duration-300 whitespace-nowrap">
@@ -183,7 +182,7 @@ export const FooterSection = (): JSX.Element => {
           <FadeIn delay={0.6} direction="up">
             <div className="text-center lg:text-left">
               <p className="text-white/60 text-sm mb-2">
-                © 2024 StartupDev Digital Agency. All rights reserved.
+                © 2024 Codava Digital Agency. All rights reserved.
             </p>
               <div className="flex flex-wrap items-center gap-4 text-white/40 text-xs">
                 <a href="/privacy" className="hover:text-[#194EFF] transition-colors duration-300">Privacy Policy</a>
@@ -203,7 +202,7 @@ export const FooterSection = (): JSX.Element => {
                   key={index}
                   href={social.href}
                   aria-label={social.name}
-                  className="w-10 h-10 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 hover:border-[#194EFF]/40 rounded-lg flex items-center justify-center transition-all duration-300 group text-white/60 hover:text-[#194EFF] hover:scale-110"
+                  className="w-10 h-10 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 hover:border-[#194EFF]/40 rounded-lg flex items-center justify-center transition-colors duration-200 text-white/60 hover:text-[#194EFF]"
                 >
                   {social.icon}
                 </a>

@@ -12,9 +12,7 @@ export const ContactFormSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    phone: "",
-    service: "",
+    subject: "",
     message: ""
   });
 
@@ -74,119 +72,62 @@ export const ContactFormSection: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-14">
               <StaggerContainer staggerDelay={0.1}>
                 {/* Personal Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  <StaggerItem>
-                    <div className="space-y-7 mb-7">
-                      <label className="text-white font-semibold text-base mb-2 block">Full Name *</label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm h-16 text-lg"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                  </StaggerItem>
-
-                  <StaggerItem>
-                    <div className="space-y-7 mb-7">
-                      <label className="text-white font-semibold text-base mb-2 block">Email Address *</label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm h-16 text-lg"
-                        placeholder="Enter your email address"
-                      />
-                    </div>
-                  </StaggerItem>
-                </div>
-
-                {/* Company Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  <StaggerItem>
-                    <div className="space-y-7 mb-7">
-                      <label className="text-white font-semibold text-base mb-2 block">Company Name</label>
-                      <Input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm h-16 text-lg"
-                        placeholder="Enter your company name"
-                      />
-                    </div>
-                  </StaggerItem>
-
-                  <StaggerItem>
-                    <div className="space-y-7 mb-7">
-                      <label className="text-white font-semibold text-base mb-2 block">Phone Number</label>
-                      <Input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm h-16 text-lg"
-                        placeholder="Enter your phone number"
-                      />
-                    </div>
-                  </StaggerItem>
-                </div>
-
-                {/* Service Selection */}
-                <StaggerItem>
-                  <div className="space-y-7 mb-7">
-                    <label className="text-white font-semibold text-base">Service Interested In *</label>
-                      <div className="relative group">
-                      <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm h-16 px-4 text-lg appearance-none cursor-pointer transition-all duration-300 hover:border-[#194EFF]/50 focus:shadow-lg focus:shadow-[#194EFF]/20 group-hover:bg-[#00041F]/70"
-                      >
-                        <option value="" className="bg-[#00041F] text-white">Select a service</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service} className="bg-[#00041F] text-white">
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                      <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                        <svg className="w-5 h-5 text-[#194EFF] transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <div>
+                    <label className="text-white font-semibold text-base mb-2 block">Full Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
+                      placeholder="Enter your full name"
+                      required
+                    />
                   </div>
-                </StaggerItem>
-
-                {/* Message */}
-                <StaggerItem>
-                  <div className="space-y-7 mb-7">
-                    <label className="text-white font-semibold text-sm">Project Details *</label>
+                  <div>
+                    <label className="text-white font-semibold text-base mb-2 block">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-white font-semibold text-base mb-2 block">Subject *</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
+                      placeholder="Enter subject"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="text-white font-semibold text-base mb-2 block">Message *</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px]"
+                      placeholder="Enter your message"
                       required
-                      rows={6}
-                      className="w-full bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-xl backdrop-blur-sm p-4 resize-none"
-                      placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
-                    />
+                    ></textarea>
                   </div>
-                </StaggerItem>
+                </div>
 
                 {/* Submit Button */}
                 <StaggerItem>
                   <div className="pt-6">
                     <Button
                       type="submit"
-                      className="w-full px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                      className="w-full px-8 py-6 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
                     >
                       Send Message
                     </Button>

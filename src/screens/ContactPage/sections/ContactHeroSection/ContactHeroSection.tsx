@@ -47,7 +47,7 @@ export const ContactHeroSection: React.FC = () => {
             </FadeIn>
 
             <FadeIn delay={0.2} direction="up">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Let's Build
                 <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
                   Something Amazing
@@ -101,7 +101,7 @@ export const ContactHeroSection: React.FC = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Quick Response</h3>
-                      <p className="text-white/60 text-sm">Get back to you within 2 hours</p>
+                      <p className="text-white/60 text-sm">Get back to you within 2 hours to anwswer your questions</p>
                     </div>
                   </FloatingElement>
                 </StaggerItem>
@@ -115,7 +115,7 @@ export const ContactHeroSection: React.FC = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Secure & Private</h3>
-                      <p className="text-white/60 text-sm">Your data is protected with us</p>
+                      <p className="text-white/60 text-sm">Your data is protected and secure with us </p>
                     </div>
                   </FloatingElement>
                 </StaggerItem>

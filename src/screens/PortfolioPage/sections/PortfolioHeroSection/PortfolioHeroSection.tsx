@@ -7,6 +7,7 @@ import {
   FloatingElement,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { Link } from "react-router-dom";
 
 export const PortfolioHeroSection: React.FC = () => {
   const stats = [
@@ -74,8 +75,13 @@ export const PortfolioHeroSection: React.FC = () => {
                 <GlowButton className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform">
                   View All Projects
                 </GlowButton>
-                <Button className="px-8 py-4 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform">
-                  Get Your Quote
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="bg-[#194EFF] hover:bg-[#194EFF]/90 text-white rounded-full px-8"
+                  asChild
+                >
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
             </FadeIn>

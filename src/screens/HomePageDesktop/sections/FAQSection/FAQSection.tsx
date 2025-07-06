@@ -30,7 +30,7 @@ export const FAQSection: React.FC = () => {
       answer: "Absolutely! We specialize in integrating with existing systems and can work with a wide variety of technologies. Our team conducts thorough assessments to ensure seamless integration with your current infrastructure."
     },
     {
-      question: "What makes StartupDev different from other IT service providers?",
+      question: "What makes Codava different from other IT service providers?",
       answer: "Our unique approach combines cutting-edge technology with personalized service. We focus on understanding your business goals first, then design custom solutions that deliver measurable results. Plus, our 24/7 support ensures you're never alone."
     }
   ];

@@ -34,7 +34,7 @@ export const CompanyStorySection = (): JSX.Element => {
     >
       {/* Background Image */}
       <img 
-        alt="StartupDev Office" 
+        alt="Codava Office" 
         loading="lazy" 
         width="1540" 
         height="1000" 

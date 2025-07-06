@@ -16,8 +16,8 @@ export const AboutCallToActionSection = (): JSX.Element => {
       icon: "📧",
       title: "Email Us",
       description: "Get in touch via email for detailed inquiries",
-      action: "hello@StartupDev.com",
-      link: "mailto:hello@StartupDev.com"
+      action: "support@codava.dev",
+      link: "mailto:support@codava.dev"
     },
     {
       icon: "📞",

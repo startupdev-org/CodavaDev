@@ -34,7 +34,7 @@ export const HeaderSection = (): JSX.Element => {
   // Dynamic navigation menu items based on current location
   const navItems = [
     { name: "Home", path: "/", hasDropdown: false },
-    { name: "About Us", path: "/aboutus", hasDropdown: false },
+    { name: "About Us", path: "/about", hasDropdown: false },
     { name: "Services", path: "/services", hasDropdown: true },
     { name: "Portfolio", path: "/portfolio", hasDropdown: false },
   ];
@@ -77,17 +77,17 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Our Work",
       items: [
-        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐" },
-        { name: "Brand Design", description: "Identity & design work", icon: "🎨" },
-        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊" },
+        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐", path: "/portfolio" },
+        { name: "Brand Design", description: "Identity & design work", icon: "🎨", path: "/portfolio/brand" },
+        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊", path: "/case-studies" },
       ]
     },
     {
       category: "Industries",
       items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "🛒" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "💡" },
+        { name: "E-commerce", description: "Online retail solutions", icon: "🛒", path: "/portfolio/ecommerce" },
+        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥", path: "/portfolio/healthcare" },
+        { name: "Technology", description: "Tech startups & SaaS", icon: "💡", path: "/portfolio/technology" },
       ]
     }
   ];
@@ -276,14 +276,14 @@ export const HeaderSection = (): JSX.Element => {
           >
             <FloatingElement intensity={3} duration={2}>
               <div className="w-10 h-10 bg-gradient-to-br from-[#194EFF] to-[#194EFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#194EFF]/25 group-hover:shadow-[#194EFF]/40 transition-all duration-300 group-hover:scale-110">
-                <span className="text-white font-bold text-lg group-hover:animate-pulse">T</span>
+                <span className="text-white font-bold text-lg group-hover:animate-pulse">C</span>
               </div>
             </FloatingElement>
             <div className="flex flex-col">
               <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-all duration-300 leading-none">
-                StartupDev
+                Codava
               </span>
-              <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
+              <span className="text-[#194EFF] text-xs font-medium">IT Agency</span>
             </div>
           </motion.div>
 
