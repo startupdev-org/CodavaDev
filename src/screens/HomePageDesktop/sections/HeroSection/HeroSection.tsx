@@ -99,7 +99,7 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute top-0 left-0 right-0 h-20"></div>
         
         {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[100px] pt-[100px] pb-16">
+        <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[170px] pt-[100px] pb-16">
           
           {/* IT Agency Badge */}
           <FadeIn delay={0.1} direction="up">
