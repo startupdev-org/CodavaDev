@@ -113,14 +113,14 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl lg:text-5xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Professional
-              <span className="block bg-gradient-to-r h-[70px] from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r h-[50px] lg:h-[70px] text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
                 Digital Solutions
               </span>
           </h2>
         </FadeIn>
         
           <FadeIn delay={0.3} direction="up">
-            <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
             From web development to smart automation, we deliver solutions that boost growth and elevate your brand.
           </p>
         </FadeIn>

@@ -99,7 +99,7 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute top-0 left-0 right-0 h-20"></div>
         
         {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center pt-[100px] pb-16">
+        <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[100px] pt-[100px] pb-16">
           
           {/* IT Agency Badge */}
           <FadeIn delay={0.1} direction="up">
@@ -119,7 +119,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
               Transform Your Business with
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1 lg:h-[90px]">
                 Digital Excellence
@@ -129,7 +129,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
-            <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
               From custom web development and stunning UI/UX design to powerful digital marketing campaigns - we deliver comprehensive IT solutions that drive real growth.
             </p>
           </FadeIn>
@@ -166,9 +166,9 @@ export const HeroSection = (): JSX.Element => {
                 <span>Available for new projects</span>
               </div>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>50+ Projects Delivered</span>
+              <span className=" below400:hidden">50+ Projects Delivered</span>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>24/7 Support</span>
+              <span className="below400:hidden">24/7 Support</span>
             </div>
           </FadeIn>
 

@@ -125,7 +125,7 @@ export function ReviewsMarqueeSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             What Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Clients Say</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
             Trusted by hundreds of businesses worldwide for exceptional digital solutions
           </p>
         </div>

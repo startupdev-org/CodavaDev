@@ -50,14 +50,14 @@ export const FAQSection: React.FC = () => {
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Frequently Asked
-              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
                 Questions
               </span>
             </h2>
           </FadeIn>
           
           <FadeIn delay={0.3} direction="up">
-            <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
             Find answers to common questions about our IT services and digital solutions. Our experts help you make informed decisions.
             </p>
           </FadeIn>
@@ -118,7 +118,7 @@ export const FAQSection: React.FC = () => {
             <div className="relative z-10">
               <h3 className="text-4xl font-bold text-white mb-3">
                 Start Your 
-                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
                 Digital Transformation Today
                 </span>
               </h3>
