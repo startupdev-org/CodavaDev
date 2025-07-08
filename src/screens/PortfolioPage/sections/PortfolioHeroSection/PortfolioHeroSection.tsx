@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { 
   FadeIn, 
@@ -12,7 +11,7 @@ export const PortfolioHeroSection = (): JSX.Element => {
   const navigate = useNavigate();
   const stats = [
     { number: "10+", label: "Projects Completed" },
-    { number: "10+", label: "Happy Clients" },
+    { number: "10+", label: "Thankful Clients" },
     { number: "50K+", label: "Lines of code" },
     { number: "100%", label: "Satisfaction" }
   ];
@@ -46,7 +45,7 @@ export const PortfolioHeroSection = (): JSX.Element => {
       <div className="relative max-w-7xl mx-auto px-6 w-full mt-10 lg:mt-[130px] below400:h-[140vh] h-[120vh] lg:h-[100vh]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             <FadeIn delay={0.1} direction="up">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>

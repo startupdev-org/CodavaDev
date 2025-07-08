@@ -7,6 +7,7 @@ import {
   StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import emailjs from '@emailjs/browser';
 
 export const ContactFormSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,9 @@ export const ContactFormSection: React.FC = () => {
     subject: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -24,21 +28,68 @@ export const ContactFormSection: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const clearForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+    setError("");
+    setIsSuccess(false);
+
+    try {
+      const result = await emailjs.send(
+        'service_glh9iss', // Service ID
+        'template_vttl4v7', // Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'dj1hZBH9DC_l229_T' // You'll need to replace this with your actual public key
+      );
+
+      if (result.status === 200) {
+        setIsSuccess(true);
+        clearForm();
+        // Reset success state after 5 seconds
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setError('Failed to send message. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const services = [
-    "Web Development",
-    "UI/UX Design",
-    "Digital Advertising",
-    "SEO Services",
-    "Copywriting",
-    "Cloud Solutions",
-    "AI & Machine Learning",
-    "Other"
+    {
+      category: "DEVELOPMENT & DESIGN",
+      items: [
+        { name: "Web Development", description: "Custom websites & applications" },
+        { name: "Full Stack Development", description: "End-to-end development solutions" },
+        { name: "Design", description: "UI/UX & brand identity" },
+        { name: "Bot Automation", description: "AI chatbots & automation" }
+      ]
+    },
+    {
+      category: "MARKETING & CONTENT",
+      items: [
+        { name: "Digital Advertising", description: "Google & Facebook Ads" },
+        { name: "SEO", description: "Search engine optimization" },
+        { name: "Copywriting", description: "Content that converts" }
+      ]
+    }
   ];
 
   return (
@@ -66,6 +117,44 @@ export const ContactFormSection: React.FC = () => {
           </FadeIn>
         </div>
 
+        {/* Success Message */}
+        {isSuccess && (
+          <FadeIn delay={0} direction="up">
+            <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-green-400 font-semibold text-lg">Message Sent Successfully!</h3>
+                  <p className="text-green-300 text-sm">Thank you for your message. We'll get back to you soon!</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        )}
+
+        {/* Error Message */}
+        {error && (
+          <FadeIn delay={0} direction="up">
+            <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
+                  <p className="text-red-300 text-sm">{error}</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        )}
+
         {/* Contact Form */}
         <FadeIn delay={0.4} direction="up">
           <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500">
@@ -80,9 +169,10 @@ export const ContactFormSection: React.FC = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
                       placeholder="Enter your full name"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div>
@@ -92,22 +182,37 @@ export const ContactFormSection: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
                       placeholder="Enter your email address"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                   <div>
                     <label className="text-white font-semibold text-base mb-2 block">Subject *</label>
-                    <input
-                      type="text"
+                    <select
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40"
-                      placeholder="Enter subject"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
                       required
-                    />
+                      disabled={isLoading}
+                    >
+                      <option value="" className="bg-[#00041F] text-white">Select a service</option>
+                      {services.map((category, categoryIndex) => (
+                        <optgroup key={categoryIndex} label={category.category} className="bg-[#00041F] text-white">
+                          {category.items.map((service, serviceIndex) => (
+                            <option 
+                              key={serviceIndex} 
+                              value={service.name}
+                              className="bg-[#00041F] text-white py-2"
+                            >
+                              {service.name} - {service.description}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
                   </div>
                   <div>
                     <label className="text-white font-semibold text-base mb-2 block">Message *</label>
@@ -115,9 +220,10 @@ export const ContactFormSection: React.FC = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px]"
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px] focus:border-[#194EFF]/50 focus:outline-none transition-colors resize-vertical"
                       placeholder="Enter your message"
                       required
+                      disabled={isLoading}
                     ></textarea>
                   </div>
                 </div>
@@ -127,9 +233,21 @@ export const ContactFormSection: React.FC = () => {
                   <div className="pt-6">
                     <Button
                       type="submit"
-                      className="w-full px-8 py-6 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                      disabled={isLoading}
+                      className={`w-full px-8 py-6 font-semibold text-lg rounded-2xl transition-all duration-300 shadow-xl hover:scale-105 transform ${
+                        isLoading 
+                          ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
+                          : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
+                      }`}
                     >
-                      Send Message
+                      {isLoading ? (
+                        <div className="flex items-center gap-3">
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <span>Sending Message...</span>
+                        </div>
+                      ) : (
+                        <span>Send Message</span>
+                      )}
                     </Button>
                   </div>
                 </StaggerItem>

@@ -10,7 +10,7 @@ import {
 
 export const ContactHeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center h-[200vh] lg:h-screen below400:h-[220vh]">
+    <section className="relative w-full min-h-screen pt-0 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center h-[120rem] lg:h-screen below400:h-[120rem]">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
@@ -38,9 +38,9 @@ export const ContactHeroSection: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             <FadeIn delay={0.1} direction="up">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
                 <span className="text-[#194EFF] text-sm font-semibold tracking-wide">GET IN TOUCH</span>
               </div>
@@ -64,7 +64,10 @@ export const ContactHeroSection: React.FC = () => {
 
             <FadeIn delay={0.4} direction="up">
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <GlowButton className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform">
+                <GlowButton 
+                  onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                  className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                >
                   Start Your Project
                 </GlowButton>
                 {/* <Button className="px-8 py-10 bg-white/8 text-white font-semibold text-xl rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform">

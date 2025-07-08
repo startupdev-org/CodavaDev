@@ -121,7 +121,7 @@ export const HeroSection = (): JSX.Element => {
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
               Transform Your Business with
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1 lg:h-[90px]">
+              <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
                 Digital Excellence
               </span>
             </h1>
@@ -137,14 +137,17 @@ export const HeroSection = (): JSX.Element => {
           {/* CTA Buttons */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <Link to="/contact" className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2">
+              <button 
+                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2"
+              >
                 <span className="flex items-center gap-2.5">
                   Start Your Project
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </Link>
+              </button>
               
               <Link to="/portfolio" className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2">
                 <span className="flex items-center gap-2.5">

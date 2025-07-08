@@ -182,7 +182,8 @@ export const HeaderSection = (): JSX.Element => {
               </button>
               <span className="text-white font-semibold">Services</span>
             </div>
-            <div className="overflow-y-auto">
+            <div className="relative">
+              <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
               {servicesDropdown.map((category, catIndex) => (
                 <div key={catIndex} className="mb-4">
                   <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
@@ -208,6 +209,9 @@ export const HeaderSection = (): JSX.Element => {
                   ))}
                 </div>
               ))}
+              </div>
+              {/* Gradient fade for scroll hint */}
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
             </div>
           </>
         );
@@ -226,7 +230,8 @@ export const HeaderSection = (): JSX.Element => {
               </button>
               <span className="text-white font-semibold">Portfolio</span>
             </div>
-            <div className="overflow-y-auto">
+            <div className="relative">
+              <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
               {portfolioDropdown.map((category, catIndex) => (
                 <div key={catIndex} className="mb-4">
                   <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
@@ -252,6 +257,9 @@ export const HeaderSection = (): JSX.Element => {
                   ))}
                 </div>
               ))}
+              </div>
+              {/* Gradient fade for scroll hint */}
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
             </div>
           </>
         );
@@ -283,7 +291,7 @@ export const HeaderSection = (): JSX.Element => {
               <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-all duration-300 leading-none">
                 Codava
               </span>
-              <span className="text-[#194EFF] text-xs font-medium">IT Agency</span>
+              <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
             </div>
           </motion.div>
 
@@ -338,7 +346,10 @@ export const HeaderSection = (): JSX.Element => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <GlowButton className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-lg font-semibold text-white transition-all duration-300 flex items-center gap-2">
+            <GlowButton 
+              onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+              className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-lg font-semibold text-white transition-all duration-300 flex items-center gap-2"
+            >
               Get Started
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -403,7 +414,11 @@ export const HeaderSection = (): JSX.Element => {
                   key={index}
                   onClick={() => {
                     if (item.hasDropdown) {
-                      setActiveDrawer(item.name);
+                      if (activeDrawer === item.name) {
+                        setActiveDrawer(null); // Close if already open
+                      } else {
+                        setActiveDrawer(item.name); // Open if not open
+                      }
                     } else {
                       navigate(item.path);
                       setIsMobileMenuOpen(false);
@@ -428,10 +443,7 @@ export const HeaderSection = (): JSX.Element => {
             {/* Mobile CTA Button */}
             <div className="mt-auto p-4 bg-[#00041F]">
               <GlowButton 
-                onClick={() => {
-                  navigate('/contact');
-                  setIsMobileMenuOpen(false);
-                }}
+                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
                 className="w-full py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
               >
                 Start Your Project
@@ -462,9 +474,9 @@ export const HeaderSection = (): JSX.Element => {
             className={`fixed left-0 right-0 z-60 ${
               activeDrawer ? 'visible' : 'invisible'
             }`}
-            style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
+            style={{ top: 'calc(var(--navbar-height, 220px) + 1rem)' }}
             initial={{ y: '-100%' }}
-            animate={{ y: activeDrawer ? 0 : '-100%' }}
+            animate={{ y: activeDrawer ? 0 : '0%' }}
             transition={{ type: "tween", duration: 0.3 }}
           >
             {activeDrawer && (
