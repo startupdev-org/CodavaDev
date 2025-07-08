@@ -10,7 +10,7 @@ import {
 
 export const ContactHeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
+    <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center h-[200vh] lg:h-screen below400:h-[220vh]">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
