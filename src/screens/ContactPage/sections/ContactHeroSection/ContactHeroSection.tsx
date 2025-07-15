@@ -10,7 +10,7 @@ import {
 
 export const ContactHeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
+    <section className="relative w-full min-h-screen pt-0 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center h-[120rem] lg:h-screen below400:h-[120rem]">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
@@ -38,16 +38,16 @@ export const ContactHeroSection: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             <FadeIn delay={0.1} direction="up">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
                 <span className="text-[#194EFF] text-sm font-semibold tracking-wide">GET IN TOUCH</span>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2} direction="up">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Let's Build
                 <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
                   Something Amazing
@@ -106,7 +106,7 @@ export const ContactHeroSection: React.FC = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Quick Response</h3>
-                      <p className="text-white/60 text-sm">Get back to you within 2 hours</p>
+                      <p className="text-white/60 text-sm">Get back to you within 2 hours to anwswer your questions</p>
                     </div>
                   </FloatingElement>
                 </StaggerItem>
@@ -120,7 +120,7 @@ export const ContactHeroSection: React.FC = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">Secure & Private</h3>
-                      <p className="text-white/60 text-sm">Your data is protected with us</p>
+                      <p className="text-white/60 text-sm">Your data is protected and secure with us </p>
                     </div>
                   </FloatingElement>
                 </StaggerItem>

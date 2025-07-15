@@ -22,7 +22,9 @@ export const FooterSection = (): JSX.Element => {
       title: "Services",
       links: [
         { name: "Web Development", href: "/services/web-development" },
+        { name: "Full Stack Development", href: "/services/full-stack-development" },
         { name: "Design", href: "/services/design" },
+        { name: "Bot Automation", href: "/services/bot-automation" },
         { name: "Digital Advertising", href: "/services/advertising" },
         { name: "SEO", href: "/services/seo" },
         { name: "Copywriting", href: "/services/copywriting" }
@@ -34,7 +36,6 @@ export const FooterSection = (): JSX.Element => {
         { name: "Contact", href: "/contact" },
         { name: "Portfolio", href: "/portfolio" },
         { name: "Case Studies", href: "/case-studies" },
-        { name: "Get Quote", href: "/quote" }
       ],
     },
   ];
@@ -139,14 +140,14 @@ export const FooterSection = (): JSX.Element => {
               <FadeIn delay={0.2 + index * 0.1} direction="up">
                 <h4 className="font-semibold text-white text-lg mb-4 relative">
                   {category.title}
-                  <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-[#194EFF] rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 w-20 top-8 h-0.5 bg-[#194EFF] rounded-full"></div>
                 </h4>
                 <div className="space-y-3">
                   {category.links.map((link, linkIndex) => (
                     <a
                       key={linkIndex}
                       href={link.href}
-                      className="block text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-300 hover:translate-x-1 transform"
+                      className="block text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -219,7 +220,7 @@ export const FooterSection = (): JSX.Element => {
                   key={index}
                   href={social.href}
                   aria-label={social.name}
-                  className="w-10 h-10 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 hover:border-[#194EFF]/40 rounded-lg flex items-center justify-center transition-all duration-300 group text-white/60 hover:text-[#194EFF] hover:scale-110"
+                  className="w-10 h-10 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 hover:border-[#194EFF]/40 rounded-lg flex items-center justify-center transition-colors duration-200 text-white/60 hover:text-[#194EFF]"
                 >
                   {social.icon}
                 </a>

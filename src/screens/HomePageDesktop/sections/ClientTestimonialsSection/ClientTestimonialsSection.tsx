@@ -9,7 +9,7 @@ import {
 export const ClientTestimonialsSection: React.FC = () => {
   const testimonials = [
     {
-      quote: "StartupDev transformed our entire IT infrastructure in just 3 months. Their expertise in cloud migration and security implementation exceeded our expectations.",
+      quote: "Codava transformed our entire IT infrastructure in just 3 months. Their expertise in cloud migration and security implementation exceeded our expectations.",
       author: "Sarah Johnson",
       position: "CTO",
       company: "DataCorp Solutions",
@@ -17,7 +17,7 @@ export const ClientTestimonialsSection: React.FC = () => {
       rating: 5
     },
     {
-      quote: "The AI solutions provided by StartupDev have revolutionized our data analysis capabilities. We've seen a 300% improvement in processing efficiency.",
+      quote: "The AI solutions provided by Codava have revolutionized our data analysis capabilities. We've seen a 300% improvement in processing efficiency.",
       author: "Michael Chen",
       position: "Head of Operations",
       company: "InnovateTech",
@@ -25,7 +25,7 @@ export const ClientTestimonialsSection: React.FC = () => {
       rating: 5
     },
     {
-      quote: "Outstanding cybersecurity implementation. StartupDev's team identified and resolved vulnerabilities we didn't even know existed. Truly professional service.",
+      quote: "Outstanding cybersecurity implementation. Codava's team identified and resolved vulnerabilities we didn't even know existed. Truly professional service.",
       author: "Emma Rodriguez",
       position: "IT Director",
       company: "SecureBase Inc",
@@ -163,7 +163,10 @@ export const ClientTestimonialsSection: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn">
+                <button 
+                  onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                  className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn"
+                >
                   <span className="relative z-10">Start Your Project</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                 </button>

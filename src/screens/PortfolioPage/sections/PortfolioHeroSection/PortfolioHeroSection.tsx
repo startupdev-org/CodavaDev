@@ -1,5 +1,4 @@
-import React from "react";
-import { Button } from "../../../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { 
   FadeIn, 
   StaggerContainer, 
@@ -8,12 +7,13 @@ import {
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const PortfolioHeroSection: React.FC = () => {
+export const PortfolioHeroSection = (): JSX.Element => {
+  const navigate = useNavigate();
   const stats = [
     { number: "10+", label: "Projects Completed" },
-    { number: "10+", label: "Happy Clients" },
+    { number: "10+", label: "Thankful Clients" },
     { number: "50K+", label: "Lines of code" },
-    { number: "100%", label: "Client Satisfaction" }
+    { number: "100%", label: "Satisfaction" }
   ];
 
   return (
@@ -42,12 +42,12 @@ export const PortfolioHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 w-full mt-10 lg:mt-[130px] below400:h-[140vh] h-[120vh] lg:h-[100vh]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-4">
             <FadeIn delay={0.1} direction="up">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
                 <span className="text-[#194EFF] text-sm font-semibold tracking-wide">OUR WORK</span>
               </div>
@@ -71,12 +71,20 @@ export const PortfolioHeroSection: React.FC = () => {
 
             <FadeIn delay={0.4} direction="up">
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <GlowButton className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform">
+                <GlowButton 
+                  onClick={() => {
+                    document.getElementById('portfolio-grid')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                >
                   View All Projects
                 </GlowButton>
-                <Button className="px-8 py-4 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform">
-                  Get Your Quote
-                </Button>
+                <GlowButton 
+                  onClick={() => navigate('/contact')}
+                  className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                >
+                  Contact Us
+                </GlowButton>
               </div>
             </FadeIn>
           </div>

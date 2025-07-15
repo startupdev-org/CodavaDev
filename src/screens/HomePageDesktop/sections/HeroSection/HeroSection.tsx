@@ -9,6 +9,7 @@ import {
   GlowButton
 } from "../../../../components/ui/animated-elements";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeroSection = (): JSX.Element => {
   const navigate = useNavigate();
@@ -100,21 +101,29 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute top-0 left-0 right-0 h-20"></div>
         
         {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
+        <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[170px] pt-[100px] pb-16">
           
           {/* IT Agency Badge */}
           <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
-              <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">Full-Service IT Agency • Development • Design • Marketing</span>
-            </div>
+            
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10  rounded-full mb-8 backdrop-blur-lg shadow-lg ">
+              <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              {/* Mobile: shorter text */}
+              <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
+                All-in-One IT Solutions 🚀
+              </span>
+              {/* Desktop: full text */}
+              <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
+                Web, Design, Automation & Marketing — All-in-One IT Solutions 🚀
+              </span>
+          </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
               Transform Your Business with
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1 h-[90px]">
+              <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
                 Digital Excellence
               </span>
             </h1>
@@ -122,7 +131,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
-            <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
               From custom web development and stunning UI/UX design to powerful digital marketing campaigns - we deliver comprehensive IT solutions that drive real growth.
             </p>
           </FadeIn>
@@ -142,7 +151,7 @@ export const HeroSection = (): JSX.Element => {
                 </span>
               </button>
               
-              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
+              <Link to="/portfolio" className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2">
                 <span className="flex items-center gap-2.5">
                   View Our Work
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +159,7 @@ export const HeroSection = (): JSX.Element => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </FadeIn>
 
@@ -162,9 +171,9 @@ export const HeroSection = (): JSX.Element => {
                 <span>Available for new projects</span>
               </div>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>50+ Projects Delivered</span>
+              <span className=" below400:hidden">50+ Projects Delivered</span>
               <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>24/7 Support</span>
+              <span className="below400:hidden">24/7 Support</span>
             </div>
           </FadeIn>
 

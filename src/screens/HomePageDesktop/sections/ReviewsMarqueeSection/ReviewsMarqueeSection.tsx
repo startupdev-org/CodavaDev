@@ -3,41 +3,53 @@ import { Marquee } from "@/components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Sarah Johnson",
-    username: "@sarahj_tech",
-    body: "Outstanding digital transformation! Our online presence has never been stronger. The team delivered beyond expectations.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-  },
-  {
-    name: "Marcus Chen",
-    username: "@marcus_dev",
-    body: "Incredible attention to detail and professional service. They understood our vision and brought it to life perfectly.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-  },
-  {
     name: "Emma Rodriguez",
-    username: "@emma_creative",
-    body: "The best digital agency we've worked with. Fast, reliable, and consistently delivers high-quality results.",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
+    username: "TechVision Solutions",
+    body: "Codava rebuilt our platform with modern tech stack. Load times dropped 70% and user engagement doubled!",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+  },
+  {
+    name: "Bors Andrei",
+    username: "Epic Trans Logistics",
+    body: "I recommend Codava! They helped our logistics business with a logo, business cards, and a client-attracting website.",
+    img: "/avatars/user-02.jpg"
+  },
+  {
+    name: "Castravet Ilie",
+    username: "Euro Tour Moldova",
+    body: "The modern, high-quality website they built for our transport company is fast, ranks high, attracts clients, and elevates visibility.",
+    img: "/avatars/user-01.jpg"
+  },
+  {
+    name: "Alex Chen",
+    username: "FinTech Innovations",
+    body: "AI chatbot handles 90% of support queries instantly. Best tech investment we've made this year!",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+  },
+  {
+    name: "Natalia Cimihov",
+    username: "DaVinci Education",
+    body: "Codava built a clear, mobile-friendly site for our educational project, perfectly showcasing all stages.",
+    img: "/avatars/user-04.jpg"
+  },
+  {
+    name: "Stefan Istrati",
+    username: "Senda Courier",
+    body: "I worked with Codava on redesign, logo, and cards; the site's innovative and results were fast, professional.",
+    img: "/avatars/user-03.jpg"
+  },
+  {
+    name: "Maya Patel",
+    username: "GrowthMarketing Pro",
+    body: "SEO campaign tripled organic traffic in 3 months. ROI exceeded expectations by 200%!",
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
   },
   {
     name: "David Thompson",
-    username: "@david_ceo",
-    body: "Transformed our business completely. ROI exceeded projections by 300%. Highly recommend their services.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-  },
-  {
-    name: "Lisa Wang",
-    username: "@lisa_startup",
-    body: "Professional, innovative, and results-driven. They helped us scale from startup to market leader.",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-  },
-  {
-    name: "Michael Brooks",
-    username: "@mike_enterprise",
-    body: "Exceptional quality and service. Our digital infrastructure has never been more robust and scalable.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
-  },
+    username: "HealthTech Solutions",
+    body: "App redesign increased daily active users by 85%. Patient feedback has been overwhelmingly positive.",
+    img: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
+  }
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
@@ -110,10 +122,10 @@ export function ReviewsMarqueeSection() {
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
             <span className="text-[#194EFF] text-sm font-semibold tracking-wider uppercase">Client Reviews</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             What Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Clients Say</span>
           </h2>
-          <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
             Trusted by hundreds of businesses worldwide for exceptional digital solutions
           </p>
         </div>

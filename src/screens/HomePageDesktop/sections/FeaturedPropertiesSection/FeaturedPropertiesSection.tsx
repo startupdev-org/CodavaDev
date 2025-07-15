@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { Link } from "react-router-dom";
 import {
   FadeIn, 
   StaggerContainer, 
@@ -20,7 +21,20 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "Web Development",
       description: "Custom websites and web applications built with modern technologies for optimal performance and user experience.",
       features: ["Responsive Design", "E-commerce Integration", "CMS Development", "Performance Optimization"],
-      popular: true
+      popular: false,
+      route: "/services/web-development"
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      ),
+      title: "Full Stack Development",
+      description: "Complete end-to-end development solutions from frontend to backend with modern technologies and scalable architecture.",
+      features: ["Frontend & Backend", "Database Design", "API Integration", "DevOps & Deployment"],
+      popular: true,
+      route: "/services/full-stack-development"
     },
     {
       icon: (
@@ -31,7 +45,8 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "Bot Automation",
       description: "Intelligent chatbots and automation solutions that streamline customer service and business processes.",
       features: ["AI Chatbots", "Process Automation", "24/7 Support", "CRM Integration"],
-      popular: false
+      popular: false,
+      route: "/services/bot-automation"
     },
     {
       icon: (
@@ -42,7 +57,8 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "Design",
       description: "Creative visual solutions including branding, UI/UX design, and graphic design that captivate your audience.",
       features: ["Brand Identity", "UI/UX Design", "Logo Design", "Print Materials"],
-      popular: false
+      popular: false,
+      route: "/services/design"
     },
     {
       icon: (
@@ -53,7 +69,8 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "Digital Advertising",
       description: "Strategic digital marketing campaigns across multiple platforms to maximize your reach and ROI.",
       features: ["Google Ads", "Facebook Advertising", "Campaign Strategy", "Performance Analytics"],
-      popular: false
+      popular: false,
+      route: "/services/advertising"
     },
     {
       icon: (
@@ -64,7 +81,8 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "SEO",
       description: "Search engine optimization strategies to improve your online visibility and drive organic traffic to your website.",
       features: ["Keyword Research", "On-Page SEO", "Technical SEO", "Monthly Reporting"],
-      popular: false
+      popular: false,
+      route: "/services/seo"
     },
     {
       icon: (
@@ -75,7 +93,8 @@ export const FeaturedPropertiesSection: React.FC = () => {
       title: "Copywriting",
       description: "Compelling content that converts visitors into customers through strategic messaging and storytelling.",
       features: ["Website Copy", "Blog Content", "Email Campaigns", "Sales Pages"],
-      popular: false
+      popular: false,
+      route: "/services/copywriting"
     }
   ];
 
@@ -92,18 +111,17 @@ export const FeaturedPropertiesSection: React.FC = () => {
         </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Professional
-              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r h-[50px] lg:h-[70px] text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
                 Digital Solutions
               </span>
           </h2>
         </FadeIn>
         
           <FadeIn delay={0.3} direction="up">
-            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-              From stunning web development to intelligent automation, we deliver comprehensive 
-              solutions that drive growth and elevate your brand presence.
+            <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+            From web development to smart automation, we deliver solutions that boost growth and elevate your brand.
           </p>
         </FadeIn>
       </div>
@@ -158,14 +176,14 @@ export const FeaturedPropertiesSection: React.FC = () => {
 
                     {/* CTA */}
                     <div className="mt-auto">
-                      <button className={`w-full py-4 px-6 rounded-2xl font-semibold text-base transition-all duration-300 shadow-lg relative overflow-hidden group/btn ${
+                      <Link to={service.route} className={`w-full py-4 px-6 rounded-2xl font-semibold text-base transition-all duration-300 shadow-lg relative overflow-hidden group/btn block ${
                         service.popular
                           ? 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40'
                           : 'bg-white/8 text-white hover:bg-white/15 border border-white/20 hover:border-[#194EFF]/40 backdrop-blur-sm'
                       }`}>
                         <span className="relative z-10">Learn More</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

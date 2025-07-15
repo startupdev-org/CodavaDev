@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../components/ui/button";
 import {
   NavigationMenu,
@@ -29,11 +29,13 @@ import logoBg from '../../photos/logo-removebg.png';
 export const HeaderSection = (): JSX.Element => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
 
   // Dynamic navigation menu items based on current location
   const navItems = [
     { name: "Home", path: "/", hasDropdown: false },
-    { name: "About Us", path: "/aboutus", hasDropdown: false },
+    { name: "About Us", path: "/about", hasDropdown: false },
     { name: "Services", path: "/services", hasDropdown: true },
     { name: "Portfolio", path: "/portfolio", hasDropdown: false },
   ];
@@ -45,9 +47,9 @@ export const HeaderSection = (): JSX.Element => {
     if (path === "/") {
       return location.pathname === "/";
     }
-    // For services, only show as active on exact /services path, not sub-paths
+    // Don't show Services as active - always show dropdown
     if (path === "/services") {
-      return location.pathname === "/services";
+      return false;
     }
     return location.pathname.startsWith(path);
   };
@@ -58,7 +60,9 @@ export const HeaderSection = (): JSX.Element => {
       category: "Development & Design",
       items: [
         { name: "Web Development", description: "Custom websites & applications", icon: "💻", path: "/services/web-development" },
+        { name: "Full Stack Development", description: "End-to-end development solutions", icon: "🚀", path: "/services/full-stack-development" },
         { name: "Design", description: "UI/UX & brand identity", icon: "🎨", path: "/services/design" },
+        { name: "Bot Automation", description: "AI chatbots & automation", icon: "🤖", path: "/services/bot-automation" },
       ]
     },
     {
@@ -67,6 +71,26 @@ export const HeaderSection = (): JSX.Element => {
         { name: "Digital Advertising", description: "Google & Facebook Ads", icon: "📢", path: "/services/advertising" },
         { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
         { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
+      ]
+    }
+  ];
+
+  // Portfolio dropdown data
+  const portfolioDropdown = [
+    {
+      category: "Our Work",
+      items: [
+        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐", path: "/portfolio" },
+        { name: "Brand Design", description: "Identity & design work", icon: "🎨", path: "/portfolio/brand" },
+        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊", path: "/case-studies" },
+      ]
+    },
+    {
+      category: "Industries",
+      items: [
+        { name: "E-commerce", description: "Online retail solutions", icon: "🛒", path: "/portfolio/ecommerce" },
+        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥", path: "/portfolio/healthcare" },
+        { name: "Technology", description: "Tech startups & SaaS", icon: "💡", path: "/portfolio/technology" },
       ]
     }
   ];
@@ -141,14 +165,122 @@ export const HeaderSection = (): JSX.Element => {
         </div>
   );
 
+  const closeDrawer = () => {
+    setActiveDrawer(null);
+  };
+
+  const renderDrawerContent = (drawerName: string) => {
+    switch (drawerName) {
+      case 'Services':
+        return (
+          <>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
+              <button 
+                onClick={closeDrawer}
+                className="p-1 text-white/60 hover:text-white"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="text-white font-semibold">Services</span>
+            </div>
+            <div className="relative">
+              <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
+              {servicesDropdown.map((category, catIndex) => (
+                <div key={catIndex} className="mb-4">
+                  <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
+                    {category.category}
+                  </div>
+                  {category.items.map((item, itemIndex) => (
+                    <button
+                      key={itemIndex}
+                      onClick={() => {
+                        if (item.path) {
+                          navigate(item.path);
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
+                    >
+                      <span className="text-xl">{item.icon}</span>
+                      <div>
+                        <div className="font-medium text-white">{item.name}</div>
+                        <div className="text-white/50 text-sm">{item.description}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              ))}
+              </div>
+              {/* Gradient fade for scroll hint */}
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
+            </div>
+          </>
+        );
+      
+      case 'Portfolio':
+        return (
+          <>
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
+              <button 
+                onClick={closeDrawer}
+                className="p-1 text-white/60 hover:text-white"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="text-white font-semibold">Portfolio</span>
+            </div>
+            <div className="relative">
+              <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
+              {portfolioDropdown.map((category, catIndex) => (
+                <div key={catIndex} className="mb-4">
+                  <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
+                    {category.category}
+                  </div>
+                  {category.items.map((item, itemIndex) => (
+                    <button
+                      key={itemIndex}
+                      onClick={() => {
+                        if (item.path) {
+                          navigate(item.path);
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
+                    >
+                      <span className="text-xl">{item.icon}</span>
+                      <div>
+                        <div className="font-medium text-white">{item.name}</div>
+                        <div className="text-white/50 text-sm">{item.description}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              ))}
+              </div>
+              {/* Gradient fade for scroll hint */}
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
+            </div>
+          </>
+        );
+
+      default:
+        return null;
+    }
+  };
+
   return (
-    <header className="fixed top-6 left-20 right-20 py-1 z-50 bg-[#00041F]/90 backdrop-blur-xl rounded-2xl border border-[#194EFF]/20 shadow-2xl shadow-[#194EFF]/10">
+    <header className="fixed top-4 left-4 right-4 rounded-2xl md:top-6 md:left-20 md:right-20 md:rounded-2xl py-1 z-50 bg-[#00041F]/90 backdrop-blur-xl border border-[#194EFF]/20 shadow-2xl shadow-[#194EFF]/10">
       {/* Main Navigation */}
-      <div className="w-full px-6 py-4 relative">
-        <div className="flex justify-between items-center w-full">
+      <div className="w-full px-4 md:px-6 py-4 relative rounded-3xl">
+        <div className="flex justify-between items-center w-full rounded-2xl">
           {/* Logo - Left */}
           <motion.div 
             className="flex items-center group cursor-pointer"
+            onClick={() => navigate('/')}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -239,13 +371,128 @@ export const HeaderSection = (): JSX.Element => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button className="p-2 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 rounded-lg">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <Button 
+              className="p-2 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 rounded-lg"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {!isMobileMenuOpen ? (
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
             </Button>
           </motion.div>
         </div>
+
+        {/* Overlay for mobile menu */}
+        {isMobileMenuOpen && (
+          <motion.div 
+            className="fixed left-0 right-0 z-40 bg-black/60"
+            style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setActiveDrawer(null);
+            }}
+          />
+        )}
+        {/* Main Mobile Menu */}
+        <motion.div 
+          className={`lg:hidden fixed left-0 right-0 z-50 transition-all duration-300 ${
+            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+          style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
+          initial={{ y: '-100%' }}
+          animate={{ y: isMobileMenuOpen ? 0 : '0%' }}
+          transition={{ type: "tween", duration: 0.3 }}
+        >
+          <div className="flex flex-col bg-[#00041F] rounded-2xl border border-[#194EFF]/20 shadow-2xl shadow-[#194EFF]/10 overflow-hidden relative">
+            {/* Main Navigation Items */}
+            <div className="space-y-0">
+              {navItems.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    if (item.hasDropdown) {
+                      if (activeDrawer === item.name) {
+                        setActiveDrawer(null); // Close if already open
+                      } else {
+                        setActiveDrawer(item.name); // Open if not open
+                      }
+                    } else {
+                      navigate(item.path);
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
+                  className={`w-full text-left py-4 px-4 text-base font-medium transition-all duration-300 flex items-center justify-between bg-[#00041F] hover:bg-[#194EFF] relative z-10 ${
+                    isActive(item.path)
+                      ? 'text-[#194EFF] font-semibold bg-[#00041F] border-l-4 border-[#194EFF]'
+                      : 'text-white hover:text-white'
+                  }`}
+                >
+                  <span>{item.name}</span>
+                  {item.hasDropdown && (
+                    <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile CTA Button */}
+            <div className="mt-auto p-4 bg-[#00041F]">
+              <GlowButton 
+                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                className="w-full py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                Start Your Project
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </GlowButton>
+            </div>
+          </div>
+
+          {/* Drawers */}
+          {/* Overlay for drawers */}
+          {activeDrawer && (
+            <motion.div 
+              className="fixed left-0 right-0 z-40 bg-black/60"
+              style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setActiveDrawer(null);
+              }}
+            />
+          )}
+          <motion.div
+            className={`fixed left-0 right-0 z-60 ${
+              activeDrawer ? 'visible' : 'invisible'
+            }`}
+            style={{ top: 'calc(var(--navbar-height, 220px) + 1rem)' }}
+            initial={{ y: '-100%' }}
+            animate={{ y: activeDrawer ? 0 : '0%' }}
+            transition={{ type: "tween", duration: 0.3 }}
+          >
+            {activeDrawer && (
+              <div className="h-full bg-[#00041F] rounded-2xl border border-[#194EFF]/20 shadow-2xl shadow-[#194EFF]/10 overflow-hidden">
+                {renderDrawerContent(activeDrawer)}
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
       </div>
     </header>
   );

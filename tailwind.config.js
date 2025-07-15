@@ -197,6 +197,10 @@ module.exports = {
           '100%': { transform: 'translateX(-50%)' },
         },
       },
+      screens: {
+        'below400': {'max': '399px'},
+        'below385': {'max': '384px'},
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
