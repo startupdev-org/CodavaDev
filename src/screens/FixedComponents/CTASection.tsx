@@ -1,11 +1,10 @@
 import React from "react";
-import { Button } from "../../components/ui/button";
 import { 
   FadeIn, 
   GlowButton
 } from "../../components/ui/animated-elements";
 
-export const CTASection = (): JSX.Element => {
+export const CTASection = () => {
   return (
     <section className="relative py-24">
       <div className="max-w-6xl mx-auto px-8 relative z-10">
@@ -32,10 +31,6 @@ export const CTASection = (): JSX.Element => {
                   <span className="relative z-10">Get Free Consultation</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                 </GlowButton>
-                {/* <Button className="px-10 py-10 bg-white/8 text-white font-bold text-lg rounded-xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
-                  <span className="relative z-10">Schedule a Call</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                </Button> */}
               </div>
 
               {/* Contact Stats */}
