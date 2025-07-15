@@ -16,10 +16,7 @@ export const CTASection = (): JSX.Element => {
             
             <div className="relative z-10">
               <h3 className="text-4xl md:text-4xl font-bold text-white mb-7">
-                Ready to Start Your
-                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
-                  Next Project?
-                </span>
+                Ready to Start Your <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent"> Next Project? </span>
               </h3>
               
               <p className="text-white/70 text-xl mt-10 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
@@ -29,7 +26,7 @@ export const CTASection = (): JSX.Element => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                 <GlowButton 
-                  onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                  onClick={() => window.open("https://calendly.com/codava-dev/30min", "_blank")}
                   className="px-10 py-5 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn"
                 >
                   <span className="relative z-10">Get Free Consultation</span>
