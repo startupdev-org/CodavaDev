@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { Globe } from "../../../../components/ui/globe";
 import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  TypewriterText,
-  FloatingElement,
   GlowButton,
-  ParallaxElement,
-  MatrixText,
 } from "../../../../components/ui/animated-elements";
-import { BoxReveal } from "../../../../components/magicui/box-reveal-props.tsx";
-
 
 const typingTexts = [
   "Through Technology",
@@ -38,7 +30,7 @@ function scrollToOurValues() {
   }
 }
 
-export const AboutHeroSection = (): JSX.Element => {
+export const AboutHeroSection = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -283,8 +275,8 @@ export const AboutHeroSection = (): JSX.Element => {
 
             <StaggerContainer staggerDelay={0.1}>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {coreValues.map((value, index) => (
-                  <StaggerItem key={index}>
+                {coreValues.map((value) => (
+                  <StaggerItem key={value.title}>
                     <Card className="bg-white/[0.03] border border-[#194EFF]/20 rounded-2xl p-6 lg:p-8 backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden h-full">
                       <CardContent className="p-0 space-y-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-[#194EFF]/20 to-[#194EFF]/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

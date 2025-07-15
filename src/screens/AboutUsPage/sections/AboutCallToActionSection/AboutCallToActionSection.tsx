@@ -4,12 +4,11 @@ import {
   FadeIn, 
   StaggerContainer, 
   StaggerItem, 
-  FloatingElement, 
   GlowButton,
-  MatrixText
 } from "../../../../components/ui/animated-elements";
 
-export const AboutCallToActionSection = (): JSX.Element => {
+export const AboutCallToActionSection = () => {
+
   // Contact methods data
   const contactMethods = [
     {
@@ -80,8 +79,11 @@ export const AboutCallToActionSection = (): JSX.Element => {
                       </div>
                     </a>
                   ))}
-                  <div className="flex flex-col xs:flex-row items-start gap-2 sm:gap-3 w-full">
-                    <GlowButton className="group w-full xs:w-auto min-w-[140px] max-w-[180px] px-4 sm:px-5 py-2.5 sm:py-3 h-auto bg-gradient-to-r from-[#1539b3] via-[#1e3a8a] to-[#2563eb] hover:from-[#1e3a8a] hover:to-[#2563eb] rounded-xl border-0 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-center relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#1539b3]/60">
+                  <div className="flex flex-col xs:flex-row items-center xs:items-start gap-2 sm:gap-3 w-full">
+                    <GlowButton 
+                      className="group w-full xs:w-auto min-w-[140px] max-w-[180px] px-4 sm:px-5 py-2.5 sm:py-3 h-auto bg-gradient-to-r from-[#1539b3] via-[#1e3a8a] to-[#2563eb] hover:from-[#1e3a8a] hover:to-[#2563eb] rounded-xl border-0 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 text-center relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#1539b3]/60 mx-auto"
+                      onClick={() => window.open("https://calendly.com/codava-dev/30min", "_blank")}
+                    >
                       <span className="relative z-10 font-semibold text-white/90 text-sm sm:text-base tracking-wide leading-[22px] sm:leading-[26px] flex items-center gap-2">
                         Schedule a Consultation
                       </span>
