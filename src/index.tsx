@@ -17,7 +17,7 @@ import { CaseStudiesPage } from "./screens/CaseStudiesPage/CaseStudiesPage";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
-    <BrowserRouter basename="/startupdev">
+    <BrowserRouter basename="/">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePageDesktop />} />

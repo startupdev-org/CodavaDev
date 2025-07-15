@@ -434,7 +434,7 @@ export const PortfolioGridSection: React.FC = () => {
                   <p className="text-white/60 text-lg text-center max-w-md">
                     Maybe your project could be the first one here? Get in touch to have it featured!
                   </p>
-                  <FadeIn delay={0.4} direction="up">
+                  <FadeIn delay={0.2} direction="up">
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                       <GlowButton 
                         onClick={() => navigate('/contact')}
