@@ -373,51 +373,51 @@ export const PortfolioGridSection: React.FC = () => {
   return (
     <>
       <section id="portfolio-grid" className="relative py-24">
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
-          {/* Header */}
-          <div className="text-center mb-20">
-            <FadeIn delay={0.1} direction="up">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
-                <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-                <span className="text-[#194EFF] text-sm font-semibold tracking-wide">PORTFOLIO</span>
-              </div>
-            </FadeIn>
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <FadeIn delay={0.1} direction="up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+              <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">PORTFOLIO</span>
+            </div>
+          </FadeIn>
 
-            <FadeIn delay={0.2} direction="up">
-              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Our Featured <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Projects</span>
-              </h2>
-            </FadeIn>
-            
-            <FadeIn delay={0.3} direction="up">
-              <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light mb-12">
-                Discover our latest work and see how we've helped businesses achieve their digital goals through innovative solutions and cutting-edge technology.
-              </p>
-            </FadeIn>
+          <FadeIn delay={0.2} direction="up">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Our Featured <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Projects</span>
+            </h2>
+          </FadeIn>
+          
+          <FadeIn delay={0.3} direction="up">
+            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light mb-12">
+              Discover our latest work and see how we've helped businesses achieve their digital goals through innovative solutions and cutting-edge technology.
+            </p>
+          </FadeIn>
 
-            {/* Filter Buttons */}
-            <FadeIn delay={0.4} direction="up">
-              <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {/* Filter Buttons */}
+          <FadeIn delay={0.4} direction="up">
+            <div className="flex flex-wrap justify-center gap-3 mb-16">
                 {filters.filter(filter => filter !== "All").map((filter) => (
-                  <Button
+                <Button
                     key={filter}
-                    onClick={() => handleFilterToggle(filter)}
-                    className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-                      activeFilters.includes(filter)
-                        ? 'bg-[#194EFF] text-white shadow-sm shadow-[#194EFF]/10'
-                        : 'bg-white/8 text-white/70 border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40'
-                    }`}
-                  >
-                    {filter}
-                  </Button>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
+                  onClick={() => handleFilterToggle(filter)}
+                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
+                    activeFilters.includes(filter)
+                      ? 'bg-[#194EFF] text-white shadow-sm shadow-[#194EFF]/10'
+                      : 'bg-white/8 text-white/70 border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40'
+                  }`}
+                >
+                  {filter}
+                </Button>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
 
-          {/* Projects Grid */}
-          <StaggerContainer staggerDelay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid */}
+        <StaggerContainer staggerDelay={0.1}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.length === 0 ? (
                 <div className="col-span-full flex flex-col items-center justify-center py-24">
                   <svg
@@ -447,76 +447,76 @@ export const PortfolioGridSection: React.FC = () => {
                 </div>
               ) : (
                 filteredProjects.map((project) => (
-                  <StaggerItem key={project.id}>
-                    <FloatingElement intensity={2} duration={4}>
-                      <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
-                        {/* Project Image */}
-                        <div className="relative h-64 overflow-hidden">
-                          <div 
-                            className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+              <StaggerItem key={project.id}>
+                <FloatingElement intensity={2} duration={4}>
+                  <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
+                    {/* Project Image */}
+                    <div className="relative h-64 overflow-hidden">
+                      <div 
+                        className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                             style={{ backgroundImage: `url(${project.mainImage || project.images?.[0]})` }}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          
-                          {/* Overlay Content */}
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Overlay Content */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <Button 
                               onClick={() => openModal(project)}
                               className="px-6 py-3 bg-[#194EFF] text-white font-semibold rounded-xl hover:bg-[#194EFF]/80 transition-all duration-300"
                             >
-                              View Details
-                            </Button>
-                          </div>
-                        </div>
+                          View Details
+                        </Button>
+                      </div>
+                    </div>
 
-                        {/* Project Content */}
-                        <div className="p-6">
-                          <div className="flex items-center justify-between mb-3">
-                            <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
-                              {project.category}
-                            </Badge>
-                          </div>
-                          
-                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
-                            {project.title}
-                          </h3>
-                          
-                          <p className="text-white/60 text-sm mb-4 leading-relaxed">
-                            {project.description}
-                          </p>
+                    {/* Project Content */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
+                          {project.category}
+                        </Badge>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
 
-                          {/* Technologies */}
-                          <div className="mb-4">
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                                <span key={techIndex} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                                  {tech}
-                                </span>
-                              ))}
-                              {project.technologies.length > 3 && (
-                                <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                                  +{project.technologies.length - 3} more
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          {/* Results */}
-                          <div className="pt-4 border-t border-white/10">
-                            <p className="text-[#194EFF] text-sm font-semibold">
-                              {project.results}
-                            </p>
-                          </div>
+                      {/* Technologies */}
+                      <div className="mb-4">
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                            <span key={techIndex} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                              {tech}
+                            </span>
+                          ))}
+                          {project.technologies.length > 3 && (
+                            <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                              +{project.technologies.length - 3} more
+                            </span>
+                          )}
                         </div>
                       </div>
-                    </FloatingElement>
-                  </StaggerItem>
+
+                      {/* Results */}
+                      <div className="pt-4 border-t border-white/10">
+                        <p className="text-[#194EFF] text-sm font-semibold">
+                          {project.results}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </FloatingElement>
+              </StaggerItem>
                 ))
               )}
-            </div>
-          </StaggerContainer>
-        </div>
-      </section>
+          </div>
+        </StaggerContainer>
+      </div>
+    </section>
 
       {/* Modal */}
       {isModalOpen && selectedProject && (

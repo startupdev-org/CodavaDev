@@ -1,3 +1,13 @@
+// Handle GitHub Pages SPA routing
+(function(l) {
+  if (l.search[1] === '/' ) {
+    var decoded = l.search.slice(1).split('&').map(function(s) { 
+      return s.replace(/~and~/g, '&')
+    }).join('?');
+    window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+  }
+}(window.location))
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,10 +24,11 @@ import { ContactPage } from "./screens/ContactPage/ContactPage";
 import { PortfolioPage } from "./screens/PortfolioPage/PortfolioPage";
 import ScrollToTop from "./components/ScrollToTop";
 import { CaseStudiesPage } from "./screens/CaseStudiesPage/CaseStudiesPage";
+import { NotFoundPage } from "./screens/NotFoundPage/NotFoundPage";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
-    <BrowserRouter basename="/">
+    <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePageDesktop />} />
@@ -31,9 +42,8 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/services/seo" element={<SEOPage />} />
         <Route path="/services/digital-advertising" element={<DigitalAdvertisingPage />} />
         <Route path="/services/copywriting" element={<CopywritingPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/portfolio" element={<PortfolioPage/>} />
         <Route path="/services/bot-automation" element={<BotAutomationPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
