@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "../../components/ui/input";
 import { 
   FadeIn, 
   GlowButton,
   FloatingElement
 } from "../../components/ui/animated-elements";
+import logoBg from '../../photos/logo-removebg.png';
 
 export const FooterSection = (): JSX.Element => {
   // Footer navigation
@@ -78,7 +79,22 @@ export const FooterSection = (): JSX.Element => {
     }
   ];
 
+  // Move this to the top level:
+  const [email, setEmail] = useState("");
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (email) {
+      // Log the email to the console
+      console.log("Newsletter subscription email:", email);
+      // Optionally, clear the input or show a message here
+    }
+  };
+
   return (
+
+    
     <footer className="relative w-full bg-[#00020F] border-t border-[#194EFF]/20">
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -93,18 +109,15 @@ export const FooterSection = (): JSX.Element => {
           {/* Logo and Description */}
           <div className="lg:col-span-1">
             <FadeIn delay={0.1} direction="up">
-              <FloatingElement intensity={2} duration={4}>
-                <div className="flex items-center gap-3 mb-6 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#194EFF] to-[#194EFF]/80 rounded-xl flex items-center justify-center shadow-lg shadow-[#194EFF]/25 group-hover:shadow-[#194EFF]/40 transition-all duration-300">
-                    <span className="text-white font-bold text-xl">T</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">StartupDev</span>
-                    <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
-                  </div>
+              <div className="flex items-center gap-3 mb-6 group cursor-pointer">
+                <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[#4C7DFF]/40 transition-all duration-300">
+                  <img src={logoBg} alt="CodavaDev logo" />
                 </div>
-              </FloatingElement>
-              
+                <div className="flex flex-col">
+                  <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">CodavaDev</span>
+                  <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
+                </div>
+              </div>
               <p className="text-white/60 text-base leading-relaxed mb-6">
                 Creating exceptional digital experiences through innovative web development, design, and marketing solutions that help brands thrive online.
               </p>
@@ -114,14 +127,7 @@ export const FooterSection = (): JSX.Element => {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-sm">hello@StartupDev.com</span>
-                </div>
-                
-                <div className="flex items-center gap-3 text-white/80 hover:text-[#194EFF] transition-colors duration-300 cursor-pointer">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="text-sm">+1 (555) 123-4567</span>
+                  <span className="text-sm">support@codava.dev</span>
                 </div>
               </div>
             </FadeIn>
@@ -152,43 +158,55 @@ export const FooterSection = (): JSX.Element => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mb-12">
-          <FadeIn delay={0.5} direction="up">
-            <div className="bg-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl p-8 backdrop-blur-xl">
-              <div className="max-w-2xl mx-auto text-center">
-                <h3 className="font-bold text-white text-2xl mb-3">
-                  Stay Inspired & Informed
+      <div className="mb-16 mt-16">
+        <FadeIn delay={0.5} direction="up">
+          <div className="relative bg-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl p-10 sm:p-12 md:p-14 backdrop-blur-xl shadow-lg max-w-3xl mx-auto">
+            <div className="text-center">
+              <h3 className="font-bold text-white text-2xl sm:text-3xl mb-2.5">
+                Stay Inspired & Informed
               </h3>
-                <p className="text-white/60 text-base mb-6">
-                  Get the latest design trends, development insights, and digital marketing tips delivered straight to your inbox.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input
-                    className="flex-1 bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-lg backdrop-blur-sm"
-                    placeholder="Enter your email address"
-                />
-                  <GlowButton className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 text-white font-semibold rounded-lg transition-all duration-300 whitespace-nowrap">
-                    Subscribe Now
-                </GlowButton>
-                </div>
-              </div>
+              <p className="text-white/60 text-base sm:text-lg mb-7 max-w-xl mx-auto">
+                Get the latest design trends, development insights, and digital marketing tips delivered straight to your inbox.
+              </p>
             </div>
-          </FadeIn>
-        </div>
+            <form
+              className="flex flex-col sm:flex-row items-center gap-3 max-w-lg mx-auto"
+              onSubmit={handleSubmit}
+            >
+              <Input
+                className="flex-1 bg-[#00041F]/50 border border-[#194EFF]/30 text-white placeholder:text-white/40 focus:border-[#194EFF]/60 rounded-lg backdrop-blur-sm px-4 py-3"
+                placeholder="Enter your email address"
+                type="email"
+                required
+                aria-label="Email address"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+              <GlowButton
+                className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 text-white font-semibold rounded-lg transition-all duration-300 whitespace-nowrap"
+              >
+                Subscribe Now
+              </GlowButton>
+            </form>
+          </div>
+        </FadeIn>
+      </div>
+
+        
 
         {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-[#194EFF]/20 gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-[#194EFF]/10 gap-6">
           <FadeIn delay={0.6} direction="up">
-            <div className="text-center lg:text-left">
-              <p className="text-white/60 text-sm mb-2">
+            <div className="text-center lg:text-left w-full lg:w-auto">
+              <p className="text-[#1A237E]/70 text-sm mb-2">
                 © 2024 StartupDev Digital Agency. All rights reserved.
-            </p>
-              <div className="flex flex-wrap items-center gap-4 text-white/40 text-xs">
-                <a href="/privacy" className="hover:text-[#194EFF] transition-colors duration-300">Privacy Policy</a>
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-[#1A237E]/50 text-xs">
+                <a href="/privacy" className="hover:text-[#194EFF] text-[#1A237E]/70 transition-colors duration-300">Privacy Policy</a>
                 <span>•</span>
-                <a href="/terms" className="hover:text-[#194EFF] transition-colors duration-300">Terms of Service</a>
+                <a href="/terms" className="hover:text-[#194EFF] text-[#1A237E]/70 transition-colors duration-300">Terms of Service</a>
                 <span>•</span>
-                <a href="/cookies" className="hover:text-[#194EFF] transition-colors duration-300">Cookie Policy</a>
+                <a href="/cookies" className="hover:text-[#194EFF] text-[#1A237E]/70 transition-colors duration-300">Cookie Policy</a>
               </div>
             </div>
           </FadeIn>
