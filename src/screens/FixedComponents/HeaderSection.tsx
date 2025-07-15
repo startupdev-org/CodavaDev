@@ -284,7 +284,6 @@ export const HeaderSection = (): JSX.Element => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            onClick={() => navigate(homeLocation)}
           >
             <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#4C7DFF]/25 group-hover:shadow-[#4C7DFF]/40 transition-all duration-300 group-hover:scale-110">
               <img
