@@ -5,8 +5,10 @@ import {
   FadeIn, 
   StaggerContainer, 
   StaggerItem,
-  FloatingElement
+  FloatingElement,
+  GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useNavigate } from "react-router-dom";
 
 interface DesignProcess {
   phase: string;
@@ -29,6 +31,8 @@ interface Project {
 }
 
 export const PortfolioGridSection: React.FC = () => {
+
+  const navigate = useNavigate();
   const [activeFilters, setActiveFilters] = useState<string[]>(["All"]);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,6 +41,7 @@ export const PortfolioGridSection: React.FC = () => {
 
   const projects = [
     {
+      id: 1,
       title: "Epic Trans Logistics",
       description: "A modern logistics and transportation company website featuring real-time tracking, booking management, and comprehensive service information. The design emphasizes trust, reliability, and ease of access to key transportation services.",
       images: [
@@ -100,6 +105,7 @@ export const PortfolioGridSection: React.FC = () => {
       ]
     },
     {
+      id: 2,
       title: "EuroTour Moldova",
       description: "A comprehensive UI/UX design project for a transportation service connecting Moldova with European destinations. The design system prioritizes user experience with intuitive navigation, clear call-to-actions, and seamless booking flow.",
           images: [
@@ -172,7 +178,7 @@ export const PortfolioGridSection: React.FC = () => {
       ]
     },
     {
-      id: 1,
+      id: 3,
       title: "PURE.BMWM E-commerce",
       category: "E-commerce Development",
       description: "Modern e-commerce platform for automotive merchandise featuring real-time inventory, secure payments, and a seamless shopping experience.",
@@ -252,7 +258,7 @@ export const PortfolioGridSection: React.FC = () => {
       ]
     },
     {
-      id: 1,
+      id: 4,
       title: "RollWithdraw Platform",
       category: "FullStack Development",
       description: "A comprehensive trading platform featuring secure cryptocurrency payments, real-time WebSocket integration, and automated trading systems.",
@@ -328,7 +334,6 @@ export const PortfolioGridSection: React.FC = () => {
         }
       ]
     }
-    
   ];
 
   const handleFilterToggle = (filter: string) => {
@@ -393,9 +398,9 @@ export const PortfolioGridSection: React.FC = () => {
             {/* Filter Buttons */}
             <FadeIn delay={0.4} direction="up">
               <div className="flex flex-wrap justify-center gap-3 mb-16">
-                {filters.filter(filter => filter !== "All").map((filter, index) => (
+                {filters.filter(filter => filter !== "All").map((filter) => (
                   <Button
-                    key={index}
+                    key={filter}
                     onClick={() => handleFilterToggle(filter)}
                     className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                       activeFilters.includes(filter)
@@ -413,72 +418,101 @@ export const PortfolioGridSection: React.FC = () => {
           {/* Projects Grid */}
           <StaggerContainer staggerDelay={0.1}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <StaggerItem key={project.id}>
-                  <FloatingElement intensity={2} duration={4}>
-                    <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
-                      {/* Project Image */}
-                      <div className="relative h-64 overflow-hidden">
-                        <div 
-                          className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                          style={{ backgroundImage: `url(${project.mainImage || project.images?.[0]})` }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Overlay Content */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <Button 
-                            onClick={() => openModal(project)}
-                            className="px-6 py-3 bg-[#194EFF] text-white font-semibold rounded-xl hover:bg-[#194EFF]/80 transition-all duration-300"
-                          >
-                            View Details
-                          </Button>
-                        </div>
-                      </div>
-
-                      {/* Project Content */}
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-3">
-                          <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
-                            {project.category}
-                          </Badge>
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
-                          {project.title}
-                        </h3>
-                        
-                        <p className="text-white/60 text-sm mb-4 leading-relaxed">
-                          {project.description}
-                        </p>
-
-                        {/* Technologies */}
-                        <div className="mb-4">
-                          <div className="flex flex-wrap gap-2">
-                            {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                              <span key={techIndex} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                                {tech}
-                              </span>
-                            ))}
-                            {project.technologies.length > 3 && (
-                              <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                                +{project.technologies.length - 3} more
-                              </span>
-                            )}
+              {filteredProjects.length === 0 ? (
+                <div className="col-span-full flex flex-col items-center justify-center py-24">
+                  <svg
+                    className="w-16 h-16 mb-6 text-[#194EFF]/60"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    viewBox="0 0 48 48"
+                  >
+                    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="3" fill="none" />
+                    <path d="M16 24h16M24 16v16" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                  <h4 className="text-2xl font-semibold text-white mb-2">Nothing for this specific filter</h4>
+                  <p className="text-white/60 text-lg text-center max-w-md">
+                    Maybe your project could be the first one here? Get in touch to have it featured!
+                  </p>
+                  <FadeIn delay={0.4} direction="up">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <GlowButton 
+                        onClick={() => navigate('/contact')}
+                        className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
+                      >
+                        Let's start
+                      </GlowButton>
+                    </div>
+                  </FadeIn>
+                </div>
+              ) : (
+                filteredProjects.map((project) => (
+                  <StaggerItem key={project.id}>
+                    <FloatingElement intensity={2} duration={4}>
+                      <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
+                        {/* Project Image */}
+                        <div className="relative h-64 overflow-hidden">
+                          <div 
+                            className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${project.mainImage || project.images?.[0]})` }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          
+                          {/* Overlay Content */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <Button 
+                              onClick={() => openModal(project)}
+                              className="px-6 py-3 bg-[#194EFF] text-white font-semibold rounded-xl hover:bg-[#194EFF]/80 transition-all duration-300"
+                            >
+                              View Details
+                            </Button>
                           </div>
                         </div>
 
-                        {/* Results */}
-                        <div className="pt-4 border-t border-white/10">
-                          <p className="text-[#194EFF] text-sm font-semibold">
-                            {project.results}
+                        {/* Project Content */}
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
+                              {project.category}
+                            </Badge>
+                          </div>
+                          
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
+                            {project.title}
+                          </h3>
+                          
+                          <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                            {project.description}
                           </p>
+
+                          {/* Technologies */}
+                          <div className="mb-4">
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                                <span key={techIndex} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                                  {tech}
+                                </span>
+                              ))}
+                              {project.technologies.length > 3 && (
+                                <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                                  +{project.technologies.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Results */}
+                          <div className="pt-4 border-t border-white/10">
+                            <p className="text-[#194EFF] text-sm font-semibold">
+                              {project.results}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </FloatingElement>
-                </StaggerItem>
-              ))}
+                    </FloatingElement>
+                  </StaggerItem>
+                ))
+              )}
             </div>
           </StaggerContainer>
         </div>
@@ -508,14 +542,14 @@ export const PortfolioGridSection: React.FC = () => {
                   
                   return (
                     <div
-                      key={index}
+                      key={image}
                       className={`relative rounded-lg overflow-hidden ${
                         isFullWidth ? 'col-span-full' : 'col-span-1'
                       }`}
                     >
                       <img
                         src={image}
-                        alt={`${selectedProject.title} - Image ${index + 1}`}
+                        alt={selectedProject.title}
                         className={`w-full ${
                           isFullWidth
                             ? 'h-auto max-h-[70vh] object-contain'
@@ -555,8 +589,8 @@ export const PortfolioGridSection: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Design Process</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {selectedProject.designProcess.map((process: DesignProcess, index: number) => (
-                        <div key={index} className="bg-white/5 rounded-lg p-4">
+                      {selectedProject.designProcess.map((process: DesignProcess) => (
+                        <div key={process.phase} className="bg-white/5 rounded-lg p-4">
                           <h5 className="text-[#194EFF] font-semibold mb-2">{process.phase}</h5>
                           <p className="text-white/70 text-sm">{process.details}</p>
                         </div>
@@ -571,7 +605,7 @@ export const PortfolioGridSection: React.FC = () => {
                       <h4 className="text-lg font-semibold text-white mb-4">Core Features</h4>
                       <ul className="space-y-2">
                         {selectedProject.features.map((feature: string, index: number) => (
-                          <li key={index} className="flex items-center gap-2 text-white/80">
+                          <li key={feature} className="flex items-center gap-2 text-white/80">
                             <span className="text-[#194EFF] font-mono">{String(index + 1).padStart(2, '0')}</span>
                             {feature}
                           </li>
@@ -584,9 +618,9 @@ export const PortfolioGridSection: React.FC = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-4">Design Tools</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedProject.technologies.map((tech: string, index: number) => (
+                        {selectedProject.technologies.map((tech: string) => (
                           <span
-                            key={index}
+                            key={tech}
                             className="px-3 py-1 bg-white/5 rounded-full text-sm text-white/80"
                           >
                             {tech}
@@ -601,9 +635,9 @@ export const PortfolioGridSection: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Design Deliverables</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {selectedProject.designDeliverables.map((deliverable: string, index: number) => (
+                      {selectedProject.designDeliverables.map((deliverable: string) => (
                         <div
-                          key={index}
+                          key={deliverable}
                           className="bg-white/5 rounded-lg p-3 text-center text-white/80 text-sm"
                         >
                           {deliverable}
@@ -617,9 +651,9 @@ export const PortfolioGridSection: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Key Achievements</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {selectedProject.achievements.map((achievement: string, index: number) => (
+                      {selectedProject.achievements.map((achievement: string) => (
                         <div
-                          key={index}
+                          key={achievement}
                           className="flex items-center gap-2 bg-white/5 rounded-lg p-3"
                         >
                           <div className="w-2 h-2 rounded-full bg-[#194EFF]" />
