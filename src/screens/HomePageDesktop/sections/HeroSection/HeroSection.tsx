@@ -8,8 +8,10 @@ import {
   StaggerItem, 
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <>
       {/* CSS Animations */}
@@ -128,7 +130,10 @@ export const HeroSection = (): JSX.Element => {
           {/* CTA Buttons */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105">
+              <button 
+                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
+                onClick={() => navigate('/contact')}
+              >
                 <span className="flex items-center gap-2.5">
                   Start Your Project
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

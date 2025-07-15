@@ -9,7 +9,6 @@ import { SEOPage } from "./screens/SEOPage";
 import { DigitalAdvertisingPage } from "./screens/DigitalAdvertisingPage";
 import { CopywritingPage } from "./screens/CopywritingPage";
 import { ContactPage } from "./screens/ContactPage/ContactPage";
-import { GetQuotePage } from "./screens/GetQuotePage/GetQuotePage";
 import { PortfolioPage } from "./screens/PortfolioPage/PortfolioPage";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
@@ -24,7 +23,6 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/services/advertising" element={<DigitalAdvertisingPage />} />
         <Route path="/services/copywriting" element={<CopywritingPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/quote" element={<GetQuotePage/>} />
         <Route path="/portfolio" element={<PortfolioPage/>} />
 
       </Routes>
