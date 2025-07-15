@@ -170,29 +170,31 @@ export const ContactHeroSection: React.FC = () => {
                 </StaggerItem>
                 {/* 4th Stat */}
                 <StaggerItem>
-                  <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#194EFF]/40 transition-all duration-300">
-                      <svg
-                        className="w-8 h-8 text-[#194EFF]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
+                  <FloatingElement intensity={3} duration={4}>
+                    <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-[#194EFF]/40 transition-all duration-300">
+                        <svg
+                          className="w-8 h-8 text-[#194EFF]"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        Expert Team
+                      </h3>
+                      <p className="text-white/60 text-sm">
+                        Dedicated professionals at your service
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Expert Team
-                    </h3>
-                    <p className="text-white/60 text-sm">
-                      Dedicated professionals at your service
-                    </p>
-                  </div>
+                  </FloatingElement>
                 </StaggerItem>
               </div>
             </StaggerContainer>

@@ -1,7 +1,6 @@
 import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { AboutHeroSection } from "./sections/AboutHeroSection";
-import { CompanyStorySection } from "./sections/CompanyStorySection";
 import { TeamSection } from "./sections/TeamSection";
 import { AboutCallToActionSection } from "./sections/AboutCallToActionSection";
 

@@ -22,35 +22,21 @@ const typingTexts = [
   "Beyond Limits",
 ];
 
-function scrollToTeamLeadership() {
-  const el = document.getElementById("team-leadership");
-  if (el) {
-    const yOffset = -80;
-    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({
-      top: y,
-      behavior: "smooth"
-    });
+function scrollToOurTeam() {
+  const formSection = document.getElementById("team-leadership");
+  if (formSection) {
+    formSection.scrollIntoView({ behavior: "smooth" });
   }
 }
 
-const PatternGraphic = ({ className }: { className?: string }) => (
-  <div
-    className={`w-[320px] h-[180px] md:w-[450px] md:h-[250px] flex items-center justify-center ${className}`}
-  >
-    <div className="w-full h-full flex gap-2 md:gap-3 -skew-x-12 transform-gpu group">
-      {[...Array(5)].map((_, i) => (
-        <div
-          key={i}
-          className="w-1/5 h-full rounded-3xl bg-cover bg-center transition-all duration-500 group-hover:scale-105"
-          style={{
-            backgroundImage: `url(https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg)`,
-          }}
-        />
-      ))}
-    </div>
-  </div>
-);
+function scrollToOurValues() {
+  const formSection = document.getElementById("our-values");
+  if (formSection) {
+    const yOffset = -120; // adjust this value as needed for your header height
+    const y = formSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}
 
 export const AboutHeroSection = (): JSX.Element => {
   const [displayedText, setDisplayedText] = useState("");
@@ -89,8 +75,8 @@ export const AboutHeroSection = (): JSX.Element => {
   // Core values data
   const coreValues = [
     {
-      title: "Innovation & Creativity",
-      description: "We are driven by a passion for fresh ideas and groundbreaking solutions. Our team constantly explores new technologies and approaches to ensure we deliver unique, cutting-edge results.",
+      title: "Creative Thinking",
+      description: "We love coming up with new ideas and using the latest technology to solve problems in unique ways.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -98,8 +84,8 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
     {
-      title: "Customer-Centric Focus",
-      description: "We prioritize our clients in every aspect of our work. By truly understanding their needs, we create tailored solutions that not only meet but exceed their expectations.",
+      title: "Client First",
+      description: "We listen carefully and build solutions that truly meet our clients’ goals and expectations.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -107,8 +93,8 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
     {
-      title: "Integrity & Transparency",
-      description: "We value honesty and open communication in all our interactions. By adhering to ethical practices and providing clear, transparent processes, we build trust with our clients.",
+      title: "Honesty & Trust",
+      description: "We are open and honest in all we do, building trust through clear and ethical actions.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -116,8 +102,8 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
     {
-      title: "Excellence in Execution",
-      description: "We strive for perfection in every project, delivering high-quality solutions that meet deadlines and stay within budget. Our focus is on ensuring optimal results.",
+      title: "Quality Results",
+      description: "We focus on doing our best work—on time, on budget, and at a high standard.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -125,8 +111,8 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
     {
-      title: "Collaboration & Teamwork",
-      description: "We believe that great ideas come from working together. By fostering a collaborative environment, both internally and with our clients, we encourage creativity.",
+      title: "Team Spirit",
+      description: "We work together and support each other to create the best solutions, both inside our team and with clients.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
@@ -134,8 +120,8 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
     {
-      title: "Agility & Adaptability",
-      description: "We embrace change and remain flexible in an ever-evolving industry. Our ability to quickly respond to new challenges ensures our solutions stay relevant.",
+      title: "Flexible & Fast",
+      description: "We adapt quickly to new challenges and changes, always staying one step ahead.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -143,6 +129,7 @@ export const AboutHeroSection = (): JSX.Element => {
       ),
     },
   ];
+  
 
   return (
     <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
@@ -178,12 +165,12 @@ export const AboutHeroSection = (): JSX.Element => {
           <div className="lg:col-span-4 space-y-8 z-10">
             <FadeIn delay={0.2} direction="up">
               <div className="space-y-10 mt-16 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl min-h-[470px] max-h-[470px]">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl 2xl:text-[7rem] font-bold leading-[1.10] text-white break-words">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.10] text-white break-words">
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>
                   <br />
                   <span className="inline-block hover:scale-105 transition-transform duration-300">Businesses</span>
                   <br />
-                  <span className="h-44 sm:h-52 md:h-56 lg:h-64 xl:h-72 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative break-words">
+                  <span className="h-32 sm:h-40 md:h-44 lg:h-52 xl:h-60 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative break-words">
                     {displayedText}
                   </span>
                 </h1>
@@ -196,11 +183,14 @@ export const AboutHeroSection = (): JSX.Element => {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.4} direction="up">
+            <FadeIn delay={0.1} direction="up">
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <GlowButton className="group px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white">
+                <GlowButton 
+                  className="group px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
+                  onClick={scrollToOurValues}
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  <span className="relative z-10">Our Story</span>
+                  <span className="relative z-10">Our Values</span>
                   <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -208,7 +198,7 @@ export const AboutHeroSection = (): JSX.Element => {
 
                 <GlowButton 
                   className="group px-8 py-4 bg-white/[0.03] border border-[#194EFF]/30 hover:border-[#194EFF]/50 hover:bg-white/[0.05] rounded-xl font-semibold text-white text-lg transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden"
-                  onClick={scrollToTeamLeadership}
+                  onClick={scrollToOurTeam}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#194EFF]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <span className="relative z-10">Meet Our Team</span>
@@ -283,7 +273,7 @@ export const AboutHeroSection = (): JSX.Element => {
         <div className="mt-20 mb-20">
           <FadeIn delay={0.9} direction="up">
             <div className="text-center space-y-8 mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" id="our-values">
                 Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Values</span>
               </h2>
               <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
