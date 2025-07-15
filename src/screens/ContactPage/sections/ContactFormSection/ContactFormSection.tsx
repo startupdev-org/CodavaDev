@@ -105,13 +105,14 @@ export const ContactFormSection: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" id="contact-form">
               Get In <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Touch</span>
             </h2>
           </FadeIn>
           
           <FadeIn delay={0.3} direction="up">
-            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light"
+            >
               Ready to start your next project? Fill out the form below.
             </p>
           </FadeIn>
@@ -157,7 +158,9 @@ export const ContactFormSection: React.FC = () => {
 
         {/* Contact Form */}
         <FadeIn delay={0.4} direction="up">
-          <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500">
+          <div 
+            className="bg-white/[0.03] border border-white/10 rounded-2xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500"
+          >
             <form onSubmit={handleSubmit} className="space-y-14">
               <StaggerContainer staggerDelay={0.1}>
                 {/* Personal Information */}

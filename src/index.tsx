@@ -31,6 +31,8 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/services/seo" element={<SEOPage />} />
         <Route path="/services/digital-advertising" element={<DigitalAdvertisingPage />} />
         <Route path="/services/copywriting" element={<CopywritingPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/portfolio" element={<PortfolioPage/>} />
         <Route path="/services/bot-automation" element={<BotAutomationPage />} />
       </Routes>
     </BrowserRouter>

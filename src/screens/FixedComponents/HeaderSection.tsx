@@ -24,6 +24,7 @@ import {
   StaggerContainer,
   StaggerItem
 } from "../../components/ui/animated-elements";
+import logoBg from '../../photos/logo-removebg.png';
 
 export const HeaderSection = (): JSX.Element => {
   const navigate = useNavigate();
@@ -38,6 +39,8 @@ export const HeaderSection = (): JSX.Element => {
     { name: "Services", path: "/services", hasDropdown: true },
     { name: "Portfolio", path: "/portfolio", hasDropdown: false },
   ];
+
+  const homeLocation = '/';
 
   // Function to check if a navigation item is active
   const isActive = (path: string) => {
@@ -281,15 +284,19 @@ export const HeaderSection = (): JSX.Element => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            onClick={() => navigate(homeLocation)}
           >
-            <FloatingElement intensity={3} duration={2}>
-              <div className="w-10 h-10 bg-gradient-to-br from-[#194EFF] to-[#194EFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#194EFF]/25 group-hover:shadow-[#194EFF]/40 transition-all duration-300 group-hover:scale-110">
-                <span className="text-white font-bold text-lg group-hover:animate-pulse">C</span>
-              </div>
-            </FloatingElement>
+            <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#4C7DFF]/25 group-hover:shadow-[#4C7DFF]/40 transition-all duration-300 group-hover:scale-110">
+              <img
+                className="w-12 h-12 p-1 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                src={logoBg}
+                alt="Logo"
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 2px 8px #4C7DFF33)' }}
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-all duration-300 leading-none">
-                Codava
+                CodavaDev
               </span>
               <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
             </div>
@@ -346,9 +353,9 @@ export const HeaderSection = (): JSX.Element => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <GlowButton 
-              onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+            <GlowButton
               className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-lg font-semibold text-white transition-all duration-300 flex items-center gap-2"
+              onClick={() => navigate('/contact')}
             >
               Get Started
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -8,9 +8,11 @@ import {
   StaggerItem, 
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export const HeroSection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <>
       {/* CSS Animations */}
@@ -138,8 +140,8 @@ export const HeroSection = (): JSX.Element => {
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
               <button 
-                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
-                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2"
+                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
+                onClick={() => navigate('/contact')}
               >
                 <span className="flex items-center gap-2.5">
                   Start Your Project
