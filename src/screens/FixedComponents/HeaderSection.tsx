@@ -68,7 +68,6 @@ export const HeaderSection = (): JSX.Element => {
     {
       category: "Marketing & Content",
       items: [
-        { name: "Digital Advertising", description: "Google & Facebook Ads", icon: "📢", path: "/services/advertising" },
         { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
         { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
       ]

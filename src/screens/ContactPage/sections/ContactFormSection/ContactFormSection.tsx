@@ -85,7 +85,6 @@ export const ContactFormSection: React.FC = () => {
     {
       category: "MARKETING & CONTENT",
       items: [
-        { name: "Digital Advertising", description: "Google & Facebook Ads" },
         { name: "SEO", description: "Search engine optimization" },
         { name: "Copywriting", description: "Content that converts" }
       ]

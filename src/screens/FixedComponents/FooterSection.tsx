@@ -17,9 +17,8 @@ export const FooterSection = (): JSX.Element => {
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/aboutus" },
+        { name: "About Us", href: "/about" },
         { name: "Our Team", href: "/team" },
-        { name: "Careers", href: "/careers" },
       ],
     },
     {
@@ -29,7 +28,6 @@ export const FooterSection = (): JSX.Element => {
         { name: "Full Stack Development", href: "/services/full-stack-development" },
         { name: "Design", href: "/services/design" },
         { name: "Bot Automation", href: "/services/bot-automation" },
-        { name: "Digital Advertising", href: "/services/advertising" },
         { name: "SEO", href: "/services/seo" },
         { name: "Copywriting", href: "/services/copywriting" },
       ],
@@ -39,7 +37,6 @@ export const FooterSection = (): JSX.Element => {
       links: [
         { name: "Contact", href: "/contact" },
         { name: "Portfolio", href: "/portfolio" },
-        { name: "Case Studies", href: "/case-studies" },
       ],
     },
   ];
