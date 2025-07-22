@@ -105,7 +105,6 @@ export const HeroSection = () => {
 
           {/* IT Agency Badge */}
           <FadeIn delay={0.1} direction="up">
-
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10  rounded-full mb-8 backdrop-blur-lg shadow-lg ">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
               {/* Mobile: shorter text */}
@@ -122,8 +121,7 @@ export const HeroSection = () => {
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Transform Your Business with
-              <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
+              Transform Your Business with <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
                 Digital Excellence
               </span>
             </h1>
