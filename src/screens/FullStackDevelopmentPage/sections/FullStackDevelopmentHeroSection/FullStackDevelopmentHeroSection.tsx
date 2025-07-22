@@ -155,10 +155,6 @@ export const FullStackDevelopmentHeroSection = () => {
                 <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
                 <span>Available for new projects</span>
               </div>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>30+ Full Stack Apps Delivered</span>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>End-to-End Solutions</span>
             </div>
           </FadeIn>
 
