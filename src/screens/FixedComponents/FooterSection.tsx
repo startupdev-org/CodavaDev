@@ -11,7 +11,7 @@ import logoBg from "../../photos/logo-removebg.png";
 import emailjs from '@emailjs/browser';
 
 
-export const FooterSection = (): JSX.Element => {
+export const FooterSection = () => {
   // Footer navigation
   const footerNavigation = [
     {
@@ -176,47 +176,47 @@ export const FooterSection = (): JSX.Element => {
         <FadeIn delay={0.4} direction="up">
           <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 max-w-md mx-auto mb-8 mt-8 relative">
 
-          {/* Success Message */}
-        {showSuccess && (
-          <FadeIn delay={0} direction="up">
-            <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
-              <div className="flex flex-row items-center justify-between gap-3 text-center">
-                <h3 className="text-green-400 font-semibold text-lg w-full text-center">Registred Successfully!</h3>
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            {/* Success Message */}
+            {showSuccess && (
+              <FadeIn delay={0} direction="up">
+                <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
+                  <div className="flex flex-row items-center justify-between gap-3 text-center">
+                    <h3 className="text-green-400 font-semibold text-lg w-full text-center">Registred Successfully!</h3>
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-2">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </FadeIn>
-        )}
-        {showSuccess && (() => {
-          // Automatically hide the success message after 5 seconds
-          setTimeout(() => {
-            setShowSuccess(false);
-          }, 5000);
-          return null;
-        })()}
+              </FadeIn>
+            )}
+            {showSuccess && (() => {
+              // Automatically hide the success message after 5 seconds
+              setTimeout(() => {
+                setShowSuccess(false);
+              }, 5000);
+              return null;
+            })()}
 
-        {/* Error Message */}
-        {showError && (
-          <FadeIn delay={0} direction="up">
-            <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+            {/* Error Message */}
+            {showError && (
+              <FadeIn delay={0} direction="up">
+                <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
+                      <p className="text-red-300 text-sm">{showError}</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
-                  <p className="text-red-300 text-sm">{showError}</p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        )}
+              </FadeIn>
+            )}
 
             <div className="text-center mt-2">
               <h3 className="font-bold text-white text-lg mb-1">
@@ -264,11 +264,10 @@ export const FooterSection = (): JSX.Element => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full px-5 py-3 font-semibold text-base rounded-xl transition-all duration-300 shadow-lg hover:scale-105 transform ${
-                        isSubmitting
-                          ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-                          : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
-                      }`}
+                      className={`w-full px-5 py-3 font-semibold text-base rounded-xl transition-all duration-300 shadow-lg hover:scale-105 transform ${isSubmitting
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                        : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
+                        }`}
                     >
                       {isSubmitting ? (
                         <div className="flex items-center gap-2 justify-center">
@@ -311,7 +310,7 @@ export const FooterSection = (): JSX.Element => {
         <div className="pt-10 border-t border-[#194EFF]/20">
           <div className="flex flex-col items-center justify-center gap-1">
             <p className="text-white/80 text-base font-medium text-center">
-              © 2025 <span className="text-[#194EFF] font-bold">CodavaDev Digital Agency</span> — All rights reserved.
+              © 2025 <span className="text-[#194EFF] font-bold">CodavaDev</span> — All rights reserved.
             </p>
           </div>
         </div>
