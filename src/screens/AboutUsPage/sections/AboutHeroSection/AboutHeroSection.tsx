@@ -5,6 +5,9 @@ import {
   StaggerContainer,
   StaggerItem,
   GlowButton,
+  ParallaxElement,
+  FloatingElement,
+  MatrixText,
 } from "../../../../components/ui/animated-elements";
 
 const typingTexts = [
@@ -67,8 +70,8 @@ export const AboutHeroSection = () => {
   // Core values data
   const coreValues = [
     {
-      title: "Creative Thinking",
-      description: "We love coming up with new ideas and using the latest technology to solve problems in unique ways.",
+      title: "Innovative Thinking",
+      description: "We challenge convention with creative ideas and smart use of technology.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -76,8 +79,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Client First",
-      description: "We listen carefully and build solutions that truly meet our clients’ goals and expectations.",
+      title: "Client-Centered",
+      description: "We put clients first, tailoring every solution to their goals and success.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -85,8 +88,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Honesty & Trust",
-      description: "We are open and honest in all we do, building trust through clear and ethical actions.",
+      title: "Integrity & Transparency",
+      description: "We act with honesty and clarity to build lasting trust and partnerships.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -94,8 +97,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Quality Results",
-      description: "We focus on doing our best work—on time, on budget, and at a high standard.",
+      title: "Excellence in Delivery",
+      description: "We deliver top-quality results—on time, on budget, and with precision.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -103,8 +106,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Team Spirit",
-      description: "We work together and support each other to create the best solutions, both inside our team and with clients.",
+      title: "Collaboration & Unity",
+      description: "We thrive as a team, working closely together and with our clients to build great solutions.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
@@ -112,8 +115,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Flexible & Fast",
-      description: "We adapt quickly to new challenges and changes, always staying one step ahead.",
+      title: "Agility & Speed",
+      description: "We adapt quickly and efficiently to evolving needs, delivering rapid and effective results.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -121,7 +124,26 @@ export const AboutHeroSection = () => {
       ),
     },
   ];
-  
+
+  const companyStats = [
+
+    {
+      value: "10+",
+      label: "Projects Completed",
+      description: "Across diverse industries"
+    },
+    {
+      value: "10+",
+      label: "Enterprise Clients",
+      description: "Trusting our expertise"
+    },
+    {
+      value: "24/7",
+      label: "Support Available",
+      description: "Always here for you"
+    },
+  ];
+
 
   return (
     <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
@@ -129,17 +151,17 @@ export const AboutHeroSection = () => {
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#194EFF]/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#194EFF]/5 via-transparent to-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#194EFF]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#194EFF]/5 via-transparent to-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
         {/* Dynamic floating particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/60 rounded-full animate-bounce" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-bounce" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/50 rounded-full animate-bounce" style={{animationDelay: '2s', animationDuration: '5s'}}></div>
-        <div className="absolute top-2/3 left-1/5 w-1 h-1 bg-[#194EFF]/50 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute top-1/5 right-1/3 w-1.5 h-1.5 bg-white/30 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-[#194EFF]/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
-        
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/60 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+        <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/50 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
+        <div className="absolute top-2/3 left-1/5 w-1 h-1 bg-[#194EFF]/50 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/5 right-1/3 w-1.5 h-1.5 bg-white/30 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-[#194EFF]/40 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
+
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="w-full h-full" style={{
@@ -150,34 +172,47 @@ export const AboutHeroSection = () => {
       </div>
 
       <div className="relative max-w-[1600px] mx-auto px-6 w-full">
-        
+
+        {/* IT Agency Badge */}
+        <FadeIn delay={0.1} direction="up">
+          <div className="flex justify-center  mt-48">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
+              <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              {/* Mobile: shorter text */}
+              <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
+                All-in-One IT Solutions 🚀
+              </span>
+              {/* Desktop: full text */}
+              <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
+                Web, Design, Automation & Marketing — All-in-One IT Solutions 🚀
+              </span>
+            </div>
+          </div>
+        </FadeIn>
+
         {/* Main Hero Content */}
         <div className="grid grid-cols-1 lg:grid-cols-11 gap-8 lg:gap-20 items-center">
-          {/* Left Content - Takes up 5 columns */}
-          <div className="lg:col-span-4 space-y-8 z-10">
+
+          {/* Centered Content */}
+          <div className="lg:col-span-11 flex flex-col items-center justify-center text-center space-y-8 z-10">
+            {/* Main Heading */}
             <FadeIn delay={0.2} direction="up">
-              <div className="space-y-10 mt-16 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl min-h-[470px] max-h-[470px]">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.10] text-white break-words">
-                  <span className="inline-block hover:scale-105 transition-transform duration-300">Transforming</span>
-                  <br />
-                  <span className="inline-block hover:scale-105 transition-transform duration-300">Businesses</span>
-                  <br />
-                  <span className="h-32 sm:h-40 md:h-44 lg:h-52 xl:h-60 text-transparent bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#194EFF] bg-clip-text animate-pulse inline-block hover:scale-105 transition-all duration-300 relative break-words">
-                    {displayedText}
-                  </span>
-                </h1>
-              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
+                Transform Your Business with <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
+                  Digital Excellence
+                </span>
+              </h1>
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
-              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300 mx-auto">
                 We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.1} direction="up">
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <GlowButton 
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center items-center">
+                <GlowButton
                   className="group px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
                   onClick={scrollToOurValues}
                 >
@@ -188,7 +223,7 @@ export const AboutHeroSection = () => {
                   </svg>
                 </GlowButton>
 
-                <GlowButton 
+                <GlowButton
                   className="group px-8 py-4 bg-white/[0.03] border border-[#194EFF]/30 hover:border-[#194EFF]/50 hover:bg-white/[0.05] rounded-xl font-semibold text-white text-lg transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden"
                   onClick={scrollToOurTeam}
                 >
@@ -201,7 +236,7 @@ export const AboutHeroSection = () => {
         </div>
 
         {/* Mission & Vision Sections */}
-        <div className="mt-20 space-y-20">
+        <div className="mt-20 space-y-20 mt-48">
           {/* Our Mission */}
           <FadeIn direction="right" delay={0.2}>
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -210,7 +245,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Mission</span>
                 </h2>
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                  To empower businesses with innovative, high-quality software solutions that drive growth and efficiency. We are committed to leveraging cutting-edge technology, creative problem-solving, and industry best practices to deliver scalable and future-ready digital solutions.
+                  To empower businesses with high-impact, innovative software solutions that enhance efficiency and drive sustainable growth. We harness modern technologies, creative strategies, and best-in-class practices to deliver scalable, future-ready digital products.
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -222,8 +257,8 @@ export const AboutHeroSection = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Empowering Growth</h3>
-                      <p className="text-white/70">Through innovative technology solutions that transform businesses and drive success.</p>
+                      <h3 className="text-2xl font-bold text-white">Empowering Progress</h3>
+                      <p className="text-white/70">We build transformative tech solutions that help businesses grow and thrive in a digital world.</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -239,7 +274,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Vision</span>
                 </h2>
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                  Our vision is to be a global leader in software development, driving digital transformation and innovation across industries. We strive to create cutting-edge solutions that empower businesses, enhance user experiences, and set new standards in technology.
+                  To become a global leader in software development by enabling digital transformation and innovation across industries. We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -252,7 +287,7 @@ export const AboutHeroSection = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white">Global Innovation</h3>
-                      <p className="text-white/70">Leading the future of technology with cutting-edge solutions and transformative ideas.</p>
+                      <p className="text-white/70">Shaping the future through bold ideas and advanced technology.</p>
                     </div>
                   </CardContent>
                 </Card>
