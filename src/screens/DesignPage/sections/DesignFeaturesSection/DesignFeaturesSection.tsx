@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
 
-export const DesignFeaturesSection = (): JSX.Element => {
+export const DesignFeaturesSection = () => {
   const features = [
     {
       icon: "🎨",
@@ -42,7 +42,7 @@ export const DesignFeaturesSection = (): JSX.Element => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -51,7 +51,7 @@ export const DesignFeaturesSection = (): JSX.Element => {
               <span className="text-[#194EFF] text-sm font-medium">Design Excellence</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Creating Designs That
@@ -60,7 +60,7 @@ export const DesignFeaturesSection = (): JSX.Element => {
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/60 leading-relaxed max-w-3xl mx-auto">
               Our design process combines creativity with strategy to deliver visual solutions that not only look stunning but achieve your business goals.

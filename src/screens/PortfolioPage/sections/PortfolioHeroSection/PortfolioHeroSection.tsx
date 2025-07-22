@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { 
-  FadeIn, 
-  StaggerContainer, 
-  StaggerItem, 
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
   FloatingElement,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const PortfolioHeroSection = (): JSX.Element => {
+export const PortfolioHeroSection = () => {
   const navigate = useNavigate();
   const stats = [
     { number: "10+", label: "Projects Completed" },
@@ -22,17 +22,17 @@ export const PortfolioHeroSection = (): JSX.Element => {
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#194EFF]/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#194EFF]/5 via-transparent to-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#194EFF]/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#194EFF]/5 via-transparent to-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
         {/* Dynamic floating particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/60 rounded-full animate-bounce" style={{animationDelay: '0s', animationDuration: '3s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-bounce" style={{animationDelay: '1s', animationDuration: '4s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/50 rounded-full animate-bounce" style={{animationDelay: '2s', animationDuration: '5s'}}></div>
-        <div className="absolute top-2/3 left-1/5 w-1 h-1 bg-[#194EFF]/50 rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute top-1/5 right-1/3 w-1.5 h-1.5 bg-white/30 rounded-full animate-ping" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-[#194EFF]/40 rounded-full animate-ping" style={{animationDelay: '2.5s'}}></div>
-        
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/60 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+        <div className="absolute top-3/4 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/50 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
+        <div className="absolute top-2/3 left-1/5 w-1 h-1 bg-[#194EFF]/50 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/5 right-1/3 w-1.5 h-1.5 bg-white/30 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-1/4 right-1/5 w-1 h-1 bg-[#194EFF]/40 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
+
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="w-full h-full" style={{
@@ -71,7 +71,7 @@ export const PortfolioHeroSection = (): JSX.Element => {
 
             <FadeIn delay={0.4} direction="up">
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <GlowButton 
+                <GlowButton
                   onClick={() => {
                     document.getElementById('portfolio-grid')?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -79,7 +79,7 @@ export const PortfolioHeroSection = (): JSX.Element => {
                 >
                   View All Projects
                 </GlowButton>
-                <GlowButton 
+                <GlowButton
                   onClick={() => navigate('/contact')}
                   className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
                 >

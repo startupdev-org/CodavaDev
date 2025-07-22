@@ -1,19 +1,19 @@
 import React from "react";
-import { 
-  FadeIn, 
+import {
+  FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const DigitalAdvertisingCTASection = (): JSX.Element => {
+export const DigitalAdvertisingCTASection = () => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
       </div>
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
-        
+
         <FadeIn delay={0.1} direction="up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full backdrop-blur-sm mb-8">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>

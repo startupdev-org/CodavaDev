@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
 
-export const WebDevelopmentFeaturesSection = (): JSX.Element => {
+export const WebDevelopmentFeaturesSection = () => {
   const features = [
     {
       icon: "🚀",
@@ -53,7 +53,7 @@ export const WebDevelopmentFeaturesSection = (): JSX.Element => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -62,7 +62,7 @@ export const WebDevelopmentFeaturesSection = (): JSX.Element => {
               <span className="text-[#194EFF] text-sm font-medium">Our Approach</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Why Choose Our
@@ -71,7 +71,7 @@ export const WebDevelopmentFeaturesSection = (): JSX.Element => {
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/60 leading-relaxed max-w-3xl mx-auto">
               We combine technical expertise with creative innovation to deliver web solutions that not only look amazing but perform exceptionally well.
@@ -105,7 +105,7 @@ export const WebDevelopmentFeaturesSection = (): JSX.Element => {
               Powered by Modern Technology
             </h3>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <p className="text-white/60 mb-12 max-w-2xl mx-auto">
               We leverage the latest technologies and frameworks to ensure your web application is fast, scalable, and future-proof.

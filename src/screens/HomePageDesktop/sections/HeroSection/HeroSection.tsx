@@ -2,16 +2,16 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Badge } from "../../../../components/ui/badge";
-import { 
-  FadeIn, 
-  StaggerContainer, 
-  StaggerItem, 
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export const HeroSection = (): JSX.Element => {
+export const HeroSection = () => {
   const navigate = useNavigate();
   return (
     <>
@@ -55,10 +55,10 @@ export const HeroSection = (): JSX.Element => {
         <div className="absolute inset-0">
           {/* Main animated gradient - similar to Arise */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
-          
+
           {/* Secondary animated gradient */}
-          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{animationDelay: '5s'}}></div>
-          
+          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>
+
           {/* Floating particles */}
           {Array.from({ length: 15 }, (_, i) => (
             <div
@@ -72,7 +72,7 @@ export const HeroSection = (): JSX.Element => {
               }}
             />
           ))}
-          
+
           {/* Floating elements */}
           {Array.from({ length: 8 }, (_, i) => (
             <div
@@ -86,7 +86,7 @@ export const HeroSection = (): JSX.Element => {
               }}
             />
           ))}
-          
+
           {/* Subtle moving grid */}
           <div className="absolute inset-0 opacity-[0.008]">
             <div className="w-full h-full gradient-shift" style={{
@@ -99,13 +99,13 @@ export const HeroSection = (): JSX.Element => {
 
         {/* Navigation space */}
         <div className="absolute top-0 left-0 right-0 h-20"></div>
-        
+
         {/* Hero Content */}
         <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[170px] pt-[100px] pb-16">
-          
+
           {/* IT Agency Badge */}
           <FadeIn delay={0.1} direction="up">
-            
+
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10  rounded-full mb-8 backdrop-blur-lg shadow-lg ">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
               {/* Mobile: shorter text */}
@@ -116,7 +116,7 @@ export const HeroSection = (): JSX.Element => {
               <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
                 Web, Design, Automation & Marketing — All-in-One IT Solutions 🚀
               </span>
-          </div>
+            </div>
           </FadeIn>
 
           {/* Main Heading */}
@@ -139,7 +139,7 @@ export const HeroSection = (): JSX.Element => {
           {/* CTA Buttons */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <button 
+              <button
                 className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
                 onClick={() => navigate('/contact')}
               >
@@ -150,7 +150,7 @@ export const HeroSection = (): JSX.Element => {
                   </svg>
                 </span>
               </button>
-              
+
               <Link to="/portfolio" className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2">
                 <span className="flex items-center gap-2.5">
                   View Our Work

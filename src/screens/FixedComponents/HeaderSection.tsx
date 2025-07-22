@@ -17,8 +17,8 @@ import {
 import { ChevronDown } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  FadeIn, 
+import {
+  FadeIn,
   GlowButton,
   FloatingElement,
   StaggerContainer,
@@ -26,7 +26,7 @@ import {
 } from "../../components/ui/animated-elements";
 import logoBg from '../../photos/logo-removebg.png';
 
-export const HeaderSection = (): JSX.Element => {
+export const HeaderSection = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -94,9 +94,9 @@ export const HeaderSection = (): JSX.Element => {
     }
   ];
 
-  const renderDropdownMenu = (items: Array<{category: string; items: Array<{name: string; description: string; icon: string; path?: string}>}>, triggerName: string, uniqueId: string) => (
+  const renderDropdownMenu = (items: Array<{ category: string; items: Array<{ name: string; description: string; icon: string; path?: string }> }>, triggerName: string, uniqueId: string) => (
     <div className={`relative dropdown-${uniqueId}`}>
-      <button 
+      <button
         className="flex items-center gap-1 font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-[#194EFF] transition-colors duration-200"
         onMouseEnter={() => {
           const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
@@ -116,11 +116,11 @@ export const HeaderSection = (): JSX.Element => {
           }, 100);
         }}
       >
-          {triggerName}
-          <ChevronDown className="w-4 h-4 text-white/60" />
-        </button>
-      
-      <div 
+        {triggerName}
+        <ChevronDown className="w-4 h-4 text-white/60" />
+      </button>
+
+      <div
         className="dropdown-content absolute top-full left-0 mt-2 w-[280px] bg-[#00041F]/95 border border-[#194EFF]/20 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 z-50 backdrop-blur-xl"
         onMouseEnter={() => {
           const dropdown = document.querySelector(`.dropdown-${uniqueId} .dropdown-content`);
@@ -145,23 +145,23 @@ export const HeaderSection = (): JSX.Element => {
                 {category.category}
               </div>
               {category.items.map((item, itemIndex) => (
-              <div 
-                    key={itemIndex}
+                <div
+                  key={itemIndex}
                   className="flex items-center gap-3 px-3 py-2 text-white text-sm hover:bg-[#194EFF]/10 rounded transition-colors duration-150 cursor-pointer group"
                   onClick={() => item.path && navigate(item.path)}
-                  >
-                <span className="text-base">{item.icon}</span>
+                >
+                  <span className="text-base">{item.icon}</span>
                   <div className="flex-1">
                     <div className="font-medium group-hover:text-[#194EFF] transition-colors">{item.name}</div>
                     <div className="text-white/60 text-xs">{item.description}</div>
                   </div>
                 </div>
               ))}
-                    </div>
+            </div>
           ))}
         </div>
       </div>
-        </div>
+    </div>
   );
 
   const closeDrawer = () => {
@@ -174,7 +174,7 @@ export const HeaderSection = (): JSX.Element => {
         return (
           <>
             <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
-              <button 
+              <button
                 onClick={closeDrawer}
                 className="p-1 text-white/60 hover:text-white"
               >
@@ -186,43 +186,43 @@ export const HeaderSection = (): JSX.Element => {
             </div>
             <div className="relative">
               <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
-              {servicesDropdown.map((category, catIndex) => (
-                <div key={catIndex} className="mb-4">
-                  <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
-                    {category.category}
+                {servicesDropdown.map((category, catIndex) => (
+                  <div key={catIndex} className="mb-4">
+                    <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
+                      {category.category}
+                    </div>
+                    {category.items.map((item, itemIndex) => (
+                      <button
+                        key={itemIndex}
+                        onClick={() => {
+                          if (item.path) {
+                            navigate(item.path);
+                            setIsMobileMenuOpen(false);
+                          }
+                        }}
+                        className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
+                      >
+                        <span className="text-xl">{item.icon}</span>
+                        <div>
+                          <div className="font-medium text-white">{item.name}</div>
+                          <div className="text-white/50 text-sm">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
                   </div>
-                  {category.items.map((item, itemIndex) => (
-                    <button
-                      key={itemIndex}
-                      onClick={() => {
-                        if (item.path) {
-                          navigate(item.path);
-                          setIsMobileMenuOpen(false);
-                        }
-                      }}
-                      className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
-                    >
-                      <span className="text-xl">{item.icon}</span>
-                      <div>
-                        <div className="font-medium text-white">{item.name}</div>
-                        <div className="text-white/50 text-sm">{item.description}</div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              ))}
+                ))}
               </div>
               {/* Gradient fade for scroll hint */}
               <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
             </div>
           </>
         );
-      
+
       case 'Portfolio':
         return (
           <>
             <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
-              <button 
+              <button
                 onClick={closeDrawer}
                 className="p-1 text-white/60 hover:text-white"
               >
@@ -234,31 +234,31 @@ export const HeaderSection = (): JSX.Element => {
             </div>
             <div className="relative">
               <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
-              {portfolioDropdown.map((category, catIndex) => (
-                <div key={catIndex} className="mb-4">
-                  <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
-                    {category.category}
+                {portfolioDropdown.map((category, catIndex) => (
+                  <div key={catIndex} className="mb-4">
+                    <div className="text-[#194EFF] text-xs font-semibold uppercase tracking-wider px-4 py-2">
+                      {category.category}
+                    </div>
+                    {category.items.map((item, itemIndex) => (
+                      <button
+                        key={itemIndex}
+                        onClick={() => {
+                          if (item.path) {
+                            navigate(item.path);
+                            setIsMobileMenuOpen(false);
+                          }
+                        }}
+                        className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
+                      >
+                        <span className="text-xl">{item.icon}</span>
+                        <div>
+                          <div className="font-medium text-white">{item.name}</div>
+                          <div className="text-white/50 text-sm">{item.description}</div>
+                        </div>
+                      </button>
+                    ))}
                   </div>
-                  {category.items.map((item, itemIndex) => (
-                    <button
-                      key={itemIndex}
-                      onClick={() => {
-                        if (item.path) {
-                          navigate(item.path);
-                          setIsMobileMenuOpen(false);
-                        }
-                      }}
-                      className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
-                    >
-                      <span className="text-xl">{item.icon}</span>
-                      <div>
-                        <div className="font-medium text-white">{item.name}</div>
-                        <div className="text-white/50 text-sm">{item.description}</div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              ))}
+                ))}
               </div>
               {/* Gradient fade for scroll hint */}
               <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#00041F] to-transparent" />
@@ -277,7 +277,7 @@ export const HeaderSection = (): JSX.Element => {
       <div className="w-full px-4 md:px-6 py-4 relative rounded-3xl">
         <div className="flex justify-between items-center w-full rounded-2xl">
           {/* Logo - Left */}
-          <motion.div 
+          <motion.div
             className="flex items-center group cursor-pointer"
             onClick={() => navigate('/')}
             initial={{ opacity: 0, x: -20 }}
@@ -301,7 +301,7 @@ export const HeaderSection = (): JSX.Element => {
           </motion.div>
 
           {/* Navigation Menu - Center */}
-          <motion.div 
+          <motion.div
             className="hidden lg:flex"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -311,28 +311,28 @@ export const HeaderSection = (): JSX.Element => {
               <NavigationMenuList className="flex flex-row items-center gap-6">
                 <StaggerContainer staggerDelay={0.1}>
                   <div className="flex flex-row items-center gap-6">
-            {navItems.map((item, index) => (
+                    {navItems.map((item, index) => (
                       <StaggerItem key={index}>
                         <NavigationMenuItem className="flex">
-                {isActive(item.path) ? (
+                          {isActive(item.path) ? (
                             <div className="flex flex-row items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#194EFF]/20 to-[#194EFF]/10 rounded-2xl border border-[#194EFF]/30 backdrop-blur-sm">
                               <div className="w-1.5 h-1.5 bg-[#194EFF] rounded-full animate-pulse" />
                               <div className="font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap">
-                      {item.name}
-                    </div>
-                  </div>
-                ) : item.hasDropdown ? (
+                                {item.name}
+                              </div>
+                            </div>
+                          ) : item.hasDropdown ? (
                             renderDropdownMenu(
                               servicesDropdown,
                               item.name,
                               item.name.toLowerCase()
                             )
-                ) : (
-                            <button 
+                          ) : (
+                            <button
                               onClick={() => navigate(item.path)}
                               className="font-['Urbanist',Helvetica] font-medium text-white text-base tracking-[0] leading-[24px] whitespace-nowrap hover:text-[#194EFF] transition-colors duration-200 px-2 py-1"
                             >
-                    {item.name}
+                              {item.name}
                             </button>
                           )}
                         </NavigationMenuItem>
@@ -340,12 +340,12 @@ export const HeaderSection = (): JSX.Element => {
                     ))}
                   </div>
                 </StaggerContainer>
-          </NavigationMenuList>
-        </NavigationMenu>
+              </NavigationMenuList>
+            </NavigationMenu>
           </motion.div>
 
           {/* CTA Button - Right */}
-          <motion.div 
+          <motion.div
             className="hidden lg:flex"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -362,14 +362,14 @@ export const HeaderSection = (): JSX.Element => {
             </GlowButton>
           </motion.div>
 
-            {/* Mobile Menu Button */}
-          <motion.div 
+          {/* Mobile Menu Button */}
+          <motion.div
             className="lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button 
+            <Button
               className="p-2 bg-[#194EFF]/10 hover:bg-[#194EFF]/20 border border-[#194EFF]/20 rounded-lg"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -388,7 +388,7 @@ export const HeaderSection = (): JSX.Element => {
 
         {/* Overlay for mobile menu */}
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             className="fixed left-0 right-0 z-40 bg-black/60"
             style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
             initial={{ opacity: 0 }}
@@ -402,10 +402,9 @@ export const HeaderSection = (): JSX.Element => {
           />
         )}
         {/* Main Mobile Menu */}
-        <motion.div 
-          className={`lg:hidden fixed left-0 right-0 z-50 transition-all duration-300 ${
-            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
+        <motion.div
+          className={`lg:hidden fixed left-0 right-0 z-50 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
           style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
           initial={{ y: '-100%' }}
           animate={{ y: isMobileMenuOpen ? 0 : '0%' }}
@@ -429,11 +428,10 @@ export const HeaderSection = (): JSX.Element => {
                       setIsMobileMenuOpen(false);
                     }
                   }}
-                  className={`w-full text-left py-4 px-4 text-base font-medium transition-all duration-300 flex items-center justify-between bg-[#00041F] hover:bg-[#194EFF] relative z-10 ${
-                    isActive(item.path)
+                  className={`w-full text-left py-4 px-4 text-base font-medium transition-all duration-300 flex items-center justify-between bg-[#00041F] hover:bg-[#194EFF] relative z-10 ${isActive(item.path)
                       ? 'text-[#194EFF] font-semibold bg-[#00041F] border-l-4 border-[#194EFF]'
                       : 'text-white hover:text-white'
-                  }`}
+                    }`}
                 >
                   <span>{item.name}</span>
                   {item.hasDropdown && (
@@ -447,7 +445,7 @@ export const HeaderSection = (): JSX.Element => {
 
             {/* Mobile CTA Button */}
             <div className="mt-auto p-4 bg-[#00041F]">
-              <GlowButton 
+              <GlowButton
                 onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
                 className="w-full py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
               >
@@ -462,7 +460,7 @@ export const HeaderSection = (): JSX.Element => {
           {/* Drawers */}
           {/* Overlay for drawers */}
           {activeDrawer && (
-            <motion.div 
+            <motion.div
               className="fixed left-0 right-0 z-40 bg-black/60"
               style={{ top: 'calc(var(--navbar-height, 80px) + 1rem)' }}
               initial={{ opacity: 0 }}
@@ -476,9 +474,8 @@ export const HeaderSection = (): JSX.Element => {
             />
           )}
           <motion.div
-            className={`fixed left-0 right-0 z-60 ${
-              activeDrawer ? 'visible' : 'invisible'
-            }`}
+            className={`fixed left-0 right-0 z-60 ${activeDrawer ? 'visible' : 'invisible'
+              }`}
             style={{ top: 'calc(var(--navbar-height, 220px) + 1rem)' }}
             initial={{ y: '-100%' }}
             animate={{ y: activeDrawer ? 0 : '0%' }}

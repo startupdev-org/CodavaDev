@@ -1,19 +1,19 @@
 import React from "react";
-import { 
-  FadeIn, 
+import {
+  FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
-export const FullStackDevelopmentCTASection = (): JSX.Element => {
+export const FullStackDevelopmentCTASection = () => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#194EFF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
       </div>
 
       <div className="relative max-w-4xl mx-auto px-6 text-center">
-        
+
         <FadeIn delay={0.1} direction="up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full backdrop-blur-sm mb-8">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
@@ -38,7 +38,7 @@ export const FullStackDevelopmentCTASection = (): JSX.Element => {
 
         <FadeIn delay={0.4} direction="up">
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <GlowButton 
+            <GlowButton
               onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
               className="group px-10 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
             >
@@ -49,7 +49,7 @@ export const FullStackDevelopmentCTASection = (): JSX.Element => {
               </svg>
             </GlowButton>
 
-            <GlowButton 
+            <GlowButton
               onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
               className="group px-10 py-4 bg-white/[0.03] border border-[#194EFF]/30 hover:border-[#194EFF]/50 hover:bg-white/[0.05] rounded-xl font-semibold text-white text-lg transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden"
             >

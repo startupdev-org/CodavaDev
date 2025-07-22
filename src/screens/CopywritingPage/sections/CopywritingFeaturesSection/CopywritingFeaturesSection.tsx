@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
 
-export const CopywritingFeaturesSection = (): JSX.Element => {
+export const CopywritingFeaturesSection = () => {
   const features = [
     {
       icon: "✍️",
@@ -42,7 +42,7 @@ export const CopywritingFeaturesSection = (): JSX.Element => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full backdrop-blur-sm mb-6">
@@ -50,7 +50,7 @@ export const CopywritingFeaturesSection = (): JSX.Element => {
               <span className="text-[#194EFF] text-sm font-medium">Content Excellence</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Words That Work
@@ -59,7 +59,7 @@ export const CopywritingFeaturesSection = (): JSX.Element => {
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/60 leading-relaxed max-w-3xl mx-auto">
               Every word is crafted with purpose. We create content that not only engages your audience but drives them to take action and become loyal customers.

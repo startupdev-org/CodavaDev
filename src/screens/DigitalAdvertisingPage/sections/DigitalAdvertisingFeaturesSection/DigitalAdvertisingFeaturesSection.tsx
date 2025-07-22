@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
 
-export const DigitalAdvertisingFeaturesSection = (): JSX.Element => {
+export const DigitalAdvertisingFeaturesSection = () => {
   const features = [
     {
       icon: "🎯",
@@ -69,7 +69,7 @@ export const DigitalAdvertisingFeaturesSection = (): JSX.Element => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -78,7 +78,7 @@ export const DigitalAdvertisingFeaturesSection = (): JSX.Element => {
               <span className="text-[#194EFF] text-sm font-medium">Advertising Excellence</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Campaigns That
@@ -87,7 +87,7 @@ export const DigitalAdvertisingFeaturesSection = (): JSX.Element => {
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/60 leading-relaxed max-w-3xl mx-auto">
               Our data-driven approach to digital advertising combines strategic targeting, compelling creatives, and continuous optimization to deliver exceptional ROI.
@@ -142,7 +142,7 @@ export const DigitalAdvertisingFeaturesSection = (): JSX.Element => {
                       <p className="text-white/60 text-sm">{platform.description}</p>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     {platform.specialties.map((specialty, specialtyIndex) => (
                       <div key={specialtyIndex} className="px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-white/80 text-sm font-medium text-center hover:bg-white/10 transition-all duration-300">

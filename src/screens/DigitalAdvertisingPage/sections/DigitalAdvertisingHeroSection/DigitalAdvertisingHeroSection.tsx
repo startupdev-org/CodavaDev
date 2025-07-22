@@ -1,15 +1,15 @@
 import React from "react";
-import { 
+import {
   FadeIn
 } from "../../../../components/ui/animated-elements";
 
-export const DigitalAdvertisingHeroSection = (): JSX.Element => {
+export const DigitalAdvertisingHeroSection = () => {
   return (
     <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
       <div className="absolute top-0 left-0 right-0 h-20"></div>
-      
+
       <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
-        
+
         <FadeIn delay={0.1} direction="up">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
@@ -35,7 +35,7 @@ export const DigitalAdvertisingHeroSection = (): JSX.Element => {
         <FadeIn delay={0.4} direction="up">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {[
-              'Google Ads', 'Facebook Ads', 'Instagram Ads', 
+              'Google Ads', 'Facebook Ads', 'Instagram Ads',
               'LinkedIn Ads', 'Display Advertising', 'YouTube Ads',
               'Retargeting', 'Shopping Campaigns'
             ].map((service, index) => (
@@ -56,7 +56,7 @@ export const DigitalAdvertisingHeroSection = (): JSX.Element => {
                 </svg>
               </span>
             </button>
-            
+
             <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
               <span className="flex items-center gap-2.5">
                 Free Ad Audit

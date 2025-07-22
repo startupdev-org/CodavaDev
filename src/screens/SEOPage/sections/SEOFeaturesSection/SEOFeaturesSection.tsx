@@ -1,11 +1,11 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
 
-export const SEOFeaturesSection = (): JSX.Element => {
+export const SEOFeaturesSection = () => {
   const features = [
     {
       icon: "🔍",
@@ -47,7 +47,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
       icon: "🔍"
     },
     {
-      step: "02", 
+      step: "02",
       title: "Strategy Development",
       description: "Custom SEO strategy based on your business goals and competitive landscape",
       icon: "📋"
@@ -69,7 +69,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Section Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -78,7 +78,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
               <span className="text-[#194EFF] text-sm font-medium">SEO Excellence</span>
             </div>
           </FadeIn>
-          
+
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               SEO That Delivers
@@ -87,7 +87,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/60 leading-relaxed max-w-3xl mx-auto">
               Our comprehensive SEO approach combines technical expertise, content strategy, and proven optimization techniques to drive sustainable organic growth.
@@ -137,7 +137,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-[#194EFF] to-[#4169E1] rounded-full flex items-center justify-center text-white font-bold text-sm">
                       {process.step}
                     </div>
-                    
+
                     <div className="text-3xl mb-4 mt-4">{process.icon}</div>
                     <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
                       {process.title}
@@ -146,7 +146,7 @@ export const SEOFeaturesSection = (): JSX.Element => {
                       {process.description}
                     </p>
                   </div>
-                  
+
                   {/* Connecting Line */}
                   {index < seoProcess.length - 1 && (
                     <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#194EFF]/50 to-transparent"></div>

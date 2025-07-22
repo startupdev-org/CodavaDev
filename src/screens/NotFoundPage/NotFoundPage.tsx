@@ -5,7 +5,7 @@ import { HeaderSection } from "../FixedComponents/HeaderSection";
 import { FooterSection } from "../FixedComponents/FooterSection";
 import { FadeIn } from "../../components/ui/animated-elements";
 
-export const NotFoundPage = (): JSX.Element => {
+export const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -50,12 +50,12 @@ export const NotFoundPage = (): JSX.Element => {
         <div className="fixed inset-0 pointer-events-none">
           {/* Main gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#00041F] via-[#00020F] to-[#00041F] opacity-95"></div>
-          
+
           {/* Animated blue glows */}
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s', animationDelay: '0s'}}></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#194EFF]/6 rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s', animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#194EFF]/4 rounded-full blur-3xl animate-pulse" style={{animationDuration: '8s', animationDelay: '1s'}}></div>
-          
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s', animationDelay: '0s' }}></div>
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#194EFF]/6 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#194EFF]/4 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
+
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 opacity-[0.015]">
             <div className="w-full h-full" style={{
@@ -63,15 +63,15 @@ export const NotFoundPage = (): JSX.Element => {
               backgroundSize: '80px 80px'
             }}></div>
           </div>
-          
+
           {/* Floating particles */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/30 rounded-full animate-ping" style={{animationDuration: '3s', animationDelay: '0s'}}></div>
-          <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/40 rounded-full animate-ping" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{animationDuration: '5s', animationDelay: '2s'}}></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/30 rounded-full animate-ping" style={{ animationDuration: '3s', animationDelay: '0s' }}></div>
+          <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/40 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
         </div>
 
         <HeaderSection />
-        
+
         <main className="relative z-10">
           {/* 404 Content */}
           <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
@@ -79,10 +79,10 @@ export const NotFoundPage = (): JSX.Element => {
             <div className="absolute inset-0">
               {/* Main animated gradient - similar to Arise */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
-              
+
               {/* Secondary animated gradient */}
-              <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{animationDelay: '5s'}}></div>
-              
+              <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>
+
               {/* Floating particles */}
               {Array.from({ length: 15 }, (_, i) => (
                 <div
@@ -96,7 +96,7 @@ export const NotFoundPage = (): JSX.Element => {
                   }}
                 />
               ))}
-              
+
               {/* Floating elements */}
               {Array.from({ length: 8 }, (_, i) => (
                 <div
@@ -110,7 +110,7 @@ export const NotFoundPage = (): JSX.Element => {
                   }}
                 />
               ))}
-              
+
               {/* Subtle moving grid */}
               <div className="absolute inset-0 opacity-[0.008]">
                 <div className="w-full h-full gradient-shift" style={{
@@ -123,10 +123,10 @@ export const NotFoundPage = (): JSX.Element => {
 
             {/* Navigation space */}
             <div className="absolute top-0 left-0 right-0 h-20"></div>
-            
+
             {/* 404 Content */}
             <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[170px] pt-[100px] pb-16">
-              
+
               {/* Error Badge */}
               <FadeIn delay={0.1} direction="up">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
@@ -164,7 +164,7 @@ export const NotFoundPage = (): JSX.Element => {
               {/* CTA Buttons */}
               <FadeIn delay={0.5} direction="up">
                 <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-                  <button 
+                  <button
                     className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
                     onClick={() => navigate('/')}
                   >
@@ -175,8 +175,8 @@ export const NotFoundPage = (): JSX.Element => {
                       </svg>
                     </span>
                   </button>
-                  
-                  <button 
+
+                  <button
                     className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
                     onClick={() => navigate('/contact')}
                   >
@@ -192,7 +192,7 @@ export const NotFoundPage = (): JSX.Element => {
             </div>
           </section>
         </main>
-        
+
         <FooterSection />
       </div>
     </>
