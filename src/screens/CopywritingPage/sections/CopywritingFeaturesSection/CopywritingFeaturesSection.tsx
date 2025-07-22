@@ -4,38 +4,40 @@ import {
   StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
+import { PencilIcon, EnvelopeIcon, DocumentTextIcon, ChatBubbleOvalLeftIcon, ChartBarIcon, LightBulbIcon } from '@heroicons/react/24/outline';
+
 
 export const CopywritingFeaturesSection = () => {
   const features = [
     {
-      icon: "✍️",
+      icon: <PencilIcon className="w-6 h-6 text-blue-600" />,
       title: "Conversion Copywriting",
-      description: "Persuasive copy that drives action and turns visitors into customers with compelling calls-to-action."
+      description: "Persuasive, action-driven copy that turns visitors into loyal customers through strategic messaging and compelling calls to action."
     },
     {
-      icon: "📧",
+      icon: <EnvelopeIcon className="w-6 h-6 text-green-600" />,
       title: "Email Marketing",
-      description: "Engaging email sequences and newsletters that nurture leads and drive sales."
+      description: "Effective email sequences and newsletters designed to nurture leads, boost engagement, and increase conversions."
     },
     {
-      icon: "📄",
+      icon: <DocumentTextIcon className="w-6 h-6 text-indigo-600" />,
       title: "Website Content",
-      description: "Clear, compelling website copy that communicates your value proposition effectively."
+      description: "Clear and impactful copy that communicates your brand's value, builds trust, and encourages user action."
     },
     {
-      icon: "📱",
+      icon: <ChatBubbleOvalLeftIcon className="w-6 h-6 text-pink-600" />,
       title: "Social Media Copy",
-      description: "Engaging social content that builds brand awareness and drives engagement."
+      description: "Scroll-stopping content crafted to increase engagement, build brand identity, and drive interaction on key platforms."
     },
     {
-      icon: "📈",
+      icon: <ChartBarIcon className="w-6 h-6 text-yellow-600" />,
       title: "Sales Pages",
-      description: "High-converting sales pages that effectively communicate benefits and drive purchases."
+      description: "High-converting landing and sales pages that highlight your offer's benefits and guide visitors toward action."
     },
     {
-      icon: "📚",
+      icon: <LightBulbIcon className="w-6 h-6 text-purple-600" />,
       title: "Content Strategy",
-      description: "Strategic content planning that aligns with your business goals and audience needs."
+      description: "Tailored content planning aligned with your business goals and audience interests to maximize reach and impact."
     }
   ];
 
@@ -53,8 +55,7 @@ export const CopywritingFeaturesSection = () => {
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Words That Work
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
+              Words That Work <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
                 Content That Converts
               </span>
             </h2>
@@ -69,13 +70,10 @@ export const CopywritingFeaturesSection = () => {
 
         <StaggerContainer staggerDelay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <StaggerItem key={index}>
+            {features.map((feature) => (
+              <StaggerItem key={feature.title}>
                 <div className="group p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-[#194EFF]/30 transition-all duration-300 transform hover:scale-105">
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
-                    {feature.title}
-                  </h3>
+                  <div className="flex items-center gap-3 mb-4 text-4xl">{feature.icon}<h3 className="text-xl font-semibold text-white group-hover:text-[#194EFF] transition-colors duration-300 mb-0">{feature.title}</h3></div>
                   <p className="text-white/60 leading-relaxed">
                     {feature.description}
                   </p>
