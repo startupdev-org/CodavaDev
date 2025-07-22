@@ -18,7 +18,6 @@ export const FooterSection = () => {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
-        { name: "Our Team", href: "/team" },
       ],
     },
     {
