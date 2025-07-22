@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Badge } from "../../../../components/ui/badge";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem,
   FloatingElement,
   GlowButton
@@ -37,7 +37,7 @@ export const PortfolioGridSection: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const filters = ["All", "Web Development", "FullStack Development", "Backend Development", "UI/UX Design", "Digital Marketing", "Mobile Apps", "E-commerce"];
+  const filters = ["All", "FullStack Development", "UI/UX Design", "Digital Marketing", "E-commerce Development"];
 
   const projects = [
     {
@@ -108,10 +108,10 @@ export const PortfolioGridSection: React.FC = () => {
       id: 2,
       title: "EuroTour Moldova",
       description: "A comprehensive UI/UX design project for a transportation service connecting Moldova with European destinations. The design system prioritizes user experience with intuitive navigation, clear call-to-actions, and seamless booking flow.",
-          images: [
-      "/portfolio/eurotour/img1.jpg",
-      "/portfolio/eurotour/img2.jpg"
-    ],
+      images: [
+        "/portfolio/eurotour/img1.jpg",
+        "/portfolio/eurotour/img2.jpg"
+      ],
       challenge: "Create an intuitive and accessible booking platform that caters to diverse user groups across multiple languages while maintaining a consistent brand identity and optimal user experience across all devices.",
       solution: "Developed a comprehensive design system in Figma with modular components, consistent typography, and a color scheme that enhances readability. Implemented user-centric features based on extensive user research and testing.",
       impact: "The new design resulted in a 150% increase in online bookings, 80% improvement in user engagement, and significantly reduced booking abandonment rates. The intuitive interface received a 4.9/5 user satisfaction rating.",
@@ -337,14 +337,16 @@ export const PortfolioGridSection: React.FC = () => {
   ];
 
   const handleFilterToggle = (filter: string) => {
-    if (filter === "All") {
+    console.log('Toggled Filter: ', filter)
+    console.log('Active filters: ', activeFilters)
+    if (activeFilters.length === 0) {
       setActiveFilters(["All"]);
       return;
     }
 
     setActiveFilters(prev => {
       const newFilters = prev.filter(f => f !== "All");
-      
+
       if (prev.includes(filter)) {
         const updatedFilters = newFilters.filter(f => f !== filter);
         return updatedFilters.length === 0 ? ["All"] : updatedFilters;
@@ -354,8 +356,8 @@ export const PortfolioGridSection: React.FC = () => {
     });
   };
 
-  const filteredProjects = activeFilters.includes("All") 
-    ? projects 
+  const filteredProjects = activeFilters.includes("All")
+    ? projects
     : projects.filter(project => activeFilters.includes(project.category));
 
   const openModal = (project: any) => {
@@ -373,51 +375,50 @@ export const PortfolioGridSection: React.FC = () => {
   return (
     <>
       <section id="portfolio-grid" className="relative py-24">
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
-              <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">PORTFOLIO</span>
-            </div>
-          </FadeIn>
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <FadeIn delay={0.1} direction="up">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+                <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+                <span className="text-[#194EFF] text-sm font-semibold tracking-wide">PORTFOLIO</span>
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={0.2} direction="up">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Our Featured <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Projects</span>
-            </h2>
-          </FadeIn>
-          
-          <FadeIn delay={0.3} direction="up">
-            <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light mb-12">
-              Discover our latest work and see how we've helped businesses achieve their digital goals through innovative solutions and cutting-edge technology.
-            </p>
-          </FadeIn>
+            <FadeIn delay={0.2} direction="up">
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Our Featured <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Projects</span>
+              </h2>
+            </FadeIn>
 
-          {/* Filter Buttons */}
-          <FadeIn delay={0.4} direction="up">
-            <div className="flex flex-wrap justify-center gap-3 mb-16">
+            <FadeIn delay={0.3} direction="up">
+              <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light mb-12">
+                Discover our latest work and see how we've helped businesses achieve their digital goals through innovative solutions and cutting-edge technology.
+              </p>
+            </FadeIn>
+
+            {/* Filter Buttons */}
+            <FadeIn delay={0.4} direction="up">
+              <div className="flex flex-wrap justify-center gap-3 mb-16">
                 {filters.filter(filter => filter !== "All").map((filter) => (
-                <Button
+                  <Button
                     key={filter}
-                  onClick={() => handleFilterToggle(filter)}
-                  className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-                    activeFilters.includes(filter)
+                    onClick={() => handleFilterToggle(filter)}
+                    className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${activeFilters.includes(filter)
                       ? 'bg-[#194EFF] text-white shadow-sm shadow-[#194EFF]/10'
                       : 'bg-white/8 text-white/70 border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40'
-                  }`}
-                >
-                  {filter}
-                </Button>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
+                      }`}
+                  >
+                    {filter}
+                  </Button>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
 
-        {/* Projects Grid */}
-        <StaggerContainer staggerDelay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Projects Grid */}
+          <StaggerContainer staggerDelay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.length === 0 ? (
                 <div className="col-span-full flex flex-col items-center justify-center py-24">
                   <svg
@@ -436,7 +437,7 @@ export const PortfolioGridSection: React.FC = () => {
                   </p>
                   <FadeIn delay={0.2} direction="up">
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                      <GlowButton 
+                      <GlowButton
                         onClick={() => navigate('/contact')}
                         className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
                       >
@@ -447,76 +448,76 @@ export const PortfolioGridSection: React.FC = () => {
                 </div>
               ) : (
                 filteredProjects.map((project) => (
-              <StaggerItem key={project.id}>
-                <FloatingElement intensity={2} duration={4}>
-                  <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
-                    {/* Project Image */}
-                    <div className="relative h-64 overflow-hidden">
-                      <div 
-                        className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  <StaggerItem key={project.id}>
+                    <FloatingElement intensity={2} duration={4}>
+                      <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 group hover:scale-105 transform">
+                        {/* Project Image */}
+                        <div className="relative h-64 overflow-hidden">
+                          <div
+                            className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                             style={{ backgroundImage: `url(${project.mainImage || project.images?.[0]})` }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      {/* Overlay Content */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <Button 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                          {/* Overlay Content */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <Button
                               onClick={() => openModal(project)}
                               className="px-6 py-3 bg-[#194EFF] text-white font-semibold rounded-xl hover:bg-[#194EFF]/80 transition-all duration-300"
                             >
-                          View Details
-                        </Button>
-                      </div>
-                    </div>
+                              View Details
+                            </Button>
+                          </div>
+                        </div>
 
-                    {/* Project Content */}
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
-                          {project.category}
-                        </Badge>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      
-                      <p className="text-white/60 text-sm mb-4 leading-relaxed">
-                        {project.description}
-                      </p>
+                        {/* Project Content */}
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <Badge className="bg-[#194EFF]/15 text-[#194EFF] border-[#194EFF]/20 hover:bg-[#194EFF]/25">
+                              {project.category}
+                            </Badge>
+                          </div>
 
-                      {/* Technologies */}
-                      <div className="mb-4">
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                            <span key={techIndex} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                              {tech}
-                            </span>
-                          ))}
-                          {project.technologies.length > 3 && (
-                            <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
-                              +{project.technologies.length - 3} more
-                            </span>
-                          )}
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
+                            {project.title}
+                          </h3>
+
+                          <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                            {project.description}
+                          </p>
+
+                          {/* Technologies */}
+                          <div className="mb-4">
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.slice(0, 3).map((tech) => (
+                                <span key={tech} className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                                  {tech}
+                                </span>
+                              ))}
+                              {project.technologies.length > 3 && (
+                                <span className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-lg">
+                                  +{project.technologies.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Results */}
+                          <div className="pt-4 border-t border-white/10">
+                            <p className="text-[#194EFF] text-sm font-semibold">
+                              {project.results}
+                            </p>
+                          </div>
                         </div>
                       </div>
-
-                      {/* Results */}
-                      <div className="pt-4 border-t border-white/10">
-                        <p className="text-[#194EFF] text-sm font-semibold">
-                          {project.results}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </FloatingElement>
-              </StaggerItem>
+                    </FloatingElement>
+                  </StaggerItem>
                 ))
               )}
-          </div>
-        </StaggerContainer>
-      </div>
-    </section>
+            </div>
+          </StaggerContainer>
+        </div>
+      </section>
 
       {/* Modal */}
       {isModalOpen && selectedProject && (
@@ -539,22 +540,20 @@ export const PortfolioGridSection: React.FC = () => {
                 {selectedProject.images.map((image: string, index: number) => {
                   // First image is always full width
                   const isFullWidth = index === 0;
-                  
+
                   return (
                     <div
                       key={image}
-                      className={`relative rounded-lg overflow-hidden ${
-                        isFullWidth ? 'col-span-full' : 'col-span-1'
-                      }`}
+                      className={`relative rounded-lg overflow-hidden ${isFullWidth ? 'col-span-full' : 'col-span-1'
+                        }`}
                     >
                       <img
                         src={image}
                         alt={selectedProject.title}
-                        className={`w-full ${
-                          isFullWidth
-                            ? 'h-auto max-h-[70vh] object-contain'
-                            : 'aspect-[3/4] object-cover'
-                        }`}
+                        className={`w-full ${isFullWidth
+                          ? 'h-auto max-h-[70vh] object-contain'
+                          : 'aspect-[3/4] object-cover'
+                          }`}
                       />
                     </div>
                   );

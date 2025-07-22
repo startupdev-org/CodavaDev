@@ -5,8 +5,11 @@ import {
   StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useNavigate } from "react-router-dom";
 
 export const FullStackDevelopmentHeroSection = () => {
+
+  const navigate = useNavigate();
   return (
     <>
       {/* CSS Animations */}
@@ -125,7 +128,7 @@ export const FullStackDevelopmentHeroSection = () => {
           <FadeIn delay={0.5} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
               <button
-                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                onClick={() => navigate('/contact')}
                 className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
               >
                 <span className="flex items-center gap-2.5">
@@ -136,7 +139,9 @@ export const FullStackDevelopmentHeroSection = () => {
                 </span>
               </button>
 
-              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
+              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+                onClick={() => navigate('/portfolio')}
+              >
                 <span className="flex items-center gap-2.5">
                   View Portfolio
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
