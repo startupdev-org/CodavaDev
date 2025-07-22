@@ -128,20 +128,59 @@ export const FooterSection = () => {
                   </div>
                 </div>
                 <p className="text-white/60 text-base leading-relaxed mb-6">
-                  Creating exceptional digital experiences through innovative web development, design, and marketing solutions that help brands thrive online.
+                  Creating exceptional digital experiences that help brands thrive online.
                 </p>
               </div>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-white/80 hover:text-[#194EFF] transition-colors duration-300 cursor-pointer">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="text-sm">support@codava.dev</span>
+                <div className="flex items-center gap-3 group cursor-pointer">
+                  <span className="relative flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#199EFF] drop-shadow-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <defs>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                          <feMerge>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
+                          </feMerge>
+                        </filter>
+                      </defs>
+                      <g filter="url(#glow)">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                  <a
+                    href="mailto:support@codava.dev"
+                    className="text-sm font-semibold bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#4C7DFF] bg-clip-text text-transparent animate-shine hover:underline focus:outline-none transition-all duration-300"
+                    style={{
+                      backgroundSize: '200% auto',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    support@codava.dev
+                  </a>
+                  <style>
+                    {`
+                      @keyframes shine {
+                        to {
+                          background-position: 200% center;
+                        }
+                      }
+                      .animate-shine {
+                        background-position: 0% center;
+                        animation: shine 4.5s linear infinite;
+                      }
+                      .drop-shadow-glow {
+                        filter: drop-shadow(0 0 6px #194EFF88);
+                      }
+                    `}
+                  </style>
                 </div>
               </div>
             </FadeIn>
