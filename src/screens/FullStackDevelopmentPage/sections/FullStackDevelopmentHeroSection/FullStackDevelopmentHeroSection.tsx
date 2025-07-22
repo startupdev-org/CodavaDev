@@ -44,7 +44,7 @@ export const FullStackDevelopmentHeroSection = () => {
         `
       }} />
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center mb-2">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}
@@ -95,7 +95,7 @@ export const FullStackDevelopmentHeroSection = () => {
         <div className="absolute top-0 left-0 right-0 h-20"></div>
 
         {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
+        <div className="relative max-w-6xl mx-auto px-6 text-center pt-64 md:pt-[18rem] pb-16">
 
           {/* Service Badge */}
           <FadeIn delay={0.1} direction="up">
@@ -108,8 +108,7 @@ export const FullStackDevelopmentHeroSection = () => {
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Complete Full Stack
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
+              Complete Full Stack <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
                 Development Solutions
               </span>
             </h1>
@@ -118,19 +117,8 @@ export const FullStackDevelopmentHeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              From frontend interfaces to backend APIs and database architecture, we deliver end-to-end full stack solutions that power modern web applications with seamless user experiences and robust performance.
+              Providing complete full stack solutions—from user interfaces to backend APIs and databases—that enable smooth user experiences and reliable, high-performance web applications.
             </p>
-          </FadeIn>
-
-          {/* Technology Stack Preview */}
-          <FadeIn delay={0.4} direction="up">
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['React', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL', 'AWS', 'Docker', 'GraphQL'].map((tech, index) => (
-                <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
-                  {tech}
-                </div>
-              ))}
-            </div>
           </FadeIn>
 
           {/* CTA Buttons */}

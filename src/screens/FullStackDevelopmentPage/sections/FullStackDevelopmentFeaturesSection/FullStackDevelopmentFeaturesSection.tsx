@@ -10,34 +10,35 @@ export const FullStackDevelopmentFeaturesSection = () => {
     {
       icon: "🎨",
       title: "Frontend Development",
-      description: "Modern, responsive user interfaces built with React, Vue.js, and Angular for exceptional user experiences across all devices."
+      description: "Modern, responsive interfaces built with React, Vue.js, and Angular to deliver great user experiences on any device."
     },
     {
       icon: "⚙️",
       title: "Backend Development",
-      description: "Robust server-side applications with Node.js, Python, and Java, featuring RESTful APIs and microservices architecture."
+      description: "Robust server-side solutions using Node.js, Python, and Java, including RESTful APIs and microservices."
     },
     {
       icon: "🗄️",
       title: "Database Design",
-      description: "Optimized database architecture with SQL and NoSQL solutions, ensuring data integrity and high performance."
+      description: "Efficient database architecture with SQL and NoSQL to ensure data accuracy and high performance."
     },
     {
       icon: "🔗",
       title: "API Integration",
-      description: "Seamless integration with third-party services, payment gateways, and external APIs for enhanced functionality."
+      description: "Smooth integration with third-party services, payment gateways, and external APIs for added functionality."
     },
     {
       icon: "🚀",
       title: "DevOps & Deployment",
-      description: "Automated deployment pipelines, containerization with Docker, and cloud infrastructure management for scalable applications."
+      description: "Automated deployment pipelines, containerization with Docker, and cloud management for scalable and reliable applications."
     },
     {
       icon: "🛡️",
       title: "Security & Performance",
-      description: "Enterprise-grade security measures, performance optimization, and comprehensive testing for reliable applications."
+      description: "Strong security practices, performance tuning, and thorough testing for stable and secure software."
     }
   ];
+
 
   const techStack = [
     { name: "React", description: "Frontend Framework" },
@@ -47,11 +48,11 @@ export const FullStackDevelopmentFeaturesSection = () => {
     { name: "PostgreSQL", description: "SQL Database" },
     { name: "AWS", description: "Cloud Infrastructure" },
     { name: "Docker", description: "Containerization" },
-    { name: "GraphQL", description: "API Technology" }
+    { name: "SpringBoot", description: "Java Backend Framework" },
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
+    <section className="relative py-20 mb-12 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
@@ -65,8 +66,7 @@ export const FullStackDevelopmentFeaturesSection = () => {
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Why Choose Our
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
+              Why Choose Our <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
                 Full Stack Development
               </span>
             </h2>
@@ -82,8 +82,8 @@ export const FullStackDevelopmentFeaturesSection = () => {
         {/* Features Grid */}
         <StaggerContainer staggerDelay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {features.map((feature, index) => (
-              <StaggerItem key={index}>
+            {features.map((feature) => (
+              <StaggerItem key={feature.title}>
                 <div className="group p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-[#194EFF]/30 transition-all duration-300 transform hover:scale-105">
                   <div className="text-4xl mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
@@ -108,14 +108,14 @@ export const FullStackDevelopmentFeaturesSection = () => {
 
           <FadeIn delay={0.2} direction="up">
             <p className="text-white/60 mb-12 max-w-2xl mx-auto">
-              We leverage cutting-edge technologies across the entire stack to build scalable, maintainable, and high-performance applications.
+              Leveraging the latest technologies across the full stack to deliver scalable, maintainable, and high-performance applications.
             </p>
           </FadeIn>
 
           <StaggerContainer staggerDelay={0.05}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {techStack.map((tech, index) => (
-                <StaggerItem key={index}>
+              {techStack.map((tech) => (
+                <StaggerItem key={tech.name}>
                   <div className="group p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 hover:border-[#194EFF]/30 transition-all duration-300 text-center">
                     <div className="font-semibold text-white group-hover:text-[#194EFF] transition-colors duration-300 mb-1">
                       {tech.name}
@@ -129,7 +129,6 @@ export const FullStackDevelopmentFeaturesSection = () => {
             </div>
           </StaggerContainer>
         </div>
-
       </div>
     </section>
   );
