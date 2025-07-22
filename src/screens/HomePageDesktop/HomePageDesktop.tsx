@@ -36,15 +36,8 @@ export const HomePageDesktop = () => {
 
       <main className="relative z-10">
         <HeroSection />
-
         <ReviewsMarqueeSection />
-
-
-
         <FeaturedPropertiesSection />
-
-
-
         <section className="max-w-7xl mx-auto px-8">
           <FAQSection />
         </section>
