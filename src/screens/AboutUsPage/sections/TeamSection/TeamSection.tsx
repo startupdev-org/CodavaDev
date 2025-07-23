@@ -61,7 +61,7 @@ export const TeamSection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
               Meet our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text"> leadership</span>
             </h2>
-            <p className="text-center font-medium text-white/80 tracking-[0] text-base sm:text-lg md:text-xl leading-[28px] md:leading-[32px] max-w-[600px] mx-auto">
+            <p className="text-center font-medium text-white/80 tracking-[0] text-base lg:text-lg leading-[28px] md:leading-[32px] max-w-[600px] mx-auto">
               Our experienced leadership team brings together diverse expertise to drive innovation and deliver exceptional results for our clients.
             </p>
           </div>
@@ -109,7 +109,7 @@ export const TeamSection = () => {
                         </div>
 
                         {/* Description */}
-                        <p className="font-medium text-white/70 text-sm sm:text-base leading-[22px] sm:leading-[24px] group-hover:text-white/90 transition-colors duration-300 text-center w-full">
+                        <p className="font-medium text-white/70 text-base lg:text-lg leading-[22px] sm:leading-[24px] group-hover:text-white/90 transition-colors duration-300 text-center w-full">
                           {member.description}
                         </p>
 

@@ -14,7 +14,8 @@ export const ContactFormSection: React.FC = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    howHeard: ""
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -33,7 +34,8 @@ export const ContactFormSection: React.FC = () => {
       name: "",
       email: "",
       subject: "",
-      message: ""
+      message: "",
+      howHeard: ""
     });
   };
 
@@ -52,6 +54,7 @@ export const ContactFormSection: React.FC = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          howHeard: formData.howHeard,
         },
         'dj1hZBH9DC_l229_T' // You'll need to replace this with your actual public key
       );
@@ -214,6 +217,25 @@ export const ContactFormSection: React.FC = () => {
                           ))}
                         </optgroup>
                       ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-white font-semibold text-base mb-2 block">How did you hear about us?</label>
+                    <select
+                      name="howHeard"
+                      value={formData.howHeard}
+                      onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                      required
+                      disabled={isLoading}
+                    >
+                      <option value="" className="bg-[#00041F] text-white">Select an option</option>
+                      <option value="Google">Google</option>
+                      <option value="Friend or Colleague">Friend or Colleague</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="Advertisement">Advertisement</option>
+                      <option value="Event or Conference">Event or Conference</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div>

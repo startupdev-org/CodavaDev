@@ -108,162 +108,75 @@ export const FooterSection = () => {
 
       {/* Main Footer Content */}
       <div className="relative max-w-7xl mx-auto px-6 py-16">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Logo and Description */}
-          <div className="lg:col-span-1 flex flex-col justify-between h-full">
-            <FadeIn delay={0.1} direction="up">
-              <div>
-                <div className="flex items-center gap-3 mb-6 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[#4C7DFF]/40 transition-all duration-300">
-                    <img src={logoBg} alt="CodavaDev logo" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">
-                      CodavaDev
-                    </span>
-                    <span className="text-[#194EFF] text-xs font-medium">
-                      Digital Agency
-                    </span>
-                  </div>
-                </div>
-                <p className="text-white/60 text-base leading-relaxed mb-6">
-                  Creating exceptional digital experiences that help brands thrive online.
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 items-start">
+          {/* Column 1: Logo, Description, Contact, Socials */}
+          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
+            <div className="flex items-center gap-3 mb-2 group cursor-pointer">
+              <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[#4C7DFF]/40 transition-all duration-300">
+                <img src={logoBg} alt="CodavaDev logo" />
               </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 group cursor-pointer">
-                  <span className="relative flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#199EFF] drop-shadow-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <defs>
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                          <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                          <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                          </feMerge>
-                        </filter>
-                      </defs>
-                      <g filter="url(#glow)">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </g>
-                    </svg>
-                  </span>
-                  <a
-                    href="mailto:support@codava.dev"
-                    className="text-sm font-semibold bg-gradient-to-r from-[#194EFF] via-blue-400 to-[#4C7DFF] bg-clip-text text-transparent animate-shine hover:underline focus:outline-none transition-all duration-300"
-                    style={{
-                      backgroundSize: '200% auto',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent'
-                    }}
-                  >
-                    support@codava.dev
-                  </a>
-                  <style>
-                    {`
-                      @keyframes shine {
-                        to {
-                          background-position: 200% center;
-                        }
-                      }
-                      .animate-shine {
-                        background-position: 0% center;
-                        animation: shine 4.5s linear infinite;
-                      }
-                      .drop-shadow-glow {
-                        filter: drop-shadow(0 0 6px #194EFF88);
-                      }
-                    `}
-                  </style>
-                </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">
+                  CodavaDev
+                </span>
+                <span className="text-[#194EFF] text-xs font-medium">
+                  Digital Agency
+                </span>
               </div>
-            </FadeIn>
+            </div>
+            <p className="text-white/60 text-base leading-relaxed">
+              Creating exceptional digital experiences that help brands thrive online.
+            </p>
+            <div className="flex items-center gap-2 mt-2">
+              <svg className="w-5 h-5 text-[#194EFF] drop-shadow-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <g filter="url(#glow)">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </g>
+              </svg>
+              <a href="mailto:support@codava.dev" className="text-sm font-semibold text-[#194EFF] hover:underline focus:outline-none transition-all duration-300">
+                support@codava.dev
+              </a>
+            </div>
+            <div className="flex gap-4 mt-4">
+              {socialLinks.map((social, idx) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  aria-label={social.name}
+                  className="text-white/70 hover:text-[#194EFF] transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Navigation Links */}
-          {footerNavigation.map((category, index) => (
-            <div key={index} className="space-y-4 flex flex-col h-full">
-              <FadeIn delay={0.2 + index * 0.1} direction="up">
-                <h4 className="font-semibold text-white text-lg mb-4 relative">
-                  {category.title}
-                  <div className="absolute bottom-0 left-0 w-20 top-8 h-0.5 bg-[#194EFF] rounded-full"></div>
-                </h4>
-                <div className="space-y-3">
-                  {category.links.map((link, linkIndex) => (
-                    <a
-                      key={linkIndex}
-                      href={link.href}
-                      className="block text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200"
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-              </FadeIn>
+          {/* Column 2: Useful Links */}
+          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
+            <h4 className="font-semibold text-white text-lg mb-2 relative">Links
+              <div className="absolute bottom-0 left-0 w-12 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
+            </h4>
+            <div className="flex flex-col gap-2">
+              <a href="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">About Us</a>
+              <a href="/portfolio" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Portfolio</a>
+              <a href="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Contact</a>
+              <a href="/services/web-development" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Web Development</a>
+              <a href="/services/full-stack-development" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Full Stack Development</a>
+              <a href="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Design</a>
+              <a href="/services/bot-automation" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Bot Automation</a>
+              <a href="/services/seo" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">SEO</a>
+              <a href="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</a>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Newsletter Section */}
-        <FadeIn delay={0.4} direction="up">
-          <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 max-w-md mx-auto mb-8 mt-8 relative">
-
-            {/* Success Message */}
-            {showSuccess && (
-              <FadeIn delay={0} direction="up">
-                <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
-                  <div className="flex flex-row items-center justify-between gap-3 text-center">
-                    <h3 className="text-green-400 font-semibold text-lg w-full text-center">Registred Successfully!</h3>
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-2">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            )}
-            {showSuccess && (() => {
-              // Automatically hide the success message after 5 seconds
-              setTimeout(() => {
-                setShowSuccess(false);
-              }, 5000);
-              return null;
-            })()}
-
-            {/* Error Message */}
-            {showError && (
-              <FadeIn delay={0} direction="up">
-                <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
-                      <p className="text-red-300 text-sm">{showError}</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            )}
-
-            <div className="text-center mt-2">
-              <h3 className="font-bold text-white text-lg mb-1">
-                Stay Inspired
-              </h3>
-              <p className="text-white/60 text-sm mb-4 max-w-xs mx-auto">
-                Get the latest digital tips in your inbox.
-              </p>
-            </div>
+          {/* Column 3: Newsletter Signup */}
+          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
+            <h4 className="font-semibold text-white text-lg mb-2 relative">Newsletter
+              <div className="absolute bottom-0 left-0 w-24 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
+            </h4>
+            <p className="text-white/60 text-sm mb-2 max-w-xs lg:max-w-none">Get the latest digital tips in your inbox.</p>
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -281,68 +194,45 @@ export const FooterSection = () => {
                   setIsSubmitting(false);
                 }
               }}
-              className="space-y-6"
+              className="w-full flex flex-col lg:flex-row gap-3 items-center lg:items-end"
             >
-              <StaggerContainer staggerDelay={0.1}>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-md px-3 py-2 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none text-sm transition-colors"
-                    placeholder="Enter your email"
-                    required
-                    disabled={isSubmitting}
-                    aria-label="Email address"
-                  />
-                </div>
-                <StaggerItem>
-                  <div className="pt-2 flex flex-col items-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={`w-full px-5 py-3 font-semibold text-base rounded-xl transition-all duration-300 shadow-lg hover:scale-105 transform ${isSubmitting
-                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
-                        }`}
-                    >
-                      {isSubmitting ? (
-                        <div className="flex items-center gap-2 justify-center">
-                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          <span className="text-sm">Subscribing...</span>
-                        </div>
-                      ) : (
-                        <span className="text-sm">Subscribe</span>
-                      )}
-                    </button>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-2 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none text-sm transition-colors min-w-0"
+                placeholder="Enter your email"
+                required
+                disabled={isSubmitting}
+                aria-label="Email address"
+              />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`px-5 py-2 font-semibold text-base rounded-xl transition-all duration-300 shadow-lg hover:scale-105 transform ${isSubmitting
+                  ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
+                  }`}
+              >
+                {isSubmitting ? (
+                  <div className="flex items-center gap-2 justify-center">
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span className="text-sm">Subscribing...</span>
                   </div>
-                </StaggerItem>
-              </StaggerContainer>
+                ) : (
+                  <span className="text-sm">Subscribe</span>
+                )}
+              </button>
             </form>
-            <div className="absolute -top-6 -right-6 w-16 h-16 opacity-20 pointer-events-none">
-              <FloatingElement intensity={3} duration={7}>
-                <span />
-              </FloatingElement>
-            </div>
+            {showSuccess && (
+              <div className="mt-2 p-2 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm w-full">Registered Successfully!</div>
+            )}
+            {showError && (
+              <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">Error Sending Message</div>
+            )}
           </div>
-        </FadeIn>
-
-        {/* Social Media Links */}
-        {/* <div className="flex justify-center items-center gap-6 mb-10">
-          {socialLinks.map((social, idx) => (
-            <a
-              key={social.name}
-              href={social.href}
-              aria-label={social.name}
-              className="text-white/70 hover:text-[#194EFF] transition-colors duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {social.icon}
-            </a>
-          ))}
-        </div> */}
+        </div>
 
         {/* Bottom Section */}
         <div className="pt-10 border-t border-[#194EFF]/20">

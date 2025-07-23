@@ -9,6 +9,8 @@ import {
   StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { MdOutlinePalette } from "react-icons/md";
+import { LuPen } from "react-icons/lu";
 
 export const FeaturedPropertiesSection: React.FC = () => {
   const services = [
@@ -49,9 +51,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-        </svg>
+        <MdOutlinePalette className="w-8 h-8" />
       ),
       title: "Design",
       description:
@@ -85,18 +85,16 @@ export const FeaturedPropertiesSection: React.FC = () => {
     },
     {
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-        </svg>
+        <LuPen className="w-8 h-8" />
       ),
       title: "Copywriting",
       description:
-        "Craft clear and persuasive content that drives sales and engages your audience.",
+        "Compelling copy that connects with your audience and drives action. From website content to email campaigns, we craft words that convert visitors into customers.",
       features: [
-        "Website Content",
-        "Blog Posts",
+        "Website Copy",
         "Email Campaigns",
         "Sales Pages",
+        "Blog Content",
       ],
       popular: false,
       route: "/services/copywriting",

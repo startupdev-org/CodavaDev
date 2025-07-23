@@ -3,6 +3,7 @@ import { HeaderSection, FooterSection } from "../FixedComponents";
 import { WebDevelopmentHeroSection } from "./sections/WebDevelopmentHeroSection/WebDevelopmentHeroSection";
 import { WebDevelopmentFeaturesSection } from "./sections/WebDevelopmentFeaturesSection/WebDevelopmentFeaturesSection";
 import { WebDevelopmentCTASection } from "./sections/WebDevelopmentCTASection/WebDevelopmentCTASection";
+import { WebDevelopmentFAQSection } from "./sections/WebDevelopmentFAQSection/WebDevelopmentFAQSection";
 
 export const WebDevelopmentPage = () => {
   return (
@@ -36,6 +37,7 @@ export const WebDevelopmentPage = () => {
       <main className="relative z-10">
         <WebDevelopmentHeroSection />
         <WebDevelopmentFeaturesSection />
+        <WebDevelopmentFAQSection />
         <WebDevelopmentCTASection />
       </main>
 

@@ -205,7 +205,7 @@ export const AboutHeroSection = () => {
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
-              <p className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300 mx-auto">
+              <p className="text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300 mx-auto">
                 We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
               </p>
             </FadeIn>
@@ -244,7 +244,7 @@ export const AboutHeroSection = () => {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Mission</span>
                 </h2>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                <p className="text-base lg:text-lg text-white/80 leading-relaxed">
                   To empower businesses with high-impact, innovative software solutions that enhance efficiency and drive sustainable growth. We harness modern technologies, creative strategies, and best-in-class practices to deliver scalable, future-ready digital products.
                 </p>
               </div>
@@ -273,7 +273,7 @@ export const AboutHeroSection = () => {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Vision</span>
                 </h2>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                <p className="text-base lg:text-lg text-white/80 leading-relaxed">
                   To become a global leader in software development by enabling digital transformation and innovation across industries. We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
                 </p>
               </div>
@@ -303,7 +303,7 @@ export const AboutHeroSection = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" id="our-values">
                 Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Values</span>
               </h2>
-              <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-base lg:text-lg text-white/80 max-w-3xl mx-auto">
                 The principles that guide our work and define our culture of excellence and innovation.
               </p>
             </div>
@@ -322,7 +322,7 @@ export const AboutHeroSection = () => {
                         <h3 className="text-xl font-bold text-white group-hover:text-[#194EFF] transition-colors duration-300">
                           {value.title}
                         </h3>
-                        <p className="text-white/70 leading-relaxed">
+                        <p className="text-white/70 leading-relaxed text-base lg:text-lg">
                           {value.description}
                         </p>
                       </CardContent>
