@@ -25,6 +25,7 @@ import { PortfolioPage } from "./screens/PortfolioPage/PortfolioPage";
 import ScrollToTop from "./components/ScrollToTop";
 import { CaseStudiesPage } from "./screens/CaseStudiesPage/CaseStudiesPage";
 import { NotFoundPage } from "./screens/NotFoundPage/NotFoundPage";
+import { AnalyticsAndTrackingPage } from "./screens/AnalyticsAndTrackingPage/AnalyticsAndTrackingPage";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
@@ -43,6 +44,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/services/digital-advertising" element={<DigitalAdvertisingPage />} />
         <Route path="/services/copywriting" element={<CopywritingPage />} />
         <Route path="/services/bot-automation" element={<BotAutomationPage />} />
+        <Route path="/services/analytics-tracking" element={<AnalyticsAndTrackingPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

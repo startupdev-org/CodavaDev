@@ -9,6 +9,8 @@ import {
 } from "../../components/ui/animated-elements";
 import logoBg from "../../photos/logo-removebg.png";
 import emailjs from '@emailjs/browser';
+import { Mail } from "lucide-react";
+import { supabase } from '../../lib/supabaseClient';
 
 
 export const FooterSection = () => {
@@ -29,6 +31,7 @@ export const FooterSection = () => {
         { name: "Bot Automation", href: "/services/bot-automation" },
         { name: "SEO", href: "/services/seo" },
         { name: "Copywriting", href: "/services/copywriting" },
+        { name: "Analytics & Tracking", href: "/services/analytics-tracking" },
       ],
     },
     {
@@ -128,16 +131,12 @@ export const FooterSection = () => {
               Creating exceptional digital experiences that help brands thrive online.
             </p>
             <div className="flex items-center gap-2 mt-2">
-              <svg className="w-5 h-5 text-[#194EFF] drop-shadow-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <g filter="url(#glow)">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </g>
-              </svg>
+              <Mail className="w-5 h-5 text-[#194EFF] drop-shadow-glow" />
               <a href="mailto:support@codava.dev" className="text-sm font-semibold text-[#194EFF] hover:underline focus:outline-none transition-all duration-300">
                 support@codava.dev
               </a>
             </div>
-            <div className="flex gap-4 mt-4">
+            {/* <div className="flex gap-4 mt-4">
               {socialLinks.map((social, idx) => (
                 <a
                   key={social.name}
@@ -150,7 +149,7 @@ export const FooterSection = () => {
                   {social.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Column 2: Useful Links */}
@@ -168,6 +167,7 @@ export const FooterSection = () => {
               <a href="/services/bot-automation" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Bot Automation</a>
               <a href="/services/seo" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">SEO</a>
               <a href="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</a>
+              <a href="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Analytics & Tracking</a>
             </div>
           </div>
 
@@ -184,8 +184,10 @@ export const FooterSection = () => {
                 setShowSuccess(false);
                 setShowError(false);
                 try {
-                  console.log('Client Email: ', email)
-                  await new Promise((res) => setTimeout(res, 1200));
+                  const { error } = await supabase
+                    .from('newsletter_subscribers')
+                    .insert([{ email }]);
+                  if (error) throw error;
                   setShowSuccess(true);
                   setEmail("");
                 } catch (err) {

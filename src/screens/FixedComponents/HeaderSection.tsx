@@ -71,6 +71,24 @@ export const HeaderSection = () => {
         { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
         { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
       ]
+    },
+    {
+      category: "Analytics & Tracking",
+      items: [
+        {
+          name: "Analytics & Tracking",
+          description: "Track user behavior. Improve results.",
+          icon: "📊",
+          path: "/services/analytics-tracking",
+          features: [
+            "Google Analytics Setup",
+            "Conversion Tracking",
+            "Heatmaps & Session Recordings",
+            "Performance Dashboards"
+          ],
+          cta: "Learn More"
+        }
+      ]
     }
   ];
 

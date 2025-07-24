@@ -11,27 +11,11 @@ import {
 } from "../../../../components/ui/animated-elements";
 import { MdOutlinePalette } from "react-icons/md";
 import { LuPen } from "react-icons/lu";
+import { ChartBarIcon } from "@heroicons/react/24/outline";
 
 export const FeaturedPropertiesSection: React.FC = () => {
   const services = [
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      ),
-      title: "Full Stack Development",
-      description:
-        "Build end-to-end digital products with modern tools that are fast, secure, and scalable.",
-      features: [
-        "Frontend & Backend",
-        "Database Design",
-        "API Connections",
-        "Deployment & Maintenance",
-      ],
-      popular: true,
-      route: "/services/full-stack-development",
-    },
+    
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,6 +32,24 @@ export const FeaturedPropertiesSection: React.FC = () => {
       ],
       popular: false,
       route: "/services/bot-automation",
+    },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      ),
+      title: "Web Development",
+      description:
+        "Build end-to-end digital products with modern tools that are fast, secure, and scalable.",
+      features: [
+        "Frontend & Backend",
+        "Database Design",
+        "API Connections",
+        "Deployment & Maintenance",
+      ],
+      popular: true,
+      route: "/services/web-development",
     },
     {
       icon: (
@@ -98,6 +100,21 @@ export const FeaturedPropertiesSection: React.FC = () => {
       ],
       popular: false,
       route: "/services/copywriting",
+    },
+    {
+      icon: (
+        <ChartBarIcon className="w-8 h-8 text-[#194EFF]" />
+      ),
+      title: "Analytics & Tracking",
+      description: "Gain valuable insights into user behavior to make smarter business decisions and boost performance.",
+      features: [
+        "Google Analytics Setup",
+        "Conversion Tracking",
+        "Heatmaps & Session Recordings",
+        "Performance Dashboards"
+      ],
+      popular: false,
+      route: "/services/analytics-tracking",
     },
   ];
 

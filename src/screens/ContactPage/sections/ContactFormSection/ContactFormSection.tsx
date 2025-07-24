@@ -91,6 +91,22 @@ export const ContactFormSection: React.FC = () => {
         { name: "SEO", description: "Search engine optimization" },
         { name: "Copywriting", description: "Content that converts" }
       ]
+    },
+    {
+      category: "ANALYTICS & TRACKING",
+      items: [
+        {
+          name: "Analytics & Tracking",
+          description: "Gain valuable insights into user behavior to make smarter business decisions and boost performance.",
+          features: [
+            "Google Analytics Setup",
+            "Conversion Tracking",
+            "Heatmaps & Session Recordings",
+            "Performance Dashboards"
+          ],
+          cta: "Learn More"
+        }
+      ]
     }
   ];
 

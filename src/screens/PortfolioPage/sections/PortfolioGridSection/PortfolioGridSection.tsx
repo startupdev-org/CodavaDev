@@ -28,6 +28,7 @@ interface Project {
   designDeliverables?: string[];
   category: string;
   achievements: string[];
+  results?: string;
 }
 
 export const PortfolioGridSection: React.FC = () => {
@@ -102,7 +103,8 @@ export const PortfolioGridSection: React.FC = () => {
         "50+ Cities Coverage",
         "150+ Satisfied Clients",
         "Optimized User Experience"
-      ]
+      ],
+      results: "Significantly improved online presence, client acquisition, and user engagement for logistics services."
     },
     {
       id: 2,
@@ -175,7 +177,8 @@ export const PortfolioGridSection: React.FC = () => {
         "Improved accessibility score to 98",
         "4.9/5 user satisfaction rating",
         "Featured on Behance and Dribbble"
-      ]
+      ],
+      results: "150% increase in online bookings, 80% improvement in engagement, and 4.9/5 user satisfaction."
     },
     {
       id: 3,
@@ -204,7 +207,7 @@ export const PortfolioGridSection: React.FC = () => {
         "SendGrid",
         "Vercel"
       ],
-      results: "Successfully delivered a high-performance e-commerce platform with advanced inventory management and payment processing",
+      results: "Launched a high-performance e-commerce platform with advanced inventory and payment systems.",
       challenge: "Building a scalable e-commerce platform with real-time inventory tracking, multiple payment options, and a responsive design that maintains high performance across all devices.",
       solution: "Our team implemented:\n\n• Next.js for server-side rendering and optimal SEO\n• Real-time inventory management with MongoDB and Redis\n• Stripe integration with multiple payment methods\n• Custom cart and checkout flow\n• Automated email notifications with SendGrid\n• AWS S3 for product image optimization and delivery\n• Responsive design with Tailwind CSS\n• Performance optimization with image lazy loading and caching",
       impact: "Technical achievements:\n\n• 98/100 Google PageSpeed score\n• 0.8s average page load time\n• 99.9% uptime on Vercel deployment\n• Optimized images reducing load time by 60%\n• Implemented efficient caching reducing server load\n• Mobile-first responsive design",
@@ -281,7 +284,7 @@ export const PortfolioGridSection: React.FC = () => {
         "Crypto Payment Gateway",
         "Discord API"
       ],
-      results: "Successfully implemented high-performance trading system with real-time data synchronization and secure payment processing",
+      results: "Delivered a secure, scalable trading platform with real-time crypto payments and automation.",
       challenge: "Developing a secure, high-performance trading platform that could handle thousands of concurrent users while maintaining real-time data synchronization and secure payment processing.",
       solution: "Our team implemented:\n\n• Secure user authentication system with JWT and 2FA\n• Cryptocurrency payment gateway integration (USDC, ETH, USDT)\n• Real-time WebSocket communication for live data updates\n• Redis caching layer for high-performance data access\n• Automated trading system with custom algorithms\n• Discord OAuth and webhook notifications system\n• Load-balanced server architecture for high availability",
       impact: "Technical achievements:\n\n• 50ms average response time for real-time operations\n• 99.9% system uptime\n• Successfully processed $1M+ in crypto transactions\n• Scaled to handle 10,000+ concurrent users\n• Reduced server costs by 40% through optimization\n• Achieved PCI DSS compliance for payment processing",
@@ -333,6 +336,52 @@ export const PortfolioGridSection: React.FC = () => {
           improvement: "Improved from 95%"
         }
       ]
+    },
+    {
+      id: 5,
+      title: "SendACourier",
+      description: "A modern, user-friendly web design for SendACourier, focusing on intuitive UI/UX for seamless courier service booking and tracking.",
+      images: [
+        "/portfolio/sendacourier/img1.webp"
+      ],
+      challenge: "Design a simple and effective interface for users to quickly book and track courier services online.",
+      solution: "Developed a clean, responsive UI with clear call-to-actions and a streamlined booking process, ensuring accessibility and ease of use.",
+      impact: "Improved user engagement and reduced booking time, resulting in higher customer satisfaction and increased service adoption.",
+      technologies: [
+        "Figma",
+        "Adobe XD"
+      ],
+      features: [
+        "Responsive Web Design",
+        "Intuitive Booking Flow",
+        "Real-time Tracking UI"
+      ],
+      designProcess: [
+        {
+          phase: "Research & Planning",
+          details: "Analyzed user needs and competitor platforms to define key features and user flows."
+        },
+        {
+          phase: "Wireframing & Prototyping",
+          details: "Created wireframes and interactive prototypes to validate the booking and tracking experience."
+        },
+        {
+          phase: "Visual Design",
+          details: "Designed a modern, brand-aligned interface with a focus on clarity and usability."
+        }
+      ],
+      designDeliverables: [
+        "UI Kit",
+        "Responsive Layouts",
+        "Booking Form Design"
+      ],
+      category: "UI/UX Design",
+      achievements: [
+        "Faster booking process",
+        "Positive user feedback",
+        "Increased online bookings"
+      ],
+      results: "Enabled fast, user-friendly courier bookings and improved customer satisfaction."
     }
   ];
 
