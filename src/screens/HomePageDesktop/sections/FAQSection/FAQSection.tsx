@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
 import { Badge } from "../../../../components/ui/badge";
-import { 
-  FadeIn, 
-  StaggerContainer, 
-  StaggerItem, 
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 
@@ -60,17 +60,17 @@ export const FAQSection: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
               Frequently Asked
-              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
+              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text h-20">
                 Questions
               </span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-            Find answers to common questions about our IT services and digital solutions. Our experts help you make informed decisions.
+              Find answers to common questions about our IT services and digital solutions. Our experts help you make informed decisions.
             </p>
           </FadeIn>
         </div>
@@ -88,26 +88,23 @@ export const FAQSection: React.FC = () => {
                     <span className="text-lg font-semibold text-white pr-8 group-hover:text-white transition-colors duration-300">
                       {faq.question}
                     </span>
-                    <div className={`w-10 h-10 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 transition-all duration-500 group-hover:border-[#194EFF]/40 group-hover:scale-110 ${
-                      openFAQ === index ? 'bg-gradient-to-br from-[#194EFF]/25 to-[#194EFF]/10' : ''
-                    }`}>
-                      <svg 
-                        className={`w-5 h-5 text-[#194EFF] transition-transform duration-300 ${
-                          openFAQ === index ? 'rotate-180' : ''
-                        }`}
-                        fill="none" 
-                        stroke="currentColor" 
+                    <div className={`w-10 h-10 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 transition-all duration-500 group-hover:border-[#194EFF]/40 group-hover:scale-110 ${openFAQ === index ? 'bg-gradient-to-br from-[#194EFF]/25 to-[#194EFF]/10' : ''
+                      }`}>
+                      <svg
+                        className={`w-5 h-5 text-[#194EFF] transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''
+                          }`}
+                        fill="none"
+                        stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
                   </button>
-                  
-                  <div 
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                      openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <div className="px-6 pb-4 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
                       <p className="text-white/70 leading-relaxed pt-4 text-base font-light">
@@ -126,23 +123,23 @@ export const FAQSection: React.FC = () => {
           <div className="text-center bg-white/[0.03] border border-white/10 rounded-2xl p-4 py-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500 relative overflow-hidden group">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#194EFF]/[0.03] via-transparent to-[#194EFF]/[0.05] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-            
+
             <div className="relative z-10">
               <h3 className="text-4xl font-bold text-white mb-3">
-                Start Your 
+                Start Your
                 <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
-                Digital Transformation Today
+                  Digital Transformation Today
                 </span>
               </h3>
-              
+
               <p className="text-white/70 text-base mb-4 max-w-2xl mx-auto font-light leading-relaxed">
-                Ready to modernize your IT infrastructure? Our experts are standing by to help you get started 
+                Ready to modernize your IT infrastructure? Our experts are standing by to help you get started
                 with a comprehensive solution tailored to your business needs.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-                <button 
-                  onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                <button
+                  onClick={() => window.open('https://calendly.com/codava-dev/30min', '_blank')}
                   className="px-8 py-3 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn"
                 >
                   <span className="relative z-10">Get Free Consultation</span>
