@@ -137,7 +137,7 @@ export const BotAutomationHeroSection = () => {
           <FadeIn delay={0.5} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
               <button
-                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                onClick={() => window.location.href = '/contact'}
                 className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
               >
                 <span className="flex items-center gap-2.5">
@@ -148,7 +148,9 @@ export const BotAutomationHeroSection = () => {
                 </span>
               </button>
 
-              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
+              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+                onClick={() => window.location.href = '/portfolio'}
+              >
                 <span className="flex items-center gap-2.5">
                   View Portfolio
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,10 +169,6 @@ export const BotAutomationHeroSection = () => {
                 <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
                 <span>Available for new projects</span>
               </div>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>50+ Bots Deployed</span>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>24/7 Automation</span>
             </div>
           </FadeIn>
 

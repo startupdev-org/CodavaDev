@@ -48,20 +48,13 @@ export const SEOHeroSection = () => {
 
         <FadeIn delay={0.5} direction="up">
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-            <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105">
+            <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
+              onClick={() => window.location.href = '/contact'}
+            >
               <span className="flex items-center gap-2.5">
                 Start SEO Campaign
                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </button>
-
-            <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
-              <span className="flex items-center gap-2.5">
-                Free SEO Audit
-                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </span>
             </button>
@@ -74,10 +67,6 @@ export const SEOHeroSection = () => {
               <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
               <span>Available for new campaigns</span>
             </div>
-            <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-            <span>300%+ Traffic Increase</span>
-            <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-            <span>Top 3 Rankings Achieved</span>
           </div>
         </FadeIn>
 

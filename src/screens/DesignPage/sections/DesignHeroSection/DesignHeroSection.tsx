@@ -7,6 +7,7 @@ import {
 } from "../../../../components/ui/animated-elements";
 
 export const DesignHeroSection = () => {
+
   return (
     <>
       {/* CSS Animations */}
@@ -125,7 +126,7 @@ export const DesignHeroSection = () => {
           {/* Design Services Preview */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['UI/UX Design', 'Brand Identity', 'Logo Design', 'Prototyping', 'User Research', 'Design Systems'].map((service, index) => (
+              {['UI/UX Design', 'Brand Identity', 'Logo Design', 'Prototyping', 'Figma Design'].map((service, index) => (
                 <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
                   {service}
                 </div>
@@ -136,7 +137,9 @@ export const DesignHeroSection = () => {
           {/* CTA Buttons */}
           <FadeIn delay={0.5} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105">
+              <button className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
+                onClick={() => window.location.href = '/contact'}
+              >
                 <span className="flex items-center gap-2.5">
                   Start Design Project
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +148,9 @@ export const DesignHeroSection = () => {
                 </span>
               </button>
 
-              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
+              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
+                onClick={() => window.location.href = '/portfolio'}
+              >
                 <span className="flex items-center gap-2.5">
                   View Design Portfolio
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,14 +165,10 @@ export const DesignHeroSection = () => {
           {/* Status & Stats */}
           <FadeIn delay={0.6} direction="up">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/50">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 mb-11 sm:mb-0">
                 <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
                 <span>Available for new projects</span>
               </div>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>50+ Brands Designed</span>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>Award-Winning Designs</span>
             </div>
           </FadeIn>
 
