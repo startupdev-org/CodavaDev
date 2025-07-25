@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- SEO-optimized sitemap for codava.dev -->
+
+<url>
+  <loc>https://codava.dev/</loc>
+</url>
+<url>
+  <loc>https://codava.dev/about</loc>
+</url>
+<url>
+  <loc>https://codava.dev/portfolio</loc>
+</url>
+<url>
+  <loc>https://codava.dev/case-studies</loc>
+</url>
+<url>
+  <loc>https://codava.dev/contact</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/web-development</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/full-stack-development</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/design</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/seo</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/digital-advertising</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/copywriting</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/bot-automation</loc>
+</url>
+<url>
+  <loc>https://codava.dev/services/analytics-tracking</loc>
+</url>
+
+</urlset>
