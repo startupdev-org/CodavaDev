@@ -24,7 +24,8 @@ import {
   StaggerContainer,
   StaggerItem
 } from "../../components/ui/animated-elements";
-import logoBg from '../../photos/logo-removebg.png';
+// import logoBg from '../../photos/logo-removebg.png';
+const logoBg = "/logo-removebg.png";
 
 export const HeaderSection = () => {
   const navigate = useNavigate();
@@ -304,7 +305,7 @@ export const HeaderSection = () => {
           >
             <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#4C7DFF]/25 group-hover:shadow-[#4C7DFF]/40 transition-all duration-300 group-hover:scale-110">
               <img
-                className="w-12 h-12 p-1 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                className="w-36 h-36 p-1 shadow-lg group-hover:scale-110 transition-transform duration-300"
                 src={logoBg}
                 alt="Logo"
                 style={{ objectFit: 'contain', filter: 'drop-shadow(0 2px 8px #4C7DFF33)' }}

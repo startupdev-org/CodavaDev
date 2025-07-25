@@ -10,8 +10,8 @@ import {
   ParallaxElement,
   MatrixText
 } from "../../../../components/ui/animated-elements";
-import BogdanIamge from '../../../../photos/Bogdan.png';
-import MariusImage from '../../../../photos/Marius.png';
+const BogdanImage = "/Bogdan.png";
+const MariusImage = "/Marius.png";
 
 export const TeamSection = () => {
   // Team members data
@@ -37,7 +37,7 @@ export const TeamSection = () => {
       role: "Chief Technology Officer",
       description:
         "Developer with strong skills in backend, cloud systems, and web design. Focused on building reliable and scalable software.",
-      image: BogdanIamge, // Use the imported image directly as a string
+      image: BogdanImage, // Use the imported image directly as a string
       linkedin: "https://www.linkedin.com/in/bor%C5%9F-bogdan-2aa748338/",
       twitter: "#",
       siteUrl: "https://dowody.dev/",

@@ -7,7 +7,6 @@ import {
   StaggerItem,
   StaggerContainer,
 } from "../../components/ui/animated-elements";
-import logoBg from "../../photos/logo-removebg.png";
 import emailjs from '@emailjs/browser';
 import { Mail } from "lucide-react";
 import { supabase } from '../../lib/supabaseClient';
@@ -83,6 +82,7 @@ export const FooterSection = () => {
     },
   ];
 
+  const logoBg = "/logo-removebg.png";
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
