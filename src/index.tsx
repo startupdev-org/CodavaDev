@@ -1,3 +1,4 @@
+import "../tailwind.css";
 // Handle GitHub Pages SPA routing
 (function (l) {
   if (l.search[1] === '/') {

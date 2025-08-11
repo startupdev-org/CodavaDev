@@ -182,19 +182,19 @@ export const PortfolioGridSection: React.FC = () => {
     },
     {
       id: 3,
-      title: "PURE.BMWM E-commerce",
+      title: "PURE.BMWM E-Commerce",
       category: "E-commerce Development",
       description: "Modern e-commerce platform for automotive merchandise featuring real-time inventory, secure payments, and a seamless shopping experience.",
-      mainImage: "/portfolio/bmwm/img1.png",
+      mainImage: "/portfolio/bmwm/img1.jpg",
       images: [
-        "/portfolio/bmwm/img1.png",
-        "/portfolio/bmwm/img2.png",
-        "/portfolio/bmwm/img3.png",
-        "/portfolio/bmwm/img4.png",
-        "/portfolio/bmwm/img5.png",
-        "/portfolio/bmwm/img6.png",
-        "/portfolio/bmwm/img7.png",
-        "/portfolio/bmwm/img8.png"
+        "/portfolio/bmwm/img1.jpg",
+        "/portfolio/bmwm/img2.jpg",
+        "/portfolio/bmwm/img3.jpg",
+        "/portfolio/bmwm/img4.jpg",
+        "/portfolio/bmwm/img5.jpg",
+        "/portfolio/bmwm/img6.jpg",
+        "/portfolio/bmwm/img7.jpg",
+        "/portfolio/bmwm/img8.jpg"
       ],
       technologies: [
         "Next.js",
@@ -265,13 +265,13 @@ export const PortfolioGridSection: React.FC = () => {
       title: "RollWithdraw Platform",
       category: "FullStack Development",
       description: "A comprehensive trading platform featuring secure cryptocurrency payments, real-time WebSocket integration, and automated trading systems.",
-      mainImage: "/portfolio/websites/rollwithdraw/img1.png",
+      mainImage: "/portfolio/websites/rollwithdraw/img1.jpg",
       images: [
-        "/portfolio/websites/rollwithdraw/img1.png",
-        "/portfolio/websites/rollwithdraw/img2.png",
-        "/portfolio/websites/rollwithdraw/img3.png",
-        "/portfolio/websites/rollwithdraw/img4.png",
-        "/portfolio/websites/rollwithdraw/img5.png"
+        "/portfolio/websites/rollwithdraw/img1.jpg",
+        "/portfolio/websites/rollwithdraw/img2.jpg",
+        "/portfolio/websites/rollwithdraw/img3.jpg",
+        "/portfolio/websites/rollwithdraw/img4.jpg",
+        "/portfolio/websites/rollwithdraw/img5.jpg"
       ],
       technologies: [
         "React",
@@ -339,7 +339,7 @@ export const PortfolioGridSection: React.FC = () => {
     },
     {
       id: 5,
-      title: "SendACourier",
+      title: "Senda Courier",
       description: "A modern, user-friendly web design for SendACourier, focusing on intuitive UI/UX for seamless courier service booking and tracking.",
       images: [
         "/portfolio/sendacourier/img1.webp"

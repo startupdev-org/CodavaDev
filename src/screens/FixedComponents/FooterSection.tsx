@@ -83,7 +83,6 @@ export const FooterSection = () => {
     },
   ];
 
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);

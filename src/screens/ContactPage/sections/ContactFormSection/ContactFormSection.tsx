@@ -248,7 +248,9 @@ export const ContactFormSection: React.FC = () => {
                       <option value="" className="bg-[#00041F] text-white">Select an option</option>
                       <option value="Google">Google</option>
                       <option value="Friend or Colleague">Friend or Colleague</option>
-                      <option value="Social Media">Social Media</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="LinkedIn">LinkedIn</option>
                       <option value="Advertisement">Advertisement</option>
                       <option value="Event or Conference">Event or Conference</option>
                       <option value="Other">Other</option>
