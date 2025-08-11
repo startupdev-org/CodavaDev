@@ -24,7 +24,7 @@ import {
   StaggerContainer,
   StaggerItem
 } from "../../components/ui/animated-elements";
-import logoBg from '../../photos/logo-removebg.png';
+import logoBg from '/logo-white.png';
 
 export const HeaderSection = () => {
   const navigate = useNavigate();
@@ -302,20 +302,11 @@ export const HeaderSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-lg flex items-center justify-center mr-3 shadow-lg shadow-[#4C7DFF]/25 group-hover:shadow-[#4C7DFF]/40 transition-all duration-300 group-hover:scale-110">
-              <img
-                className="w-12 h-12 p-1 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                src={logoBg}
-                alt="Logo"
-                style={{ objectFit: 'contain', filter: 'drop-shadow(0 2px 8px #4C7DFF33)' }}
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-all duration-300 leading-none">
-                CodavaDev
-              </span>
-              <span className="text-[#194EFF] text-xs font-medium">Digital Agency</span>
-            </div>
+            <img
+              className="w-auto h-8 lg:w-50 lg:h-10 group-hover:scale-110 transition-transform duration-300"
+              src={logoBg}
+              alt="Logo"
+            />
           </motion.div>
 
           {/* Navigation Menu - Center */}

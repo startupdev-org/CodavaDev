@@ -26,11 +26,13 @@ import ScrollToTop from "./components/ScrollToTop";
 import { CaseStudiesPage } from "./screens/CaseStudiesPage/CaseStudiesPage";
 import { NotFoundPage } from "./screens/NotFoundPage/NotFoundPage";
 import { AnalyticsAndTrackingPage } from "./screens/AnalyticsAndTrackingPage/AnalyticsAndTrackingPage";
+import TelegramButton from "./components/TelegramButton";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
+      <TelegramButton />
       <Routes>
         <Route path="/" element={<HomePageDesktop />} />
         <Route path="/about" element={<AboutUsPage />} />

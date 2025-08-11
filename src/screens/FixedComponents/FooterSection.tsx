@@ -7,7 +7,7 @@ import {
   StaggerItem,
   StaggerContainer,
 } from "../../components/ui/animated-elements";
-import logoBg from "../../photos/logo-removebg.png";
+import logoBg from "/logo-white.png";
 import emailjs from '@emailjs/browser';
 import { Mail } from "lucide-react";
 import { supabase } from '../../lib/supabaseClient';
@@ -115,17 +115,11 @@ export const FooterSection = () => {
           {/* Column 1: Logo, Description, Contact, Socials */}
           <div className="flex flex-col gap-6 lg:items-start items-start text-left">
             <div className="flex items-center gap-3 mb-2 group cursor-pointer">
-              <div className="w-12 h-12 bg-gradient-to-br from-white via-sky-100 to-[#4C7DFF]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-[#4C7DFF]/40 transition-all duration-300">
-                <img src={logoBg} alt="CodavaDev logo" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-white text-xl group-hover:text-[#194EFF] transition-colors duration-300">
-                  CodavaDev
-                </span>
-                <span className="text-[#194EFF] text-xs font-medium">
-                  Digital Agency
-                </span>
-              </div>
+              <img 
+                src={logoBg} 
+                alt="CodavaDev logo" 
+                className="w-auto h-8 lg:w-50 lg:h-10 group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <p className="text-white/60 text-base leading-relaxed">
               Creating exceptional digital experiences that help brands thrive online.
