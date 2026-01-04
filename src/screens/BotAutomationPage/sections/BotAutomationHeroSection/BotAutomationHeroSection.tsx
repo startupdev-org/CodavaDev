@@ -1,9 +1,5 @@
-import React from "react";
 import {
   FadeIn,
-  StaggerContainer,
-  StaggerItem,
-  GlowButton
 } from "../../../../components/ui/animated-elements";
 
 export const BotAutomationHeroSection = () => {
@@ -98,19 +94,19 @@ export const BotAutomationHeroSection = () => {
         <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
 
           {/* Service Badge */}
-          <FadeIn delay={0.1} direction="up">
+          {/* <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">🤖 Bot Automation • AI Chatbots • Process Automation • 24/7 Support</span>
+              <span className="text-white/80 text-sm font-medium">AI powered by humans</span>
             </div>
-          </FadeIn>
+          </FadeIn> */}
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Intelligent Bot
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                Automation Solutions
+              AI
+              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1 mb-2">
+                Powered by humans
               </span>
             </h1>
           </FadeIn>
@@ -118,12 +114,12 @@ export const BotAutomationHeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Streamline your business operations with intelligent chatbots and automation solutions. From customer service to process optimization, our AI-powered bots work 24/7 to enhance efficiency and improve customer satisfaction.
+              We believe the future of work belongs to organizations that use artificial intelligence to enhance human potential, not replace it.
             </p>
           </FadeIn>
 
           {/* Technology Stack Preview */}
-          <FadeIn delay={0.4} direction="up">
+          {/* <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {['AI/ML', 'Natural Language Processing', 'API Integration', 'Cloud Computing', 'Analytics', 'CRM Systems'].map((tech, index) => (
                 <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
@@ -131,7 +127,7 @@ export const BotAutomationHeroSection = () => {
                 </div>
               ))}
             </div>
-          </FadeIn>
+          </FadeIn> */}
 
           {/* CTA Buttons */}
           <FadeIn delay={0.5} direction="up">
