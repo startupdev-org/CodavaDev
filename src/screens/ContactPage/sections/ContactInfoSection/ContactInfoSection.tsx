@@ -1,7 +1,7 @@
 import React from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem,
   FloatingElement
 } from "../../../../components/ui/animated-elements";
@@ -11,9 +11,9 @@ export const ContactInfoSection: React.FC = () => {
     {
       icon: "email",
       label: "Email",
-      value: "support@codava.dev",
+      value: "codava.dev@gmail.com",
       description: "Send us an email anytime",
-      link: "mailto:support@codava.dev"
+      link: "mailto:codava.dev@gmail.com"
     }
   ];
 
@@ -29,7 +29,7 @@ export const ContactInfoSection: React.FC = () => {
                   Get In <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Touch</span>
                 </h3>
                 <p className="text-white/70 text-lg leading-relaxed">
-                  Ready to start your next project? We're here to help you bring your vision to life. 
+                  Ready to start your next project? We're here to help you bring your vision to life.
                   Reach out to us through any of the channels below.
                 </p>
               </div>

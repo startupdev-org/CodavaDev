@@ -114,9 +114,9 @@ export const FooterSection = () => {
           {/* Column 1: Logo, Description, Contact, Socials */}
           <div className="flex flex-col gap-6 lg:items-start items-start text-left">
             <div className="flex items-center gap-3 mb-2 group cursor-pointer">
-              <img 
-                src={logoBg} 
-                alt="CodavaDev logo" 
+              <img
+                src={logoBg}
+                alt="CodavaDev logo"
                 className="w-auto h-8 lg:w-50 lg:h-10 group-hover:scale-110 transition-transform duration-300"
               />
             </div>
@@ -125,8 +125,8 @@ export const FooterSection = () => {
             </p>
             <div className="flex items-center gap-2 mt-2">
               <Mail className="w-5 h-5 text-[#194EFF] drop-shadow-glow" />
-              <a href="mailto:support@codava.dev" className="text-sm font-semibold text-[#194EFF] hover:underline focus:outline-none transition-all duration-300">
-                support@codava.dev
+              <a href="mailto:codava.dev@gmail.com" className="text-sm font-semibold text-[#194EFF] hover:underline focus:outline-none transition-all duration-300">
+                codava.dev@gmail.com
               </a>
             </div>
             {/* <div className="flex gap-4 mt-4">

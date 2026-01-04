@@ -19,8 +19,8 @@ export const AboutCallToActionSection = () => {
       icon: <Mail className="w-5 h-5 text-primary" />,
       title: "Email",
       description: "Contact our team for proposals, support, or general inquiries.",
-      action: "support@codava.dev",
-      link: "mailto:support@codava.dev"
+      action: "codava.dev@gmail.com",
+      link: "mailto:codava.dev@gmail.com"
     }
   ];
 
