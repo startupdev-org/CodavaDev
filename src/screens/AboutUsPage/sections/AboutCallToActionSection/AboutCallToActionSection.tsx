@@ -39,7 +39,7 @@ export const AboutCallToActionSection = () => {
                       Ready to Start Your Digital <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Transformation?</span>
                     </h2>
                     <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center">
-                      Join hundreds of forward-thinking businesses that have streamlined operations, boosted customer engagement, and accelerated growth with our cutting-edge technology solutions — trusted by startups and enterprises alike.
+                      Join businesses that have streamlined operations, boosted customer engagement, and accelerated growth with our cutting-edge technology solutions - trusted by startups and enterprises alike.
                     </p>
                   </div>
                 </div>

@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  GlowButton,
-  ParallaxElement,
-  FloatingElement,
-  MatrixText,
 } from "../../../../components/ui/animated-elements";
 
 const typingTexts = [
@@ -70,8 +66,17 @@ export const AboutHeroSection = () => {
   // Core values data
   const coreValues = [
     {
-      title: "Innovative Thinking",
-      description: "We challenge convention with creative ideas and smart use of technology.",
+      title: "Human-Centered Innovation",
+      description: "We design and apply technology to amplify human potential, ensuring AI enhances judgment, creativity, and collaboration rather than replacing it.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20v-2c0-2.21 3.58-4 6-4s6 1.79 6 4v2H6z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Outcome-Driven Execution",
+      description: "Success is measured by results as: accelerated delivery, improved decision accuracy, and measurable growth - rather than effort alone.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -79,26 +84,17 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Client-Centered",
-      description: "We put clients first, tailoring every solution to their goals and success.",
+      title: "Agility and Adaptability",
+      description: "Our teams and processes are flexible, scalable, and responsive, enabling rapid experimentation, continuous learning, and innovation aligned with business strategy.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
     },
     {
-      title: "Integrity & Transparency",
-      description: "We act with honesty and clarity to build lasting trust and partnerships.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Excellence in Delivery",
-      description: "We deliver top-quality results—on time, on budget, and with precision.",
+      title: "Continuous Innovation",
+      description: "By embedding intelligence into every workflow and continuously testing hypotheses, we turn experimentation into rapid, evidence-based improvement.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -106,20 +102,20 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Collaboration & Unity",
-      description: "We thrive as a team, working closely together and with our clients to build great solutions.",
+      title: "Sustainable Transformation",
+      description: "AI adoption succeeds when people, process, and technology evolve together. We embed governance, transparency, and measurable metrics from the start to ensure long-term impact.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
     },
     {
-      title: "Agility & Speed",
-      description: "We adapt quickly and efficiently to evolving needs, delivering rapid and effective results.",
+      title: "Collaboration and Partnership",
+      description: "work alongside business specialists, domain experts, and leaders to co-create pragmatic roadmaps, pilots, and solutions that solve real problems and unlock new markets.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
     },
@@ -177,7 +173,7 @@ export const AboutHeroSection = () => {
         <FadeIn delay={0.1} direction="up">
           <div className="flex justify-center  mt-48">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
-              <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+              {/* <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse  shadow-sm shadow-[#194EFF]/50"></div> */}
               <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
                 All-in-One IT Solutions
               </span>
@@ -243,7 +239,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Mission</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  To empower businesses with high-impact, innovative software solutions that enhance efficiency and drive sustainable growth. We harness modern technologies, creative strategies, and best-in-class practices to deliver scalable, future-ready digital products.
+                  We are dedicated to creating a positive impact for our employees, clients, communities, and the environment.
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -272,7 +268,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Vision</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  To become a global leader in software development by enabling digital transformation and innovation across industries. We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
+                  We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
                 </p>
               </div>
               <div className="lg:w-1/2">
