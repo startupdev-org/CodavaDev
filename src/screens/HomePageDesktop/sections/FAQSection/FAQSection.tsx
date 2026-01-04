@@ -15,37 +15,38 @@ export const FAQSection: React.FC = () => {
   const faqs = [
     {
       question: "What types of IT services do you offer?",
-      answer: "We provide comprehensive IT solutions including web development, full stack development, UI/UX design, bot automation, SEO, copywriting, and 24/7 IT support. Our services are designed to scale with your business needs."
+      answer: "We provide end-to-end IT solutions, including web and full stack development, UI/UX design, automation, SEO, copywriting, and 24/7 IT support—tailored to grow with your business."
     },
     {
       question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. Small implementations can take 1-2 weeks, while comprehensive digital transformations typically range from 1-3 months. We provide detailed timelines during our initial consultation."
+      answer: "Project timelines depend on scope. Small projects take 1-2 weeks, while larger digital transformations can take up to 3 months. We provide detailed timelines during your consultation."
     },
     {
-      question: "Do you provide ongoing support after launch?",
-      answer: "Yes, we offer 24/7 ongoing support and maintenance services. This includes monitoring, updates, troubleshooting, and continuous optimization to ensure your systems perform at their best."
+      question: "Do you offer ongoing support after launch?",
+      answer: "Yes! We provide 24/7 support and maintenance—including monitoring, updates, troubleshooting, and continuous optimization. This service is free for the first 14 days after your project is completed."
     },
     {
-      question: "Can you help with content and copywriting for my website?",
-      answer: "Absolutely! Our expert copywriters craft compelling website copy, email campaigns, sales pages, and blog content to help you connect with your audience and drive conversions."
+      question: "Can you help with content and copywriting?",
+      answer: "Absolutely. Our expert copywriters create compelling website copy, emails, sales pages, and blog content to engage your audience and drive conversions."
     },
     {
       question: "How do you approach UI/UX design?",
-      answer: "We focus on user-centered design, creating visually engaging and intuitive interfaces that enhance user experience and align with your brand identity."
+      answer: "We use a user-centered approach, crafting intuitive and visually engaging interfaces that enhance user experience and reflect your brand identity."
     },
     {
       question: "Can you automate business processes or customer support?",
-      answer: "Yes, we build smart bots and automation solutions to streamline business tasks, improve customer service, and boost efficiency."
+      answer: "Yes. We build smart automation and bot solutions to streamline tasks, improve customer service, and boost efficiency."
     },
     {
       question: "Will you work with our existing technology stack?",
-      answer: "Absolutely! We specialize in integrating with existing systems and can work with a wide variety of technologies. Our team conducts thorough assessments to ensure seamless integration."
+      answer: "Absolutely. We integrate seamlessly with existing systems, using a thorough assessment to ensure compatibility and smooth operation."
     },
     {
       question: "What makes Codava different from other IT service providers?",
-      answer: "Our unique approach combines cutting-edge technology with personalized service. We focus on understanding your business goals first, then design custom solutions that deliver measurable results. Plus, our 24/7 support ensures you're never alone."
+      answer: "We combine cutting-edge technology with personalized service, focusing on your business goals first. Our custom solutions deliver measurable results, supported by 24/7 assistance."
     }
   ];
+
 
   return (
     <section className="relative py-16">
