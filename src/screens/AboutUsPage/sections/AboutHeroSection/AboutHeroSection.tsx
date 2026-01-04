@@ -210,7 +210,7 @@ export const AboutHeroSection = () => {
 
             <FadeIn delay={0.1} direction="up">
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center items-center">
-                <GlowButton
+                {/* <GlowButton
                   className="group px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
                   onClick={scrollToOurValues}
                 >
@@ -219,15 +219,15 @@ export const AboutHeroSection = () => {
                   <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </GlowButton>
+                </GlowButton> */}
 
-                <GlowButton
+                {/* <GlowButton
                   className="group px-8 py-4 bg-white/[0.03] border border-[#194EFF]/30 hover:border-[#194EFF]/50 hover:bg-white/[0.05] rounded-xl font-semibold text-white text-lg transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden"
                   onClick={scrollToOurTeam}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#194EFF]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <span className="relative z-10">Meet Our Team</span>
-                </GlowButton>
+                </GlowButton> */}
               </div>
             </FadeIn>
           </div>
