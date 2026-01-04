@@ -178,13 +178,11 @@ export const AboutHeroSection = () => {
           <div className="flex justify-center  mt-48">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              {/* Mobile: shorter text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
-                All-in-One IT Solutions 🚀
+                All-in-One IT Solutions
               </span>
-              {/* Desktop: full text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
-                Web, Design, Automation & Marketing — All-in-One IT Solutions 🚀
+                We build better lives with technology
               </span>
             </div>
           </div>
