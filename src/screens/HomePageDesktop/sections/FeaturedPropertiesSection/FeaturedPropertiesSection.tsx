@@ -15,18 +15,18 @@ import { ChartBarIcon } from "@heroicons/react/24/outline";
 
 export const FeaturedPropertiesSection: React.FC = () => {
   const services = [
-    
+
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      title: "Bot Automation",
+      title: "AI",
       description:
-        "Create smart bots and automation to improve customer service and streamline business tasks.",
+        "Whether using AI to develop new products or transform your business strategy, we guide you to success.",
       features: [
-        "Chatbots with AI",
+        "AI Consultant",
         "Task Automation",
         "24/7 Support",
       ],
@@ -39,13 +39,12 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      title: "Web Development",
+      title: "Digital Engineering",
       description:
-        "Build end-to-end digital products with modern tools that are fast, secure, and scalable.",
+        "Delivering high-quality solutions using modern tools and proven methodologies, designed to meet your needs.",
       features: [
-        "Frontend & Backend",
-        "Database Design",
-        "API Connections",
+        "Cloud Applications",
+        "Software Security",
         "Deployment & Maintenance",
       ],
       popular: true,
@@ -60,31 +59,30 @@ export const FeaturedPropertiesSection: React.FC = () => {
         "Deliver clear and engaging visuals that connect your brand with your customers.",
       features: [
         "Branding & Logos",
-        "Website Design",
-        "User Experience (UX)",
+        "Product Design",
         "Marketing Materials",
       ],
       popular: false,
       route: "/services/design",
     },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      ),
-      title: "SEO",
-      description:
-        "Improve your website's ranking on search engines to attract more visitors and potential customers.",
-      features: [
-        "Keyword Research",
-        "On-Page SEO",
-        "Technical SEO",
-        "Monthly Reports",
-      ],
-      popular: false,
-      route: "/services/seo",
-    },
+    // {
+    //   icon: (
+    //     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    //     </svg>
+    //   ),
+    //   title: "SEO",
+    //   description:
+    //     "Improve your website's ranking on search engines to attract more visitors and potential customers.",
+    //   features: [
+    //     "Keyword Research",
+    //     "On-Page SEO",
+    //     "Technical SEO",
+    //     "Monthly Reports",
+    //   ],
+    //   popular: false,
+    //   route: "/services/seo",
+    // },
     {
       icon: (
         <LuPen className="w-8 h-8" />
@@ -142,7 +140,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
 
           <FadeIn delay={0.3} direction="up">
             <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-              From web development to smart automation, we deliver solutions that boost growth and elevate your brand.
+              By combining data, AI, intelligent automation, and creativity, we deliver solutions that drive growth and elevate your brand.
             </p>
           </FadeIn>
         </div>

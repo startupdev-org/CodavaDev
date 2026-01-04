@@ -109,11 +109,11 @@ export const HeroSection = () => {
               <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
               {/* Mobile: shorter text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
-                All-in-One IT Solutions 🚀
+                You dream. We deliver
               </span>
               {/* Desktop: full text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
-                Web, Design, Automation & Marketing — All-in-One IT Solutions 🚀
+                You dream. We deliver
               </span>
             </div>
           </FadeIn>
@@ -130,7 +130,7 @@ export const HeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              From custom web development and stunning UI/UX design to powerful digital marketing campaigns - we deliver comprehensive IT solutions that drive real growth.
+              From web solutions and design to marketing and analytics, we deliver solutions tailored to your niche today while also preparing you for its future.
             </p>
           </FadeIn>
 
