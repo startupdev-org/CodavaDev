@@ -1,4 +1,3 @@
-import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { AboutHeroSection } from "./sections/AboutHeroSection";
 import { TeamSection } from "./sections/TeamSection";
@@ -35,7 +34,7 @@ export const AboutUsPage = () => {
 
       <main className="relative z-10">
         <AboutHeroSection />
-        <TeamSection />
+        {/* <TeamSection /> */}
         <AboutCallToActionSection />
       </main>
 
