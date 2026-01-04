@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FadeIn,
   GlowButton
@@ -23,16 +22,16 @@ export const BotAutomationCTASection = () => {
 
         <FadeIn delay={0.2} direction="up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Let's Build Your
+            Building What's Next
             <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent h-20">
-              Intelligent Bot
+              Together
             </span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.3} direction="up">
           <p className="text-xl text-white/70 leading-relaxed mb-12 max-w-2xl mx-auto">
-            Ready to transform your business operations with intelligent automation? Let's discuss your needs and create a custom bot solution that works for you.
+            We deliver proven results: faster product cycles, more accurate decisions, and measurable growth. We partner with organisations ready to modernise with purpose - solving real problems and unlocking new market opportunities.
           </p>
         </FadeIn>
 
@@ -51,7 +50,7 @@ export const BotAutomationCTASection = () => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.5} direction="up">
+        {/* <FadeIn delay={0.5} direction="up">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-gradient-to-r from-[#194EFF]/20 to-[#194EFF]/10 border border-[#194EFF]/30 rounded-2xl flex items-center justify-center mb-4">
@@ -83,7 +82,7 @@ export const BotAutomationCTASection = () => {
               <p className="text-white/60 text-sm">Continuous monitoring and maintenance</p>
             </div>
           </div>
-        </FadeIn>
+        </FadeIn> */}
 
       </div>
     </section>
