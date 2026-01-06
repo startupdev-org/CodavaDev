@@ -1,12 +1,15 @@
 import { FaTelegram, FaTimes } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const TelegramButton = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+  const isHomepage = location.pathname === '/';
 
   useEffect(() => {
-    // Show notification every minute
+    // Show notification every 3 minutes
     const showNotificationTimer = () => {
       setShowNotification(true);
       // Small delay to ensure the element is rendered before animating
@@ -17,17 +20,24 @@ const TelegramButton = () => {
       // Remove auto-hide - notification stays until user closes it
     };
 
-    // Show first notification after 3 seconds
-    const initialTimer = setTimeout(showNotificationTimer, 3000);
+    let initialTimer: NodeJS.Timeout | null = null;
 
-    // Set up interval to show notification every minute
-    const intervalTimer = setInterval(showNotificationTimer, 60000);
+    // Only show initial delay on homepage
+    if (isHomepage) {
+      // Show first notification after 5 seconds on homepage
+      initialTimer = setTimeout(showNotificationTimer, 5000);
+    }
+
+    // Set up interval to show notification every 3 minutes
+    const intervalTimer = setInterval(showNotificationTimer, 180000);
 
     return () => {
-      clearTimeout(initialTimer);
+      if (initialTimer) {
+        clearTimeout(initialTimer);
+      }
       clearInterval(intervalTimer);
     };
-  }, []);
+  }, [isHomepage]);
 
   const handleTelegramClick = () => {
     // Replace with your actual Telegram username or link
@@ -43,6 +53,18 @@ const TelegramButton = () => {
 
   return (
     <>
+      {/* Custom slower pulse animation */}
+      <style>{`
+        @keyframes slow-ping {
+          75%, 100% {
+            transform: scale(1.6);
+            opacity: 0;
+          }
+        }
+        .animate-slow-ping {
+          animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+      `}</style>
       {/* Chat Bubble Notification */}
       {showNotification && (
         <div className={`fixed bottom-28 right-8 z-50 transition-all duration-700 ease-out ${
@@ -99,15 +121,15 @@ const TelegramButton = () => {
       <div className="fixed bottom-8 right-8 z-50">
         <button
           onClick={handleTelegramClick}
-          className="group relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-blue-400/20"
+          className="group relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-3 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-blue-400/20"
           aria-label="Contact us on Telegram"
           title="Chat with us on Telegram"
         >
           <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <FaTelegram className="w-7 h-7 relative z-10" />
+          <FaTelegram className="w-9 h-9 relative z-10" />
           
           {/* Pulse animation */}
-          <div className="absolute inset-0 rounded-2xl bg-blue-400/30 animate-ping"></div>
+          <div className="absolute inset-0 rounded-2xl bg-blue-400/30 animate-slow-ping"></div>
         </button>
         
         {/* Floating label */}
