@@ -3,12 +3,6 @@ import { Marquee } from "@/components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Emma Rodriguez",
-    username: "TechVision Solutions",
-    body: "Codava rebuilt our platform with modern tech stack. Load times dropped 70% and user engagement doubled!",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
     name: "Bors Andrei",
     username: "Epic Trans Logistics",
     body: "I recommend Codava! They helped our logistics business with a logo, business cards, and a client-attracting website.",
@@ -21,12 +15,6 @@ const reviews = [
     img: "/avatars/user-01.jpg"
   },
   {
-    name: "Alex Chen",
-    username: "FinTech Innovations",
-    body: "AI chatbot handles 90% of support queries instantly. Best tech investment we've made this year!",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
     name: "Natalia Cimihov",
     username: "DaVinci Education",
     body: "Codava built a clear, mobile-friendly site for our educational project, perfectly showcasing all stages.",
@@ -37,18 +25,6 @@ const reviews = [
     username: "Senda Courier",
     body: "I worked with Codava on redesign, logo, and cards; the site's innovative and results were fast, professional.",
     img: "/avatars/user-03.jpg"
-  },
-  {
-    name: "Maya Patel",
-    username: "GrowthMarketing Pro",
-    body: "SEO campaign tripled organic traffic in 3 months. ROI exceeded expectations by 200%!",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
-    name: "David Thompson",
-    username: "HealthTech Solutions",
-    body: "App redesign increased daily active users by 85%. Patient feedback has been overwhelmingly positive.",
-    img: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
   }
 ];
 

@@ -22,9 +22,9 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      title: "AI",
+      title: "AI Automation",
       description:
-        "Whether using AI to develop new products or transform your business strategy, we guide you to success.",
+        "Save time and boost efficiency with intelligent automation solutions that streamline workflows and eliminate repetitive tasks.",
       features: [
         "AI Consultant",
         "Task Automation",
@@ -39,13 +39,13 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      title: "Digital Engineering",
+      title: "Web Development",
       description:
-        "Delivering high-quality solutions using modern tools and proven methodologies, designed to meet your needs.",
+        "Build fast, secure, and scalable websites—from e-commerce stores to business sites and web applications.",
       features: [
-        "Cloud Applications",
-        "Software Security",
-        "Deployment & Maintenance",
+        "Frontend & Backend",
+        "Database Design",
+        "Complex Apps",
       ],
       popular: true,
       route: "/services/web-development",
@@ -65,36 +65,34 @@ export const FeaturedPropertiesSection: React.FC = () => {
       popular: false,
       route: "/services/design",
     },
-    // {
-    //   icon: (
-    //     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-    //     </svg>
-    //   ),
-    //   title: "SEO",
-    //   description:
-    //     "Improve your website's ranking on search engines to attract more visitors and potential customers.",
-    //   features: [
-    //     "Keyword Research",
-    //     "On-Page SEO",
-    //     "Technical SEO",
-    //     "Monthly Reports",
-    //   ],
-    //   popular: false,
-    //   route: "/services/seo",
-    // },
+    {
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      ),
+      title: "SEO",
+      description:
+        "Improve your website's ranking on search engines to attract more visitors and potential customers.",
+      features: [
+        "Keyword Research",
+        "On-Page SEO",
+        "Technical SEO",
+      ],
+      popular: false,
+      route: "/services/seo",
+    },
     {
       icon: (
         <LuPen className="w-8 h-8" />
       ),
       title: "Copywriting",
       description:
-        "Compelling copy that connects with your audience and drives action. From website content to email campaigns, we craft words that convert visitors into customers.",
+        "Compelling copy that connects with your audience and drives action. From website content to email campaigns.",
       features: [
-        "Website Copy",
+        "Website Copyrighting",
         "Email Campaigns",
         "Sales Pages",
-        "Blog Content",
       ],
       popular: false,
       route: "/services/copywriting",
@@ -108,7 +106,6 @@ export const FeaturedPropertiesSection: React.FC = () => {
       features: [
         "Google Analytics Setup",
         "Conversion Tracking",
-        "Heatmaps & Session Recordings",
         "Performance Dashboards"
       ],
       popular: false,
