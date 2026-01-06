@@ -1,26 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "../../components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "../../components/ui/navigation-menu";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-} from "../../components/ui/dropdown-menu";
 import { ChevronDown, Code, Layers, Palette, Bot, Search, FileText, BarChart3, Globe, Briefcase, ShoppingCart, Heart, Lightbulb } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  FadeIn,
   GlowButton,
-  FloatingElement,
   StaggerContainer,
   StaggerItem
 } from "../../components/ui/animated-elements";
@@ -37,10 +26,8 @@ export const HeaderSection = () => {
     { name: "Home", path: "/", hasDropdown: false },
     { name: "About Us", path: "/about", hasDropdown: false },
     { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Portfolio", path: "/portfolio", hasDropdown: false },
+    { name: "Our Work", path: "/our-work", hasDropdown: false },
   ];
-
-  const homeLocation = '/';
 
   // Function to get icon component based on icon name
   const getIconComponent = (iconName: string) => {
@@ -116,17 +103,17 @@ export const HeaderSection = () => {
     {
       category: "Our Work",
       items: [
-        { name: "Website Portfolio", description: "Featured web projects", icon: "Globe", path: "/portfolio" },
-        { name: "Brand Design", description: "Identity & design work", icon: "Palette", path: "/portfolio/brand" },
+        { name: "Web Projects", description: "Featured web projects", icon: "Globe", path: "/our-work" },
+        { name: "Brand Design", description: "Identity & design work", icon: "Palette", path: "/our-work/brand" },
         { name: "Case Studies", description: "Detailed project breakdowns", icon: "BarChart3", path: "/case-studies" },
       ]
     },
     {
       category: "Industries",
       items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/portfolio/ecommerce" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "Heart", path: "/portfolio/healthcare" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "Lightbulb", path: "/portfolio/technology" },
+        { name: "E-commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/our-work/ecommerce" },
+        { name: "Healthcare", description: "Medical & wellness brands", icon: "Heart", path: "/our-work/healthcare" },
+        { name: "Technology", description: "Tech startups & SaaS", icon: "Lightbulb", path: "/our-work/technology" },
       ]
     }
   ];
@@ -255,7 +242,7 @@ export const HeaderSection = () => {
           </>
         );
 
-      case 'Portfolio':
+      case 'Our Work':
         return (
           <>
             <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
@@ -267,7 +254,7 @@ export const HeaderSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <span className="text-white font-semibold">Portfolio</span>
+              <span className="text-white font-semibold">Our Work</span>
             </div>
             <div className="relative">
               <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
@@ -380,13 +367,15 @@ export const HeaderSection = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <GlowButton
-              className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-lg font-semibold text-white transition-all duration-300 flex items-center gap-2"
+              disableGlow={true}
+              className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
               onClick={() => navigate('/contact')}
             >
-              Contact Us
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span className="relative z-10">Contact Us</span>
+              <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
             </GlowButton>
           </motion.div>
 
@@ -474,13 +463,15 @@ export const HeaderSection = () => {
             {/* Mobile CTA Button */}
             <div className="mt-auto p-4 bg-[#00041F]">
               <GlowButton
+                disableGlow={true}
                 onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
-                className="w-full py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2"
               >
-                Contact Us
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="relative z-10">Contact Us</span>
+                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
               </GlowButton>
             </div>
           </div>

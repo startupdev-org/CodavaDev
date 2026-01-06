@@ -37,7 +37,7 @@ createRoot(document.getElementById("app") as HTMLElement).render(
       <Routes>
         <Route path="/" element={<HomePageDesktop />} />
         <Route path="/about" element={<AboutUsPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/our-work" element={<PortfolioPage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/services/web-development" element={<WebDevelopmentPage />} />

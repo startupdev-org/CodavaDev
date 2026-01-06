@@ -1,15 +1,8 @@
-import React from "react";
-import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Badge } from "../../../../components/ui/badge";
 import {
   FadeIn,
-  StaggerContainer,
-  StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
@@ -109,11 +102,11 @@ export const HeroSection = () => {
               <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
               {/* Mobile: shorter text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
-                You dream. We deliver
+                You dream. We deliver.
               </span>
               {/* Desktop: full text */}
               <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
-                You dream. We deliver
+                You dream. We deliver.
               </span>
             </div>
           </FadeIn>
@@ -137,27 +130,30 @@ export const HeroSection = () => {
           {/* CTA Buttons */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <button
-                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
+              <GlowButton
+                disableGlow={true}
+                className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
                 onClick={() => navigate('/contact')}
               >
-                <span className="flex items-center gap-2.5">
-                  Start Your Project
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </button>
+                <span className="relative z-10">Start Your Project</span>
+                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+              </GlowButton>
 
-              <Link to="/portfolio" className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2">
-                <span className="flex items-center gap-2.5">
-                  View Our Work
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </span>
-              </Link>
+              <GlowButton
+                disableGlow={true}
+                className="px-8 py-4 bg-white/10 text-white font-semibold text-base rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm shadow-xl shadow-white/5 hover:shadow-white/10 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
+                onClick={() => navigate('/our-work')}
+              >
+                <span className="relative z-10">View Our Work</span>
+                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+              </GlowButton>
             </div>
           </FadeIn>
 

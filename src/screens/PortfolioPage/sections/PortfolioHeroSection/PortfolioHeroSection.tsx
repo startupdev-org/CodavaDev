@@ -61,7 +61,7 @@ export const PortfolioHeroSection = () => {
 
             <FadeIn delay={0.3} direction="up">
               <p className="text-xl text-white/70 leading-relaxed font-light max-w-2xl">
-                Explore our portfolio of innovative digital solutions that have transformed businesses and delivered exceptional results. From web applications to digital marketing campaigns, discover how we bring ideas to life.
+                Explore our work of innovative digital solutions that have transformed businesses and delivered exceptional results. From web applications to digital marketing campaigns, discover how we bring ideas to life.
               </p>
             </FadeIn>
 
