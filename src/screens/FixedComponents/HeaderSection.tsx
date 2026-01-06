@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuGroup,
 } from "../../components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Code, Layers, Palette, Bot, Search, FileText, BarChart3, Globe, Briefcase, ShoppingCart, Heart, Lightbulb } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -42,6 +42,25 @@ export const HeaderSection = () => {
 
   const homeLocation = '/';
 
+  // Function to get icon component based on icon name
+  const getIconComponent = (iconName: string) => {
+    switch (iconName) {
+      case "Code": return <Code className="w-4 h-4" />;
+      case "Layers": return <Layers className="w-4 h-4" />;
+      case "Palette": return <Palette className="w-4 h-4" />;
+      case "Bot": return <Bot className="w-4 h-4" />;
+      case "Search": return <Search className="w-4 h-4" />;
+      case "FileText": return <FileText className="w-4 h-4" />;
+      case "BarChart3": return <BarChart3 className="w-4 h-4" />;
+      case "Globe": return <Globe className="w-4 h-4" />;
+      case "Briefcase": return <Briefcase className="w-4 h-4" />;
+      case "ShoppingCart": return <ShoppingCart className="w-4 h-4" />;
+      case "Heart": return <Heart className="w-4 h-4" />;
+      case "Lightbulb": return <Lightbulb className="w-4 h-4" />;
+      default: return null;
+    }
+  };
+
   // Function to check if a navigation item is active
   const isActive = (path: string) => {
     if (path === "/") {
@@ -59,17 +78,17 @@ export const HeaderSection = () => {
     {
       category: "Development & Design",
       items: [
-        { name: "Web Development", description: "Custom websites & applications", icon: "💻", path: "/services/web-development" },
-        { name: "Full Stack Development", description: "End-to-end development solutions", icon: "🚀", path: "/services/full-stack-development" },
-        { name: "Design", description: "UI/UX & brand identity", icon: "🎨", path: "/services/design" },
-        { name: "Bot Automation", description: "AI chatbots & automation", icon: "🤖", path: "/services/bot-automation" },
+        { name: "Web Development", description: "Custom websites & applications", icon: "Code", path: "/services/web-development" },
+        { name: "Full Stack Development", description: "End-to-end development solutions", icon: "Layers", path: "/services/full-stack-development" },
+        { name: "Design", description: "UI/UX & brand identity", icon: "Palette", path: "/services/design" },
+        { name: "Bot Automation", description: "AI chatbots & automation", icon: "Bot", path: "/services/bot-automation" },
       ]
     },
     {
       category: "Marketing & Content",
       items: [
-        { name: "SEO", description: "Search engine optimization", icon: "🔍", path: "/services/seo" },
-        { name: "Copywriting", description: "Content that converts", icon: "✍️", path: "/services/copywriting" },
+        { name: "SEO", description: "Search engine optimization", icon: "Search", path: "/services/seo" },
+        { name: "Copywriting", description: "Content that converts", icon: "FileText", path: "/services/copywriting" },
       ]
     },
     {
@@ -78,7 +97,7 @@ export const HeaderSection = () => {
         {
           name: "Analytics & Tracking",
           description: "Track user behavior. Improve results.",
-          icon: "📊",
+          icon: "BarChart3",
           path: "/services/analytics-tracking",
           features: [
             "Google Analytics Setup",
@@ -97,17 +116,17 @@ export const HeaderSection = () => {
     {
       category: "Our Work",
       items: [
-        { name: "Website Portfolio", description: "Featured web projects", icon: "🌐", path: "/portfolio" },
-        { name: "Brand Design", description: "Identity & design work", icon: "🎨", path: "/portfolio/brand" },
-        { name: "Case Studies", description: "Detailed project breakdowns", icon: "📊", path: "/case-studies" },
+        { name: "Website Portfolio", description: "Featured web projects", icon: "Globe", path: "/portfolio" },
+        { name: "Brand Design", description: "Identity & design work", icon: "Palette", path: "/portfolio/brand" },
+        { name: "Case Studies", description: "Detailed project breakdowns", icon: "BarChart3", path: "/case-studies" },
       ]
     },
     {
       category: "Industries",
       items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "🛒", path: "/portfolio/ecommerce" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "🏥", path: "/portfolio/healthcare" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "💡", path: "/portfolio/technology" },
+        { name: "E-commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/portfolio/ecommerce" },
+        { name: "Healthcare", description: "Medical & wellness brands", icon: "Heart", path: "/portfolio/healthcare" },
+        { name: "Technology", description: "Tech startups & SaaS", icon: "Lightbulb", path: "/portfolio/technology" },
       ]
     }
   ];
@@ -168,7 +187,7 @@ export const HeaderSection = () => {
                   className="flex items-center gap-3 px-3 py-2 text-white text-sm hover:bg-[#194EFF]/10 rounded transition-colors duration-150 cursor-pointer group"
                   onClick={() => item.path && navigate(item.path)}
                 >
-                  <span className="text-base">{item.icon}</span>
+                  <span className="text-base">{getIconComponent(item.icon)}</span>
                   <div className="flex-1">
                     <div className="font-medium group-hover:text-[#194EFF] transition-colors">{item.name}</div>
                     <div className="text-white/60 text-xs">{item.description}</div>
@@ -220,7 +239,7 @@ export const HeaderSection = () => {
                         }}
                         className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
                       >
-                        <span className="text-xl">{item.icon}</span>
+                        <span className="text-xl">{getIconComponent(item.icon)}</span>
                         <div>
                           <div className="font-medium text-white">{item.name}</div>
                           <div className="text-white/50 text-sm">{item.description}</div>
@@ -268,7 +287,7 @@ export const HeaderSection = () => {
                         }}
                         className="w-full text-left flex items-center gap-3 px-4 py-3 text-white/70 hover:text-white border-b border-white/5"
                       >
-                        <span className="text-xl">{item.icon}</span>
+                        <span className="text-xl">{getIconComponent(item.icon)}</span>
                         <div>
                           <div className="font-medium text-white">{item.name}</div>
                           <div className="text-white/50 text-sm">{item.description}</div>
@@ -364,7 +383,7 @@ export const HeaderSection = () => {
               className="px-6 py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-lg font-semibold text-white transition-all duration-300 flex items-center gap-2"
               onClick={() => navigate('/contact')}
             >
-              Get Started
+              Contact Us
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -458,7 +477,7 @@ export const HeaderSection = () => {
                 onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
                 className="w-full py-3 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center justify-center gap-2"
               >
-                Start Your Project
+                Contact Us
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

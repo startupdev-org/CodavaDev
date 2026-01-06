@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Input } from "../../../../components/ui/input";
 import { Button } from "../../../../components/ui/button";
 import { 
   FadeIn, 
@@ -47,8 +46,8 @@ export const ContactFormSection: React.FC = () => {
 
     try {
       const result = await emailjs.send(
-        'service_glh9iss', // Service ID
-        'template_vttl4v7', // Template ID
+        'service_glh9iss',
+        'template_vttl4v7',
         {
           name: formData.name,
           email: formData.email,
@@ -56,7 +55,7 @@ export const ContactFormSection: React.FC = () => {
           message: formData.message,
           howHeard: formData.howHeard,
         },
-        'dj1hZBH9DC_l229_T' // You'll need to replace this with your actual public key
+        'dj1hZBH9DC_l229_T'
       );
 
       if (result.status === 200) {
@@ -112,7 +111,7 @@ export const ContactFormSection: React.FC = () => {
 
   return (
     <section className="relative py-24">
-      <div className="max-w-6xl mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
           <FadeIn delay={0.1} direction="up">
@@ -136,78 +135,147 @@ export const ContactFormSection: React.FC = () => {
           </FadeIn>
         </div>
 
-        {/* Success Message */}
-        {isSuccess && (
-          <FadeIn delay={0} direction="up">
-            <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        {/* Contact Form Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Promotional Content */}
+          <FadeIn delay={0.4} direction="up">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
+                  Ready to Start Your Next Project?
+                </h3>
+                <p className="text-lg text-white/70 leading-relaxed mb-8">
+                  Let's discuss how we can help you achieve your business goals with cutting-edge technology solutions. Our team is ready to bring your vision to life.
+                </p>
+                <GlowButton
+                  className="px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center gap-3"
+                  onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                >
+                  Get Free Consultation
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
+                </GlowButton>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-1 gap-4">
+                <div className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm">
+                  <div className="w-12 h-12 bg-[#194EFF]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">10+</div>
+                    <div className="text-white/60 text-sm">Projects Completed</div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-green-400 font-semibold text-lg">Message Sent Successfully!</h3>
-                  <p className="text-green-300 text-sm">Thank you for your message. We'll get back to you soon!</p>
+
+                <div className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm">
+                  <div className="w-12 h-12 bg-[#194EFF]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">50K+</div>
+                    <div className="text-white/60 text-sm">Lines of Code Written</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm">
+                  <div className="w-12 h-12 bg-[#194EFF]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white">20+</div>
+                    <div className="text-white/60 text-sm">Tech Stack Tools</div>
+                  </div>
                 </div>
               </div>
             </div>
           </FadeIn>
-        )}
 
-        {/* Error Message */}
-        {error && (
-          <FadeIn delay={0} direction="up">
-            <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+          {/* Right Side - Contact Form */}
+          <div className="space-y-6">
+            {/* Success Message */}
+            {isSuccess && (
+              <FadeIn delay={0} direction="up">
+                <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-2xl backdrop-blur-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-green-400 font-semibold text-lg">Message Sent Successfully!</h3>
+                      <p className="text-green-300 text-sm">Thank you for your message. We'll get back to you soon!</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
-                  <p className="text-red-300 text-sm">{error}</p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        )}
+              </FadeIn>
+            )}
 
-        {/* Contact Form */}
-        <FadeIn delay={0.4} direction="up">
-          <div 
-            className="bg-white/[0.03] border border-white/10 rounded-2xl p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500"
-          >
+            {/* Error Message */}
+            {error && (
+              <FadeIn delay={0} direction="up">
+                <div className="p-6 bg-red-500/10 border border-red-500/30 rounded-2xl backdrop-blur-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
+                      <p className="text-red-300 text-sm">{error}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            )}
+
+            {/* Contact Form */}
+            <FadeIn delay={0.5} direction="up">
+              <div 
+                className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500"
+              >
             <form onSubmit={handleSubmit} className="space-y-14">
               <StaggerContainer staggerDelay={0.1}>
                 {/* Personal Information */}
                 <div className="grid grid-cols-1 gap-6">
-                  <div>
-                    <label className="text-white font-semibold text-base mb-2 block">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      placeholder="Enter your full name"
-                      required
-                      disabled={isLoading}
-                    />
-                  </div>
-                  <div>
-                    <label className="text-white font-semibold text-base mb-2 block">Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      placeholder="Enter your email address"
-                      required
-                      disabled={isLoading}
-                    />
+                  {/* Full Name and Email in 2 columns on desktop */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                      <label className="text-white font-semibold text-base mb-2 block">Full Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                        placeholder="Enter your full name"
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
+                    <div>
+                      <label className="text-white font-semibold text-base mb-2 block">Email Address *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                        placeholder="Enter your email address"
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="text-white font-semibold text-base mb-2 block">Subject *</label>
@@ -295,9 +363,11 @@ export const ContactFormSection: React.FC = () => {
                 </StaggerItem>
               </StaggerContainer>
             </form>
+              </div>
+            </FadeIn>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );
-}; 
+};
