@@ -26,7 +26,7 @@ export const AboutCallToActionSection = () => {
 
   return (
     <section className="relative w-full py-20 sm:py-28 md:py-32 lg:py-40 overflow-hidden">
-      <div className="max-w-[1600px] mx-auto px-6 w-full">
+      <div className="max-w-[1200px] mx-auto px-6 w-full">
         {/* Main CTA Card */}
         <FadeIn delay={0.4} direction="up">
           <Card className="w-full max-w-5xl mx-auto bg-white/[0.03] border border-[#194EFF]/20 rounded-3xl backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden">
@@ -38,8 +38,8 @@ export const AboutCallToActionSection = () => {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
                       Ready to Start Your Digital <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Transformation?</span>
                     </h2>
-                    <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center">
-                      Join businesses that have streamlined operations, boosted customer engagement, and accelerated growth with our cutting-edge technology solutions - trusted by startups and enterprises alike.
+                    <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center ">
+                      Join businesses that have streamlined operations and accelerated growth with our technology solutions.
                     </p>
                   </div>
                 </div>

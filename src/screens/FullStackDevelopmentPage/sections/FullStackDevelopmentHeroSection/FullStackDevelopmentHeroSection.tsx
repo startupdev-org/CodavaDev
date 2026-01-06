@@ -104,7 +104,7 @@ export const FullStackDevelopmentHeroSection = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">🚀 Full Stack Development • Frontend • Backend • Database • DevOps</span>
+              <span className="text-white/80 text-sm font-medium">Full Stack Development</span>
             </div>
           </FadeIn>
 

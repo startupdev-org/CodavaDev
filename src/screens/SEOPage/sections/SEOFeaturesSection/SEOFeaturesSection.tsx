@@ -8,63 +8,62 @@ import {
 export const SEOFeaturesSection = () => {
   const features = [
     {
-      icon: "🔍",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      ),
       title: "Keyword Research",
       description: "In-depth keyword analysis to identify high-value search terms that your target audience uses to find businesses like yours."
     },
     {
-      icon: "⚙️",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
       title: "Technical SEO",
       description: "Optimize site speed, mobile responsiveness, crawlability, and technical elements for better search engine performance."
     },
     {
-      icon: "📝",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
+      ),
       title: "Content Optimization",
       description: "Create and optimize content that ranks well and provides value to your audience, driving engagement and conversions."
     },
     {
-      icon: "📈",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
       title: "Ranking Improvement",
       description: "Proven strategies to improve your search rankings and increase visibility for your most important keywords."
     },
     {
-      icon: "🔗",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+      ),
       title: "Link Building",
       description: "Build high-quality, authoritative backlinks that boost your domain authority and search engine credibility."
     },
     {
-      icon: "📊",
+      icon: (
+        <svg className="w-8 h-8 text-[#194EFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
       title: "Analytics & Reporting",
       description: "Comprehensive tracking and reporting to monitor progress, measure ROI, and identify optimization opportunities."
     }
   ];
 
-  const seoProcess = [
-    {
-      step: "01",
-      title: "SEO Audit",
-      description: "Comprehensive analysis of your current SEO performance and opportunities",
-      icon: "🔍"
-    },
-    {
-      step: "02",
-      title: "Strategy Development",
-      description: "Custom SEO strategy based on your business goals and competitive landscape",
-      icon: "📋"
-    },
-    {
-      step: "03",
-      title: "Implementation",
-      description: "Execute on-page, technical, and content optimizations across your website",
-      icon: "⚙️"
-    },
-    {
-      step: "04",
-      title: "Monitoring & Growth",
-      description: "Track rankings, traffic, and conversions while continuously optimizing",
-      icon: "📈"
-    }
-  ];
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
@@ -101,7 +100,7 @@ export const SEOFeaturesSection = () => {
             {features.map((feature, index) => (
               <StaggerItem key={index}>
                 <div className="group p-8 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-[#194EFF]/30 transition-all duration-300 transform hover:scale-105">
-                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <div className="mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
                     {feature.title}
                   </h3>
@@ -114,48 +113,6 @@ export const SEOFeaturesSection = () => {
           </div>
         </StaggerContainer>
 
-        {/* SEO Process Section */}
-        <div className="text-center mb-16">
-          <FadeIn delay={0.1} direction="up">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our SEO Process
-            </h3>
-          </FadeIn>
-          <FadeIn delay={0.2} direction="up">
-            <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              A proven methodology that delivers consistent results through strategic planning and expert execution.
-            </p>
-          </FadeIn>
-        </div>
-
-        <StaggerContainer staggerDelay={0.2}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {seoProcess.map((process, index) => (
-              <StaggerItem key={index}>
-                <div className="group relative">
-                  <div className="p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-2xl backdrop-blur-sm hover:border-[#194EFF]/30 transition-all duration-300 text-center">
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-[#194EFF] to-[#4169E1] rounded-full flex items-center justify-center text-white font-bold text-sm">
-                      {process.step}
-                    </div>
-
-                    <div className="text-3xl mb-4 mt-4">{process.icon}</div>
-                    <h4 className="text-lg font-semibold text-white mb-3 group-hover:text-[#194EFF] transition-colors duration-300">
-                      {process.title}
-                    </h4>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {process.description}
-                    </p>
-                  </div>
-
-                  {/* Connecting Line */}
-                  {index < seoProcess.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#194EFF]/50 to-transparent"></div>
-                  )}
-                </div>
-              </StaggerItem>
-            ))}
-          </div>
-        </StaggerContainer>
 
       </div>
     </section>

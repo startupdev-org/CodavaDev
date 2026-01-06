@@ -5,7 +5,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "../../components/ui/navigation-menu";
-import { ChevronDown, Code, Layers, Palette, Bot, Search, FileText, BarChart3, Globe, Briefcase, ShoppingCart, Heart, Lightbulb } from "lucide-react";
+import { ChevronDown, Code, Bot, Palette, Search, FileText, BarChart3, Globe, Briefcase, ShoppingCart, Heart, Lightbulb } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -33,9 +33,8 @@ export const HeaderSection = () => {
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case "Code": return <Code className="w-4 h-4" />;
-      case "Layers": return <Layers className="w-4 h-4" />;
-      case "Palette": return <Palette className="w-4 h-4" />;
       case "Bot": return <Bot className="w-4 h-4" />;
+      case "Palette": return <Palette className="w-4 h-4" />;
       case "Search": return <Search className="w-4 h-4" />;
       case "FileText": return <FileText className="w-4 h-4" />;
       case "BarChart3": return <BarChart3 className="w-4 h-4" />;
@@ -66,9 +65,8 @@ export const HeaderSection = () => {
       category: "Development & Design",
       items: [
         { name: "Web Development", description: "Custom websites & applications", icon: "Code", path: "/services/web-development" },
-        { name: "Full Stack Development", description: "End-to-end development solutions", icon: "Layers", path: "/services/full-stack-development" },
         { name: "Design", description: "UI/UX & brand identity", icon: "Palette", path: "/services/design" },
-        { name: "Bot Automation", description: "AI chatbots & automation", icon: "Bot", path: "/services/bot-automation" },
+        { name: "AI Automation", description: "AI chatbots & automation", icon: "Bot", path: "/services/bot-automation" },
       ]
     },
     {
@@ -464,7 +462,7 @@ export const HeaderSection = () => {
             <div className="mt-auto p-4 bg-[#00041F]">
               <GlowButton
                 disableGlow={true}
-                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
+                onClick={() => navigate('/contact')}
                 className="w-full px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2"
               >
                 <span className="relative z-10">Contact Us</span>

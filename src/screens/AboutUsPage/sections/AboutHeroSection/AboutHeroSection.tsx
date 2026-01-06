@@ -67,7 +67,7 @@ export const AboutHeroSection = () => {
   const coreValues = [
     {
       title: "Human-Centered Innovation",
-      description: "We design and apply technology to amplify human potential, ensuring AI enhances judgment, creativity, and collaboration rather than replacing it.",
+      description: "Technology that enhances human potential, creativity, and collaboration rather than replacing it.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20v-2c0-2.21 3.58-4 6-4s6 1.79 6 4v2H6z" />
@@ -76,7 +76,7 @@ export const AboutHeroSection = () => {
     },
     {
       title: "Outcome-Driven Execution",
-      description: "Success is measured by results as: accelerated delivery, improved decision accuracy, and measurable growth - rather than effort alone.",
+      description: "Success measured by results: faster delivery, better decisions, and measurable growth.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -85,7 +85,7 @@ export const AboutHeroSection = () => {
     },
     {
       title: "Agility and Adaptability",
-      description: "Our teams and processes are flexible, scalable, and responsive, enabling rapid experimentation, continuous learning, and innovation aligned with business strategy.",
+      description: "Flexible teams and processes enabling rapid experimentation and continuous learning.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -94,7 +94,7 @@ export const AboutHeroSection = () => {
     },
     {
       title: "Continuous Innovation",
-      description: "By embedding intelligence into every workflow and continuously testing hypotheses, we turn experimentation into rapid, evidence-based improvement.",
+      description: "Embedding intelligence into workflows through evidence-based experimentation and improvement.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -103,7 +103,7 @@ export const AboutHeroSection = () => {
     },
     {
       title: "Sustainable Transformation",
-      description: "AI adoption succeeds when people, process, and technology evolve together. We embed governance, transparency, and measurable metrics from the start to ensure long-term impact.",
+      description: "People, process, and technology evolving together with governance and measurable metrics.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -112,7 +112,7 @@ export const AboutHeroSection = () => {
     },
     {
       title: "Collaboration and Partnership",
-      description: "work alongside business specialists, domain experts, and leaders to co-create pragmatic roadmaps, pilots, and solutions that solve real problems and unlock new markets.",
+      description: "Working alongside experts to co-create solutions that solve real problems and unlock markets.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -167,7 +167,7 @@ export const AboutHeroSection = () => {
         </div>
       </div>
 
-      <div className="relative max-w-[1600px] mx-auto px-6 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 w-full">
 
         {/* IT Agency Badge */}
         <FadeIn delay={0.1} direction="up">
@@ -200,7 +200,7 @@ export const AboutHeroSection = () => {
 
             <FadeIn delay={0.3} direction="up">
               <p className="text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300 mx-auto">
-                We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
+                We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology and driving digital transformation.
               </p>
             </FadeIn>
 
@@ -239,7 +239,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Mission</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  We are dedicated to creating a positive impact for our employees, clients, communities, and the environment.
+                  Creating positive impact for employees, clients, communities, and the environment.
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -268,7 +268,7 @@ export const AboutHeroSection = () => {
                   Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Vision</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
+                  Creating smart, user-focused solutions that redefine standards and unlock new possibilities.
                 </p>
               </div>
               <div className="lg:w-1/2">

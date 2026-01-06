@@ -377,8 +377,6 @@ export const PortfolioGridSection: React.FC = () => {
   ];
 
   const handleFilterToggle = (filter: string) => {
-    console.log('Toggled Filter: ', filter)
-    console.log('Active filters: ', activeFilters)
     if (activeFilters.length === 0) {
       setActiveFilters(["All"]);
       return;
@@ -768,7 +766,7 @@ export const PortfolioGridSection: React.FC = () => {
                       Key Achievements
                     </h3>
                     <div className="grid grid-cols-1 gap-4">
-                      {selectedProject.achievements.map((achievement: string, index: number) => (
+                      {selectedProject.achievements.map((achievement: string) => (
                         <div
                           key={achievement}
                           className="flex items-start gap-4 bg-white/[0.05] border border-white/5 rounded-xl p-4"
