@@ -1,7 +1,5 @@
 import React from "react";
 import { HeaderSection, FooterSection, } from "../FixedComponents";
-import { CTASection } from "../FixedComponents/CTASection";
-import { PortfolioHeroSection } from "./sections/PortfolioHeroSection/PortfolioHeroSection";
 import { PortfolioGridSection } from "./sections/PortfolioGridSection/PortfolioGridSection";
 
 export const PortfolioPage = () => {
@@ -34,9 +32,7 @@ export const PortfolioPage = () => {
       <HeaderSection />
 
       <main className="relative z-10">
-        <PortfolioHeroSection />
         <PortfolioGridSection />
-        <CTASection />
       </main>
 
       <FooterSection />
