@@ -1,5 +1,3 @@
-import React from "react";
-import { Button } from "../../../../components/ui/button";
 import {
   FadeIn,
   StaggerContainer,
@@ -7,8 +5,10 @@ import {
   FloatingElement,
   GlowButton,
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
-export const ContactHeroSection: React.FC = () => {
+export const ContactHeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative w-full min-h-screen pt-0 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center h-[120rem] lg:h-screen below400:h-[120rem]">
       {/* Background Elements */}
@@ -35,7 +35,7 @@ export const ContactHeroSection: React.FC = () => {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
                 <span className="text-[#194EFF] text-sm font-semibold tracking-wide">
-                  GET IN TOUCH
+                  {t('contact_page.hero.badge')}
                 </span>
               </div>
             </FadeIn>
@@ -43,11 +43,11 @@ export const ContactHeroSection: React.FC = () => {
             <FadeIn delay={0.2} direction="up">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 <span className="block">
-                  Let's Build
+                  {t('contact_page.hero.title_line1')}
                 </span>
                 <span className="block relative my-2">
                   <span className="relative z-10 bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
-                    Something Amazing
+                    {t('contact_page.hero.title_highlight')}
                   </span>
                   <span
                     aria-hidden
@@ -55,16 +55,14 @@ export const ContactHeroSection: React.FC = () => {
                   />
                 </span>
                 <span className="block">
-                  Together
+                  {t('contact_page.hero.title_line2')}
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
               <p className="text-xl text-white/70 leading-relaxed font-light max-w-2xl">
-                Ready to transform your business with cutting-edge technology?
-                Our team of experts is here to help you bring your vision to
-                life. Let's start the conversation today.
+                {t('contact_page.hero.description')}
               </p>
             </FadeIn>
 
@@ -80,7 +78,7 @@ export const ContactHeroSection: React.FC = () => {
                     }
                   }}
                 >
-                  Start Your Project
+                  {t('contact_page.hero.button')}
                 </GlowButton>
               </div>
             </FadeIn>
@@ -109,10 +107,10 @@ export const ContactHeroSection: React.FC = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
-                      24/7 Support
+                      {t('contact_page.hero.stats.support_24_7.title')}
                     </h3>
                     <p className="text-white/60 text-sm">
-                      Round-the-clock assistance for all your needs
+                      {t('contact_page.hero.stats.support_24_7.description')}
                     </p>
                   </div>
                 </StaggerItem>
@@ -135,10 +133,10 @@ export const ContactHeroSection: React.FC = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
-                      Quick Response
+                      {t('contact_page.hero.stats.quick_response.title')}
                     </h3>
                     <p className="text-white/60 text-sm">
-                      Get back to you within 2 hours to anwswer your questions
+                      {t('contact_page.hero.stats.quick_response.description')}
                     </p>
                   </div>
                 </StaggerItem>
@@ -161,10 +159,10 @@ export const ContactHeroSection: React.FC = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
-                      Secure & Private
+                      {t('contact_page.hero.stats.secure_private.title')}
                     </h3>
                     <p className="text-white/60 text-sm">
-                      Your data is protected and secure with us
+                      {t('contact_page.hero.stats.secure_private.description')}
                     </p>
                   </div>
                 </StaggerItem>
@@ -188,10 +186,10 @@ export const ContactHeroSection: React.FC = () => {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">
-                        Expert Team
+                        {t('contact_page.hero.stats.expert_team.title')}
                       </h3>
                       <p className="text-white/60 text-sm">
-                        Dedicated professionals at your service
+                        {t('contact_page.hero.stats.expert_team.description')}
                       </p>
                     </div>
                   </FloatingElement>

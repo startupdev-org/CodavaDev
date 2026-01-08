@@ -104,7 +104,7 @@ export const FullStackDevelopmentHeroSection = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">🚀 Full Stack Development • Frontend • Backend • Database • DevOps</span>
+              <span className="text-white/80 text-sm font-medium">Full Stack Development</span>
             </div>
           </FadeIn>
 
@@ -140,10 +140,10 @@ export const FullStackDevelopmentHeroSection = () => {
               </button>
 
               <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
-                onClick={() => navigate('/portfolio')}
+                onClick={() => navigate('/our-work')}
               >
                 <span className="flex items-center gap-2.5">
-                  View Portfolio
+                  View Our Work
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

@@ -1,9 +1,5 @@
-import React from "react";
 import { HeaderSection, FooterSection } from "../FixedComponents";
-import { CTASection } from "../FixedComponents/CTASection";
-import { ContactHeroSection } from "./sections/ContactHeroSection/ContactHeroSection";
 import { ContactFormSection } from "./sections/ContactFormSection/ContactFormSection";
-import { ContactInfoSection } from "./sections/ContactInfoSection/ContactInfoSection";
 
 export const ContactPage = () => {
   return (
@@ -34,11 +30,8 @@ export const ContactPage = () => {
 
       <HeaderSection />
 
-      <main className="relative z-10">
-        <ContactHeroSection />
+      <main className="relative z-10 pt-24 md:pt-32">
         <ContactFormSection />
-        {/* <ContactInfoSection /> */}
-        <CTASection />
       </main>
 
       <FooterSection />

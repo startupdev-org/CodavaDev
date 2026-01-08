@@ -1,12 +1,17 @@
 import { FaTelegram, FaTimes } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const TelegramButton = () => {
+  const { t } = useTranslation();
   const [showNotification, setShowNotification] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+  const isHomepage = location.pathname === '/';
 
   useEffect(() => {
-    // Show notification every minute
+    // Show notification every 3 minutes
     const showNotificationTimer = () => {
       setShowNotification(true);
       // Small delay to ensure the element is rendered before animating
@@ -17,17 +22,24 @@ const TelegramButton = () => {
       // Remove auto-hide - notification stays until user closes it
     };
 
-    // Show first notification after 3 seconds
-    const initialTimer = setTimeout(showNotificationTimer, 3000);
+    let initialTimer: NodeJS.Timeout | null = null;
 
-    // Set up interval to show notification every minute
-    const intervalTimer = setInterval(showNotificationTimer, 60000);
+    // Only show initial delay on homepage
+    if (isHomepage) {
+      // Show first notification after 5 seconds on homepage
+      initialTimer = setTimeout(showNotificationTimer, 5000);
+    }
+
+    // Set up interval to show notification every 3 minutes
+    const intervalTimer = setInterval(showNotificationTimer, 180000);
 
     return () => {
-      clearTimeout(initialTimer);
+      if (initialTimer) {
+        clearTimeout(initialTimer);
+      }
       clearInterval(intervalTimer);
     };
-  }, []);
+  }, [isHomepage]);
 
   const handleTelegramClick = () => {
     // Replace with your actual Telegram username or link
@@ -43,6 +55,18 @@ const TelegramButton = () => {
 
   return (
     <>
+      {/* Custom slower pulse animation */}
+      <style>{`
+        @keyframes slow-ping {
+          75%, 100% {
+            transform: scale(1.6);
+            opacity: 0;
+          }
+        }
+        .animate-slow-ping {
+          animation: slow-ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+      `}</style>
       {/* Chat Bubble Notification */}
       {showNotification && (
         <div className={`fixed bottom-28 right-8 z-50 transition-all duration-700 ease-out ${
@@ -64,16 +88,16 @@ const TelegramButton = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-medium text-white text-sm mb-1.5">
-                    Save 50% on your project!
+                    {t('telegram.notification_title')}
                   </h4>
                   <p className="text-gray-300 text-xs mb-3 leading-relaxed">
-                    Limited time offer! Chat now to get exclusive pricing and start building.
+                    {t('telegram.notification_description')}
                   </p>
                   <button
                     onClick={handleTelegramClick}
                     className="text-blue-400 hover:text-blue-300 text-xs font-medium transition-colors duration-200 flex items-center gap-1 group"
                   >
-                    Claim Discount
+{t('telegram.claim_discount')}
                     <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
                   </button>
                 </div>
@@ -99,20 +123,20 @@ const TelegramButton = () => {
       <div className="fixed bottom-8 right-8 z-50">
         <button
           onClick={handleTelegramClick}
-          className="group relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-blue-400/20"
+          className="group relative bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-3 rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 border border-blue-400/20"
           aria-label="Contact us on Telegram"
           title="Chat with us on Telegram"
         >
           <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <FaTelegram className="w-7 h-7 relative z-10" />
+          <FaTelegram className="w-9 h-9 relative z-10" />
           
           {/* Pulse animation */}
-          <div className="absolute inset-0 rounded-2xl bg-blue-400/30 animate-ping"></div>
+          <div className="absolute inset-0 rounded-2xl bg-blue-400/30 animate-slow-ping"></div>
         </button>
         
         {/* Floating label */}
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Chat with us
+{t('telegram.chat_with_us')}
           <div className="absolute left-full top-1/2 -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-900 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
         </div>
       </div>

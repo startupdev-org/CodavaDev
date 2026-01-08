@@ -8,8 +8,10 @@ import {
 } from "../../../../components/ui/animated-elements";
 import { Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const AboutCallToActionSection = () => {
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export const AboutCallToActionSection = () => {
 
   return (
     <section className="relative w-full py-20 sm:py-28 md:py-32 lg:py-40 overflow-hidden">
-      <div className="max-w-[1600px] mx-auto px-6 w-full">
+      <div className="max-w-[1200px] mx-auto px-6 w-full">
         {/* Main CTA Card */}
         <FadeIn delay={0.4} direction="up">
           <Card className="w-full max-w-5xl mx-auto bg-white/[0.03] border border-[#194EFF]/20 rounded-3xl backdrop-blur-xl shadow-2xl hover:shadow-[#194EFF]/10 transition-all duration-500 group relative overflow-hidden">
@@ -36,10 +38,10 @@ export const AboutCallToActionSection = () => {
                 <div className="flex flex-col items-center gap-6 sm:gap-8 w-full">
                   <div className="flex flex-col items-center gap-2 sm:gap-4">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
-                      Ready to Start Your Digital <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Transformation?</span>
+                      {t('about_cta.title')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('about_cta.title_highlight')}</span>
                     </h2>
-                    <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center">
-                      Join businesses that have streamlined operations, boosted customer engagement, and accelerated growth with our cutting-edge technology solutions - trusted by startups and enterprises alike.
+                    <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center ">
+                      {t('about_cta.subtitle')}
                     </p>
                   </div>
                 </div>
@@ -49,7 +51,7 @@ export const AboutCallToActionSection = () => {
                     onClick={() => navigate('/contact')}
                   >
                     <span className="flex items-center gap-2.5">
-                      Let's discuss
+                      {t('about_cta.button_text')}
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>

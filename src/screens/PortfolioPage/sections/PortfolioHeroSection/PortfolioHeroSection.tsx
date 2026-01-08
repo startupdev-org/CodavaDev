@@ -6,14 +6,17 @@ import {
   FloatingElement,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const PortfolioHeroSection = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  
   const stats = [
-    { number: "10+", label: "Projects Completed" },
-    { number: "10+", label: "Thankful Clients" },
-    { number: "50K+", label: "Lines of code" },
-    { number: "100%", label: "Satisfaction" }
+    { number: "10+", label: t('portfolio.hero.stats.projects_completed') },
+    { number: "10+", label: t('portfolio.hero.stats.thankful_clients') },
+    { number: "50K+", label: t('portfolio.hero.stats.lines_of_code') },
+    { number: "100%", label: t('portfolio.hero.stats.satisfaction') }
   ];
 
   return (
@@ -49,19 +52,19 @@ export const PortfolioHeroSection = () => {
             <FadeIn delay={0.1} direction="up">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-0 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
                 <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-                <span className="text-[#194EFF] text-sm font-semibold tracking-wide">OUR WORK</span>
+                <span className="text-[#194EFF] text-sm font-semibold tracking-wide">{t('portfolio.hero.badge')}</span>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2} direction="up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Showcasing <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent"> Our Best Work </span> & Success Stories
+                {t('portfolio.hero.title')} <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent"> {t('portfolio.hero.title_highlight')} </span> {t('portfolio.hero.title_suffix')}
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
               <p className="text-xl text-white/70 leading-relaxed font-light max-w-2xl">
-                Explore our portfolio of innovative digital solutions that have transformed businesses and delivered exceptional results. From web applications to digital marketing campaigns, discover how we bring ideas to life.
+                {t('portfolio.hero.description')}
               </p>
             </FadeIn>
 
@@ -74,7 +77,7 @@ export const PortfolioHeroSection = () => {
                   className="px-10 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-lg rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform"
                 >
                   <span className="flex items-center gap-2.5">
-                    View All Projects
+                    {t('portfolio.hero.view_projects')}
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -86,7 +89,7 @@ export const PortfolioHeroSection = () => {
                   className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#194EFF] focus:ring-offset-2"
                 >
                   <span className="flex items-center gap-2.5">
-                    Contact Us
+                    {t('portfolio.hero.contact_us')}
                     <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>

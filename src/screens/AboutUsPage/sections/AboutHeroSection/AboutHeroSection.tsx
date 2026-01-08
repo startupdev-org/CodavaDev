@@ -5,6 +5,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 const typingTexts = [
   "Through Technology",
@@ -30,10 +31,13 @@ function scrollToOurValues() {
 }
 
 export const AboutHeroSection = () => {
+  const { t } = useTranslation();
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const typingTexts = t('about.typing_texts', { returnObjects: true });
 
   useEffect(() => {
     const currentText = typingTexts[textIndex];
@@ -66,8 +70,8 @@ export const AboutHeroSection = () => {
   // Core values data
   const coreValues = [
     {
-      title: "Human-Centered Innovation",
-      description: "We design and apply technology to amplify human potential, ensuring AI enhances judgment, creativity, and collaboration rather than replacing it.",
+      title: t('about.values.human_centered.title'),
+      description: t('about.values.human_centered.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20v-2c0-2.21 3.58-4 6-4s6 1.79 6 4v2H6z" />
@@ -75,8 +79,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Outcome-Driven Execution",
-      description: "Success is measured by results as: accelerated delivery, improved decision accuracy, and measurable growth - rather than effort alone.",
+      title: t('about.values.outcome_driven.title'),
+      description: t('about.values.outcome_driven.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -84,8 +88,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Agility and Adaptability",
-      description: "Our teams and processes are flexible, scalable, and responsive, enabling rapid experimentation, continuous learning, and innovation aligned with business strategy.",
+      title: t('about.values.agility.title'),
+      description: t('about.values.agility.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -93,8 +97,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Continuous Innovation",
-      description: "By embedding intelligence into every workflow and continuously testing hypotheses, we turn experimentation into rapid, evidence-based improvement.",
+      title: t('about.values.continuous_innovation.title'),
+      description: t('about.values.continuous_innovation.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -102,8 +106,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Sustainable Transformation",
-      description: "AI adoption succeeds when people, process, and technology evolve together. We embed governance, transparency, and measurable metrics from the start to ensure long-term impact.",
+      title: t('about.values.sustainable.title'),
+      description: t('about.values.sustainable.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -111,8 +115,8 @@ export const AboutHeroSection = () => {
       ),
     },
     {
-      title: "Collaboration and Partnership",
-      description: "work alongside business specialists, domain experts, and leaders to co-create pragmatic roadmaps, pilots, and solutions that solve real problems and unlock new markets.",
+      title: t('about.values.collaboration.title'),
+      description: t('about.values.collaboration.description'),
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -142,7 +146,7 @@ export const AboutHeroSection = () => {
 
 
   return (
-    <section className="relative w-full min-h-screen pt-28 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
+    <section className="relative w-full min-h-screen pt-0 bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#194EFF]/20 overflow-hidden flex items-center">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Main gradient overlays */}
@@ -167,7 +171,7 @@ export const AboutHeroSection = () => {
         </div>
       </div>
 
-      <div className="relative max-w-[1600px] mx-auto px-6 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 w-full">
 
         {/* IT Agency Badge */}
         <FadeIn delay={0.1} direction="up">
@@ -175,10 +179,10 @@ export const AboutHeroSection = () => {
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
               {/* <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse  shadow-sm shadow-[#194EFF]/50"></div> */}
               <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
-                All-in-One IT Solutions
+                {t('about.badge_mobile')}
               </span>
               <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
-                We build better lives with technology
+                {t('about.badge_desktop')}
               </span>
             </div>
           </div>
@@ -192,15 +196,15 @@ export const AboutHeroSection = () => {
             {/* Main Heading */}
             <FadeIn delay={0.2} direction="up">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-                Transform Your Business with <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
-                  Digital Excellence
+                {t('about.hero_title')} <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
+                  {t('about.hero_title_highlight')}
                 </span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.3} direction="up">
               <p className="text-base lg:text-lg text-white/80 leading-relaxed max-w-2xl font-light hover:text-white/90 transition-colors duration-300 mx-auto">
-                We are a forward-thinking IT solutions company dedicated to empowering businesses with innovative technology solutions and drive digital transformation and create lasting value for our clients.
+                {t('about.hero_description')}
               </p>
             </FadeIn>
 
@@ -236,10 +240,10 @@ export const AboutHeroSection = () => {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                  Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Mission</span>
+                  {t('about.mission_title')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('about.mission_title').split(' ')[1]}</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  We are dedicated to creating a positive impact for our employees, clients, communities, and the environment.
+                  {t('about.mission_description')}
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -251,8 +255,8 @@ export const AboutHeroSection = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Empowering Progress</h3>
-                      <p className="text-white/70">We build transformative tech solutions that help businesses grow and thrive in a digital world.</p>
+                      <h3 className="text-2xl font-bold text-white">{t('about.mission_card_title')}</h3>
+                      <p className="text-white/70">{t('about.mission_card_description')}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -265,10 +269,10 @@ export const AboutHeroSection = () => {
             <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
               <div className="lg:w-1/2 space-y-6">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                  Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Vision</span>
+                  {t('about.vision_title')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('about.vision_title').split(' ')[1]}</span>
                 </h2>
                 <p className="text-base lg:text-lg text-white/80 leading-relaxed">
-                  We aim to create smart, user-focused solutions that redefine standards and unlock new possibilities.
+                  {t('about.vision_description')}
                 </p>
               </div>
               <div className="lg:w-1/2">
@@ -280,8 +284,8 @@ export const AboutHeroSection = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Global Innovation</h3>
-                      <p className="text-white/70">Shaping the future through bold ideas and advanced technology.</p>
+                      <h3 className="text-2xl font-bold text-white">{t('about.vision_card_title')}</h3>
+                      <p className="text-white/70">{t('about.vision_card_description')}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -295,10 +299,10 @@ export const AboutHeroSection = () => {
           <FadeIn delay={0.9} direction="up">
             <div className="text-center space-y-8 mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" id="our-values">
-                Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Values</span>
+                {t('about.values_title')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('about.values_title').split(' ')[1]}</span>
               </h2>
               <p className="text-base lg:text-lg text-white/80 max-w-3xl mx-auto">
-                The principles that guide our work and define our culture of excellence and innovation.
+                {t('about.values_description')}
               </p>
             </div>
 

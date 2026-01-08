@@ -110,16 +110,18 @@ export const StaggerItem = ({ children }: { children: React.ReactNode }) => {
 export const GlowButton = ({ 
   children, 
   onClick, 
-  className = "" 
+  className = "",
+  disableGlow = false
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  disableGlow?: boolean;
 }) => {
   return (
     <motion.button
       className={`relative overflow-hidden ${className}`}
-      whileHover={{ 
+      whileHover={disableGlow ? {} : { 
         scale: 1.05,
         boxShadow: "0 0 25px rgba(124, 58, 237, 0.6)",
       }}
@@ -127,11 +129,13 @@ export const GlowButton = ({
       onClick={onClick}
       transition={{ duration: 0.2 }}
     >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-0"
-        whileHover={{ opacity: 0.1 }}
-        transition={{ duration: 0.3 }}
-      />
+      {!disableGlow && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-0"
+          whileHover={{ opacity: 0.1 }}
+          transition={{ duration: 0.3 }}
+        />
+      )}
       {children}
     </motion.button>
   );

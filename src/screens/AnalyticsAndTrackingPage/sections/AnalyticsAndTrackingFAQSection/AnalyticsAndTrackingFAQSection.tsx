@@ -1,55 +1,57 @@
-import React, { useState, useRef } from "react";
-
-const faqData = [
-  {
-    block: "General Questions",
-    faqs: [
-      {
-        q: "What is Analytics & Tracking?",
-        a: "Analytics & Tracking refers to the collection and analysis of data about how users interact with your website or app. It helps you understand user behavior, measure performance, and make data-driven decisions."
-      },
-      {
-        q: "Why do I need Google Analytics?",
-        a: "Google Analytics provides detailed insights into your website traffic, user demographics, and behavior. It helps you identify what works, what doesn't, and where to focus your marketing efforts."
-      },
-      {
-        q: "What is Conversion Tracking?",
-        a: "Conversion Tracking allows you to measure specific actions users take on your site, such as purchases, sign-ups, or downloads. This helps you optimize your site for better results."
-      },
-      {
-        q: "How do Heatmaps & Session Recordings help?",
-        a: "Heatmaps and session recordings visually show where users click, scroll, and spend time on your site. This helps you identify usability issues and improve user experience."
-      },
-      {
-        q: "What are Performance Dashboards?",
-        a: "Performance Dashboards are custom visual reports that display your key metrics in real time, making it easy to monitor progress and make informed decisions."
-      },
-      {
-        q: "Can you set up everything for me?",
-        a: "Yes! We handle the full setup and configuration of analytics, tracking, and dashboards so you can focus on your business."
-      }
-    ]
-  },
-  {
-    block: "Technical & Privacy",
-    faqs: [
-      {
-        q: "Is my data secure?",
-        a: "Yes, we follow best practices for data privacy and security. All tracking is GDPR-compliant and respects user consent."
-      },
-      {
-        q: "Can I access my data anytime?",
-        a: "Absolutely! You'll have 24/7 access to your dashboards and analytics reports."
-      },
-      {
-        q: "Can you integrate with my existing tools?",
-        a: "Yes, we can connect analytics and dashboards with your CRM, marketing, or other business tools."
-      }
-    ]
-  }
-];
+import { useState, useRef } from "react";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const AnalyticsAndTrackingFAQSection = () => {
+  const { t } = useTranslation();
+  
+  const faqData = [
+    {
+      block: t('analytics_tracking_page.faq.blocks.general.title'),
+      faqs: [
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.what_is.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.what_is.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.why_google_analytics.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.why_google_analytics.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.what_is_conversion.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.what_is_conversion.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.how_heatmaps.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.how_heatmaps.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.what_dashboards.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.what_dashboards.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.general.items.can_setup.q'),
+          a: t('analytics_tracking_page.faq.blocks.general.items.can_setup.a')
+        }
+      ]
+    },
+    {
+      block: t('analytics_tracking_page.faq.blocks.technical.title'),
+      faqs: [
+        {
+          q: t('analytics_tracking_page.faq.blocks.technical.items.data_secure.q'),
+          a: t('analytics_tracking_page.faq.blocks.technical.items.data_secure.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.technical.items.access_data.q'),
+          a: t('analytics_tracking_page.faq.blocks.technical.items.access_data.a')
+        },
+        {
+          q: t('analytics_tracking_page.faq.blocks.technical.items.integrate_tools.q'),
+          a: t('analytics_tracking_page.faq.blocks.technical.items.integrate_tools.a')
+        }
+      ]
+    }
+  ];
   const [open, setOpen] = useState<{[key: string]: number | null}>({});
   const faqSectionRef = useRef<HTMLDivElement>(null);
   const questionRefs = useRef<(HTMLDivElement | null)[][]>([]);
@@ -64,7 +66,7 @@ export const AnalyticsAndTrackingFAQSection = () => {
   return (
     <section ref={faqSectionRef} className="relative py-20 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">{t('analytics_tracking_page.faq.title')}</h2>
         <div className="space-y-12">
           {faqData.map((block, blockIdx) => (
             <div key={block.block} className="s-faq__block">

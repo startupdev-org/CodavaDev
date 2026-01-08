@@ -1,56 +1,10 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
-const reviews = [
-  {
-    name: "Emma Rodriguez",
-    username: "TechVision Solutions",
-    body: "Codava rebuilt our platform with modern tech stack. Load times dropped 70% and user engagement doubled!",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
-    name: "Bors Andrei",
-    username: "Epic Trans Logistics",
-    body: "I recommend Codava! They helped our logistics business with a logo, business cards, and a client-attracting website.",
-    img: "/avatars/user-02.jpg"
-  },
-  {
-    name: "Castravet Ilie",
-    username: "Euro Tour Moldova",
-    body: "The modern, high-quality website they built for our transport company is fast, ranks high, attracts clients, and elevates visibility.",
-    img: "/avatars/user-01.jpg"
-  },
-  {
-    name: "Alex Chen",
-    username: "FinTech Innovations",
-    body: "AI chatbot handles 90% of support queries instantly. Best tech investment we've made this year!",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
-    name: "Natalia Cimihov",
-    username: "DaVinci Education",
-    body: "Codava built a clear, mobile-friendly site for our educational project, perfectly showcasing all stages.",
-    img: "/avatars/user-04.jpg"
-  },
-  {
-    name: "Stefan Istrati",
-    username: "Senda Courier",
-    body: "I worked with Codava on redesign, logo, and cards; the site's innovative and results were fast, professional.",
-    img: "/avatars/user-03.jpg"
-  },
-  {
-    name: "Maya Patel",
-    username: "GrowthMarketing Pro",
-    body: "SEO campaign tripled organic traffic in 3 months. ROI exceeded expectations by 200%!",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  },
-  {
-    name: "David Thompson",
-    username: "HealthTech Solutions",
-    body: "App redesign increased daily active users by 85%. Patient feedback has been overwhelmingly positive.",
-    img: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face&auto=format&q=80"
-  }
-];
+export function ReviewsMarqueeSection() {
+  const { t } = useTranslation();
+  const reviews = t('reviews.testimonials', { returnObjects: true });
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -110,8 +64,6 @@ const ReviewCard = ({
     </figure>
   );
 };
-
-export function ReviewsMarqueeSection() {
   return (
     <section className="relative py-20">
       {/* Background decoration */}
@@ -125,13 +77,13 @@ export function ReviewsMarqueeSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full mb-6">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
-            <span className="text-[#194EFF] text-sm font-semibold tracking-wider uppercase">Client Reviews</span>
+            <span className="text-[#194EFF] text-sm font-semibold tracking-wider uppercase">{t('reviews.badge')}</span>
           </div>
           <h2 className="text-3xl sm:text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            What Our <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Clients Say</span>
+            {t('reviews.title_line1')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('reviews.title_line2')}</span>
           </h2>
           <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-            Trusted by hundreds of businesses worldwide for exceptional digital solutions
+            {t('reviews.subtitle')}
           </p>
         </div>
 

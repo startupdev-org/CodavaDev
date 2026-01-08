@@ -1,12 +1,11 @@
 import React from "react";
-import {
-  FadeIn,
-  StaggerContainer,
-  StaggerItem,
-  GlowButton
-} from "../../../../components/ui/animated-elements";
+import { FadeIn } from "../../../../components/ui/animated-elements";
+import { BiMouse } from "react-icons/bi";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const WebDevelopmentHeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* CSS Animations */}
@@ -44,7 +43,7 @@ export const WebDevelopmentHeroSection = () => {
         `
       }} />
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}
@@ -99,33 +98,33 @@ export const WebDevelopmentHeroSection = () => {
 
           {/* Service Badge */}
           <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm lg:mb-10 mb-6">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">💻 Web Development • Custom Solutions • Scalable Applications</span>
+              <span className="text-white/80 text-sm font-medium">{t('web_development.hero.badge')}</span>
             </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Custom Web Development
+              {t('web_development.hero.title')}
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                That Scales With You
+                {t('web_development.hero.title_highlight')}
               </span>
             </h1>
           </FadeIn>
 
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
-            <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              From responsive websites to complex web applications, we build modern, fast, and secure solutions using the latest technologies. Every project is crafted to deliver exceptional user experiences and drive business growth.
+            <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
+              {t('web_development.hero.description')}
             </p>
           </FadeIn>
 
           {/* Technology Stack Preview */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['React', 'Node.js', 'TypeScript', 'Next.js', 'MongoDB', 'AWS'].map((tech, index) => (
+              {(t('web_development.hero.tech_stack', { returnObjects: true }) as string[]).map((tech: string, index: number) => (
                 <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
                   {tech}
                 </div>
@@ -133,45 +132,13 @@ export const WebDevelopmentHeroSection = () => {
             </div>
           </FadeIn>
 
-          {/* CTA Buttons */}
-          <FadeIn delay={0.5} direction="up">
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <button
-                onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
-                className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
-              >
-                <span className="flex items-center gap-2.5">
-                  Start Your Project
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-              </button>
-
-              <button className="group px-9 py-3.5 bg-white/10 text-white font-semibold text-base rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm">
-                <span className="flex items-center gap-2.5">
-                  View Portfolio
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </FadeIn>
-
-          {/* Status & Stats */}
-          <FadeIn delay={0.6} direction="up">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/50">
-              <div className="flex items-center gap-2.5">
-                <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
-                <span>Available for new projects</span>
+          {/* Scroll Indicator */}
+          <FadeIn delay={0.7} direction="up">
+              <div className="flex justify-center pt-8">
+                <div className="animate-bounce">
+                  <BiMouse className="w-8 h-8 text-white/50 hover:text-white/70 transition-colors duration-300" />
+                </div>
               </div>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>20+ Web Apps Delivered</span>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span>99.9% Uptime Guarantee</span>
-            </div>
           </FadeIn>
 
         </div>
