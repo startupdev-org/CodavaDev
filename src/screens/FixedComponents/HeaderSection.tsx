@@ -14,19 +14,21 @@ import {
   StaggerItem
 } from "../../components/ui/animated-elements";
 import logoBg from '/logo-white.png';
+import { useTranslation } from "../../contexts/LanguageContext";
 
 export const HeaderSection = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
 
   // Dynamic navigation menu items based on current location
   const navItems = [
-    { name: "Home", path: "/", hasDropdown: false },
-    { name: "About Us", path: "/about", hasDropdown: false },
-    { name: "Services", path: "/services", hasDropdown: true },
-    { name: "Our Work", path: "/our-work", hasDropdown: false },
+    { name: t('navigation.home'), path: "/", hasDropdown: false },
+    { name: t('navigation.about'), path: "/about", hasDropdown: false },
+    { name: t('navigation.services'), path: "/services", hasDropdown: true },
+    { name: t('navigation.portfolio'), path: "/our-work", hasDropdown: false },
   ];
 
   // Function to get icon component based on icon name
@@ -62,25 +64,25 @@ export const HeaderSection = () => {
   // Services dropdown data
   const servicesDropdown = [
     {
-      category: "Development & Design",
+      category: t('navigation.services'),
       items: [
-        { name: "Web Development", description: "Custom websites & applications", icon: "Code", path: "/services/web-development" },
-        { name: "Design", description: "UI/UX & brand identity", icon: "Palette", path: "/services/design" },
-        { name: "AI Automation", description: "AI chatbots & automation", icon: "Bot", path: "/services/bot-automation" },
+        { name: t('navigation.web_development'), description: t('header.custom_websites_desc'), icon: "Code", path: "/services/web-development" },
+        { name: t('navigation.design'), description: t('header.design_desc'), icon: "Palette", path: "/services/design" },
+        { name: t('navigation.bot_automation'), description: t('header.automation_desc'), icon: "Bot", path: "/services/bot-automation" },
       ]
     },
     {
-      category: "Marketing & Content",
+      category: t('header.marketing_content'),
       items: [
-        { name: "SEO", description: "Search engine optimization", icon: "Search", path: "/services/seo" },
-        { name: "Copywriting", description: "Content that converts", icon: "FileText", path: "/services/copywriting" },
+        { name: t('navigation.seo'), description: t('header.seo_desc'), icon: "Search", path: "/services/seo" },
+        { name: t('navigation.copywriting'), description: t('header.copywriting_desc'), icon: "FileText", path: "/services/copywriting" },
       ]
     },
     {
-      category: "Analytics & Tracking",
+      category: t('navigation.analytics_tracking'),
       items: [
         {
-          name: "Analytics & Tracking",
+          name: t('navigation.analytics_tracking'),
           description: "Track user behavior. Improve results.",
           icon: "BarChart3",
           path: "/services/analytics-tracking",
@@ -99,19 +101,19 @@ export const HeaderSection = () => {
   // Portfolio dropdown data
   const portfolioDropdown = [
     {
-      category: "Our Work",
+      category: t('header.our_work'),
       items: [
-        { name: "Web Projects", description: "Featured web projects", icon: "Globe", path: "/our-work" },
-        { name: "Brand Design", description: "Identity & design work", icon: "Palette", path: "/our-work/brand" },
-        { name: "Case Studies", description: "Detailed project breakdowns", icon: "BarChart3", path: "/case-studies" },
+        { name: t('header.web_projects'), description: t('header.web_projects_desc'), icon: "Globe", path: "/our-work" },
+        { name: t('header.brand_design'), description: t('header.brand_design_desc'), icon: "Palette", path: "/our-work/brand" },
+        { name: t('header.case_studies'), description: t('header.case_studies_desc'), icon: "BarChart3", path: "/case-studies" },
       ]
     },
     {
-      category: "Industries",
+      category: t('header.industries'),
       items: [
-        { name: "E-commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/our-work/ecommerce" },
-        { name: "Healthcare", description: "Medical & wellness brands", icon: "Heart", path: "/our-work/healthcare" },
-        { name: "Technology", description: "Tech startups & SaaS", icon: "Lightbulb", path: "/our-work/technology" },
+        { name: t('header.ecommerce'), description: t('header.ecommerce_desc'), icon: "ShoppingCart", path: "/our-work/ecommerce" },
+        { name: t('header.healthcare'), description: t('header.healthcare_desc'), icon: "Heart", path: "/our-work/healthcare" },
+        { name: t('header.technology'), description: t('header.technology_desc'), icon: "Lightbulb", path: "/our-work/technology" },
       ]
     }
   ];
@@ -204,7 +206,7 @@ export const HeaderSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <span className="text-white font-semibold">Services</span>
+              <span className="text-white font-semibold">{t('navigation.services')}</span>
             </div>
             <div className="relative">
               <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
@@ -252,7 +254,7 @@ export const HeaderSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <span className="text-white font-semibold">Our Work</span>
+              <span className="text-white font-semibold">{t('navigation.portfolio')}</span>
             </div>
             <div className="relative">
               <div className="overflow-y-auto max-h-[45vh] scrollbar-thin scrollbar-thumb-[#194EFF]/40 scrollbar-track-transparent">
@@ -357,6 +359,7 @@ export const HeaderSection = () => {
             </NavigationMenu>
           </motion.div>
 
+
           {/* CTA Button - Right */}
           <motion.div
             className="hidden lg:flex"
@@ -369,7 +372,7 @@ export const HeaderSection = () => {
               className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
               onClick={() => navigate('/contact')}
             >
-              <span className="relative z-10">Contact Us</span>
+              <span className="relative z-10">{t('navigation.contact')}</span>
               <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -465,7 +468,7 @@ export const HeaderSection = () => {
                 onClick={() => navigate('/contact')}
                 className="w-full px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2"
               >
-                <span className="relative z-10">Contact Us</span>
+                <span className="relative z-10">{t('navigation.contact')}</span>
                 <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

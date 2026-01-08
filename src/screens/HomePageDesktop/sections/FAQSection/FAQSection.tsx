@@ -1,51 +1,16 @@
 import React, { useState } from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Button } from "../../../../components/ui/button";
-import { Badge } from "../../../../components/ui/badge";
 import {
   FadeIn,
   StaggerContainer,
-  StaggerItem,
-  GlowButton
+  StaggerItem
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const FAQSection: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const { t } = useTranslation();
 
-  const faqs = [
-    {
-      question: "What types of IT services do you offer?",
-      answer: "We provide end-to-end IT solutions, including web and full stack development, UI/UX design, automation, SEO, copywriting, and 24/7 IT support—tailored to grow with your business."
-    },
-    {
-      question: "How long does a typical project take?",
-      answer: "Project timelines depend on scope. Small projects take 1-2 weeks, while larger digital transformations can take up to 3 months. We provide detailed timelines during your consultation."
-    },
-    {
-      question: "Do you offer ongoing support after launch?",
-      answer: "Yes! We provide 24/7 support and maintenance—including monitoring, updates, troubleshooting, and continuous optimization. This service is free for the first 14 days after your project is completed."
-    },
-    {
-      question: "Can you help with content and copywriting?",
-      answer: "Absolutely. Our expert copywriters create compelling website copy, emails, sales pages, and blog content to engage your audience and drive conversions."
-    },
-    {
-      question: "How do you approach UI/UX design?",
-      answer: "We use a user-centered approach, crafting intuitive and visually engaging interfaces that enhance user experience and reflect your brand identity."
-    },
-    {
-      question: "Can you automate business processes or customer support?",
-      answer: "Yes. We build smart automation and bot solutions to streamline tasks, improve customer service, and boost efficiency."
-    },
-    {
-      question: "Will you work with our existing technology stack?",
-      answer: "Absolutely. We integrate seamlessly with existing systems, using a thorough assessment to ensure compatibility and smooth operation."
-    },
-    {
-      question: "What makes Codava different from other IT service providers?",
-      answer: "We combine cutting-edge technology with personalized service, focusing on your business goals first. Our custom solutions deliver measurable results, supported by 24/7 assistance."
-    }
-  ];
+  const faqs = t('faq.questions', { returnObjects: true }) as Array<{question: string, answer: string}>;
 
 
   return (
@@ -56,22 +21,22 @@ export const FAQSection: React.FC = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
               <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">SUPPORT CENTER</span>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">{t('faq.badge')}</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
-              Frequently Asked
+              {t('faq.title_line1')}
               <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text h-20">
-                Questions
+                {t('faq.title_line2')}
               </span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.3} direction="up">
             <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-              Find answers to common questions about our IT services and digital solutions. Our experts help you make informed decisions.
+              {t('faq.subtitle')}
             </p>
           </FadeIn>
         </div>
@@ -128,15 +93,14 @@ export const FAQSection: React.FC = () => {
 
             <div className="relative z-10">
               <h3 className="text-4xl font-bold text-white mb-3">
-                Start Your
+                {t('cta.title')}
                 <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
-                  Digital Transformation Today
+                  {t('cta.title_highlight')}
                 </span>
               </h3>
 
               <p className="text-white/70 text-base mb-4 max-w-2xl mx-auto font-light leading-relaxed">
-                Ready to modernize your IT infrastructure? Our experts are standing by to help you get started
-                with a comprehensive solution tailored to your business needs.
+                {t('cta.subtitle')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
@@ -144,7 +108,7 @@ export const FAQSection: React.FC = () => {
                   onClick={() => window.open('https://calendly.com/codava-dev/30min', '_blank')}
                   className="px-8 py-3 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn"
                 >
-                  <span className="relative z-10">Get Free Consultation</span>
+                  <span className="relative z-10">{t('cta.primary_button')}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                 </button>
                 {/* <button className="px-10 py-5 bg-white/8 text-white font-semibold text-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#194EFF]/40 transition-all duration-300 backdrop-blur-sm hover:scale-105 transform shadow-lg relative overflow-hidden group/btn">
@@ -155,9 +119,9 @@ export const FAQSection: React.FC = () => {
 
               {/* Contact Support */}
               <div className="border-t border-white/10 pt-4">
-                <h4 className="text-white font-semibold text-xl mb-3">Still have questions?</h4>
+                <h4 className="text-white font-semibold text-xl mb-3">{t('cta.support_title')}</h4>
                 <p className="text-white/60 text-base mb-4 font-medium">
-                  Our support team is available 24/7 to help you find the right solution for your business.
+                  {t('cta.support_description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <div className="flex items-center gap-3 text-[#194EFF] hover:text-[#194EFF]/80 transition-colors duration-300 cursor-pointer group/contact">
@@ -174,7 +138,7 @@ export const FAQSection: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span className="font-semibold">codava.dev@gmail.com</span>
+                    <span className="font-semibold">{t('cta.contact_email')}</span>
                   </div>
                 </div>
               </div>

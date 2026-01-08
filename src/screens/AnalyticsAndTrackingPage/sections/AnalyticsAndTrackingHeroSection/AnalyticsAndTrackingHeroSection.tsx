@@ -1,8 +1,9 @@
-import React from "react";
 import { FadeIn } from "../../../../components/ui/animated-elements";
 import { BiMouse } from "react-icons/bi";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const AnalyticsAndTrackingHeroSection = () => {
+  const { t } = useTranslation();
   return (
     <>
       <style dangerouslySetInnerHTML={{
@@ -33,7 +34,7 @@ export const AnalyticsAndTrackingHeroSection = () => {
           }
         `
       }} />
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>
@@ -73,28 +74,28 @@ export const AnalyticsAndTrackingHeroSection = () => {
         <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">
         {/* Service Badge */}
         <FadeIn delay={0.1} direction="up">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm lg:mb-10 mb-6">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-            <span className="text-white/80 text-sm font-medium">Analytics & Tracking</span>
+            <span className="text-white/80 text-sm font-medium">{t('analytics_tracking_page.hero.badge')}</span>
           </div>
         </FadeIn>
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Analytics & Tracking
+              {t('analytics_tracking_page.hero.title')}
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                Smarter Decisions, Better Results
+                {t('analytics_tracking_page.hero.title_highlight')}
               </span>
             </h1>
           </FadeIn>
         {/* Enhanced Description */}
         <FadeIn delay={0.3} direction="up">
           <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-            Gain valuable insights into user behavior to make smarter business decisions and boost performance.
+            {t('analytics_tracking_page.hero.description')}
           </p>
         </FadeIn>
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {["Google Analytics", "Conversion Tracking", "Heatmaps", "Dashboards"].map((tech, index) => (
+              {(t('analytics_tracking_page.hero.services', { returnObjects: true }) as string[]).map((tech: string, index: number) => (
                 <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
                   {tech}
                 </div>

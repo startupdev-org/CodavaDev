@@ -8,8 +8,10 @@ import {
 } from "../../../../components/ui/animated-elements";
 import { Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const AboutCallToActionSection = () => {
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -36,10 +38,10 @@ export const AboutCallToActionSection = () => {
                 <div className="flex flex-col items-center gap-6 sm:gap-8 w-full">
                   <div className="flex flex-col items-center gap-2 sm:gap-4">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
-                      Ready to Start Your Digital <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">Transformation?</span>
+                      {t('about_cta.title')} <span className="text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">{t('about_cta.title_highlight')}</span>
                     </h2>
                     <p className="font-medium text-white/70 text-base sm:text-lg leading-[22px] sm:leading-[27px] text-center ">
-                      Join businesses that have streamlined operations and accelerated growth with our technology solutions.
+                      {t('about_cta.subtitle')}
                     </p>
                   </div>
                 </div>
@@ -49,7 +51,7 @@ export const AboutCallToActionSection = () => {
                     onClick={() => navigate('/contact')}
                   >
                     <span className="flex items-center gap-2.5">
-                      Let's discuss
+                      {t('about_cta.button_text')}
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>

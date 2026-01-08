@@ -1,8 +1,10 @@
 import { FaTelegram, FaTimes } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from '../contexts/LanguageContext';
 
 const TelegramButton = () => {
+  const { t } = useTranslation();
   const [showNotification, setShowNotification] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
@@ -86,16 +88,16 @@ const TelegramButton = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-medium text-white text-sm mb-1.5">
-                    Save 50% on your project!
+                    {t('telegram.notification_title')}
                   </h4>
                   <p className="text-gray-300 text-xs mb-3 leading-relaxed">
-                    Limited time offer! Chat now to get exclusive pricing and start building.
+                    {t('telegram.notification_description')}
                   </p>
                   <button
                     onClick={handleTelegramClick}
                     className="text-blue-400 hover:text-blue-300 text-xs font-medium transition-colors duration-200 flex items-center gap-1 group"
                   >
-                    Claim Discount
+{t('telegram.claim_discount')}
                     <span className="group-hover:translate-x-0.5 transition-transform duration-200">→</span>
                   </button>
                 </div>
@@ -134,7 +136,7 @@ const TelegramButton = () => {
         
         {/* Floating label */}
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Chat with us
+{t('telegram.chat_with_us')}
           <div className="absolute left-full top-1/2 -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-900 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
         </div>
       </div>

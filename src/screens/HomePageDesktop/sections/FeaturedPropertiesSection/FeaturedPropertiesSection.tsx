@@ -12,24 +12,21 @@ import {
 import { MdOutlinePalette } from "react-icons/md";
 import { LuPen } from "react-icons/lu";
 import { ChartBarIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const FeaturedPropertiesSection: React.FC = () => {
-  const services = [
+  const { t } = useTranslation();
 
+  const services = [
     {
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      title: "AI Automation",
-      description:
-        "Save time and boost efficiency with intelligent automation solutions that streamline workflows and eliminate repetitive tasks.",
-      features: [
-        "AI Consultant",
-        "Task Automation",
-        "24/7 Support",
-      ],
+      title: t('services.ai_automation.title'),
+      description: t('services.ai_automation.description'),
+      features: t('services.ai_automation.features', { returnObjects: true }),
       popular: false,
       route: "/services/bot-automation",
     },
@@ -39,14 +36,9 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      title: "Web Development",
-      description:
-        "Build fast, secure, and scalable websites—from e-commerce stores to business sites and web applications.",
-      features: [
-        "Frontend & Backend",
-        "Database Design",
-        "Complex Apps",
-      ],
+      title: t('services.web_development.title'),
+      description: t('services.web_development.description'),
+      features: t('services.web_development.features', { returnObjects: true }),
       popular: true,
       route: "/services/web-development",
     },
@@ -54,14 +46,9 @@ export const FeaturedPropertiesSection: React.FC = () => {
       icon: (
         <MdOutlinePalette className="w-8 h-8" />
       ),
-      title: "Design",
-      description:
-        "Deliver clear and engaging visuals that connect your brand with your customers.",
-      features: [
-        "Branding & Logos",
-        "Product Design",
-        "Marketing Materials",
-      ],
+      title: t('services.design.title'),
+      description: t('services.design.description'),
+      features: t('services.design.features', { returnObjects: true }),
       popular: false,
       route: "/services/design",
     },
@@ -71,14 +58,9 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       ),
-      title: "SEO",
-      description:
-        "Improve your website's ranking on search engines to attract more visitors and potential customers.",
-      features: [
-        "Keyword Research",
-        "On-Page SEO",
-        "Technical SEO",
-      ],
+      title: t('services.seo.title'),
+      description: t('services.seo.description'),
+      features: t('services.seo.features', { returnObjects: true }),
       popular: false,
       route: "/services/seo",
     },
@@ -86,28 +68,19 @@ export const FeaturedPropertiesSection: React.FC = () => {
       icon: (
         <LuPen className="w-8 h-8" />
       ),
-      title: "Copywriting",
-      description:
-        "Compelling copy that connects with your audience and drives action. From website content to email campaigns.",
-      features: [
-        "Website Copyrighting",
-        "Email Campaigns",
-        "Sales Pages",
-      ],
+      title: t('services.copywriting.title'),
+      description: t('services.copywriting.description'),
+      features: t('services.copywriting.features', { returnObjects: true }),
       popular: false,
       route: "/services/copywriting",
     },
     {
       icon: (
-        <ChartBarIcon className="w-8 h-8 text-[#194EFF]" />
+        <ChartBarIcon className="w-8 h-8" />
       ),
-      title: "Analytics & Tracking",
-      description: "Gain valuable insights into user behavior to make smarter business decisions and boost performance.",
-      features: [
-        "Google Analytics Setup",
-        "Conversion Tracking",
-        "Performance Dashboards"
-      ],
+      title: t('services.analytics.title'),
+      description: t('services.analytics.description'),
+      features: t('services.analytics.features', { returnObjects: true }),
       popular: false,
       route: "/services/analytics-tracking",
     },
@@ -122,22 +95,22 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
               <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">CREATIVE SERVICES</span>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">{t('services.badge')}</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl lg:text-5xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Professional
+              {t('services.title_line1')}
               <span className="block bg-gradient-to-r h-[50px] lg:h-[70px] text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
-                Digital Solutions
+                {t('services.title_line2')}
               </span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.3} direction="up">
             <p className="text-base lg:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-              By combining data, AI, intelligent automation, and creativity, we deliver solutions that drive growth and elevate your brand.
+              {t('services.subtitle')}
             </p>
           </FadeIn>
         </div>
@@ -154,7 +127,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
                   {service.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                       <div className="bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg shadow-[#194EFF]/25 border border-[#194EFF]/30">
-                        Most Popular
+                        {t('services.most_popular')}
                       </div>
                     </div>
                   )}
@@ -195,7 +168,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
                         ? 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40'
                         : 'bg-white/8 text-white hover:bg-white/15 border border-white/20 hover:border-[#194EFF]/40 backdrop-blur-sm'
                         }`}>
-                        <span className="relative z-10">Learn More</span>
+                        <span className="relative z-10">{t('services.learn_more')}</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                       </Link>
                     </div>

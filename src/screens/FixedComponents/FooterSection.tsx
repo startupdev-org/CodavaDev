@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Mail } from "lucide-react";
 import { supabase } from '../../lib/supabaseClient';
 import logoBg from "/logo-white.png";
+import { useTranslation } from "../../contexts/LanguageContext";
+import { LanguageSelector } from "../../components/LanguageSelector";
 
 
 export const FooterSection = () => {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -31,7 +34,7 @@ export const FooterSection = () => {
               />
             </div>
             <p className="text-white/60 text-base leading-relaxed">
-              Creating exceptional digital experiences that help brands thrive online.
+              {t('footer.description')}
             </p>
             <div className="flex items-center gap-2 mt-2">
               <Mail className="w-5 h-5 text-[#194EFF] drop-shadow-glow" />
@@ -57,19 +60,19 @@ export const FooterSection = () => {
 
           {/* Column 2: Company */}
           <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">Company
+            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.company')}
               <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
             <div className="flex flex-col gap-2">
-              <a href="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">About Us</a>
-              <a href="/our-work" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Our Work</a>
-              <a href="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Contact</a>
+              <a href="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.about')}</a>
+              <a href="/our-work" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.portfolio')}</a>
+              <a href="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.contact')}</a>
             </div>
           </div>
 
           {/* Column 3: Services */}
           <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">Services
+            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.services')}
               <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
             <div className="flex flex-col gap-2">
@@ -83,10 +86,10 @@ export const FooterSection = () => {
 
           {/* Column 4: Newsletter Signup */}
           <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">Newsletter
+            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.newsletter')}
               <div className="absolute bottom-0 left-0 w-24 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
-            <p className="text-white/60 text-sm mb-4 max-w-xs lg:max-w-none">Get the latest digital tips in your inbox.</p>
+            <p className="text-white/60 text-sm mb-4 max-w-xs lg:max-w-none">{t('footer.newsletter_description')}</p>
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -115,7 +118,7 @@ export const FooterSection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3.5 text-white placeholder-white/50 focus:border-[#194EFF] focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#194EFF]/20 text-sm transition-all duration-300"
-                  placeholder="Enter your email"
+                  placeholder={t('footer.email_placeholder')}
                   required
                   disabled={isSubmitting}
                   aria-label="Email address"
@@ -132,28 +135,33 @@ export const FooterSection = () => {
                 {isSubmitting ? (
                   <div className="flex items-center gap-2 justify-center">
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Subscribing...</span>
+                    <span>{t('footer.subscribing')}</span>
                   </div>
                 ) : (
-                  <span>Subscribe</span>
+                  <span>{t('footer.subscribe')}</span>
                 )}
               </button>
             </form>
             {showSuccess && (
-              <div className="mt-2 p-2 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm w-full">Registered Successfully!</div>
+              <div className="mt-2 p-2 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm w-full">{t('footer.success_message')}</div>
             )}
             {showError && (
-              <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">Error Sending Message</div>
+              <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">{t('footer.error_message')}</div>
             )}
           </div>
         </div>
 
         {/* Bottom Section */}
         <div className="pt-10 border-t border-[#194EFF]/20">
-          <div className="flex flex-col items-center justify-center gap-1">
-            <p className="text-white/80 text-base font-medium text-center">
-              © 2026 <span className="text-[#194EFF] font-bold">CodavaDev</span> — All rights reserved.
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Copyright - Left */}
+            <p className="text-white/80 text-base font-medium text-center sm:text-left">
+              {t('footer.copyright').replace('2024', '2026')}
             </p>
+            {/* Language Selector - Right */}
+            <div className="flex justify-center sm:justify-end">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       </div>

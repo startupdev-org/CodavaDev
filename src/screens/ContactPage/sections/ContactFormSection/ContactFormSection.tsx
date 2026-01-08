@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Button } from "../../../../components/ui/button";
+import { useState } from "react";
 import { 
   FadeIn, 
   StaggerContainer, 
@@ -7,8 +6,10 @@ import {
   GlowButton
 } from "../../../../components/ui/animated-elements";
 import emailjs from '@emailjs/browser';
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
-export const ContactFormSection: React.FC = () => {
+export const ContactFormSection = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,11 +50,11 @@ export const ContactFormSection: React.FC = () => {
         'service_glh9iss',
         'template_vttl4v7',
         {
-          name: formData.name,
+          full_name: formData.name,
           email: formData.email,
           subject: formData.subject,
+          source: formData.howHeard,
           message: formData.message,
-          howHeard: formData.howHeard,
         },
         'dj1hZBH9DC_l229_T'
       );
@@ -68,7 +69,7 @@ export const ContactFormSection: React.FC = () => {
       }
     } catch (error) {
       console.error('EmailJS Error:', error);
-      setError('Failed to send message. Please try again.');
+      setError(t('contact_page.form.messages.error.default'));
     } finally {
       setIsLoading(false);
     }
@@ -76,35 +77,24 @@ export const ContactFormSection: React.FC = () => {
 
   const services = [
     {
-      category: "DEVELOPMENT & DESIGN",
+      category: t('contact_page.form.service_categories.development_design'),
       items: [
-        { name: "Web Development", description: "Custom websites & applications" },
-        { name: "Full Stack Development", description: "End-to-end development solutions" },
-        { name: "Design", description: "UI/UX & brand identity" },
-        { name: "Bot Automation", description: "AI chatbots & automation" }
+        { name: "Web Development", translationKey: "web_development" },
+        { name: "Design", translationKey: "design" },
+        { name: "Bot Automation", translationKey: "bot_automation" }
       ]
     },
     {
-      category: "MARKETING & CONTENT",
+      category: t('contact_page.form.service_categories.marketing_content'),
       items: [
-        { name: "SEO", description: "Search engine optimization" },
-        { name: "Copywriting", description: "Content that converts" }
+        { name: "SEO", translationKey: "seo" },
+        { name: "Copywriting", translationKey: "copywriting" }
       ]
     },
     {
-      category: "ANALYTICS & TRACKING",
+      category: t('contact_page.form.service_categories.analytics_tracking'),
       items: [
-        {
-          name: "Analytics & Tracking",
-          description: "Gain valuable insights into user behavior to make smarter business decisions and boost performance.",
-          features: [
-            "Google Analytics Setup",
-            "Conversion Tracking",
-            "Heatmaps & Session Recordings",
-            "Performance Dashboards"
-          ],
-          cta: "Learn More"
-        }
+        { name: "Analytics & Tracking", translationKey: "analytics_tracking" }
       ]
     }
   ];
@@ -117,20 +107,20 @@ export const ContactFormSection: React.FC = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
               <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">CONTACT FORM</span>
+              <span className="text-[#194EFF] text-sm font-semibold tracking-wide">{t('contact_page.form.badge')}</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" id="contact-form">
-              Get In <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Touch</span>
+              {t('contact_page.form.title')} <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">{t('contact_page.form.title_highlight')}</span>
             </h2>
           </FadeIn>
           
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light"
             >
-              Ready to start your next project? Fill out the form below.
+              {t('contact_page.form.description')}
             </p>
           </FadeIn>
         </div>
@@ -142,19 +132,21 @@ export const ContactFormSection: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
-                  Ready to Start Your Next Project?
+                  {t('contact_page.form.left_side.title')}
                 </h3>
                 <p className="text-lg text-white/70 leading-relaxed mb-8">
-                  Let's discuss how we can help you achieve your business goals with cutting-edge technology solutions. Our team is ready to bring your vision to life.
+                  {t('contact_page.form.left_side.description')}
                 </p>
                 <GlowButton
-                  className="px-8 py-4 bg-[#194EFF] hover:bg-[#194EFF]/80 rounded-xl font-semibold text-white transition-all duration-300 flex items-center gap-3"
+                  disableGlow={true}
+                  className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
                   onClick={() => window.open('https://calendly.com/codava-support/consultation', '_blank')}
                 >
-                  Get Free Consultation
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="relative z-10">{t('contact_page.form.left_side.button')}</span>
+                  <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
                 </GlowButton>
               </div>
 
@@ -167,8 +159,8 @@ export const ContactFormSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">10+</div>
-                    <div className="text-white/60 text-sm">Projects Completed</div>
+                    <div className="text-2xl font-bold text-white">{t('contact_page.form.left_side.stats.projects_completed.value')}</div>
+                    <div className="text-white/60 text-sm">{t('contact_page.form.left_side.stats.projects_completed.label')}</div>
                   </div>
                 </div>
 
@@ -179,8 +171,8 @@ export const ContactFormSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">50K+</div>
-                    <div className="text-white/60 text-sm">Lines of Code Written</div>
+                    <div className="text-2xl font-bold text-white">{t('contact_page.form.left_side.stats.lines_of_code.value')}</div>
+                    <div className="text-white/60 text-sm">{t('contact_page.form.left_side.stats.lines_of_code.label')}</div>
                   </div>
                 </div>
 
@@ -191,8 +183,8 @@ export const ContactFormSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-white">20+</div>
-                    <div className="text-white/60 text-sm">Tech Stack Tools</div>
+                    <div className="text-2xl font-bold text-white">{t('contact_page.form.left_side.stats.tech_stack_tools.value')}</div>
+                    <div className="text-white/60 text-sm">{t('contact_page.form.left_side.stats.tech_stack_tools.label')}</div>
                   </div>
                 </div>
               </div>
@@ -212,8 +204,8 @@ export const ContactFormSection: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-green-400 font-semibold text-lg">Message Sent Successfully!</h3>
-                      <p className="text-green-300 text-sm">Thank you for your message. We'll get back to you soon!</p>
+                      <h3 className="text-green-400 font-semibold text-lg">{t('contact_page.form.messages.success.title')}</h3>
+                      <p className="text-green-300 text-sm">{t('contact_page.form.messages.success.description')}</p>
                     </div>
                   </div>
                 </div>
@@ -231,7 +223,7 @@ export const ContactFormSection: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-red-400 font-semibold text-lg">Error Sending Message</h3>
+                      <h3 className="text-red-400 font-semibold text-lg">{t('contact_page.form.messages.error.title')}</h3>
                       <p className="text-red-300 text-sm">{error}</p>
                     </div>
                   </div>
@@ -251,34 +243,34 @@ export const ContactFormSection: React.FC = () => {
                   {/* Full Name and Email in 2 columns on desktop */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div>
-                      <label className="text-white font-semibold text-base mb-2 block">Full Name *</label>
+                      <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.full_name')}</label>
                       <input
                         type="text"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                        placeholder="Enter your full name"
+                        placeholder={t('contact_page.form.placeholders.full_name')}
                         required
                         disabled={isLoading}
                       />
                     </div>
                     <div>
-                      <label className="text-white font-semibold text-base mb-2 block">Email Address *</label>
+                      <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.email')}</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                        placeholder="Enter your email address"
+                        placeholder={t('contact_page.form.placeholders.email')}
                         required
                         disabled={isLoading}
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-white font-semibold text-base mb-2 block">Subject *</label>
+                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.subject')}</label>
                     <select
                       name="subject"
                       value={formData.subject}
@@ -287,7 +279,7 @@ export const ContactFormSection: React.FC = () => {
                       required
                       disabled={isLoading}
                     >
-                      <option value="" className="bg-[#00041F] text-white">Select a service</option>
+                      <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_service')}</option>
                       {services.map((category, categoryIndex) => (
                         <optgroup key={categoryIndex} label={category.category} className="bg-[#00041F] text-white">
                           {category.items.map((service, serviceIndex) => (
@@ -296,7 +288,7 @@ export const ContactFormSection: React.FC = () => {
                               value={service.name}
                               className="bg-[#00041F] text-white py-2"
                             >
-                              {service.name} - {service.description}
+                              {t(`contact_page.form.services.${service.translationKey}`)}
                             </option>
                           ))}
                         </optgroup>
@@ -304,7 +296,7 @@ export const ContactFormSection: React.FC = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="text-white font-semibold text-base mb-2 block">How did you hear about us?</label>
+                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.how_heard')}</label>
                     <select
                       name="howHeard"
                       value={formData.howHeard}
@@ -313,25 +305,25 @@ export const ContactFormSection: React.FC = () => {
                       required
                       disabled={isLoading}
                     >
-                      <option value="" className="bg-[#00041F] text-white">Select an option</option>
-                      <option value="Google">Google</option>
-                      <option value="Friend or Colleague">Friend or Colleague</option>
-                      <option value="Instagram">Instagram</option>
-                      <option value="Facebook">Facebook</option>
-                      <option value="LinkedIn">LinkedIn</option>
-                      <option value="Advertisement">Advertisement</option>
-                      <option value="Event or Conference">Event or Conference</option>
-                      <option value="Other">Other</option>
+                      <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_option')}</option>
+                      <option value="Google">{t('contact_page.form.select_options.how_heard.google')}</option>
+                      <option value="Friend or Colleague">{t('contact_page.form.select_options.how_heard.friend_colleague')}</option>
+                      <option value="Instagram">{t('contact_page.form.select_options.how_heard.instagram')}</option>
+                      <option value="Facebook">{t('contact_page.form.select_options.how_heard.facebook')}</option>
+                      <option value="LinkedIn">{t('contact_page.form.select_options.how_heard.linkedin')}</option>
+                      <option value="Advertisement">{t('contact_page.form.select_options.how_heard.advertisement')}</option>
+                      <option value="Event or Conference">{t('contact_page.form.select_options.how_heard.event_conference')}</option>
+                      <option value="Other">{t('contact_page.form.select_options.how_heard.other')}</option>
                     </select>
                   </div>
                   <div>
-                    <label className="text-white font-semibold text-base mb-2 block">Message *</label>
+                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.message')}</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px] focus:border-[#194EFF]/50 focus:outline-none transition-colors resize-vertical"
-                      placeholder="Enter your message"
+                      placeholder={t('contact_page.form.placeholders.message')}
                       required
                       disabled={isLoading}
                     ></textarea>
@@ -341,24 +333,30 @@ export const ContactFormSection: React.FC = () => {
                 {/* Submit Button */}
                 <StaggerItem>
                   <div className="pt-6">
-                    <Button
+                    <button
                       type="submit"
                       disabled={isLoading}
-                      className={`w-full px-8 py-6 font-semibold text-lg rounded-2xl transition-all duration-300 shadow-xl hover:scale-105 transform ${
+                      className={`w-full px-8 py-4 font-semibold text-base rounded-2xl transition-all duration-300 shadow-xl hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2 ${
                         isLoading 
                           ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
                           : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
                       }`}
                     >
                       {isLoading ? (
-                        <div className="flex items-center gap-3">
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          <span>Sending Message...</span>
-                        </div>
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin relative z-10"></div>
+                          <span className="relative z-10">{t('contact_page.form.button.sending')}</span>
+                        </>
                       ) : (
-                        <span>Send Message</span>
+                        <>
+                          <span className="relative z-10">{t('contact_page.form.button.send')}</span>
+                          <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                        </>
                       )}
-                    </Button>
+                    </button>
                   </div>
                 </StaggerItem>
               </StaggerContainer>

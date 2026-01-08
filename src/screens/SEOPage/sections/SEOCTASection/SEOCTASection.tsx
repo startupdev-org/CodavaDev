@@ -1,10 +1,11 @@
-import React from "react";
 import {
   FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const SEOCTASection = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       <div className="absolute inset-0">
@@ -16,22 +17,22 @@ export const SEOCTASection = () => {
         <FadeIn delay={0.1} direction="up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full backdrop-blur-sm mb-8">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
-            <span className="text-[#194EFF] text-sm font-medium">Ready to Rank?</span>
+            <span className="text-[#194EFF] text-sm font-medium">{t('seo_page.cta.badge')}</span>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Start Your SEO Journey
+            {t('seo_page.cta.title')}
             <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
-              Dominate Search Results
+              {t('seo_page.cta.title_highlight')}
             </span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.3} direction="up">
           <p className="text-xl text-white/70 leading-relaxed mb-12 max-w-2xl mx-auto">
-            Get a free SEO audit and discover exactly what's holding your website back from ranking higher and driving more organic traffic.
+            {t('seo_page.cta.description')}
           </p>
         </FadeIn>
 
@@ -41,7 +42,7 @@ export const SEOCTASection = () => {
               onClick={() => window.location.href = '/contact'}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <span className="relative z-10">Start SEO Campaign</span>
+              <span className="relative z-10">{t('seo_page.cta.button')}</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -57,8 +58,8 @@ export const SEOCTASection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Quick Results</h3>
-              <p className="text-white/60 text-sm">See ranking improvements in 60-90 days</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{t('seo_page.cta.benefits.quick_results.title')}</h3>
+              <p className="text-white/60 text-sm">{t('seo_page.cta.benefits.quick_results.description')}</p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -67,8 +68,8 @@ export const SEOCTASection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Proven Methods</h3>
-              <p className="text-white/60 text-sm">White-hat strategies that last long-term</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{t('seo_page.cta.benefits.proven_methods.title')}</h3>
+              <p className="text-white/60 text-sm">{t('seo_page.cta.benefits.proven_methods.description')}</p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -77,8 +78,8 @@ export const SEOCTASection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Full Support</h3>
-              <p className="text-white/60 text-sm">Monthly reports and ongoing optimization</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{t('seo_page.cta.benefits.full_support.title')}</h3>
+              <p className="text-white/60 text-sm">{t('seo_page.cta.benefits.full_support.description')}</p>
             </div>
           </div>
         </FadeIn>

@@ -2,7 +2,7 @@
 import { FAQSection } from "./sections/FAQSection";
 import { FeaturedPropertiesSection } from "./sections/FeaturedPropertiesSection";
 import { ReviewsMarqueeSection } from "./sections/ReviewsMarqueeSection";
-import { HeaderSection, FooterSection } from "../FixedComponents";
+import { HeaderSection, FooterSection, CTASection } from "../FixedComponents";
 import { HeroSection } from "./sections/HeroSection";
 
 export const HomePageDesktop = () => {

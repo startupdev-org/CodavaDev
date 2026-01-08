@@ -1,8 +1,9 @@
-import React from "react";
 import { FadeIn } from "../../../../components/ui/animated-elements";
 import { BiMouse } from "react-icons/bi";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const DesignHeroSection = () => {
+  const { t } = useTranslation();
 
   return (
     <>
@@ -41,7 +42,7 @@ export const DesignHeroSection = () => {
         `
       }} />
 
-      <section className="relative mt-10 w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+      <section className="relative mt-10 w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}
@@ -96,18 +97,18 @@ export const DesignHeroSection = () => {
 
           {/* Service Badge */}
           <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm lg:mb-10 mb-6">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">UI/UX Design</span>
+              <span className="text-white/80 text-sm font-medium">{t('design_page.hero.badge')}</span>
             </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Design That Captivates
+              {t('design_page.hero.title')}
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                And Converts
+                {t('design_page.hero.title_highlight')}
               </span>
             </h1>
           </FadeIn>
@@ -115,14 +116,14 @@ export const DesignHeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              We create stunning user interfaces and memorable brand identities that drive engagement and conversions. Every pixel is crafted with purpose and precision.
+              {t('design_page.hero.description')}
             </p>
           </FadeIn>
 
           {/* Design Services Preview */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {['UI/UX Design', 'Brand Identity', 'Logo Design', 'Prototyping', 'Figma Design'].map((service, index) => (
+              {(t('design_page.hero.services', { returnObjects: true }) as string[]).map((service: string, index: number) => (
                 <div key={index} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm text-white/80 text-sm font-medium hover:bg-white/10 transition-all duration-300">
                   {service}
                 </div>

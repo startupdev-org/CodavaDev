@@ -1,18 +1,20 @@
-import React from "react";
 import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
   FloatingElement
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
-export const ContactInfoSection: React.FC = () => {
+export const ContactInfoSection = () => {
+  const { t } = useTranslation();
+  
   const contactInfo = [
     {
       icon: "email",
-      label: "Email",
-      value: "codava.dev@gmail.com",
-      description: "Send us an email anytime",
+      label: t('contact_page.info.email.label'),
+      value: t('contact_page.info.email.value'),
+      description: t('contact_page.info.email.description'),
       link: "mailto:codava.dev@gmail.com"
     }
   ];
@@ -26,11 +28,10 @@ export const ContactInfoSection: React.FC = () => {
             <FadeIn delay={0.1} direction="up">
               <div>
                 <h3 className="text-4xl font-bold text-white mb-6">
-                  Get In <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">Touch</span>
+                  {t('contact_page.info.title')} <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">{t('contact_page.info.title_highlight')}</span>
                 </h3>
                 <p className="text-white/70 text-lg leading-relaxed">
-                  Ready to start your next project? We're here to help you bring your vision to life.
-                  Reach out to us through any of the channels below.
+                  {t('contact_page.info.description')}
                 </p>
               </div>
             </FadeIn>
@@ -70,23 +71,19 @@ export const ContactInfoSection: React.FC = () => {
           <div className="space-y-12 mt-64">
             <FadeIn delay={0.3} direction="up">
               <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500">
-                <h4 className="text-2xl font-bold text-white mb-6">Why Choose Us?</h4>
+                <h4 className="text-2xl font-bold text-white mb-6">{t('contact_page.info.why_choose_us.title')}</h4>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#194EFF] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-white/70">24/7 support and maintenance</p>
+                    <p className="text-white/70">{t('contact_page.info.why_choose_us.items.support')}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#194EFF] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-white/70">Quick response time (within 2 hours)</p>
+                    <p className="text-white/70">{t('contact_page.info.why_choose_us.items.response')}</p>
                   </div>
-                  {/* <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-[#194EFF] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-white/70">Expert team with 10+ years experience</p>
-                  </div> */}
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[#194EFF] rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-white/70">Secure and confidential communication</p>
+                    <p className="text-white/70">{t('contact_page.info.why_choose_us.items.secure')}</p>
                   </div>
                 </div>
               </div>

@@ -29,8 +29,16 @@ import { NotFoundPage } from "./screens/NotFoundPage/NotFoundPage";
 import { AnalyticsAndTrackingPage } from "./screens/AnalyticsAndTrackingPage/AnalyticsAndTrackingPage";
 import TelegramButton from "./components/TelegramButton";
 
+// Import i18n configuration
+import i18n from "./lib/i18n";
+import { LanguageProvider } from "./contexts/LanguageContext";
+
+// Initialize i18n
+i18n.init({});
+
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
+    <LanguageProvider>
     <BrowserRouter>
       <ScrollToTop />
       <TelegramButton />
@@ -51,5 +59,6 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
+    </LanguageProvider>
   </StrictMode>,
 );

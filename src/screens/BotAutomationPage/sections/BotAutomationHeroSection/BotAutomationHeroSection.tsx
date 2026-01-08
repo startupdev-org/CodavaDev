@@ -40,7 +40,7 @@ export const BotAutomationHeroSection = () => {
         `
       }} />
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}
@@ -95,7 +95,7 @@ export const BotAutomationHeroSection = () => {
 
           {/* Service Badge */}
           <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-10">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
               <span className="text-white/80 text-sm font-medium">AI Automation</span>
             </div>

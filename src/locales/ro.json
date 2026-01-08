@@ -1,0 +1,1288 @@
+{
+  "hero": {
+    "badge": "Tu visezi. Noi livrăm.",
+    "title": "Transformă-ți afacerea cu",
+    "title_highlight": "Excelență Digitală",
+    "description": "De la soluții web și design până la marketing și analytics, livrăm soluții adaptate pentru nișa ta astăzi, pregătindu-te totodată pentru viitorul acesteia.",
+    "cta_primary": "Începe proiectul tău",
+    "cta_secondary": "Vezi munca noastră",
+    "status_available": "Disponibili pentru proiecte noi",
+    "status_projects": "50+ Proiecte Livrate",
+    "status_support": "Suport 24/7"
+  },
+  "navigation": {
+    "home": "Acasă",
+    "about": "Despre Noi",
+    "services": "Servicii",
+    "portfolio": "Lucrările Noastre",
+    "contact": "Contactați-ne",
+    "web_development": "Dezvoltare Web",
+    "full_stack_development": "Dezvoltare Full Stack",
+    "design": "Design",
+    "seo": "SEO",
+    "digital_advertising": "Publicitate Digitală",
+    "copywriting": "Copywriting",
+    "bot_automation": "Automatizare Bot",
+    "analytics_tracking": "Analytics și Tracking"
+  },
+  "header": {
+    "marketing_content": "Marketing și Conținut",
+    "our_work": "Munca Noastră",
+    "industries": "Industrii",
+    "web_projects": "Proiecte Web",
+    "web_projects_desc": "Proiecte web prezentate",
+    "brand_design": "Design Brand",
+    "brand_design_desc": "Identitate și lucrări de design",
+    "case_studies": "Studii de Caz",
+    "case_studies_desc": "Analize detaliate ale proiectelor",
+    "ecommerce": "E-commerce",
+    "ecommerce_desc": "Soluții pentru retail online",
+    "healthcare": "Sănătate",
+    "healthcare_desc": "Branduri medicale și wellness",
+    "technology": "Tehnologie",
+    "technology_desc": "Startup-uri tech și SaaS",
+    "custom_websites_desc": "Site-uri web și aplicații personalizate",
+    "design_desc": "UI/UX și identitate brand",
+    "automation_desc": "Chatbot-uri AI și automatizare",
+    "seo_desc": "Optimizare motoare de căutare",
+    "copywriting_desc": "Conținut care convertește"
+  },
+  "footer": {
+    "description": "Creăm experiențe digitale excepționale care ajută brandurile să prospere online.",
+    "company": "Companie",
+    "services": "Servicii",
+    "newsletter": "Newsletter",
+    "newsletter_description": "Primește cele mai recente sfaturi digitale în inbox-ul tău.",
+    "subscribe": "Abonează-te",
+    "subscribing": "Se abonează...",
+    "email_placeholder": "Introdu adresa de email",
+    "success_message": "Mulțumim pentru abonare!",
+    "error_message": "Ceva nu a mers bine. Te rugăm să încerci din nou.",
+    "copyright": "© 2026 CodavaDev. Toate drepturile rezervate."
+  },
+  "reviews": {
+    "badge": "Recenzii Clienți",
+    "title_line1": "Ce Spun",
+    "title_line2": "Clienții Noștri",
+    "subtitle": "Încredereați de sute de afaceri din întreaga lume pentru soluții digitale excepționale",
+    "testimonials": [
+      {
+        "name": "Bors Andrei",
+        "username": "Epic Trans Logistics",
+        "body": "Recomand Codava! Au ajutat afacerea noastră de logistică cu un logo, cărți de vizită și un site web atractiv pentru clienți.",
+        "img": "/avatars/user-02.jpg"
+      },
+      {
+        "name": "Castravet Ilie",
+        "username": "Euro Tour Moldova",
+        "body": "Site-ul modern și de înaltă calitate pe care l-au construit pentru compania noastră de transport este rapid, se clasează bine, atrage clienți și crește vizibilitatea.",
+        "img": "/avatars/user-01.jpg"
+      },
+      {
+        "name": "Natalia Cimihov",
+        "username": "DaVinci Education",
+        "body": "Codava a construit un site clar și prietenos pentru mobil pentru proiectul nostru educațional, prezentând perfect toate etapele.",
+        "img": "/avatars/user-04.jpg"
+      },
+      {
+        "name": "Stefan Istrati",
+        "username": "Senda Courier",
+        "body": "Am lucrat cu Codava la redesign, logo și cărți; site-ul este inovator și rezultatele au fost rapide, profesionale.",
+        "img": "/avatars/user-03.jpg"
+      }
+    ]
+  },
+  "services": {
+    "badge": "SERVICII CREATIVE",
+    "title_line1": "Soluții",
+    "title_line2": "Digitale Profesionale",
+    "subtitle": "Combinând date, AI, automatizare inteligentă și creativitate, livrăm soluții care generează creștere și înalță brandul tău.",
+    "most_popular": "Cel Mai Popular",
+    "learn_more": "Află Mai Multe",
+    "ai_automation": {
+      "title": "Automatizare AI",
+      "description": "Economisiți timp și creșteți eficiența cu soluții inteligente de automatizare care eficientizează fluxurile de lucru și elimină sarcinile repetitive.",
+      "features": [
+        "Consultant AI",
+        "Automatizare Sarcini",
+        "Suport 24/7"
+      ]
+    },
+    "web_development": {
+      "title": "Dezvoltare Web",
+      "description": "Construiți site-uri web rapide, sigure și scalabile - de la magazine e-commerce la site-uri de afaceri și aplicații web.",
+      "features": [
+        "Frontend & Backend",
+        "Design Bază de Date",
+        "Aplicații Complexe"
+      ]
+    },
+    "design": {
+      "title": "Design",
+      "description": "Creați identități vizuale uimitoare care capturează esența brandului dvs. și se conectează cu publicul.",
+      "features": [
+        "Design UI/UX",
+        "Identitate Brand",
+        "Materiale Printate"
+      ]
+    },
+    "seo": {
+      "title": "SEO",
+      "description": "Dominați rezultatele căutării și generați trafic organic cu strategiile și tehnicile noastre dovedite SEO.",
+      "features": [
+        "Cercetare Cuvinte Cheie",
+        "Optimizare On-Page",
+        "Link Building"
+      ]
+    },
+    "analytics": {
+      "title": "Analytics și Tracking",
+      "description": "Monitorizați comportamentul utilizatorilor, măsurați performanța și luați decizii bazate pe date pentru creșterea afacerii.",
+      "features": [
+        "Google Analytics",
+        "Tracking Conversii",
+        "Rapoarte Performanță"
+      ]
+    },
+    "copywriting": {
+      "title": "Copywriting",
+      "description": "Conținut convingător care se conectează cu publicul și generează acțiune. De la conținutul site-ului până la campanii email.",
+      "features": [
+        "Copywriting Website",
+        "Campanii Email",
+        "Pagini Vânzări"
+      ]
+    }
+  },
+  "faq": {
+    "badge": "CENTRU DE SUPORT",
+    "title_line1": "Întrebări",
+    "title_line2": "Frecvente",
+    "subtitle": "Găsește răspunsuri la întrebările comune despre serviciile noastre IT și soluțiile digitale. Experții noștri te ajută să iei decizii informate.",
+    "questions": [
+      {
+        "question": "Ce tipuri de servicii IT oferiți?",
+        "answer": "Oferim soluții IT complete, inclusiv dezvoltare web și full stack, design UI/UX, automatizare, SEO, copywriting și suport IT 24/7 - adaptate pentru a crește împreună cu afacerea ta."
+      },
+      {
+        "question": "Cât durează un proiect tipic?",
+        "answer": "Termenele proiectelor depind de amploare. Proiectele mici durează 1-2 săptămâni, în timp ce transformările digitale mai mari pot dura până la 3 luni. Oferim termene detaliate în timpul consultării."
+      },
+      {
+        "question": "Oferiți suport continuu după lansare?",
+        "answer": "Da! Oferim suport și mentenanță 24/7 - inclusiv monitorizare, actualizări, depanare și optimizare continuă. Acest serviciu este gratuit în primele 14 zile după finalizarea proiectului."
+      },
+      {
+        "question": "Ne puteți ajuta cu conținut și copywriting?",
+        "answer": "Absolut. Copywriterii noștri experți creează conținut convingător pentru site-uri web, email-uri, pagini de vânzări și articole de blog pentru a angaja audiența și a genera conversii."
+      },
+      {
+        "question": "Cum abordați designul UI/UX?",
+        "answer": "Folosim o abordare centrată pe utilizator, creând interfețe intuitive și vizual atractive care îmbunătățesc experiența utilizatorului și reflectă identitatea brandului tău."
+      },
+      {
+        "question": "Puteți automatiza procesele de afaceri sau suportul pentru clienți?",
+        "answer": "Da. Construim soluții inteligente de automatizare și bot pentru a eficientiza sarcinile, pentru a îmbunătăți serviciul clienți și pentru a crește eficiența."
+      },
+      {
+        "question": "Veți lucra cu stiva noastră de tehnologie existentă?",
+        "answer": "Absolut. Ne integrăm perfect cu sistemele existente, folosind o evaluare amănunțită pentru a asigura compatibilitatea și funcționarea fără probleme."
+      },
+      {
+        "question": "Ce face Codava diferită de alți furnizori de servicii IT?",
+        "answer": "Combinăm tehnologia de ultimă generație cu serviciul personalizat, concentrându-ne mai întâi pe obiectivele afacerii tale. Soluțiile noastre personalizate oferă rezultate măsurabile, susținute de asistență 24/7."
+      }
+    ]
+  },
+  "telegram": {
+    "notification_title": "Reducere 50% la proiect!",
+    "notification_description": "Ofertă limitată! Discutați acum pentru prețuri exclusive.",
+    "claim_discount": "Solicitați Reducerea",
+    "chat_with_us": "Discutați cu noi"
+  },
+  "cta": {
+    "title": "Începe-ți",
+    "title_highlight": "Transformarea Digitală Astăzi",
+    "subtitle": "Ești pregătit să modernizezi infrastructura IT? Experții noștri sunt gata să te ajute să începi cu o soluție cuprinzătoare adaptată nevoilor afacerii tale.",
+    "primary_button": "Obține Consultație Gratuită",
+    "support_title": "Mai ai întrebări?",
+    "support_description": "Echipa noastră de suport este disponibilă 24/7 pentru a te ajuta să găsești soluția potrivită pentru afacerea ta.",
+    "contact_email": "codava.dev@gmail.com"
+  },
+  "cta_section": {
+    "title": "Ești pregătit să începi",
+    "title_highlight": "următorul proiect?",
+    "subtitle": "Să discutăm cum te putem ajuta să atingi obiectivele afacerii tale cu soluții de tehnologie de ultimă generație. Echipa noastră este gata să aducă viziunea ta la viață.",
+    "primary_button": "Obține Consultație Gratuită",
+    "stats": {
+      "projects_completed": "Proiecte Finalizate",
+      "support_available": "Suport Disponibil",
+      "client_satisfaction": "Satisfacția Clienților",
+      "lines_of_code": "Linii de Cod Scrise",
+      "tech_stack_tools": "Instrumente Tech Stack"
+    }
+  },
+  "about": {
+    "badge_mobile": "Soluții IT Complete",
+    "badge_desktop": "Construim vieți mai bune cu tehnologia",
+    "hero_title": "Transformați-vă Afacerea cu",
+    "hero_title_highlight": "Excelență Digitală",
+    "hero_description": "Suntem o companie de soluții IT orientată spre viitor, dedicată să împuternicească afacerile cu tehnologie inovatoare și să conducă transformarea digitală.",
+    "mission_title": "Misiunea Noastră",
+    "mission_description": "Crearea unui impact pozitiv pentru angajați, clienți, comunități și mediu.",
+    "mission_card_title": "Împuternicirea Progresului",
+    "mission_card_description": "Construim soluții tech transformative care ajută afacerile să crească și să prospere într-o lume digitală.",
+    "vision_title": "Viziunea Noastră",
+    "vision_description": "Crearea de soluții inteligente, centrate pe utilizator, care redefinește standardele și deblochează noi posibilități.",
+    "vision_card_title": "Inovație Globală",
+    "vision_card_description": "Modelarea viitorului prin idei îndrăznețe și tehnologie avansată.",
+    "values_title": "Valorile Noastre",
+    "values_description": "Principiile care ghidează munca noastră și definesc cultura noastră de excelență și inovație.",
+    "values": {
+      "human_centered": {
+        "title": "Inovație Centrată pe Om",
+        "description": "Tehnologie care îmbunătățește potențialul uman, creativitatea și colaborarea în loc să le înlocuiască."
+      },
+      "outcome_driven": {
+        "title": "Execuție Orientată spre Rezultate",
+        "description": "Succesul măsurat prin rezultate: livrare mai rapidă, decizii mai bune și creștere măsurabilă."
+      },
+      "agility": {
+        "title": "Agilitate și Adaptabilitate",
+        "description": "Echipe și procese flexibile care permit experimentarea rapidă și învățarea continuă."
+      },
+      "continuous_innovation": {
+        "title": "Inovație Continuă",
+        "description": "Încorporarea inteligenței în fluxurile de lucru prin experimentare bazată pe dovezi și îmbunătățire."
+      },
+      "sustainable": {
+        "title": "Transformare Sustabilă",
+        "description": "Oameni, proces și tehnologie care evoluează împreună cu guvernanță și metrici măsurabile."
+      },
+      "collaboration": {
+        "title": "Colaborare și Parteneriat",
+        "description": "Lucrul alături de experți pentru a co-crea soluții care rezolvă probleme reale și deblochează piețe."
+      }
+    },
+    "typing_texts": [
+      "Prin Tehnologie",
+      "Cu Inovație",
+      "Pentru Viitor",
+      "Dincolo de Limite"
+    ]
+  },
+  "about_cta": {
+    "title": "Ești pregătit să începi",
+    "title_highlight": "Transformarea Digitală?",
+    "subtitle": "Alătură-te afacerilor care și-au eficientizat operațiunile și au accelerat creșterea cu soluțiile noastre de tehnologie.",
+    "button_text": "Să discutăm"
+  },
+  "web_development": {
+    "hero": {
+      "badge": "Dezvoltare Web",
+      "title": "Dezvoltare Web",
+      "title_highlight": "Personalizată",
+      "description": "Construim aplicații web moderne, rapide și sigure folosind cele mai noi tehnologii. Fiecare proiect oferă experiențe excepționale utilizatorilor și stimulează creșterea afacerii.",
+      "tech_stack": ["React", "Node.js", "TypeScript", "Next.js", "MongoDB", "AWS"]
+    },
+    "packages": {
+      "title": "Pachete Dezvoltare Web",
+      "starter": {
+        "name": "Starter",
+        "subtitle": "Perfect pentru afaceri mici și site-uri personale"
+      },
+      "business": {
+        "name": "Business",
+        "subtitle": "Ideal pentru afaceri în creștere cu nevoi profesionale"
+      },
+      "professional": {
+        "name": "Professional",
+        "subtitle": "Pentru afaceri stabilite care au nevoie de funcționalități avansate"
+      }
+    },
+    "features": {
+      "ssl_security": "Certificat SSL Securitate",
+      "professional_hosting": "Hosting Profesional",
+      "responsive_design": "Design Responsiv",
+      "pages_included": "Pagini Incluse",
+      "languages": "Limbi",
+      "contact_form": "Formular Contact",
+      "professional_copywriting": "Copywriting Profesional",
+      "seo_optimization": "Optimizare SEO",
+      "cms": "CMS",
+      "e_commerce": "E-Commerce",
+      "professional_email": "Email Profesional",
+      "newsletter_integration": "Integrare Newsletter",
+      "google_analytics": "Google Analytics",
+      "google_search_console": "Google Search Console",
+      "social_media_integration": "Integrare Social Media",
+      "user_registration": "Înregistrare/Login Utilizator",
+      "inventory_management": "Management Inventar",
+      "booking_quotes_system": "Sistem Rezervări/Oferte",
+      "live_chat_ai_chatbot": "Chat Live & AI Chatbot",
+      "free_support_period": "Perioadă Suport Gratuit",
+      "priority_support": "Suport Prioritar"
+    },
+    "values": {
+      "true": "Da",
+      "false": "Nu",
+      "basic": "Basic",
+      "advanced": "Avansat",
+      "enhanced": "Îmbunătățit",
+      "unlimited": "Nelimitat",
+      "month_1": "1 lună",
+      "month_3": "3 luni",
+      "month_6": "6 luni",
+      "pages_5": "5",
+      "pages_10": "10",
+      "pages_20": "20",
+      "language_1": "1",
+      "language_2": "2",
+      "language_3": "3",
+      "up_to_10_products": "Basic (până la 10 produse)",
+      "up_to_50_products": "Avansat (până la 50 produse)",
+      "accounts_3": "3 conturi",
+      "accounts_10": "10 conturi",
+      "support_7_days": "7 zile",
+      "support_14_days": "14 zile",
+      "support_30_days": "30 zile",
+      "support_48h": "48h",
+      "support_24h": "24h",
+      "support_12h": "12h",
+      "custom_reporting": "Raportare Personalizată",
+      "advanced_dashboard": "Dashboard Avansat"
+    },
+    "addons": {
+      "title": "Servicii Suplimentare",
+      "google_maps": {
+        "title": "Google Maps + Indicații",
+        "description": "Hartă interactivă cu marker și indicații."
+      },
+      "custom_domain": {
+        "title": "Domeniu Personalizat",
+        "description": "Achiziționează .com, .ro, .md, etc."
+      },
+      "priority_support": {
+        "title": "Upgrade Suport Prioritar",
+        "description": "Upgrade la timpii de răspuns mai rapizi (12h timp de răspuns inclusiv modificări)."
+      },
+      "additional_pages": {
+        "title": "Pagini Adiționale",
+        "description": "Pagini suplimentare peste cele incluse în pachetul selectat."
+      },
+      "advanced_ecommerce": {
+        "title": "Funcții E-commerce Avansate",
+        "description": "Urmărirea inventarului, management comenzi, calculatori de livrare, calcule taxe, coduri discount, variante produse, import/export în masă."
+      },
+      "custom_integrations": {
+        "title": "Integrări Personalizate",
+        "description": "Conectează-te cu sisteme CRM, software de contabilitate, gateway-uri de plată, API-uri social media sau alte instrumente de afaceri."
+      }
+    },
+    "maintenance": {
+      "title": "Pachete de Mentenanță",
+      "basic": {
+        "name": "Mentenanță Basic",
+        "price": "€29",
+        "period": "/lună",
+        "subtitle": "Perfect pentru Site-uri Starter",
+        "hours": "2 Ore",
+        "hours_label": "Actualizări Conținut",
+        "features": [
+          "Actualizări și patch-uri securitate",
+          "Monitorizare performanță",
+          "Backup-uri lunare",
+          "Suport (răspuns 48h)"
+        ]
+      },
+      "professional": {
+        "name": "Mentenanță Professional",
+        "price": "€59",
+        "period": "/lună",
+        "subtitle": "Ideal pentru Site-uri Pro",
+        "hours": "5 Ore",
+        "hours_label": "Actualizări Conținut",
+        "badge": "Cel Mai Popular",
+        "features": [
+          "Tot ce e în Basic",
+          "Asistență postări blog (5/lună)",
+          "Monitorizare SEO",
+          "Raportare analytics",
+          "Depanare CMS",
+          "Suport prioritar (24h)"
+        ]
+      },
+      "features": {
+        "everything_in_basic": "Tot ce e în Basic",
+        "blog_assistance": "Asistență postări blog (5/lună)",
+        "seo_monitoring": "Monitorizare SEO și raportare",
+        "cms_troubleshooting": "Depanare CMS",
+        "priority_support_24h": "Suport prioritar (24h)",
+        "everything_in_professional": "Tot ce e în Professional",
+        "ecommerce_support": "Suport e-commerce",
+        "payment_maintenance": "Mentenanță sistem plăți",
+        "email_automation": "Management automatizare email",
+        "monthly_strategy": "Apel strategie lunar",
+        "priority_support_12h": "Suport prioritar (12h)",
+        "instant_changes": "Modificări instant"
+      },
+      "premium": {
+        "name": "Mentenanță Premium",
+        "price": "€99",
+        "period": "/lună",
+        "subtitle": "Cuprinzător pentru Site-uri Premium",
+        "hours": "8 Ore",
+        "hours_label": "Actualizări Conținut",
+        "features": [
+          "Tot ce e în Professional",
+          "Suport e-commerce",
+          "Mentenanță sistem plăți",
+          "Management automatizare email",
+          "Apel strategie lunar",
+          "Suport prioritar (12h)",
+          "Modificări instant"
+        ]
+      }
+    },
+    "quote_form": {
+      "title": "Află Prețul",
+      "summary_title": "Sumar Selecție",
+      "selected_package": "Pachet Selectat:",
+      "selected_addons": "Suplimente Selectate:",
+      "total_items": "Total Articole:",
+      "contact_title": "Informații Contact",
+      "full_name": "Nume Complet *",
+      "email": "Adresă Email *",
+      "phone": "Număr Telefon",
+      "project_description": "Descriere Proiect",
+      "submit_button": "Obține Oferta de Preț",
+      "sending": "Se trimite cererea...",
+      "select_package_error": "Te rugăm să selectezi un pachet",
+      "enter_name_error": "Te rugăm să introduci numele",
+      "enter_email_error": "Te rugăm să introduci adresa de email",
+      "success_title": "Cerere Trimisă cu Succes!",
+      "success_message": "Mulțumim pentru interes. Vom analiza selecțiile tale și vom reveni cu o ofertă personalizată și programare consultanță.",
+      "error_title": "Eroare",
+      "placeholder_name": "Introdu numele complet",
+      "placeholder_email": "Introdu adresa de email",
+      "placeholder_phone": "Introdu numărul de telefon (opțional)",
+      "placeholder_description": "Spune-ne despre proiectul tău (opțional)"
+    },
+    "buttons": {
+      "select_package": "Selectează Pachet",
+      "selected": "✓ Selectat",
+      "add_to_project": "Adaugă la Proiect"
+    },
+    "errors": {
+      "select_package": "Te rugăm să selectezi un pachet",
+      "enter_name": "Te rugăm să introduci numele",
+      "enter_email": "Te rugăm să introduci adresa de email"
+    },
+    "faq": {
+      "title": "Întrebări Frecvente",
+      "general_questions": "Întrebări Generale",
+      "feature_explanations": "Explicații Funcții",
+      "package_faqs": {
+        "starter": "Website Starter (€299)",
+        "business": "Website Business (€599)",
+        "professional": "Website Professional (€999)"
+      },
+      "additional_costs": "Costuri Servicii Suplimentare",
+      "payment_process": "Plată și Proces",
+      "technical_questions": "Întrebări Tehnice",
+      "maintenance_faq": "FAQ Mentenanță Lunară"
+    },
+    "faq_content": {
+      "general": {
+        "launch_offer": "Ce este inclus în oferta de lansare 50%?",
+        "launch_answer": "Aceasta este o promoție limitată de lansare unde economisești 50% la toate pachetele:<ul className=\"list-disc ml-5 mt-2\"><li><b>Starter:</b> €199 (era €399) - Economisești €200</li><li><b>Pro:</b> €349 (era €699) - Economisești €350</li><li><b>Premium:</b> €649 (era €1,299) - Economisești €600</li></ul>",
+        "platform": "Ce platformă folosești pentru a construi site-uri web?",
+        "platform_answer": "Construiesc site-uri web folosind React, Tailwind CSS și tehnologii web moderne — un stack tehnic de ultimă generație care asigură performanță maximă, personalizare completă și scalabilitate pe măsură ce afacerea ta crește.",
+        "hosting": "Hosting-ul este într-adevăr inclus gratuit?",
+        "hosting_answer": "Da! Toate pachetele includ hosting gratuit:<ul className=\"list-disc ml-5 mt-2\"><li><b>Starter:</b> 1 lună hosting gratuit</li><li><b>Business:</b> 3 luni hosting gratuit</li><li><b>Professional:</b> 6 luni hosting gratuit</li></ul>",
+        "domain": "Poți conecta domeniul meu propriu?",
+        "domain_answer": "Da, pot conecta domeniul tău existent sau te pot ajuta să achiziționezi și să configurezi unul nou dacă este nevoie. Domeniul + certificat SSL este inclus în toate pachetele.",
+        "timeline": "Cât durează să primesc site-ul meu web?",
+        "timeline_answer": "<ul className=\"list-disc ml-5 mt-2\"><li><b>Starter:</b> 3-5 zile lucrătoare</li><li><b>Pro:</b> 5-7 zile lucrătoare</li><li><b>Premium:</b> 7-14 zile lucrătoare</li></ul>",
+        "after_delivery": "Ce se întâmplă după ce site-ul meu este livrat?",
+        "after_delivery_answer": "Primești 7 zile de suport gratuit după livrare pentru orice bug-uri sau ajustări minore. Mentenanța și actualizările continue pot fi aranjate ca serviciu lunar.",
+        "custom_solutions": "Oferi soluții personalizate în afara acestor pachete?",
+        "custom_solutions_answer": "Absolut! Fiecare afacere este unică. Dacă ai nevoie de funcții personalizate sau un mix de elemente din diferite pachete, voi crea o soluție adaptată special pentru tine."
+      },
+      "features": {
+        "seo": "Ce este Optimizarea SEO?",
+        "seo_answer": "Optimizarea SEO se referă la tehnici și cele mai bune practici care ajută site-ul tău să se claseze mai sus în motoarele de căutare, făcându-te mai ușor de găsit de către clienții potențiali online.",
+        "cms": "Ce este un CMS?",
+        "cms_answer": "<span>Un CMS (Content Management System) îți permite să actualizezi și să gestionezi ușor conținutul site-ului tău web (cum ar fi text, imagini și postări de blog) fără a fi nevoie să scrii cod.<br/><br/><b>CMS Basic:</b> Îți permite să editezi paginile principale și conținut simplu (text, imagini, informații de contact) printr-un panou de administrare ușor de utilizat.<br/><b>CMS Avansat:</b> Include toate funcțiile Basic plus management blog, galerii media, roluri utilizatori, câmpuri personalizate și instrumente mai avansate de editare și publicare.</span>",
+        "ecommerce": "Ce este E-commerce?",
+        "ecommerce_answer": "Funcționalitatea E-commerce îți permite să vinzi produse sau servicii online, inclusiv liste de produse, coș de cumpărături, checkout securizat și procesare plăți.",
+        "analytics": "Ce este Google Analytics?",
+        "analytics_answer": "Google Analytics este un instrument care urmărește și raportează traficul site-ului web, ajutându-te să înțelegi publicul tău și să măsori eficacitatea marketingului.",
+        "search_console": "Ce este Google Search Console?",
+        "search_console_answer": "Google Search Console este un instrument gratuit de la Google care te ajută să monitorizezi, să menții și să depanezi prezența site-ului tău în rezultatele Google Search.",
+        "chatbot": "Ce este Chat Live & AI Chatbot?",
+        "chatbot_answer": "Chat Live & AI Chatbot îți permite să oferi suport instant și răspunsuri automatizate vizitatorilor site-ului tău, îmbunătățind serviciul clienți și angajamentul.",
+        "inventory": "Ce este Management Inventar?",
+        "inventory_answer": "Management Inventar îți permite să urmărești, să gestionezi și să organizezi nivelurile stocului produselor tale, comenzile, vânzările și livrările — esențial pentru afacerile de e-commerce.",
+        "booking": "Ce este un Sistem de Rezervări/Programări?",
+        "booking_answer": "Un Sistem de Rezervări/Programări permite clienților tăi să programeze întâlniri sau servicii direct prin site-ul tău web, cu funcții precum integrare calendar și mementouri automate.",
+        "support": "Ce este Suport Prioritar?",
+        "support_answer": "Suport Prioritar îți oferă timpii de răspuns mai rapizi și prioritate mai mare pentru cererile de suport tehnic, asigurând că problemele tale sunt rezolvate rapid.",
+        "maintenance": "Ce este Mentenanță Inclusă?",
+        "maintenance_answer": "Mentenanță Inclusă înseamnă că pachetul tău vine cu o perioadă stabilită de suport tehnic gratuit, actualizări și ajustări minore după ce site-ul tău web este livrat.",
+        "ssl": "Ce este Certificat SSL & Securitate?",
+        "ssl_answer": "Un Certificat SSL criptează datele între site-ul tău web și vizitatori, asigurând comunicare securizată. Funcțiile de securitate includ de asemenea firewall-uri, protecție malware și actualizări regulate pentru a păstra site-ul tău în siguranță."
+      },
+      "packages": {
+        "starter_best_for": "Pentru cine este potrivit pachetul Starter?",
+        "starter_best_for_answer": "<span>Pachetul Starter este perfect pentru:<ul className=\"list-disc ml-5 mt-2\"><li>Afaceri locale și profesioniști care au nevoie de o prezență online simplă și profesională</li><li>Freelancer și consultanți</li><li>Branduri personale și portofolii</li><li>Afaceri bazate pe servicii (ex: saloane, service reparații, tutori)</li><li>Oricine vrea un site web rapid, sigur și accesibil pentru a stabili credibilitate online</li></ul></span>",
+        "starter_content_update": "Pot actualiza singur conținutul cu Starter?",
+        "starter_content_update_answer": "Pachetul Starter nu include un sistem de management al conținutului. Dacă trebuie să actualizezi conținutul în mod regulat, consideră upgrade-ul la Pro care include un panou de administrare personalizat.",
+        "starter_seo": "Ce SEO este inclus în Starter?",
+        "starter_seo_answer": "<span>Elemente esențiale SEO de bază:<ul className=\"list-disc ml-5 mt-2\"><li>Titluri de pagină și meta descrieri optimizate</li><li>Creare sitemap XML</li><li>Design responsiv pentru mobil</li><li>Viteze de încărcare rapide</li><li>Configurare vizibilitate motoare de căutare</li></ul></span>",
+        "business_best_for": "Pentru cine este potrivit pachetul Business?",
+        "business_best_for_answer": "<span>Pachetul Business este ideal pentru afaceri și profesioniști care vor să ducă site-ul lor la următorul nivel cu mai multe funcții și flexibilitate. Este perfect pentru:<ul className=\"list-disc ml-5 mt-2\"><li>Afaceri în creștere și agenții</li><li>Consultanți, antrenori și educatori</li><li>Clinici medicale, firme de avocatură și agenții imobiliare</li><li>Bloggeri și creatori de conținut care vor un CMS</li><li>Furnizori de servicii care au nevoie de forme personalizate, email profesional și analytics</li><li>Oricine trebuie să actualizeze conținutul în mod regulat și vrea SEO avansat</li></ul></span>",
+        "business_admin_panel": "Ce pot face cu panoul de administrare personalizat?",
+        "business_admin_panel_answer": "<span>Panoul de administrare îți permite să:<ul className=\"list-disc ml-5 mt-2\"><li>Editezi conținut text și imagini</li><li>Adaugi/editezi/ștergi postări de blog</li><li>Gestionați trimiterile din formularele de contact</li><li>Actualizezi informațiile despre afaceri</li><li>Încărci noi fotografii în galerii</li></ul></span>",
+        "business_blog": "Cum funcționează sistemul de blog?",
+        "business_blog_answer": "<span>Primești un sistem complet de management al conținutului unde poți:<ul className=\"list-disc ml-5 mt-2\"><li>Să scrii și să publici postări de blog</li><li>Să adaugi imagini și videouri</li><li>Să organizezi postările pe categorii</li><li>Să programezi postările pentru publicare viitoare</li><li>Să gestionezi comentariile (dacă sunt activate)</li></ul></span>",
+        "business_seo": "Ce este inclus în \"SEO Avansat\"?",
+        "business_seo_answer": "<span>SEO Pro include totul din Starter plus:<ul className=\"list-disc ml-5 mt-2\"><li>Tehnici de optimizare a vitezei</li><li>Implementare markup schema</li><li>Optimizare meta tag-uri avansate</li><li>Optimizare alt text pentru imagini</li><li>Structură de linking intern</li><li>Configurare Google Search Console</li></ul></span>",
+        "business_analytics": "Voi putea vedea traficul site-ului meu web?",
+        "business_analytics_answer": "<span>Da! Integrarea Google Analytics este inclusă, așa că poți urmări:<ul className=\"list-disc ml-5 mt-2\"><li>Numărul de vizitatori</li><li>Paginile cele mai populare</li><li>De unde vin vizitatorii</li><li>Comportamentul utilizatorilor pe site-ul tău</li></ul></span>",
+        "professional_best_for": "Pentru cine este potrivit pachetul Professional?",
+        "professional_best_for_answer": "<span>Pachetul Professional este conceput pentru afaceri care au nevoie de o prezență online puternică și scalabilă cu funcții avansate. Este perfect pentru:<ul className=\"list-disc ml-5 mt-2\"><li>Magazine online și afaceri de e-commerce</li><li>Afaceri bazate pe rezervări și înregistrări (ex: clinici, studiouri de fitness, agenții de turism)</li><li>Furnizori de servicii mari și agenții</li><li>Companii care au nevoie de login-uri utilizatori, management produse/comenzi și automatizare</li><li>Afaceri care vor chat live, AI chatbot și marketing email avansat</li><li>Orice afacere care are nevoie de cea mai cuprinzătoare soluție web scalabilă</li></ul></span>",
+        "professional_ecommerce": "Ce include \"Integrarea E-commerce Completă\"?",
+        "professional_ecommerce_answer": "<span>Funcționalitate completă de magazin online:<ul className=\"list-disc ml-5 mt-2\"><li>Catalog produse cu produse nelimitate</li><li>Coș de cumpărături și checkout securizat</li><li>Procesare plăți (Stripe, PayPal, Crypto)</li><li>Sistem de management comenzi</li><li>Conturi și profiluri clienți</li><li>Urmărire inventar</li><li>Email-uri automate de confirmare comenzi</li></ul></span>",
+        "professional_chatbot": "Cum funcționează AI chatbot-ul?",
+        "professional_chatbot_answer": "<span>AI chatbot-ul oferă:<ul className=\"list-disc ml-5 mt-2\"><li>Suport clienți 24/7</li><li>Răspunsuri instant la întrebări comune</li><li>Captare și calificare lead-uri</li><li>Integrare cu formularele tale de contact</li><li>Răspunsuri personalizabile pentru afacerea ta</li></ul><b>Notă:</b> Chatbot-ul necesită un serviciu AI terț (cum ar fi Tidio, LiveChatInc, sau similar). Îl configurez și setez pentru afacerea ta, dar vei avea nevoie de abonamentul lor (de obicei €15-50/lună în funcție de funcții și volumul mesajelor).</span>",
+        "professional_email": "Ce fel de automatizare email este inclusă?",
+        "professional_email_answer": "<span>Funcții profesionale de marketing email:<ul className=\"list-disc ml-5 mt-2\"><li>Confirmări comenzi și actualizări livrare</li><li>Oferte noi și promoții</li><li>Management newsletter</li><li>Segmentare clienți</li><li>Campanii automate de follow-up</li></ul><b>Notă:</b> Automatizarea email necesită un serviciu terț (cum ar fi Mailchimp, EmailJS, sau similar). Configurarea de bază este inclusă, dar va trebui să te abonezi la serviciul lor (de obicei €10-30/lună în funcție de numărul de abonați).</span>",
+        "professional_booking": "Pot gestiona rezervările și programările?",
+        "professional_booking_answer": "<span>Da! Sistemul de rezervări include:<ul className=\"list-disc ml-5 mt-2\"><li>Programare întâlniri online</li><li>Integrare calendar</li><li>Confirmări automate de rezervare</li><li>Mementouri pentru clienți</li><li>Programare personal (dacă este aplicabil)</li><li>Colectare plăți pentru rezervări</li></ul></span>",
+        "professional_seo": "Ce face SEO-ul Premium cel mai \"bun\"?",
+        "professional_seo_answer": "<span>Premium include SEO cuprinzător:<ul className=\"list-disc ml-5 mt-2\"><li>Totul din pachetul Pro</li><li>Optimizare SEO e-commerce</li><li>Configurare SEO local (dacă este aplicabil)</li><li>Markup schema avansat</li><li>Urmărire conversii</li><li>Monitorizare performanță SEO</li><li>Rapoarte SEO lunare</li></ul></span>",
+        "professional_support": "Care este diferența dintre suportul prioritar Pro și Premium?",
+        "professional_support_answer": "<span><b>Pro:</b> Suport rapid în timp de 4 ore, inclusiv modificări proiect.<br/><b>Premium:</b> Suport instant în timp de 1-2 ore, inclusiv modificări proiect.</span>"
+      },
+      "additional_costs": {
+        "ongoing_costs": "Sunt costuri continue despre care ar trebui să știu?",
+        "ongoing_costs_answer": "<span>Da, unele funcții avansate necesită servicii terțe. De exemplu:<ul className=\"list-disc ml-5 mt-2\"><li><b>Marketing Email (Pachete Pro & Premium):</b> Necesită un furnizor de servicii precum Mailchimp, EmailJS, sau similar. Eu gestionez configurarea și integrarea, dar utilizarea continuă va avea costuri suplimentare facturate de furnizor.</li><li><b>AI Chatbot & Chat Live (Pachet Premium):</b> Necesită un furnizor de servicii precum Tidio, Intercom, Crisp, sau similar. Eu gestionez configurarea și setarea, dar utilizarea continuă va avea costuri suplimentare facturate de furnizor.</li><li><b>Reînnoire domeniu:</b> ~€10-25/an (standard)</li><li><b>Repository Privat GitHub (Opțional):</b> ~4€ lunar. Inclus pentru toate pachetele din motive de securitate. Oferă backup securizat, control complet al versiunilor și ușurează colaborarea sau transferul site-ului tău web către un alt dezvoltator în viitor.</li><li><b>Instalare email profesional (Opțional):</b> ~10€ lunar (dacă ai nevoie de adresă email profesională cu domeniul tău)</li></ul>Aceste costuri sunt facturate direct de către furnizorii de servicii terțe și nu sunt incluse în taxa mea de dezvoltare.</span>",
+        "ownership": "Dețin site-ul web și codul meu?",
+        "ownership_answer": "<span>Primești:<ul className=\"list-disc ml-5 mt-2\"><li><b>Proprietate completă a site-ului tău web</b></li><li><b>Cod sursă complet</b></li><li><b>Toate fișierele de design și asset-urile</b></li><li><b>Fără taxe de licențiere continue către mine</b></li></ul></span>"
+      },
+      "payment": {
+        "methods": "Ce metode de plată acceptați?",
+        "methods_answer": "<span>Accept:<ul className=\"list-disc ml-5 mt-2\"><li>Transferuri bancare</li><li>PayPal</li><li>Cărți de credit/debit</li><li>Plăți în criptomonedă</li></ul></span>",
+        "when_pay": "Când trebuie să plătesc?",
+        "when_pay_answer": "<span><ul className=\"list-disc ml-5 mt-2\"><li><b>40% avans:</b> Acest lucru asigură angajamentul tău și acoperă toată munca de design.</li><li><b>40% la începerea dezvoltării:</b> Acest lucru menține proiectul în mișcare și acoperă faza principală de dezvoltare.</li><li><b>20% plată finală:</b> Acest lucru este datorat numai după ce site-ul tău web este complet, aprobat și gata de lansare — așa că ai liniște sufletească și control deplin înainte de ultimul pas.</li></ul></span>",
+        "satisfaction": "Ce se întâmplă dacă nu sunt mulțumit de rezultat?",
+        "satisfaction_answer": "Ofer revizuiri nelimitate în timpul procesului de dezvoltare și suport gratuit de 7 zile după livrare, pentru orice ajustări sau remedieri minore.",
+        "training": "Oferiți instruire despre cum să folosesc site-ul meu web nou?",
+        "training_answer": "<span>Da! După livrare, ofer:<ul className=\"list-disc ml-5 mt-2\"><li>Tutoriale video pentru panoul tău specific de administrare</li><li>Apel de instruire de 1 oră (Pachete Pro și Premium)</li><li>Suport continuu în timpul procesului de dezvoltare și primele 7 zile după livrare</li></ul></span>"
+      },
+      "technical": {
+        "mobile": "Va funcționa site-ul meu web pe telefoane mobile?",
+        "mobile_answer": "<span>Absolut! Toate site-urile web sunt complet responsive și optimizate pentru:<ul className=\"list-disc ml-5 mt-2\"><li>Calculatoare desktop</li><li>Tablete</li><li>Telefoane mobile</li><li>Toate browserele majore</li></ul></span>",
+        "speed": "Cât de rapid se va încărca site-ul meu web?",
+        "speed_answer": "<span>Foarte rapid! Optimizez pentru viteză folosind:<ul className=\"list-disc ml-5 mt-2\"><li>Tehnici moderne de codare</li><li>Optimizare imagini</li><li>Infrastructură de hosting rapidă</li><li>Monitorizare performanță</li><li>Scoruri de viteză de obicei 90+ pe Google PageSpeed</li></ul></span>",
+        "security": "Este site-ul meu web securizat?",
+        "security_answer": "<span>Da! Funcțiile de securitate includ:<ul className=\"list-disc ml-5 mt-2\"><li>Certificate SSL (HTTPS)</li><li>Actualizări regulate de securitate</li><li>Procesare plăți securizată</li><li>Criptare date</li></ul>Pentru protecție continuă și liniște sufletească, ofer trei planuri de mentenanță:<ul className=\"list-disc ml-5 mt-2\"><li><b>Mentenanță Basic:</b> Actualizări esențiale de securitate și backup-uri lunare</li><li><b>Mentenanță Professional:</b> Include totul din Basic, plus monitorizare SEO, analytics și suport prioritar</li><li><b>Mentenanță Premium:</b> Acoperire cuprinzătoare cu suport e-commerce, mentenanță sistem plăți, raportare avansată și suportul cel mai rapid</li></ul>Aceste planuri asigură că site-ul tău web rămâne securizat, actualizat și funcționând fără probleme.</span>",
+        "transfer": "Pot muta site-ul meu web către alt host mai târziu?",
+        "transfer_answer": "Da, deții site-ul tău web complet. Pot ajuta la transferarea acestuia către orice furnizor de hosting dacă este nevoie (pot aplica taxe suplimentare)."
+      },
+      "maintenance": {
+        "need_maintenance": "Am nevoie de mentenanță lunară?",
+        "need_maintenance_answer": "Deși nu este obligatorie, mentenanța asigură că site-ul tău web rămâne securizat, rapid și actualizat. Site-urile web moderne au nevoie de actualizări regulate pentru patch-uri de securitate, optimizare performanță și management servicii terțe.",
+        "without_maintenance": "Ce se întâmplă dacă nu fac mentenanță?",
+        "without_maintenance_answer": "<span>Site-ul tău web va continua să funcționeze, dar poți experimenta:<ul className=\"list-disc ml-5 mt-2\"><li>Vulnerabilități de securitate</li><li>Viteze de încărcare mai lente</li><li>Integrări terțe distruse</li><li>Plugin-uri și dependențe învechite</li></ul></span>",
+        "pause_service": "Pot întrerupe serviciul de mentenanță?",
+        "pause_service_answer": "Da, poți întrerupe sau anula oricând. Nu sunt contracte pe termen lung obligatorii.",
+        "basic_maintenance": "Mentenanță Basic - €29/lună (Perfect pentru Site-uri Starter)",
+        "basic_maintenance_answer": "<span><ul className=\"list-disc ml-5 mt-2\"><li>Actualizări și patch-uri securitate</li><li>Monitorizare performanță</li><li>Backup-uri lunare</li><li>Actualizări minore de conținut (2 ore incluse)</li><li>Suport (răspuns 48 ore)</li></ul></span>",
+        "professional_maintenance": "Mentenanță Professional - €59/lună (Ideal pentru Site-uri Pro)",
+        "professional_maintenance_answer": "<span><ul className=\"list-disc ml-5 mt-2\"><li>Totul din Basic</li><li>Asistență postări blog (1 post/lună)</li><li>Monitorizare SEO</li><li>Raportare analytics</li><li>Depanare CMS</li><li>Suport prioritar (răspuns 24 ore)</li><li>Până la 5 ore actualizări/modificări</li><li>Modificările apar instant pe site-ul tău</li></ul></span>",
+        "premium_maintenance": "Mentenanță Premium - €99/lună (Cuprinzător pentru Site-uri Premium)",
+        "premium_maintenance_answer": "<span><ul className=\"list-disc ml-5 mt-2\"><li>Totul din Professional</li><li>Suport e-commerce</li><li>Mentenanță sistem plăți</li><li>Management automatizare email</li><li>Optimizare chatbot</li><li>Raportare avansată</li><li>Suport prioritar (răspuns 12 ore)</li><li>Până la 8 ore actualizări/modificări</li><li>Modificările apar instant pe site-ul tău</li><li>Apel strategie lunar</li></ul></span>",
+        "extra_updates": "Ce se întâmplă dacă am nevoie de mai multe actualizări decât cele incluse?",
+        "extra_updates_answer": "Actualizări suplimentare de conținut: +€10/oră dincolo de limitele pachetului.",
+        "emergency_support": "Oferiți suport de urgență?",
+        "emergency_support_answer": "Da, suport de urgență disponibil la +€25/oră pentru probleme urgente în afara orelor de lucru.",
+        "add_features": "Pot adăuga funcții noi în timpul mentenanței?",
+        "add_features_answer": "Funcțiile noi sunt estimate și calculate separat în funcție de complexitate. Mentenanța acoperă actualizările funcționalității existente.",
+        "payment_method": "Cum plătesc pentru mentenanță?",
+        "payment_method_answer": "Facturare lunară prin Transfer Bancar, PayPal, Card sau Crypto. Prima plată datorată când începe serviciul.",
+        "change_packages": "Pot schimba pachetele?",
+        "change_packages_answer": "Da, poți face upgrade sau downgrade oricând. Modificările intră în vigoare în următorul ciclu de facturare.",
+        "response_time": "Care este garanția timpului de răspuns?",
+        "response_time_answer": "<span><ul className=\"list-disc ml-5 mt-2\"><li>Basic: 72 ore</li><li>Professional: 48 ore (suport prioritar)</li><li>Premium: 24 ore (suport prioritar)</li></ul></span>",
+        "maintenance_reports": "Oferiți rapoarte de mentenanță?",
+        "maintenance_reports_answer": "<span>Da, rapoarte lunare incluse care arată:<ul className=\"list-disc ml-5 mt-2\"><li>Actualizări efectuate</li><li>Metrici performanță</li><li>Status securitate</li><li>Recomandări</li></ul></span>",
+        "change_speed": "Cât de repede apar modificările pe site-ul meu web?",
+        "change_speed_answer": "Toate actualizările și modificările de conținut apar instant pe site-ul tău web odată ce sunt finalizate."
+      }
+    },
+    "cta": {
+      "badge": "Gata să Începi?",
+      "title": "Să Construim",
+      "title_highlight": "Site-ul Visurilor Tale",
+      "description": "Gata să transformi ideile tale într-o prezență web puternică? Să discutăm proiectul tău și să creăm ceva extraordinar împreună.",
+      "primary_button": "Începe Proiectul Tău",
+      "secondary_button": "Programează Consultație",
+      "features": {
+        "fast_delivery": {
+          "title": "Livrare Rapidă",
+          "description": "Majoritatea proiectelor finalizate în 4-8 săptămâni"
+        },
+        "quality_guarantee": {
+          "title": "Garanție Calitate",
+          "description": "100% satisfacție sau banii înapoi"
+        },
+        "ongoing_support": {
+          "title": "Suport Continuu",
+          "description": "Mentenanță și actualizări gratuite pentru 6 luni"
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "badge": "LUCRĂRILE NOASTRE",
+      "title": "Prezentând",
+      "title_highlight": "Cea Mai Bună Muncă",
+      "title_suffix": "& Povești de Succes",
+      "description": "Explorează lucrările noastre de soluții digitale inovatoare care au transformat afaceri și au livrat rezultate excepționale. De la aplicații web la campanii de marketing digital, descoperă cum aducem ideile la viață.",
+      "view_projects": "Vezi Toate Proiectele",
+      "contact_us": "Contactați-ne",
+      "stats": {
+        "projects_completed": "Proiecte Finalizate",
+        "thankful_clients": "Clienți Mulțumiți",
+        "lines_of_code": "Linii de cod",
+        "satisfaction": "Satisfacție"
+      }
+    },
+    "grid": {
+      "badge": "PORTFOLIO",
+      "title": "Proiectele Noastre",
+      "title_highlight": "Prezentate",
+      "description": "Descoperă cele mai recente lucrări ale noastre și vezi cum am ajutat afaceri să-și atingă obiectivele digitale prin soluții inovatoare și tehnologie de ultimă generație.",
+      "filters": {
+        "all": "Toate",
+        "fullstack": "Dezvoltare FullStack",
+        "uiux": "Design UI/UX",
+        "marketing": "Marketing Digital",
+        "ecommerce": "Dezvoltare E-commerce"
+      },
+      "empty_state": {
+        "title": "Nimic pentru acest filtru specific",
+        "description": "Poate proiectul tău ar putea fi primul aici? Contactează-ne pentru a-l prezenta!",
+        "button": "Să începem"
+      },
+      "view_details": "Vezi Detalii",
+      "detail": {
+        "breadcrumb": "Portfolio",
+        "gallery": "Galerie Proiect",
+        "challenge": "Provocare",
+        "solution": "Soluție",
+        "impact": "Impact",
+        "design_process": "Proces de Design",
+        "core_features": "Funcții Principale",
+        "technologies_tools": "Tehnologii și Instrumente",
+        "results_impact": "Rezultate și Impact",
+        "key_achievements": "Realizări Cheie"
+      },
+      "projects": {
+        "senda_courier": {
+          "description": "Un design web modern și prietenos pentru SendACourier, concentrându-se pe UI/UX intuitiv pentru rezervarea și urmărirea fără probleme a serviciilor de curierat.",
+          "challenge": "Proiectează o interfață simplă și eficientă pentru ca utilizatorii să rezerve și să urmărească rapid serviciile de curierat online.",
+          "solution": "Am dezvoltat o interfață curată și responsivă cu call-to-actions clare și un proces de rezervare simplificat, asigurând accesibilitate și ușurință în utilizare.",
+          "impact": "Am îmbunătățit implicarea utilizatorilor și am redus timpul de rezervare, rezultând o satisfacție mai mare a clienților și o adoptare crescută a serviciului.",
+          "features": {
+            "0": "Design Web Responsiv",
+            "1": "Flux de Rezervare Intuitiv",
+            "2": "Interfață de Urmărire în Timp Real"
+          },
+          "design_process": {
+            "0": {
+              "phase": "Cercetare și Planificare",
+              "details": "Am analizat nevoile utilizatorilor și platformele concurente pentru a defini funcțiile cheie și fluxurile utilizatorilor."
+            },
+            "1": {
+              "phase": "Wireframing și Prototipare",
+              "details": "Am creat wireframe-uri și prototipuri interactive pentru a valida experiența de rezervare și urmărire."
+            },
+            "2": {
+              "phase": "Design Vizual",
+              "details": "Am proiectat o interfață modernă, aliniată cu brandul, cu accent pe claritate și ușurință în utilizare."
+            }
+          },
+          "results": "A permis rezervări rapide și prietenoase pentru curierat și a îmbunătățit satisfacția clienților.",
+          "achievements": {
+            "0": "Proces de rezervare mai rapid",
+            "1": "Feedback pozitiv de la utilizatori",
+            "2": "Rezervări online în creștere"
+          }
+        },
+        "epic_trans_logistics": {
+          "description": "Un site web modern pentru o companie de logistică și transport cu urmărire în timp real, managementul rezervărilor și informații complete despre servicii. Designul pune accent pe încredere, fiabilitate și acces ușor la serviciile cheie de transport.",
+          "challenge": "Proiectează o prezență digitală profesională și de încredere pentru o companie de logistică care gestionează transportul internațional de marfă, făcând serviciile complexe accesibile și ușor de înțeles pentru clienți.",
+          "solution": "Am creat un site web modern și prietenos cu prezentare clară a serviciilor, integrare de urmărire în timp real și suport multilingv. Designul se concentrează pe construirea încrederii prin transparență și acces ușor la informațiile cheie.",
+          "impact": "Am obținut îmbunătățiri semnificative în prezența online și achiziționarea de clienți, cu o implicare sporită a utilizatorilor și un proces de rezervare a serviciilor optimizat.",
+          "features": {
+            "0": "Urmărire GPS în Timp Real",
+            "1": "Suport Multilingv",
+            "2": "Sistem de Rezervare Servicii",
+            "3": "Hărți de Rute Interactive",
+            "4": "Testimoniale Clienți",
+            "5": "Statistici Performanță",
+            "6": "Management Contacte"
+          },
+          "design_process": {
+            "0": {
+              "phase": "Cercetare și Analiză",
+              "details": "Am efectuat analiză competitivă și cercetare a utilizatorilor pentru a identifica funcțiile cheie și așteptările utilizatorilor în site-urile de logistică."
+            },
+            "1": {
+              "phase": "Strategie UX",
+              "details": "Am dezvoltat fluxuri de utilizatori și arhitectură informațională concentrându-ne pe accesul ușor la serviciile de urmărire și rezervare."
+            },
+            "2": {
+              "phase": "Design Vizual",
+              "details": "Am creat un limbaj vizual profesional cu accent pe încredere și fiabilitate prin layout-uri curate și tipografie clară."
+            },
+            "3": {
+              "phase": "Implementare",
+              "details": "Am construit layout-uri responsive și am integrat funcții de urmărire în timp real cu accent pe performanță și ușurință în utilizare."
+            }
+          },
+          "results": "Am îmbunătățit semnificativ prezența online, achiziționarea de clienți și implicarea utilizatorilor pentru serviciile de logistică.",
+          "achievements": {
+            "0": "Rating 100% Calitate Serviciu",
+            "1": "Acoperire 50+ Orașe",
+            "2": "150+ Clienți Mulțumiți",
+            "3": "Experiență Utilizator Optimizată"
+          }
+        },
+        "eurotour_moldova": {
+          "description": "Un proiect complet de design UI/UX pentru un serviciu de transport care conectează Moldova cu destinații europene. Sistemul de design prioritizează experiența utilizatorului cu navigare intuitivă, call-to-actions clare și flux de rezervare fără probleme.",
+          "challenge": "Creează o platformă de rezervare intuitivă și accesibilă care servește grupuri diverse de utilizatori în mai multe limbi, menținând în același timp o identitate de brand consistentă și o experiență optimă a utilizatorului pe toate dispozitivele.",
+          "solution": "Am dezvoltat un sistem de design cuprinzător în Figma cu componente modulare, tipografie consistentă și o schemă de culori care îmbunătățește lizibilitatea. Am implementat funcții centrate pe utilizator bazate pe cercetare și testare extinsă a utilizatorilor.",
+          "impact": "Noul design a rezultat într-o creștere de 150% a rezervărilor online, o îmbunătățire de 80% a implicării utilizatorilor și o reducere semnificativă a ratelor de abandonare a rezervărilor. Interfața intuitivă a primit un rating de satisfacție a utilizatorilor de 4.9/5.",
+          "features": {
+            "0": "Sistem de Design Personalizat",
+            "1": "Prototipuri Interactive",
+            "2": "Optimizare Flux Utilizator",
+            "3": "Ghiduri Accesibilitate",
+            "4": "Layout-uri Responsive",
+            "5": "Design de Animație",
+            "6": "Identitate Vizuală"
+          },
+          "design_process": {
+            "0": {
+              "phase": "Cercetare și Descoperire",
+              "details": "Am efectuat interviuri cu utilizatorii, analiză competitivă și am creat personaje de utilizatori pentru a înțelege nevoile publicului țintă."
+            },
+            "1": {
+              "phase": "Arhitectură Informațională",
+              "details": "Am dezvoltat structură de navigare intuitivă și fluxuri de utilizatori optimizate pentru procesul de rezervare."
+            },
+            "2": {
+              "phase": "Wireframing",
+              "details": "Am creat wireframe-uri de joasă și înaltă fidelitate cu accent pe călătoria utilizatorului și optimizarea conversiei."
+            },
+            "3": {
+              "phase": "Sistem de Design",
+              "details": "Am construit un sistem de design cuprinzător cu componente reutilizabile, tipografie și scheme de culori."
+            },
+            "4": {
+              "phase": "Prototipare",
+              "details": "Am dezvoltat prototipuri interactive pentru testarea utilizatorilor și feedback-ul părților interesate."
+            },
+            "5": {
+              "phase": "Testare și Iterare",
+              "details": "Am efectuat testare de utilizabilitate și îmbunătățiri iterative bazate pe feedback-ul utilizatorilor."
+            }
+          },
+          "results": "Creștere de 150% a rezervărilor online, îmbunătățire de 80% a implicării și rating de satisfacție a utilizatorilor de 4.9/5.",
+          "achievements": {
+            "0": "Reducere cu 40% a pașilor procesului de rezervare",
+            "1": "Creștere cu 95% a ratei de conversie pe mobil",
+            "2": "Îmbunătățire a scorului de accesibilitate la 98",
+            "3": "Rating de satisfacție a utilizatorilor 4.9/5",
+            "4": "Prezentat pe Behance și Dribbble"
+          }
+        },
+        "pure_bmwm_ecommerce": {
+          "description": "Platformă modernă de e-commerce pentru mărfuri auto cu inventar în timp real, plăți sigure și o experiență de cumpărare fără probleme.",
+          "challenge": "Construirea unei platforme de e-commerce scalabile cu urmărire a inventarului în timp real, multiple opțiuni de plată și un design responsive care menține performanță ridicată pe toate dispozitivele.",
+          "solution": "Echipa noastră a implementat:\n\n• Next.js pentru renderizare server-side și SEO optim\n• Management inventar în timp real cu MongoDB și Redis\n• Integrare Stripe cu multiple metode de plată\n• Flux personalizat de coș și checkout\n• Notificări email automate cu SendGrid\n• AWS S3 pentru optimizare și livrare imagini produse\n• Design responsive cu Tailwind CSS\n• Optimizare performanță cu lazy loading imagini și caching",
+          "impact": "Realizări tehnice:\n\n• Scor Google PageSpeed 98/100\n• Timp mediu de încărcare pagină 0.8s\n• Uptime 99.9% pe deployment Vercel\n• Imagini optimizate reducând timpul de încărcare cu 60%\n• Caching eficient implementat reducând încărcarea serverului\n• Design responsive mobile-first",
+          "features": {
+            "0": "Renderizare Server-side",
+            "1": "Inventar în Timp Real",
+            "2": "Gateway Multi-plăți",
+            "3": "Optimizare Imagini",
+            "4": "Automatizare Email",
+            "5": "Caching Performanță"
+          },
+          "results": "Am lansat o platformă de e-commerce de înaltă performanță cu sisteme avansate de inventar și plăți."
+        },
+        "rollwithdraw_platform": {
+          "description": "O platformă completă de tranzacționare cu plăți sigure în criptomonede, integrare WebSocket în timp real și sisteme automate de tranzacționare.",
+          "challenge": "Dezvoltarea unei platforme de tranzacționare sigure și de înaltă performanță care ar putea gestiona mii de utilizatori simultani menținând în același timp sincronizarea datelor în timp real și procesarea sigură a plăților.",
+          "solution": "Echipa noastră a implementat:\n\n• Sistem de autentificare utilizator sigur cu JWT și 2FA\n• Integrare gateway de plată criptomonede (USDC, ETH, USDT)\n• Comunicare WebSocket în timp real pentru actualizări date live\n• Strat de caching Redis pentru acces la date de înaltă performanță\n• Sistem automat de tranzacționare cu algoritmi personalizați\n• Sistem Discord OAuth și notificări webhook\n• Arhitectură server cu load balancing pentru disponibilitate ridicată",
+          "impact": "Realizări tehnice:\n\n• Timp mediu de răspuns 50ms pentru operațiuni în timp real\n• Uptime sistem 99.9%\n• Procesat cu succes peste 1M$ în tranzacții crypto\n• Scalat pentru a gestiona peste 10.000 de utilizatori simultani\n• Redus costurile serverului cu 40% prin optimizare\n• Atins conformitate PCI DSS pentru procesarea plăților",
+          "features": {
+            "0": "Autentificare JWT și 2FA",
+            "1": "Plăți Crypto Multi-monedă",
+            "2": "Actualizări WebSocket în Timp Real",
+            "3": "Caching Performanță Redis",
+            "4": "Motor Automat de Tranzacționare",
+            "5": "Integrare Discord"
+          },
+          "results": "Am livrat o platformă de tranzacționare sigură și scalabilă cu plăți crypto în timp real și automatizare."
+        }
+      }
+    }
+  },
+  "design_page": {
+    "hero": {
+      "badge": "Design UI/UX",
+      "title": "Design Care Captivează",
+      "title_highlight": "Și Convertește",
+      "description": "Creăm interfețe utilizator uimitoare și identități de brand memorabile care stimulează implicarea și conversiile. Fiecare pixel este creat cu scop și precizie.",
+      "services": [
+        "Design UI/UX",
+        "Identitate Brand",
+        "Design Logo",
+        "Design Figma"
+      ]
+    },
+    "features": {
+      "badge": "Excelență Design",
+      "title": "Creând Design-uri Care",
+      "title_highlight": "Generează Rezultate",
+      "subtitle": "Procesul nostru de design combină creativitatea cu strategia pentru a livra soluții vizuale care nu doar arată uimitor, ci ating și obiectivele tale de afaceri.",
+      "items": {
+        "uiux": {
+          "title": "Design UI/UX",
+          "description": "Interfețe intuitive pe care utilizatorii le iubesc, susținute de cercetare și cele mai bune practici pentru o experiență optimă a utilizatorului."
+        },
+        "brand_identity": {
+          "title": "Identitate Brand",
+          "description": "Sisteme complete de brand, inclusiv logo-uri, palete de culori, tipografie și ghiduri care te fac memorabil."
+        },
+        "responsive": {
+          "title": "Design Responsive",
+          "description": "Design-uri care funcționează perfect pe toate dispozitivele și dimensiunile de ecran cu precizie pixel-perfect."
+        },
+        "user_research": {
+          "title": "Cercetare Utilizatori",
+          "description": "Decizii de design bazate pe date fundamentate pe analiza comportamentului utilizatorilor și cercetare de piață cuprinzătoare."
+        },
+        "prototyping": {
+          "title": "Prototipare Rapidă",
+          "description": "Prototipuri interactive care aduc ideile tale la viață înainte ca dezvoltarea să înceapă."
+        },
+        "conversion": {
+          "title": "Orientat pe Conversie",
+          "description": "Strategii de design create special pentru a crește implicarea utilizatorilor și ratele de conversie."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Gata să Designezi?",
+      "title": "Să Creăm Ceva",
+      "title_highlight": "Uimitor Împreună",
+      "description": "De la conceptul inițial până la execuția finală, vom lucra strâns cu tine pentru a aduce viziunea ta la viață cu design uimitor și eficient.",
+      "button": "Începe Proiect Design",
+      "benefits": {
+        "passionate_team": {
+          "title": "Echipă Pasionată",
+          "description": "Designeri premiați care iubesc ceea ce fac"
+        },
+        "fast_turnaround": {
+          "title": "Livrare Rapidă",
+          "description": "Majoritatea proiectelor de design finalizate în 2-4 săptămâni"
+        },
+        "unlimited_revisions": {
+          "title": "Revizii Nelimitate",
+          "description": "Lucrăm până ești 100% mulțumit"
+        }
+      }
+    }
+  },
+  "seo_page": {
+    "hero": {
+      "badge": "Optimizare Motoare de Căutare",
+      "title": "Dominează Rezultatele Căutării",
+      "title_highlight": "Generează Trafic Organic",
+      "description": "Fii găsit de clienții tăi ideali cu strategii SEO bazate pe date care îmbunătățesc pozițiile tale în căutare și generează trafic organic calificat pe site-ul tău.",
+      "services": [
+        "Cercetare Cuvinte Cheie",
+        "SEO Tehnic",
+        "SEO Local",
+        "Analytics",
+        "Audit Site"
+      ]
+    },
+    "features": {
+      "badge": "Excelență SEO",
+      "title": "SEO Care Livrează",
+      "title_highlight": "Creștere Măsurabilă",
+      "subtitle": "Abordarea noastră cuprinzătoare SEO combină expertiza tehnică, strategia de conținut și tehnici dovedite de optimizare pentru a genera creștere organică durabilă.",
+      "items": {
+        "keyword_research": {
+          "title": "Cercetare Cuvinte Cheie",
+          "description": "Analiză aprofundată a cuvintelor cheie pentru a identifica termeni de căutare de valoare ridicată pe care publicul țintă îi folosește pentru a găsi afaceri ca a ta."
+        },
+        "technical_seo": {
+          "title": "SEO Tehnic",
+          "description": "Optimizează viteza site-ului, responsivitatea pe mobil, capacitatea de indexare și elementele tehnice pentru o performanță mai bună a motorului de căutare."
+        },
+        "content_optimization": {
+          "title": "Optimizare Conținut",
+          "description": "Creează și optimizează conținut care se clasează bine și oferă valoare publicului tău, stimulând implicarea și conversiile."
+        },
+        "ranking_improvement": {
+          "title": "Îmbunătățire Poziții",
+          "description": "Strategii dovedite pentru a îmbunătăți pozițiile tale în căutare și a crește vizibilitatea pentru cele mai importante cuvinte cheie."
+        },
+        "link_building": {
+          "title": "Link Building",
+          "description": "Construiește backlink-uri de înaltă calitate și autoritative care îți cresc autoritatea domeniului și credibilitatea în motoarele de căutare."
+        },
+        "analytics_reporting": {
+          "title": "Analytics și Raportare",
+          "description": "Urmărire și raportare cuprinzătoare pentru a monitoriza progresul, măsura ROI-ul și identifica oportunități de optimizare."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Gata să Clasezi?",
+      "title": "Începe Călătoria Ta SEO",
+      "title_highlight": "Dominează Rezultatele Căutării",
+      "description": "Obține un audit SEO gratuit și descoperă exact ce îți împiedică site-ul să se claseze mai sus și să genereze mai mult trafic organic.",
+      "button": "Începe Campanie SEO",
+      "benefits": {
+        "quick_results": {
+          "title": "Rezultate Rapide",
+          "description": "Vezi îmbunătățiri în poziții în 60-90 zile"
+        },
+        "proven_methods": {
+          "title": "Metode Dovedite",
+          "description": "Strategii white-hat care durează pe termen lung"
+        },
+        "full_support": {
+          "title": "Suport Complet",
+          "description": "Rapoarte lunare și optimizare continuă"
+        }
+      }
+    }
+  },
+  "copywriting_page": {
+    "hero": {
+      "badge": "Copywriting",
+      "title": "Cuvinte Care Convertesc",
+      "title_highlight": "Povești Care Vând",
+      "description": "Conținut convingător care se conectează cu publicul tău și generează acțiune. De la conținutul site-ului la campanii email, creăm cuvinte care transformă vizitatorii în clienți.",
+      "services": [
+        "Conținut Website",
+        "Campanii Email",
+        "Pagini Vânzări",
+        "Conținut Blog",
+        "Social Media",
+        "Descrieri Produse"
+      ]
+    },
+    "features": {
+      "badge": "Excelență Conținut",
+      "title": "Cuvinte Care Funcționează",
+      "title_highlight": "Conținut Care Convertește",
+      "subtitle": "Fiecare cuvânt este creat cu scop. Creăm conținut care nu doar implică publicul tău, ci îi determină să acționeze și să devină clienți fideli.",
+      "items": {
+        "conversion_copywriting": {
+          "title": "Copywriting Conversie",
+          "description": "Conținut persuasiv, orientat pe acțiune care transformă vizitatorii în clienți fideli prin mesagerie strategică și call-to-actions convingătoare."
+        },
+        "email_marketing": {
+          "title": "Marketing Email",
+          "description": "Secvențe email și newsletter-uri eficiente concepute pentru a nutri lead-uri, stimula implicarea și crește conversiile."
+        },
+        "website_content": {
+          "title": "Conținut Website",
+          "description": "Conținut clar și impactant care comunică valoarea brandului tău, construiește încredere și încurajează acțiunea utilizatorilor."
+        },
+        "social_media_copy": {
+          "title": "Conținut Social Media",
+          "description": "Conținut care oprește scroll-ul, creat pentru a crește implicarea, construi identitatea brandului și stimula interacțiunea pe platformele cheie."
+        },
+        "sales_pages": {
+          "title": "Pagini Vânzări",
+          "description": "Pagini de destinație și vânzări cu conversie ridicată care evidențiază beneficiile ofertei tale și ghidează vizitatorii către acțiune."
+        },
+        "content_strategy": {
+          "title": "Strategie Conținut",
+          "description": "Planificare de conținut personalizată aliniată cu obiectivele tale de afaceri și interesele publicului pentru a maximiza acoperirea și impactul."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Gata să Scrii?",
+      "title": "Să Creăm Conținut",
+      "title_highlight": "Care Convertește",
+      "description": "Gata să-ți transformi marketingul cu cuvinte care funcționează? Să creăm conținut convingător care transformă publicul tău în clienți.",
+      "button": "Să Începem",
+      "benefits": {
+        "fast_delivery": {
+          "title": "Livrare Rapidă",
+          "description": "Conținut de calitate livrat în 5-7 zile"
+        },
+        "unlimited_revisions": {
+          "title": "Revizii Nelimitate",
+          "description": "Lucrăm până ești 100% mulțumit"
+        },
+        "expert_writers": {
+          "title": "Scriitori Experți",
+          "description": "Copywriter-i experimentați care înțeleg conversia"
+        }
+      }
+    }
+  },
+  "analytics_tracking_page": {
+    "hero": {
+      "badge": "Analytics & Tracking",
+      "title": "Analytics & Tracking",
+      "title_highlight": "Decizii Mai Inteligente, Rezultate Mai Bune",
+      "description": "Obține perspective valoroase despre comportamentul utilizatorilor pentru a lua decizii de afaceri mai inteligente și a îmbunătăți performanța.",
+      "services": [
+        "Google Analytics",
+        "Urmărire Conversii",
+        "Heatmaps",
+        "Dashboard-uri"
+      ]
+    },
+    "features": {
+      "title": "Funcții Analytics & Tracking",
+      "items": {
+        "google_analytics": {
+          "title": "Configurare Google Analytics",
+          "description": "Configurare și setare completă pentru urmărire și raportare precisă a site-ului."
+        },
+        "conversion_tracking": {
+          "title": "Urmărire Conversii",
+          "description": "Monitorizează acțiunile cheie și măsoară ce contează cel mai mult pentru afacerea ta."
+        },
+        "heatmaps": {
+          "title": "Heatmaps & Înregistrări Sesiuni",
+          "description": "Vizualizează comportamentul utilizatorilor și identifică oportunități de îmbunătățire a experienței utilizatorului."
+        },
+        "performance_dashboards": {
+          "title": "Dashboard-uri Performanță",
+          "description": "Dashboard-uri personalizate pentru a urmări KPI-urile și a lua decizii bazate pe date."
+        }
+      }
+    },
+    "faq": {
+      "title": "Întrebări Frecvente",
+      "blocks": {
+        "general": {
+          "title": "Întrebări Generale",
+          "items": {
+            "what_is": {
+              "q": "Ce este Analytics & Tracking?",
+              "a": "Analytics & Tracking se referă la colectarea și analiza datelor despre modul în care utilizatorii interacționează cu site-ul sau aplicația ta. Te ajută să înțelegi comportamentul utilizatorilor, să măsori performanța și să iei decizii bazate pe date."
+            },
+            "why_google_analytics": {
+              "q": "De ce am nevoie de Google Analytics?",
+              "a": "Google Analytics oferă perspective detaliate despre traficul site-ului tău, demografia utilizatorilor și comportamentul lor. Te ajută să identifici ce funcționează, ce nu funcționează și unde să-ți concentrezi eforturile de marketing."
+            },
+            "what_is_conversion": {
+              "q": "Ce este Urmărirea Conversiilor?",
+              "a": "Urmărirea Conversiilor îți permite să măsori acțiuni specifice pe care le fac utilizatorii pe site-ul tău, cum ar fi cumpărăturile, înregistrările sau descărcările. Acest lucru te ajută să optimizezi site-ul pentru rezultate mai bune."
+            },
+            "how_heatmaps": {
+              "q": "Cum ajută Heatmaps & Înregistrările Sesiunilor?",
+              "a": "Heatmaps și înregistrările sesiunilor arată vizual unde dau click utilizatorii, unde fac scroll și unde petrec timp pe site-ul tău. Acest lucru te ajută să identifici probleme de utilizabilitate și să îmbunătățești experiența utilizatorului."
+            },
+            "what_dashboards": {
+              "q": "Ce sunt Dashboard-urile de Performanță?",
+              "a": "Dashboard-urile de Performanță sunt rapoarte vizuale personalizate care afișează indicatorii tăi cheie în timp real, facilitând monitorizarea progresului și luarea de decizii informate."
+            },
+            "can_setup": {
+              "q": "Puteți configura totul pentru mine?",
+              "a": "Da! Ne ocupăm de configurarea și setarea completă a analytics-ului, urmăririi și dashboard-urilor, astfel încât tu să te poți concentra pe afacerea ta."
+            }
+          }
+        },
+        "technical": {
+          "title": "Tehnic & Confidențialitate",
+          "items": {
+            "data_secure": {
+              "q": "Datele mele sunt sigure?",
+              "a": "Da, urmăm cele mai bune practici pentru confidențialitatea și securitatea datelor. Toată urmărirea este conformă GDPR și respectă consimțământul utilizatorilor."
+            },
+            "access_data": {
+              "q": "Pot accesa datele mele oricând?",
+              "a": "Absolut! Vei avea acces 24/7 la dashboard-urile și rapoartele tale de analytics."
+            },
+            "integrate_tools": {
+              "q": "Puteți integra cu instrumentele mele existente?",
+              "a": "Da, putem conecta analytics-ul și dashboard-urile cu CRM-ul tău, instrumentele de marketing sau alte instrumente de afaceri."
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "badge": "Gata să Deblochezi Perspective?",
+      "title": "Să Urmărim Împreună",
+      "title_highlight": "Succesul Tău",
+      "description": "Gata să iei decizii de afaceri mai inteligente? Să discutăm despre nevoile tale de analytics și să configurăm urmărirea care generează rezultate.",
+      "button": "Începe Proiectul",
+      "benefits": {
+        "fast_setup": {
+          "title": "Configurare Rapidă",
+          "description": "Obține urmărire și dashboard-uri live în zile"
+        },
+        "actionable_insights": {
+          "title": "Perspective Acționabile",
+          "description": "Vezi ce funcționează și optimizează pentru creștere"
+        },
+        "ongoing_support": {
+          "title": "Suport Continuu",
+          "description": "Mentenanță și actualizări gratuite timp de 6 luni"
+        }
+      }
+    }
+  },
+  "contact_page": {
+    "hero": {
+      "badge": "CONTACTEAZĂ-NE",
+      "title_line1": "Să Construim",
+      "title_highlight": "Ceva Uimitor",
+      "title_line2": "Împreună",
+      "description": "Gata să-ți transformi afacerea cu tehnologie de ultimă generație? Echipa noastră de experți este aici pentru a te ajuta să-ți aduci viziunea la viață. Să începem conversația astăzi.",
+      "button": "Începe Proiectul",
+      "stats": {
+        "support_24_7": {
+          "title": "Suport 24/7",
+          "description": "Asistență non-stop pentru toate nevoile tale"
+        },
+        "quick_response": {
+          "title": "Răspuns Rapid",
+          "description": "Îți răspundem în 2 ore pentru a răspunde la întrebările tale"
+        },
+        "secure_private": {
+          "title": "Sigur & Privat",
+          "description": "Datele tale sunt protejate și sigure la noi"
+        },
+        "expert_team": {
+          "title": "Echipă Expertă",
+          "description": "Profesioniști dedicați la serviciul tău"
+        }
+      }
+    },
+    "form": {
+      "badge": "FORMULAR CONTACT",
+      "title": "Ia Legătura",
+      "title_highlight": "Cu Noi",
+      "description": "Gata să începi următorul tău proiect? Completează formularul de mai jos.",
+      "left_side": {
+        "title": "Gata să Începi Următorul Tău Proiect?",
+        "description": "Să discutăm despre cum te putem ajuta să-ți atingi obiectivele de afaceri cu soluții tehnologice de ultimă generație. Echipa noastră este pregătită să-ți aducă viziunea la viață.",
+        "button": "Obține Consultație Gratuită",
+        "stats": {
+          "projects_completed": {
+            "value": "10+",
+            "label": "Proiecte Finalizate"
+          },
+          "lines_of_code": {
+            "value": "50K+",
+            "label": "Linii de Cod Scrise"
+          },
+          "tech_stack_tools": {
+            "value": "20+",
+            "label": "Instrumente Tech Stack"
+          }
+        }
+      },
+      "labels": {
+        "full_name": "Nume Complet *",
+        "email": "Adresă Email *",
+        "subject": "Subiect *",
+        "how_heard": "Cum ai auzit despre noi?",
+        "message": "Mesaj *"
+      },
+      "placeholders": {
+        "full_name": "Introdu numele tău complet",
+        "email": "Introdu adresa ta de email",
+        "message": "Introdu mesajul tău"
+      },
+      "select_options": {
+        "select_service": "Selectează un serviciu",
+        "select_option": "Selectează o opțiune",
+        "how_heard": {
+          "google": "Google",
+          "friend_colleague": "Prieten sau Coleg",
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "linkedin": "LinkedIn",
+          "advertisement": "Reclamă",
+          "event_conference": "Eveniment sau Conferință",
+          "other": "Altul"
+        }
+      },
+      "service_categories": {
+        "development_design": "DEZVOLTARE & DESIGN",
+        "marketing_content": "MARKETING & CONȚINUT",
+        "analytics_tracking": "ANALYTICS & TRACKING"
+      },
+      "services": {
+        "web_development": "Dezvoltare Web - Site-uri web și aplicații personalizate",
+        "design": "Design - UI/UX și identitate brand",
+        "bot_automation": "Automatizare Bot - Chatbot-uri AI și automatizare",
+        "seo": "SEO - Optimizare motoare de căutare",
+        "copywriting": "Copywriting - Conținut care convertește",
+        "analytics_tracking": "Analytics și Tracking - Track user behavior. Improve results."
+      },
+      "button": {
+        "send": "Trimite Mesaj",
+        "sending": "Se trimite mesajul..."
+      },
+      "messages": {
+        "success": {
+          "title": "Mesaj Trimis cu Succes!",
+          "description": "Mulțumim pentru mesaj. Te vom contacta în curând!"
+        },
+        "error": {
+          "title": "Eroare la Trimiterea Mesajului",
+          "default": "Nu s-a putut trimite mesajul. Te rugăm să încerci din nou."
+        }
+      }
+    },
+    "info": {
+      "title": "Ia Legătura",
+      "title_highlight": "Cu Noi",
+      "description": "Gata să începi următorul tău proiect? Suntem aici pentru a te ajuta să-ți aduci viziunea la viață. Contactează-ne prin oricare dintre canalele de mai jos.",
+      "email": {
+        "label": "Email",
+        "description": "Trimite-ne un email oricând",
+        "value": "codava.dev@gmail.com"
+      },
+      "why_choose_us": {
+        "title": "De Ce Să Ne Alegi?",
+        "items": {
+          "support": "Suport și mentenanță 24/7",
+          "response": "Timp de răspuns rapid (în 2 ore)",
+          "secure": "Comunicare sigură și confidențială"
+        }
+      }
+    }
+  },
+  "common": {
+    "loading": "Se încarcă...",
+    "error": "A apărut o eroare",
+    "retry": "Încearcă din nou"
+  }
+}
