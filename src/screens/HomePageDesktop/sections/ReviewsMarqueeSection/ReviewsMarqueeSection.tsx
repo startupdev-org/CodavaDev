@@ -25,23 +25,12 @@ const ReviewCard = ({
   const handleClick = () => {
     window.open('https://levelauto.md', '_blank', 'noopener,noreferrer');
   };
-<<<<<<< HEAD
-  return (
-      onClick={handleClick}
-      onKeyDown={(e) => { if (e.key === 'Enter') handleClick(); }}
-      tabIndex={0}
-      role="button"
-=======
-  const handleClick = () => {
-    window.open('https://levelauto.md', '_blank', 'noopener,noreferrer');
-  };
   return (
     <figure
       onClick={handleClick}
       onKeyDown={(e) => { if (e.key === 'Enter') handleClick(); }}
       tabIndex={0}
       role="button"
->>>>>>> db1288b (Victorin Review)
       className={cn(
         "relative h-full w-96 cursor-pointer overflow-hidden rounded-2xl border p-8 transition-all duration-300 hover:scale-105",
         // Blue theme styling to match the site
