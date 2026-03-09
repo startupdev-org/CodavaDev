@@ -43,11 +43,11 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguageState] = useState<string>('en');
+  const [language, setLanguageState] = useState<string>('ro');
 
-  // Initialize language from localStorage or default to English
+  // Initialize language from localStorage or default to Romanian
   useEffect(() => {
-    const storedLang = localStorage.getItem('preferred-language') || 'en';
+    const storedLang = localStorage.getItem('preferred-language') || 'ro';
     setLanguageState(storedLang);
     i18n.changeLanguage(storedLang);
   }, []);

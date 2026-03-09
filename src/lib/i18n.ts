@@ -4,7 +4,7 @@ import enTranslations from '../locales/en.json';
 import roTranslations from '../locales/ro.json';
 
 class BasicI18n {
-  private currentLanguage: string = 'en';
+  private currentLanguage: string = 'ro';
   private resources: Record<string, any> = {
     en: { translation: enTranslations },
     ro: { translation: roTranslations }
