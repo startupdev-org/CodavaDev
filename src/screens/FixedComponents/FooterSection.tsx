@@ -76,11 +76,11 @@ export const FooterSection = () => {
               <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
             <div className="flex flex-col gap-2">
-              <Link to="/services/ai-consultant" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">AI Consultant</Link>
-              <Link to="/services/digital-engineering" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Digital Engineering</Link>
-              <Link to="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Design</Link>
-              <Link to="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</Link>
-              <Link to="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Analytics & Tracking</Link>
+              <Link to="/services/bot-automation" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.bot_automation')}</Link>
+              <Link to="/services/web-development" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.web_development')}</Link>
+              <Link to="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.design')}</Link>
+              <Link to="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.copywriting')}</Link>
+              <Link to="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.analytics_tracking')}</Link>
             </div>
           </div>
 
