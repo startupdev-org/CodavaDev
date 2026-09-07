@@ -85,7 +85,7 @@ export const FooterSection = () => {
           </div>
 
           {/* Column 4: Newsletter Signup */}
-          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
+          {/* <div className="flex flex-col gap-6 lg:items-start items-start text-left">
             <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.newsletter')}
               <div className="absolute bottom-0 left-0 w-24 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
@@ -144,7 +144,7 @@ export const FooterSection = () => {
             {showError && (
               <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">{t('footer.error_message')}</div>
             )}
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section */}
