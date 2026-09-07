@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import logoBg from "/logo-white.png";
 import { useTranslation } from "../../contexts/LanguageContext";
@@ -63,9 +64,9 @@ export const FooterSection = () => {
               <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
             <div className="flex flex-col gap-2">
-              <a href="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.about')}</a>
-              <a href="/our-work" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.portfolio')}</a>
-              <a href="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.contact')}</a>
+              <Link to="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.about')}</Link>
+              <Link to="/our-work" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.portfolio')}</Link>
+              <Link to="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.contact')}</Link>
             </div>
           </div>
 
@@ -75,11 +76,11 @@ export const FooterSection = () => {
               <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
             </h4>
             <div className="flex flex-col gap-2">
-              <a href="/services/ai-consultant" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">AI Consultant</a>
-              <a href="/services/digital-engineering" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Digital Engineering</a>
-              <a href="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Design</a>
-              <a href="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</a>
-              <a href="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Analytics & Tracking</a>
+              <Link to="/services/ai-consultant" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">AI Consultant</Link>
+              <Link to="/services/digital-engineering" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Digital Engineering</Link>
+              <Link to="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Design</Link>
+              <Link to="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</Link>
+              <Link to="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Analytics & Tracking</Link>
             </div>
           </div>
 
