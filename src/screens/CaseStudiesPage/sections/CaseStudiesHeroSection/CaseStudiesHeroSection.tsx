@@ -32,7 +32,7 @@ export const CaseStudiesHeroSection: React.FC = () => {
             <FadeIn delay={0.2} direction="up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 Real Results,
-                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                   Real Stories
                 </span>
                 Real Impact

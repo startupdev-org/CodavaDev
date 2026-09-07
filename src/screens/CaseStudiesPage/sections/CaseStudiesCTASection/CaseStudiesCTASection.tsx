@@ -13,7 +13,7 @@ export const CaseStudiesCTASection: React.FC = () => {
           <div className="text-center bg-white/[0.03] border border-white/10 rounded-3xl p-12 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500">
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Create
-              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 Your Success Story?
               </span>
             </h3>

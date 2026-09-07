@@ -58,7 +58,7 @@ export const PortfolioHeroSection = () => {
 
             <FadeIn delay={0.2} direction="up">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                {t('portfolio.hero.title')} <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent"> {t('portfolio.hero.title_highlight')} </span> {t('portfolio.hero.title_suffix')}
+                {t('portfolio.hero.title')} <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2"> {t('portfolio.hero.title_highlight')} </span> {t('portfolio.hero.title_suffix')}
               </h1>
             </FadeIn>
 

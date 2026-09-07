@@ -874,8 +874,8 @@
   "design_page": {
     "hero": {
       "badge": "Design UI/UX",
-      "title": "Design Care Captivează",
-      "title_highlight": "Și Convertește",
+      "title": "Design care captivează",
+      "title_highlight": "și convertește",
       "description": "Creăm interfețe utilizator uimitoare și identități de brand memorabile care stimulează implicarea și conversiile. Fiecare pixel este creat cu scop și precizie.",
       "services": [
         "Design UI/UX",
@@ -1384,14 +1384,38 @@
       "tech_title": "Susținut de un stack tehnologic modern",
       "tech_description": "Folosim cele mai noi tehnologii pe întregul stack pentru a livra aplicații scalabile, ușor de întreținut și de înaltă performanță.",
       "tech_stack": [
-        { "name": "React", "description": "Framework frontend" },
-        { "name": "Node.js", "description": "Mediu de execuție backend" },
-        { "name": "TypeScript", "description": "Dezvoltare cu tipare sigure" },
-        { "name": "MongoDB", "description": "Bază de date NoSQL" },
-        { "name": "PostgreSQL", "description": "Bază de date SQL" },
-        { "name": "AWS", "description": "Infrastructură cloud" },
-        { "name": "Docker", "description": "Containerizare" },
-        { "name": "SpringBoot", "description": "Framework backend Java" }
+        {
+          "name": "React",
+          "description": "Framework frontend"
+        },
+        {
+          "name": "Node.js",
+          "description": "Mediu de execuție backend"
+        },
+        {
+          "name": "TypeScript",
+          "description": "Dezvoltare cu tipare sigure"
+        },
+        {
+          "name": "MongoDB",
+          "description": "Bază de date NoSQL"
+        },
+        {
+          "name": "PostgreSQL",
+          "description": "Bază de date SQL"
+        },
+        {
+          "name": "AWS",
+          "description": "Infrastructură cloud"
+        },
+        {
+          "name": "Docker",
+          "description": "Containerizare"
+        },
+        {
+          "name": "SpringBoot",
+          "description": "Framework backend Java"
+        }
       ]
     },
     "cta": {
@@ -1462,22 +1486,42 @@
         {
           "name": "Google Ads",
           "description": "Campanii Search, Display, Shopping și YouTube",
-          "specialties": ["Campanii Search", "Reclame Shopping", "Rețea Display", "Publicitate YouTube"]
+          "specialties": [
+            "Campanii Search",
+            "Reclame Shopping",
+            "Rețea Display",
+            "Publicitate YouTube"
+          ]
         },
         {
           "name": "Facebook & Instagram",
           "description": "Publicitate în social media și retargeting",
-          "specialties": ["Reclame în feed", "Stories", "Reels", "Reclame Messenger"]
+          "specialties": [
+            "Reclame în feed",
+            "Stories",
+            "Reels",
+            "Reclame Messenger"
+          ]
         },
         {
           "name": "LinkedIn Ads",
           "description": "Publicitate în rețeaua profesională B2B",
-          "specialties": ["Conținut sponsorizat", "Formulare de generare lead-uri", "Reclame prin mesaje", "Reclame dinamice"]
+          "specialties": [
+            "Conținut sponsorizat",
+            "Formulare de generare lead-uri",
+            "Reclame prin mesaje",
+            "Reclame dinamice"
+          ]
         },
         {
           "name": "Microsoft Ads",
           "description": "Publicitate în rețeaua de căutare Bing",
-          "specialties": ["Reclame Search", "Campanii Shopping", "Rețea de audiență", "Import din Google"]
+          "specialties": [
+            "Reclame Search",
+            "Campanii Shopping",
+            "Rețea de audiență",
+            "Import din Google"
+          ]
         }
       ]
     },

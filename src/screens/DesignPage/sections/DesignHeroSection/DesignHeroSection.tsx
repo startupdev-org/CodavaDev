@@ -105,9 +105,9 @@ export const DesignHeroSection = () => {
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-white tracking-tight mb-7">
               {t('design_page.hero.title')}
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
+              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 {t('design_page.hero.title_highlight')}
               </span>
             </h1>

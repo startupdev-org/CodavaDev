@@ -102,7 +102,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl lg:text-5xl md:text-5xl font-bold text-white mb-6 leading-tight">
               {t('services.title_line1')}
-              <span className="block bg-gradient-to-r h-[50px] lg:h-[70px] text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
+              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text leading-[1.2] pb-2 -mb-2">
                 {t('services.title_line2')}
               </span>
             </h2>

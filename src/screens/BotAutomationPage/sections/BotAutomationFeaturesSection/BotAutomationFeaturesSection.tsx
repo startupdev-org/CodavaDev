@@ -21,7 +21,7 @@ export const BotAutomationFeaturesSection = () => {
           <FadeIn delay={0.1} direction="up">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('bot_automation.features.title')}
-              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
+              <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 {t('bot_automation.features.title_highlight')}
               </span>
             </h2>

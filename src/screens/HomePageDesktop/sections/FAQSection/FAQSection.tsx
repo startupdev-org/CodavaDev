@@ -28,7 +28,7 @@ export const FAQSection: React.FC = () => {
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
               {t('faq.title_line1')}
-              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text h-20">
+              <span className="block bg-gradient-to-r text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text leading-[1.2] py-2 -my-2">
                 {t('faq.title_line2')}
               </span>
             </h2>
@@ -96,7 +96,7 @@ export const FAQSection: React.FC = () => {
             <div className="relative z-10">
               <h3 className="text-4xl font-bold text-white mb-3">
                 {t('cta.title')}
-                <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text">
+                <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text leading-[1.2] pb-2 -mb-2">
                   {t('cta.title_highlight')}
                 </span>
               </h3>

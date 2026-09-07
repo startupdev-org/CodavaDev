@@ -31,7 +31,7 @@ export const CTASection = () => {
             
             <div className="relative z-10">
               <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
-                {t('cta_section.title')} <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent"> {t('cta_section.title_highlight')} </span>
+                {t('cta_section.title')} <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2"> {t('cta_section.title_highlight')} </span>
               </h3>
               
               <p className="text-white/70 text-lg md:text-xl lg:text-2xl mt-6 md:mt-8 mb-8 md:mb-12 max-w-3xl mx-auto font-light leading-relaxed">

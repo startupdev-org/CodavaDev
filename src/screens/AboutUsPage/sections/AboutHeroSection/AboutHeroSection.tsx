@@ -195,8 +195,8 @@ export const AboutHeroSection = () => {
           <div className="lg:col-span-11 flex flex-col items-center justify-center text-center space-y-8 z-10">
             {/* Main Heading */}
             <FadeIn delay={0.2} direction="up">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-                {t('about.hero_title')} <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-white tracking-tight mb-7">
+                {t('about.hero_title')} <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text leading-[1.2] pb-2 -mb-2">
                   {t('about.hero_title_highlight')}
                 </span>
               </h1>

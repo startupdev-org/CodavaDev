@@ -48,7 +48,7 @@ export const ClientTestimonialsSection: React.FC = () => {
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-3xl md:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight md:leading-tight">
-              What Our <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              What Our <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 Clients Say
               </span>
             </h2>
@@ -151,7 +151,7 @@ export const ClientTestimonialsSection: React.FC = () => {
             <div className="relative z-10">
               <h3 className="text-4xl font-bold text-white mb-4">
                 Ready to Join Our
-                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                   Success Stories?
                 </span>
               </h3>

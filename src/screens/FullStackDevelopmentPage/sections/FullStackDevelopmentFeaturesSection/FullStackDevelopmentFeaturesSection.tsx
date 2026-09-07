@@ -68,7 +68,7 @@ export const FullStackDevelopmentFeaturesSection = () => {
 
           <FadeIn delay={0.2} direction="up">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              {t('full_stack_development.features.title')} <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent">
+              {t('full_stack_development.features.title')} <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 {t('full_stack_development.features.title_highlight')}
               </span>
             </h2>

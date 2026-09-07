@@ -13,7 +13,7 @@ const SectionCTA: React.FC = () => {
           <div className="relative z-10">
             <h3 className="text-4xl font-bold text-white mb-4">
               Ready to Start Your Project?
-              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent leading-[1.2] pb-2 -mb-2">
                 Let's Work Together
               </span>
             </h3>

@@ -24,9 +24,9 @@ export const DesignCTASection = () => {
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15]">
             {t('design_page.cta.title')}
-            <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent h-20">
+            <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent leading-[1.2] py-2 -my-2">
               {t('design_page.cta.title_highlight')}
             </span>
           </h2>

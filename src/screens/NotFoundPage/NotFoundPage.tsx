@@ -148,9 +148,9 @@ export const NotFoundPage = () => {
 
               {/* Main Heading */}
               <FadeIn delay={0.3} direction="up">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-white tracking-tight mb-7">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] text-white tracking-tight mb-7">
                   {t('not_found_page.heading')}
-                  <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text mt-1 lg:h-[60px]">
+                  <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text leading-[1.2] pb-2 -mb-2">
                     {t('not_found_page.heading_highlight')}
                   </span>
                 </h1>
