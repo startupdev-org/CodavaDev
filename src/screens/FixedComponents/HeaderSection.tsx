@@ -15,6 +15,7 @@ import {
 } from "../../components/ui/animated-elements";
 import logoBg from '/logo-white.png';
 import { useTranslation } from "../../contexts/LanguageContext";
+import { LanguageSelector } from "../../components/LanguageSelector";
 
 export const HeaderSection = () => {
   const navigate = useNavigate();
@@ -360,13 +361,14 @@ export const HeaderSection = () => {
           </motion.div>
 
 
-          {/* CTA Button - Right */}
+          {/* Language + CTA Button - Right */}
           <motion.div
-            className="hidden lg:flex"
+            className="hidden lg:flex items-center gap-3"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
+            <LanguageSelector pulse />
             <GlowButton
               disableGlow={true}
               className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
@@ -463,6 +465,9 @@ export const HeaderSection = () => {
 
             {/* Mobile CTA Button */}
             <div className="mt-auto p-4 bg-[#00041F]">
+              <div className="mb-3 flex justify-center">
+                <LanguageSelector pulse className="w-full justify-center py-3 text-base" />
+              </div>
               <GlowButton
                 disableGlow={true}
                 onClick={() => navigate('/contact')}

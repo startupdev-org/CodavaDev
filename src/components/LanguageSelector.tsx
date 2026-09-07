@@ -1,31 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { ArrowLeftRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-export const LanguageSelector: React.FC = () => {
+const SEEN_KEY = 'lang-switch-seen';
+
+const readSeen = (): boolean => {
+  try {
+    return localStorage.getItem(SEEN_KEY) === '1';
+  } catch {
+    return true;
+  }
+};
+
+const writeSeen = () => {
+  try {
+    localStorage.setItem(SEEN_KEY, '1');
+  } catch {
+    /* private mode / storage disabled — non-critical */
+  }
+};
+
+interface LanguageSelectorProps {
+  /** Draw a one-time attention pulse on first visit (until the user has interacted with any selector). */
+  pulse?: boolean;
+  className?: string;
+}
+
+export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ pulse = false, className = '' }) => {
   const { language, setLanguage } = useLanguage();
+  const isEn = language === 'en';
+
+  const [showPulse, setShowPulse] = useState(false);
+
+  useEffect(() => {
+    if (!pulse || readSeen()) return;
+    setShowPulse(true);
+    const timer = setTimeout(() => setShowPulse(false), 3200);
+    return () => clearTimeout(timer);
+  }, [pulse]);
 
   const toggleLanguage = () => {
-    const newLang = language === 'en' ? 'ro' : 'en';
-    setLanguage(newLang);
+    writeSeen();
+    setShowPulse(false);
+    setLanguage(isEn ? 'ro' : 'en');
   };
+
+  const label = isEn ? 'Comută în română' : 'Switch to English';
 
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center space-x-2 px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 hover:border-white/20 transition-all duration-200 group"
-      title={`Switch to ${language === 'en' ? 'Romanian' : 'English'}`}
+      title={label}
+      aria-label={label}
+      className={`inline-flex items-center gap-2 rounded-xl border border-[#194EFF]/40 bg-[#194EFF]/10 px-3 py-1.5 text-sm font-medium text-white transition-all duration-200 hover:border-[#194EFF]/70 hover:bg-[#194EFF]/20 ${
+        showPulse ? 'animate-pulse ring-2 ring-[#194EFF]/60' : ''
+      } ${className}`}
     >
-      <span className="text-white/80 text-sm font-medium">
-        {language === 'en' ? 'EN' : 'RO'}
-      </span>
-      <svg
-        className="w-3 h-3 text-white/60 group-hover:text-white/80 transition-colors"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-      </svg>
+      <span className="text-base leading-none">{isEn ? '🇬🇧' : '🇷🇴'}</span>
+      <span className="tracking-wide">{isEn ? 'EN' : 'RO'}</span>
+      <ArrowLeftRight className="h-3.5 w-3.5 text-white/60" />
     </button>
   );
 };
