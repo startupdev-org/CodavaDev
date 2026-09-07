@@ -300,17 +300,24 @@
     },
     "packages": {
       "title": "Pachete Dezvoltare Web",
+      "feature_column": "Caracteristică",
+      "most_popular": "Cel mai popular",
+      "price_note": "plată unică",
+      "info_aria": "Află mai multe despre",
       "starter": {
         "name": "Starter",
-        "subtitle": "Perfect pentru afaceri mici și site-uri personale"
+        "subtitle": "Perfect pentru afaceri mici și site-uri personale",
+        "price": "€299"
       },
       "business": {
         "name": "Business",
-        "subtitle": "Ideal pentru afaceri în creștere cu nevoi profesionale"
+        "subtitle": "Ideal pentru afaceri în creștere cu nevoi profesionale",
+        "price": "€599"
       },
       "professional": {
         "name": "Professional",
-        "subtitle": "Pentru afaceri stabilite care au nevoie de funcționalități avansate"
+        "subtitle": "Pentru afaceri stabilite care au nevoie de funcționalități avansate",
+        "price": "€999"
       }
     },
     "features": {
@@ -489,7 +496,14 @@
     "errors": {
       "select_package": "Te rugăm să selectezi un pachet",
       "enter_name": "Te rugăm să introduci numele",
-      "enter_email": "Te rugăm să introduci adresa de email"
+      "enter_email": "Te rugăm să introduci adresa de email",
+      "send_failed": "Trimiterea cererii de ofertă a eșuat. Te rugăm să încerci din nou."
+    },
+    "summary": {
+      "no_package": "Niciun pachet selectat",
+      "no_addons": "Niciun serviciu adițional selectat",
+      "package_word": "pachet",
+      "addons_word": "suplimente"
     },
     "faq": {
       "title": "Întrebări Frecvente",

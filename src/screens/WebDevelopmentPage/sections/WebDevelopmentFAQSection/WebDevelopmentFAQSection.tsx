@@ -393,7 +393,8 @@ const faqData = [
     };
     window.addEventListener("open-faq", handler);
     return () => window.removeEventListener("open-faq", handler);
-  }, []);
+    // Re-bind each render so the handler closes over the current lookup maps.
+  });
 
   const toggle = (blockIdx: number, faqIdx: number) => {
     setOpen((prev) => ({
@@ -432,7 +433,7 @@ const faqData = [
                     <div
   className={`faq-answer transition-all duration-500 ease-in-out
     ${open[blockIdx] === faqIdx
-      ? 'max-h-none sm:max-h-[700px] opacity-100 px-6 pb-4 border-t border-[#194EFF]/20'
+      ? 'max-h-none opacity-100 px-6 pb-4 border-t border-[#194EFF]/20'
       : 'max-h-0 opacity-0 overflow-hidden p-0 border-0'
     } bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]`}
 >

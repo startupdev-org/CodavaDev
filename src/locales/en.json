@@ -300,17 +300,24 @@
     },
     "packages": {
       "title": "Web Development Packages",
+      "feature_column": "Feature",
+      "most_popular": "Most Popular",
+      "price_note": "one-time",
+      "info_aria": "Learn more about",
       "starter": {
         "name": "Starter",
-        "subtitle": "Perfect for small businesses and personal sites"
+        "subtitle": "Perfect for small businesses and personal sites",
+        "price": "€299"
       },
       "business": {
         "name": "Business",
-        "subtitle": "Ideal for growing businesses with professional needs"
+        "subtitle": "Ideal for growing businesses with professional needs",
+        "price": "€599"
       },
       "professional": {
         "name": "Professional",
-        "subtitle": "For established businesses needing advanced functionality"
+        "subtitle": "For established businesses needing advanced functionality",
+        "price": "€999"
       }
     },
     "features": {
@@ -488,7 +495,14 @@
     "errors": {
       "select_package": "Please select a package",
       "enter_name": "Please enter your name",
-      "enter_email": "Please enter your email address"
+      "enter_email": "Please enter your email address",
+      "send_failed": "Failed to send quote request. Please try again."
+    },
+    "summary": {
+      "no_package": "No package selected",
+      "no_addons": "No add-ons selected",
+      "package_word": "package",
+      "addons_word": "add-ons"
     },
     "faq": {
       "title": "Frequently Asked Questions",

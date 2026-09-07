@@ -12,10 +12,10 @@ const check = <svg className="w-5 h-5 text-[#194EFF] inline-block" fill="none" s
 const cross = <svg className="w-5 h-5 text-white/30 inline-block" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>;
 
 
-const infoIcon = (faqKey: string, label: string) => (
+const infoIcon = (faqKey: string, ariaLabel: string) => (
   <button
     type="button"
-    aria-label={`What is ${label}? (see FAQ)`}
+    aria-label={ariaLabel}
     className="inline-block align-middle ml-2"
     tabIndex={0}
     style={{ textDecoration: 'none' }}
@@ -45,42 +45,49 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
     {
       name: t('web_development.packages.starter.name'),
       subtitle: t('web_development.packages.starter.subtitle'),
+      price: t('web_development.packages.starter.price'),
       highlight: false,
     },
     {
       name: t('web_development.packages.business.name'),
       subtitle: t('web_development.packages.business.subtitle'),
+      price: t('web_development.packages.business.price'),
       highlight: true,
     },
     {
       name: t('web_development.packages.professional.name'),
       subtitle: t('web_development.packages.professional.subtitle'),
+      price: t('web_development.packages.professional.price'),
       highlight: false,
     },
   ];
 
+  const priceNote = t('web_development.packages.price_note');
+
+  // `faqKey` links a feature row to a question in WebDevelopmentFAQSection via the
+  // `open-faq` event. Keep these ids in sync with `featureFaqKeyToQuestion` there.
   const features = [
-    { label: t('web_development.features.ssl_security'), values: [true, true, true] },
+    { faqKey: 'ssl', label: t('web_development.features.ssl_security'), values: [true, true, true] },
     { label: t('web_development.features.professional_hosting'), values: [t('web_development.values.month_1'), t('web_development.values.month_3'), t('web_development.values.month_6')] },
     { label: t('web_development.features.responsive_design'), values: [true, true, true] },
     { label: t('web_development.features.pages_included'), values: [t('web_development.values.pages_5'), t('web_development.values.pages_10'), t('web_development.values.pages_20')] },
     { label: t('web_development.features.languages'), values: [t('web_development.values.language_1'), t('web_development.values.language_2'), t('web_development.values.language_3')] },
     { label: t('web_development.features.contact_form'), values: [t('web_development.values.basic'), t('web_development.values.enhanced'), t('web_development.values.enhanced')] },
     { label: t('web_development.features.professional_copywriting'), values: [true, true, true] },
-    { label: t('web_development.features.seo_optimization'), values: [t('web_development.values.basic'), t('web_development.values.advanced'), t('web_development.values.advanced') + " + Local"] },
-    { label: t('web_development.features.cms'), values: [false, t('web_development.values.basic'), t('web_development.values.advanced')] },
-    { label: t('web_development.features.e_commerce'), values: [false, t('web_development.values.up_to_10_products'), t('web_development.values.up_to_50_products')] },
+    { faqKey: 'seo', label: t('web_development.features.seo_optimization'), values: [t('web_development.values.basic'), t('web_development.values.advanced'), t('web_development.values.advanced') + " + Local"] },
+    { faqKey: 'cms', label: t('web_development.features.cms'), values: [false, t('web_development.values.basic'), t('web_development.values.advanced')] },
+    { faqKey: 'ecommerce', label: t('web_development.features.e_commerce'), values: [false, t('web_development.values.up_to_10_products'), t('web_development.values.up_to_50_products')] },
     { label: t('web_development.features.professional_email'), values: [false, t('web_development.values.accounts_3'), t('web_development.values.accounts_10')] },
     { label: t('web_development.features.newsletter_integration'), values: [false, true, true] },
-    { label: t('web_development.features.google_analytics'), values: [t('web_development.values.basic'), t('web_development.values.custom_reporting'), t('web_development.values.advanced_dashboard')] },
-    { label: t('web_development.features.google_search_console'), values: [false, true, true] },
+    { faqKey: 'analytics', label: t('web_development.features.google_analytics'), values: [t('web_development.values.basic'), t('web_development.values.custom_reporting'), t('web_development.values.advanced_dashboard')] },
+    { faqKey: 'searchconsole', label: t('web_development.features.google_search_console'), values: [false, true, true] },
     { label: t('web_development.features.social_media_integration'), values: [true, true, true] },
     { label: t('web_development.features.user_registration'), values: [false, false, true] },
-    { label: t('web_development.features.inventory_management'), values: [false, false, t('web_development.values.advanced')] },
-    { label: t('web_development.features.booking_quotes_system'), values: [false, false, true] },
-    { label: t('web_development.features.live_chat_ai_chatbot'), values: [false, false, true] },
+    { faqKey: 'inventory', label: t('web_development.features.inventory_management'), values: [false, false, t('web_development.values.advanced')] },
+    { faqKey: 'booking', label: t('web_development.features.booking_quotes_system'), values: [false, false, true] },
+    { faqKey: 'chatbot', label: t('web_development.features.live_chat_ai_chatbot'), values: [false, false, true] },
     { label: t('web_development.features.free_support_period'), values: [t('web_development.values.support_7_days'), t('web_development.values.support_14_days'), t('web_development.values.support_30_days')] },
-    { label: t('web_development.features.priority_support'), values: [false, t('web_development.values.support_24h'), t('web_development.values.support_12h')] },
+    { faqKey: 'support', label: t('web_development.features.priority_support'), values: [false, t('web_development.values.support_24h'), t('web_development.values.support_12h')] },
   ];
 
   const addons = [
@@ -113,20 +120,14 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
     },
   ];
 
-  // Only show info icon for the most important hard features
-  const hardNames: Record<string, string> = {
-    "SSL Certificate & Security": "ssl",
-    "SEO Optimization": "seo",
-    "CMS": "cms",
-    "E-commerce": "ecommerce",
-    "Google Analytics": "analytics",
-    "Google Search Console": "searchconsole",
-    "Live Chat & AI Chatbot": "chatbot",
-    "Inventory Management": "inventory",
-    "Booking/Quotes System": "booking",
-    "Priority Support": "support",
-    "Maintenance Included": "maintenance",
+  // Stable identifiers for the maintenance plans so selection state and the
+  // mutual-exclusivity check don't depend on the (translated) display text.
+  const maintenancePlans = {
+    basic: `${t('web_development.maintenance.basic.name')} - ${t('web_development.maintenance.basic.price')}${t('web_development.maintenance.basic.period')}`,
+    professional: `${t('web_development.maintenance.professional.name')} - ${t('web_development.maintenance.professional.price')}${t('web_development.maintenance.professional.period')}`,
+    premium: `${t('web_development.maintenance.premium.name')} - ${t('web_development.maintenance.premium.price')}${t('web_development.maintenance.premium.period')}`,
   };
+  const maintenanceLabels: string[] = Object.values(maintenancePlans);
 
   const handlePackageSelect = (packageName: string) => {
     setSelectedPackage(packageName);
@@ -146,18 +147,15 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
     }, 300);
   };
 
-  const handleAddonToggle = (addonTitle: string) => {
+  const handleAddonToggle = (addonTitle: string, isMaintenancePlan = false) => {
     setSelectedAddons(prev => {
-      // Check if this is a maintenance plan
-      const isMaintenancePlan = addonTitle.includes('Maintenance');
-      
       if (prev.includes(addonTitle)) {
         // If already selected, remove it
         return prev.filter(item => item !== addonTitle);
       } else {
         // If selecting a maintenance plan, remove any other maintenance plans first
         if (isMaintenancePlan) {
-          const nonMaintenanceAddons = prev.filter(item => !item.includes('Maintenance'));
+          const nonMaintenanceAddons = prev.filter(item => !maintenanceLabels.includes(item));
           return [...nonMaintenanceAddons, addonTitle];
         } else {
           // For non-maintenance add-ons, just add to the list
@@ -220,7 +218,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
       }
     } catch (error) {
       console.error('EmailJS Error:', error);
-      setError('Failed to send quote request. Please try again.');
+      setError(t('web_development.errors.send_failed'));
     } finally {
       setIsLoading(false);
     }
@@ -236,17 +234,20 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
             <div key={pkg.name} className={`bg-white/[0.03] border border-white/10 rounded-2xl p-5 shadow-lg backdrop-blur-xl ${pkg.highlight ? 'ring-2 ring-[#194EFF]/30' : ''}`}>
               <div className="text-center mb-4">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  {pkg.highlight && <span className="px-2 py-1 bg-[#194EFF]/20 text-[#194EFF] text-xs font-semibold rounded-full">Most Popular</span>}
+                  {pkg.highlight && <span className="px-2 py-1 bg-[#194EFF]/20 text-[#194EFF] text-xs font-semibold rounded-full">{t('web_development.packages.most_popular')}</span>}
                 </div>
                 <div className="py-5">
                   <div className="text-4xl md:text-3xl font-bold text-white">{pkg.name}</div>
                   <div className="text-sm text-white/60 mt-1">{pkg.subtitle}</div>
+                  <div className="mt-3">
+                    <span className="text-3xl font-bold text-[#194EFF]">{pkg.price}</span>
+                    <span className="text-sm text-white/50 ml-1">{priceNote}</span>
+                  </div>
                 </div>
               </div>
               <div className="space-y-3 mb-6">
                 {features.map((row, i) => {
-                  // In both mobile and desktop feature rendering, use only this hardNames mapping for info icons
-                  const icon = hardNames[row.label] ? infoIcon(hardNames[row.label], row.label) : null;
+                  const icon = row.faqKey ? infoIcon(row.faqKey, `${t('web_development.packages.info_aria')} ${row.label}`) : null;
                   return (
                     <div key={row.label} className="flex items-center justify-between py-2 border-b border-white/5 last:border-b-0">
                       <span className="text-sm text-white/70 font-medium flex items-center">{row.label}{icon}</span>
@@ -275,13 +276,17 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
           <table className="min-w-full border-separate border-spacing-y-4">
             <thead>
               <tr>
-                <th className="text-left text-white/70 text-base font-semibold py-4 pr-4">Feature</th>
+                <th className="text-left text-white/70 text-base font-semibold py-4 pr-4">{t('web_development.packages.feature_column')}</th>
                 {packages.map((pkg, idx) => (
                   <th key={pkg.name} className={`text-center px-4 py-4 ${pkg.highlight ? 'bg-[#194EFF]/10 rounded-t-2xl' : ''}`}>
                     <div className="flex flex-col items-center">
                       <span className="text-2xl md:text-3xl font-bold text-white mt-1 py-2">{pkg.name}</span>
                       <span className="text-xs text-white/60 mb-1">{pkg.subtitle}</span>
-                      {pkg.highlight && <span className="px-2 py-1 bg-[#194EFF]/20 text-[#194EFF] text-xs font-semibold rounded-full mt-1">Most Popular</span>}
+                      <div className="mt-1 mb-1">
+                        <span className="text-2xl font-bold text-[#194EFF]">{pkg.price}</span>
+                        <span className="text-xs text-white/50 ml-1">{priceNote}</span>
+                      </div>
+                      {pkg.highlight && <span className="px-2 py-1 bg-[#194EFF]/20 text-[#194EFF] text-xs font-semibold rounded-full mt-1">{t('web_development.packages.most_popular')}</span>}
                     </div>
                   </th>
                 ))}
@@ -289,8 +294,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
             </thead>
             <tbody>
               {features.map((row, i) => {
-                // In both mobile and desktop feature rendering, use only this hardNames mapping for info icons
-                const icon = hardNames[row.label] ? infoIcon(hardNames[row.label], row.label) : null;
+                const icon = row.faqKey ? infoIcon(row.faqKey, `${t('web_development.packages.info_aria')} ${row.label}`) : null;
                 return (
                   <tr key={row.label} className="align-top">
                     <td className="text-white/80 text-sm font-medium py-3 pr-4 min-w-[180px] border-r border-white/10 flex items-center">{row.label}{icon}</td>
@@ -383,15 +387,15 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                 </div>
               </div>
               
-              <button 
-                onClick={() => handleAddonToggle("Basic Maintenance - €29/month")}
+              <button
+                onClick={() => handleAddonToggle(maintenancePlans.basic, true)}
                 className={`w-full py-4 text-sm font-semibold rounded-2xl transition-all duration-300 border-2 mt-auto ${
-                  selectedAddons.includes("Basic Maintenance - €29/month")
+                  selectedAddons.includes(maintenancePlans.basic)
                     ? 'bg-[#194EFF] border-[#194EFF] text-white shadow-lg shadow-[#194EFF]/30 hover:shadow-[#194EFF]/50'
                     : 'bg-transparent border-[#194EFF]/30 text-[#194EFF] hover:bg-[#194EFF]/10 hover:border-[#194EFF]/50'
                 }`}
               >
-                {selectedAddons.includes("Basic Maintenance - €29/month") ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
+                {selectedAddons.includes(maintenancePlans.basic) ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
               </button>
             </div>
 
@@ -443,15 +447,15 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                 </div> */}
               </div>
               
-              <button 
-                onClick={() => handleAddonToggle("Professional Maintenance - €59/month")}
+              <button
+                onClick={() => handleAddonToggle(maintenancePlans.professional, true)}
                 className={`w-full py-4 text-sm font-semibold rounded-2xl transition-all duration-300 border-2 mt-auto ${
-                  selectedAddons.includes("Professional Maintenance - €59/month")
+                  selectedAddons.includes(maintenancePlans.professional)
                     ? 'bg-[#194EFF] border-[#194EFF] text-white shadow-lg shadow-[#194EFF]/30 hover:shadow-[#194EFF]/50'
                     : 'bg-transparent border-[#194EFF]/30 text-[#194EFF] hover:bg-[#194EFF]/10 hover:border-[#194EFF]/50'
                 }`}
               >
-                {selectedAddons.includes("Professional Maintenance - €59/month") ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
+                {selectedAddons.includes(maintenancePlans.professional) ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
               </button>
             </div>
 
@@ -503,15 +507,15 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                 
               </div>
               
-              <button 
-                onClick={() => handleAddonToggle("Premium Maintenance - €99/month")}
+              <button
+                onClick={() => handleAddonToggle(maintenancePlans.premium, true)}
                 className={`w-full py-4 text-sm font-semibold rounded-2xl transition-all duration-300 border-2 mt-auto ${
-                  selectedAddons.includes("Premium Maintenance - €99/month")
+                  selectedAddons.includes(maintenancePlans.premium)
                     ? 'bg-[#194EFF] border-[#194EFF] text-white shadow-lg shadow-[#194EFF]/30 hover:shadow-[#194EFF]/50'
                     : 'bg-transparent border-[#194EFF]/30 text-[#194EFF] hover:bg-[#194EFF]/10 hover:border-[#194EFF]/50'
                 }`}
               >
-                {selectedAddons.includes("Premium Maintenance - €99/month") ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
+                {selectedAddons.includes(maintenancePlans.premium) ? t('web_development.buttons.selected') : t('web_development.buttons.add_to_project')}
               </button>
             </div>
           </div>
@@ -532,8 +536,8 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-green-400 font-semibold text-lg">Request Sent Successfully!</h3>
-                    <p className="text-green-300 text-sm">Thank you for your interest. We'll review your selections and get back to you with a personalized quote and consultation scheduling.</p>
+                    <h3 className="text-green-400 font-semibold text-lg">{t('web_development.quote_form.success_title')}</h3>
+                    <p className="text-green-300 text-sm">{t('web_development.quote_form.success_message')}</p>
                   </div>
                 </div>
               </div>
@@ -551,7 +555,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-red-400 font-semibold text-lg">Error</h3>
+                    <h3 className="text-red-400 font-semibold text-lg">{t('web_development.quote_form.error_title')}</h3>
                     <p className="text-red-300 text-sm">{error}</p>
                   </div>
                 </div>
@@ -574,7 +578,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                     </div>
                   ) : (
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                      <div className="text-white/40">No package selected</div>
+                      <div className="text-white/40">{t('web_development.summary.no_package')}</div>
                     </div>
                   )}
                 </div>
@@ -592,7 +596,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                     </div>
                   ) : (
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                      <div className="text-white/40">No add-ons selected</div>
+                      <div className="text-white/40">{t('web_development.summary.no_addons')}</div>
                     </div>
                   )}
                 </div>
@@ -601,7 +605,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                 <div className="pt-4 border-t border-white/10">
                   <div className="text-sm text-white/60">{t('web_development.quote_form.total_items')}</div>
                   <div className="text-white font-semibold">
-                    {selectedPackage ? 1 : 0} package + {selectedAddons.length} add-ons
+                    {selectedPackage ? 1 : 0} {t('web_development.summary.package_word')} + {selectedAddons.length} {t('web_development.summary.addons_word')}
                   </div>
                 </div>
               </div>
@@ -631,7 +635,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      placeholder="Enter your email address"
+                      placeholder={t('web_development.quote_form.placeholder_email')}
                       required
                       disabled={isLoading}
                     />
@@ -644,7 +648,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      placeholder="Enter your phone number (optional)"
+                      placeholder={t('web_development.quote_form.placeholder_phone')}
                       disabled={isLoading}
                     />
                   </div>
@@ -655,7 +659,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/40 min-h-[100px] focus:border-[#194EFF]/50 focus:outline-none transition-colors resize-vertical"
-                      placeholder="Tell us about your project (optional)"
+                      placeholder={t('web_development.quote_form.placeholder_description')}
                       disabled={isLoading}
                     ></textarea>
                   </div>
@@ -672,7 +676,7 @@ export const WebDevelopmentFeaturesSection: React.FC = () => {
                     {isLoading ? (
                       <div className="flex items-center gap-3">
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span>Sending Request...</span>
+                        <span>{t('web_development.quote_form.sending')}</span>
                       </div>
                     ) : (
                       <span>{t('web_development.quote_form.submit_button')}</span>

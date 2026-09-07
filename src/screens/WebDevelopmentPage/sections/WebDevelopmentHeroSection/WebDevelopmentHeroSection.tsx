@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { FadeIn } from "../../../../components/ui/animated-elements";
 import { BiMouse } from "react-icons/bi";
 import { useTranslation } from "../../../../contexts/LanguageContext";
@@ -6,39 +6,61 @@ import { useTranslation } from "../../../../contexts/LanguageContext";
 export const WebDevelopmentHeroSection = () => {
   const { t } = useTranslation();
 
+  // Generate decorative positions once so particles don't jump on every re-render.
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 15 }, () => ({
+        left: `${20 + Math.random() * 60}%`,
+        top: `${20 + Math.random() * 60}%`,
+        animationDelay: `${Math.random() * 3}s`,
+        animationDuration: `${2 + Math.random() * 2}s`,
+      })),
+    []
+  );
+  const floaters = useMemo(
+    () =>
+      Array.from({ length: 8 }, () => ({
+        left: `${10 + Math.random() * 80}%`,
+        top: `${15 + Math.random() * 70}%`,
+        animationDelay: `${Math.random() * 6}s`,
+        animationDuration: `${4 + Math.random() * 4}s`,
+      })),
+    []
+  );
+
   return (
     <>
       {/* CSS Animations */}
       <style dangerouslySetInnerHTML={{
         __html: `
-          @keyframes float {
+          @keyframes wdHeroFloat {
             0%, 100% { transform: translateY(0px) translateX(0px); }
             25% { transform: translateY(-15px) translateX(8px); }
             50% { transform: translateY(-8px) translateX(-8px); }
             75% { transform: translateY(-12px) translateX(4px); }
           }
-          
-          @keyframes gradientShift {
+
+          @keyframes wdHeroGradientShift {
             0%, 100% { transform: translateX(0) translateY(0) scale(1); }
             33% { transform: translateX(20px) translateY(-10px) scale(1.05); }
             66% { transform: translateX(-15px) translateY(15px) scale(0.95); }
           }
-          
-          @keyframes pulse-soft {
+
+          @keyframes wdHeroPulseSoft {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 0.8; }
           }
-          
+
           .float-animation {
-            animation: float 6s ease-in-out infinite;
+            animation: wdHeroFloat 6s ease-in-out infinite;
           }
-          
+
           .gradient-shift {
-            animation: gradientShift 15s ease-in-out infinite;
+            animation: wdHeroGradientShift 15s ease-in-out infinite;
           }
-          
+
           .pulse-soft {
-            animation: pulse-soft 3s ease-in-out infinite;
+            animation: wdHeroPulseSoft 3s ease-in-out infinite;
           }
         `
       }} />
@@ -53,30 +75,20 @@ export const WebDevelopmentHeroSection = () => {
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>
 
           {/* Floating particles */}
-          {Array.from({ length: 15 }, (_, i) => (
+          {particles.map((p, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-[#194EFF]/40 rounded-full pulse-soft"
-              style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
-              }}
+              style={p}
             />
           ))}
 
           {/* Floating elements */}
-          {Array.from({ length: 8 }, (_, i) => (
+          {floaters.map((f, i) => (
             <div
               key={`float-${i}`}
               className="absolute w-2 h-2 bg-gradient-to-r from-[#194EFF]/20 to-[#4169E1]/20 rounded-full float-animation"
-              style={{
-                left: `${10 + Math.random() * 80}%`,
-                top: `${15 + Math.random() * 70}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${4 + Math.random() * 4}s`
-              }}
+              style={f}
             />
           ))}
 
