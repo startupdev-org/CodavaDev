@@ -1,4 +1,5 @@
 import { HeaderSection, FooterSection } from "../FixedComponents";
+import { Seo } from "../../components/Seo";
 import { ContactFormSection } from "./sections/ContactFormSection/ContactFormSection";
 
 export const ContactPage = () => {
@@ -28,6 +29,7 @@ export const ContactPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="Contact" description="Get in touch with CodavaDev to discuss your web development, full-stack, design, SEO, or automation project." path="/contact" />
       <HeaderSection />
 
       <main className="relative z-10 pt-24 md:pt-32">

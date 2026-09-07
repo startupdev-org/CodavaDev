@@ -1,4 +1,5 @@
 import { HeaderSection, FooterSection } from "../FixedComponents";
+import { Seo } from "../../components/Seo";
 import { AboutHeroSection } from "./sections/AboutHeroSection";
 import { TeamSection } from "./sections/TeamSection";
 import { AboutCallToActionSection } from "./sections/AboutCallToActionSection";
@@ -30,6 +31,7 @@ export const AboutUsPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="About Us" description="Meet CodavaDev - a software and digital marketing studio helping businesses ship modern web products and grow their online presence." path="/about" />
       <HeaderSection />
 
       <main className="relative z-10">

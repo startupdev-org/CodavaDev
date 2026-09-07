@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { DigitalAdvertisingHeroSection } from "./sections/DigitalAdvertisingHeroSection";
 import { DigitalAdvertisingFeaturesSection } from "./sections/DigitalAdvertisingFeaturesSection";
@@ -26,6 +27,7 @@ export const DigitalAdvertisingPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="Digital Advertising Services" description="Paid search and social advertising campaigns managed by CodavaDev - targeted, measured, and optimized for return on ad spend." path="/services/digital-advertising" />
       <HeaderSection />
 
       <main className="relative z-10">

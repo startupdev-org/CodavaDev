@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { BotAutomationHeroSection } from "./sections/BotAutomationHeroSection/BotAutomationHeroSection";
 import { BotAutomationFeaturesSection } from "./sections/BotAutomationFeaturesSection/BotAutomationFeaturesSection";
@@ -31,6 +32,7 @@ export const BotAutomationPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="Bot & Automation Services" description="CodavaDev builds chatbots, workflow automation, and integrations that remove manual work and speed up your operations." path="/services/bot-automation" />
       <HeaderSection />
 
       <main className="relative z-10">

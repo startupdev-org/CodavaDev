@@ -1,4 +1,5 @@
 
+import { Seo } from "../../components/Seo";
 import { FAQSection } from "./sections/FAQSection";
 import { FeaturedPropertiesSection } from "./sections/FeaturedPropertiesSection";
 import { ReviewsMarqueeSection } from "./sections/ReviewsMarqueeSection";
@@ -32,6 +33,7 @@ export const HomePageDesktop = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="CodavaDev - IT Solutions & Digital Transformation" description="CodavaDev builds web apps, full-stack platforms, and digital marketing that helps businesses grow online. Explore our services and portfolio." path="/" />
       <HeaderSection />
 
       <main className="relative z-10">

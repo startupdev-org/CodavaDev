@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { AnalyticsAndTrackingHeroSection } from "./sections/AnalyticsAndTrackingHeroSection/AnalyticsAndTrackingHeroSection";
 import { AnalyticsAndTrackingFeaturesSection } from "./sections/AnalyticsAndTrackingFeaturesSection/AnalyticsAndTrackingFeaturesSection";
@@ -25,6 +26,7 @@ export const AnalyticsAndTrackingPage = () => {
         <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/40 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
+      <Seo title="Analytics & Tracking Services" description="Reliable analytics, event tracking, and conversion measurement setup from CodavaDev so you can make decisions on real data." path="/services/analytics-tracking" />
       <HeaderSection />
       <main className="relative z-10">
         <AnalyticsAndTrackingHeroSection />

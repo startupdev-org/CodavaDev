@@ -70,9 +70,8 @@ Not every page directory has an `index.ts` — `AboutUsPage`, `PortfolioPage`, `
 3. Add nav entries in `HeaderSection.tsx` (`servicesItems`) and `FooterSection.tsx`.
 4. Add translation keys to **both** `src/locales/en.json` and `ro.json`.
 5. Add the URL to `public/sitemap.xml`.
-
-Note: `FooterSection` currently links `/services/ai-consultant` and `/services/digital-engineering`,
-which have no routes and fall through to `NotFoundPage`.
+6. Render `<Seo title=… description=… path="/services/<name>" />` in the page shell before
+   `<HeaderSection/>` (see SEO section).
 
 ### i18n — custom, not i18next
 
@@ -157,8 +156,8 @@ There is no backend of the site's own — one third-party integration only:
   `WebDevelopmentPage/sections/WebDevelopmentFeaturesSection`. Service/template/public keys are
   hardcoded at the call sites (public keys by design), and the two forms duplicate the send logic.
 
-The footer newsletter form in `FooterSection.tsx` has no backend — on submit it just shows the
-success message; the entered email is not stored or sent anywhere.
+`FooterSection.tsx` previously carried a newsletter form with no backend; it has been removed. If a
+newsletter is added back, wire it to a real provider (or EmailJS, like the contact forms).
 
 Google Analytics (`G-0LK5WP4QKB`) is a plain gtag snippet in `index.html`.
 
@@ -174,7 +173,10 @@ relies on the GitHub Pages repo setting.
 
 ### SEO
 
-All meta tags are static in `index.html`; there is no per-route `<title>` or meta handling (no
-react-helmet). `public/sitemap.xml` and `public/robots.txt` are maintained by hand. Two stray files: a duplicate
-`src/screens/WebDevelopmentPage/sections/sitemap.xml` that is not served, and `public/levelauto.md`
-(a client testimonial note) that is served but linked from nowhere.
+`index.html` holds the default/homepage meta tags. Per-route `<title>`, description, canonical, and
+OG/Twitter tags are set by `src/components/Seo.tsx` — a small `useEffect` hook (no react-helmet) that
+every routed page renders once, just before `<HeaderSection/>` in its shell. Pass `title`,
+`description`, `path`, and optionally `noindex`. `path` feeds both `<link rel="canonical">` and
+`og:url`; keep it in sync with the route in `src/index.tsx` and the `<loc>` in `public/sitemap.xml`.
+
+`public/sitemap.xml` and `public/robots.txt` are maintained by hand.

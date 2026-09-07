@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Seo } from "../../components/Seo";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 import { HeaderSection } from "../FixedComponents/HeaderSection";
@@ -72,6 +73,7 @@ export const NotFoundPage = () => {
           <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
         </div>
 
+        <Seo title="Page Not Found" description="The page you are looking for does not exist. Head back to the CodavaDev homepage." path="/404" noindex />
         <HeaderSection />
 
         <main className="relative z-10">

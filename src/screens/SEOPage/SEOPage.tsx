@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { SEOHeroSection } from "./sections/SEOHeroSection";
 import { SEOFeaturesSection } from "./sections/SEOFeaturesSection";
@@ -26,6 +27,7 @@ export const SEOPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="SEO Services" description="Technical SEO, on-page optimization, and content strategy from CodavaDev to improve your search visibility and organic traffic." path="/services/seo" />
       <HeaderSection />
 
       <main className="relative z-10">

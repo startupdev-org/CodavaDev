@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { WebDevelopmentHeroSection } from "./sections/WebDevelopmentHeroSection/WebDevelopmentHeroSection";
 import { WebDevelopmentFeaturesSection } from "./sections/WebDevelopmentFeaturesSection/WebDevelopmentFeaturesSection";
@@ -32,6 +33,7 @@ export const WebDevelopmentPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="Web Development Services" description="Custom websites and web applications built by CodavaDev with React, TypeScript, and modern tooling - fast, responsive, and SEO-ready." path="/services/web-development" />
       <HeaderSection />
 
       <main className="relative z-10">

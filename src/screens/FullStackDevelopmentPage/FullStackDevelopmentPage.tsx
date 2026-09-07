@@ -1,4 +1,5 @@
 import React from "react";
+import { Seo } from "../../components/Seo";
 import { HeaderSection, FooterSection } from "../FixedComponents";
 import { FullStackDevelopmentHeroSection } from "./sections/FullStackDevelopmentHeroSection/FullStackDevelopmentHeroSection";
 import { FullStackDevelopmentFeaturesSection } from "./sections/FullStackDevelopmentFeaturesSection/FullStackDevelopmentFeaturesSection";
@@ -31,6 +32,7 @@ export const FullStackDevelopmentPage = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
       </div>
 
+      <Seo title="Full-Stack Development Services" description="End-to-end product development from CodavaDev: APIs, databases, front-end, and deployment handled by one team." path="/services/full-stack-development" />
       <HeaderSection />
 
       <main className="relative z-10">

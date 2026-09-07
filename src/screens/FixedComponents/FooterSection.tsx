@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import logoBg from "/logo-white.png";
@@ -8,10 +7,6 @@ import { LanguageSelector } from "../../components/LanguageSelector";
 
 export const FooterSection = () => {
   const { t } = useTranslation();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [email, setEmail] = useState("");
 
   return (
     <footer className="relative w-full bg-[#00020F] border-t border-[#194EFF]/20">
@@ -84,67 +79,6 @@ export const FooterSection = () => {
             </div>
           </div>
 
-          {/* Column 4: Newsletter Signup */}
-          {/* <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.newsletter')}
-              <div className="absolute bottom-0 left-0 w-24 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
-            </h4>
-            <p className="text-white/60 text-sm mb-4 max-w-xs lg:max-w-none">{t('footer.newsletter_description')}</p>
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                setIsSubmitting(true);
-                setShowSuccess(false);
-                setShowError(false);
-                try {
-                  setShowSuccess(true);
-                  setEmail("");
-                } catch (err) {
-                  setShowError(true);
-                } finally {
-                  setIsSubmitting(false);
-                }
-              }}
-              className="w-full space-y-3"
-            >
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3.5 text-white placeholder-white/50 focus:border-[#194EFF] focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#194EFF]/20 text-sm transition-all duration-300"
-                  placeholder={t('footer.email_placeholder')}
-                  required
-                  disabled={isSubmitting}
-                  aria-label="Email address"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full px-6 py-3.5 font-semibold text-sm rounded-lg transition-all duration-300 shadow-lg ${isSubmitting
-                  ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-                  : 'bg-[#194EFF] text-white hover:bg-[#194EFF]/90 hover:shadow-[#194EFF]/30 hover:scale-[1.02]'
-                  }`}
-              >
-                {isSubmitting ? (
-                  <div className="flex items-center gap-2 justify-center">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>{t('footer.subscribing')}</span>
-                  </div>
-                ) : (
-                  <span>{t('footer.subscribe')}</span>
-                )}
-              </button>
-            </form>
-            {showSuccess && (
-              <div className="mt-2 p-2 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm w-full">{t('footer.success_message')}</div>
-            )}
-            {showError && (
-              <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">{t('footer.error_message')}</div>
-            )}
-          </div> */}
         </div>
 
         {/* Bottom Section */}
