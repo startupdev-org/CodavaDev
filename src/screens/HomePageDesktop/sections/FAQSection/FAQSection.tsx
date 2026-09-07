@@ -10,7 +10,7 @@ export const FAQSection: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const { t } = useTranslation();
 
-  const faqs = t('faq.questions', { returnObjects: true }) as Array<{question: string, answer: string}>;
+  const faqs = t('faq.questions', { returnObjects: true }) as Array<{ question: string, answer: string }>;
 
 
   return (
@@ -61,7 +61,7 @@ export const FAQSection: React.FC = () => {
                           }`}
                         fill="none"
                         stroke="currentColor"
-                        
+
                         viewBox="0 0 24 24"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
@@ -70,13 +70,15 @@ export const FAQSection: React.FC = () => {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    className={`grid transition-all duration-500 ease-in-out ${openFAQ === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                       }`}
                   >
-                    <div className="px-6 pb-4 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
-                      <p className="text-white/70 leading-relaxed pt-4 text-base font-light">
-                        {faq.answer}
-                      </p>
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-4 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
+                        <p className="text-white/70 leading-relaxed pt-4 text-base font-light">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -64,45 +64,65 @@ export const AnalyticsAndTrackingFAQSection = () => {
   };
 
   return (
-    <section ref={faqSectionRef} className="relative py-20 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">{t('analytics_tracking_page.faq.title')}</h2>
+    <section ref={faqSectionRef} className="relative py-16 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
+      <div className="max-w-6xl mx-auto px-0 lg:px-8 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/8 border border-[#194EFF]/25 rounded-full mb-8 backdrop-blur-lg shadow-lg shadow-[#194EFF]/10">
+            <div className="w-2.5 h-2.5 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
+            <span className="text-[#194EFF] text-sm font-semibold tracking-wide">{t('faq.badge')}</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
+            {t('analytics_tracking_page.faq.title')}
+          </h2>
+        </div>
+
         <div className="space-y-12">
           {faqData.map((block, blockIdx) => (
             <div key={block.block} className="s-faq__block">
-              <h3 className="s-faq__block-title text-2xl font-semibold text-[#194EFF] mb-6">{block.block}</h3>
+              <h3 className="s-faq__block-title text-2xl font-semibold text-[#194EFF] mb-6 px-6 lg:px-0">{block.block}</h3>
               <div className="faq-list space-y-4">
-                {block.faqs.map((faq, faqIdx) => (
-                  <div
-                    key={faq.q}
-                    ref={el => {
-                      if (!questionRefs.current[blockIdx]) questionRefs.current[blockIdx] = [];
-                      questionRefs.current[blockIdx][faqIdx] = el;
-                    }}
-                    className="faq-item bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden hover:border-[#194EFF]/30 hover:bg-white/[0.06] transition-all duration-500 backdrop-blur-xl shadow-lg"
-                  >
-                    <button
-                      className="faq-question w-full px-6 py-4 text-left flex justify-between items-center text-lg font-medium text-white group hover:text-[#194EFF] transition-colors duration-300"
-                      onClick={() => toggle(blockIdx, faqIdx)}
-                    >
-                      <span>{faq.q}</span>
-                      <svg className={`w-5 h-5 ml-4 transition-transform duration-300 ${open[blockIdx] === faqIdx ? 'rotate-180 text-[#194EFF]' : 'text-white/60'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
+                {block.faqs.map((faq, faqIdx) => {
+                  const isOpen = open[blockIdx] === faqIdx;
+                  return (
                     <div
-                      className={`faq-answer transition-all duration-500 ease-in-out
-                        ${open[blockIdx] === faqIdx
-                          ? 'max-h-none sm:max-h-[700px] opacity-100 px-6 pb-4 border-t border-[#194EFF]/20'
-                          : 'max-h-0 opacity-0 overflow-hidden p-0 border-0'
-                        } bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]`}
+                      key={faq.q}
+                      ref={el => {
+                        if (!questionRefs.current[blockIdx]) questionRefs.current[blockIdx] = [];
+                        questionRefs.current[blockIdx][faqIdx] = el;
+                      }}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:border-[#194EFF]/30 hover:bg-white/[0.06] transition-all duration-500 backdrop-blur-xl shadow-lg shadow-black/20 hover:shadow-[#194EFF]/10 group"
                     >
-                      <div className="pt-4 text-white/80 leading-relaxed text-base">
-                        {faq.a}
+                      <button
+                        className="w-full px-6 py-4 text-left grid grid-cols-[1fr,auto] items-center hover:bg-white/[0.02] transition-all duration-300"
+                        onClick={() => toggle(blockIdx, faqIdx)}
+                      >
+                        <span className="text-base font-semibold text-white pr-4">
+                          {faq.q}
+                        </span>
+                        <div className={`w-8 h-8 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#194EFF]/15 to-[#194EFF]/5 border border-[#194EFF]/20 transition-all duration-500 group-hover:border-[#194EFF]/40 group-hover:scale-110 ${isOpen ? 'bg-gradient-to-br from-[#194EFF]/25 to-[#194EFF]/10' : ''}`}>
+                          <svg
+                            className={`w-4 h-4 text-[#194EFF] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}
+                      >
+                        <div className="px-6 pb-4 border-t border-white/10 bg-gradient-to-r from-[#194EFF]/[0.02] via-transparent to-[#194EFF]/[0.02]">
+                          <div className="text-white/70 leading-relaxed pt-4 text-base font-light">
+                            {faq.a}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}

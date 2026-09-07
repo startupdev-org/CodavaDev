@@ -52,9 +52,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ pulse = fals
       onClick={toggleLanguage}
       title={label}
       aria-label={label}
-      className={`inline-flex items-center gap-2 rounded-xl border border-[#194EFF]/40 bg-[#194EFF]/10 px-3 py-1.5 text-sm font-medium text-white transition-all duration-200 hover:border-[#194EFF]/70 hover:bg-[#194EFF]/20 ${
-        showPulse ? 'animate-pulse ring-2 ring-[#194EFF]/60' : ''
-      } ${className}`}
+      className={`inline-flex items-center gap-2 rounded-xl border border-[#194EFF]/40 bg-[#194EFF]/10 px-3 py-1.5 text-sm font-medium text-white transition-all duration-200 hover:border-[#194EFF]/70 hover:bg-[#194EFF]/20 ${showPulse ? 'animate-pulse ring-2 ring-[#194EFF]/60' : ''
+        } ${className}`}
     >
       <span className="text-base leading-none">{isEn ? '🇬🇧' : '🇷🇴'}</span>
       <span className="tracking-wide">{isEn ? 'EN' : 'RO'}</span>
