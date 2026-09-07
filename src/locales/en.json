@@ -1306,6 +1306,204 @@
       }
     }
   },
+  "bot_automation": {
+    "hero": {
+      "badge": "AI Automation",
+      "title": "AI Automation",
+      "title_highlight": "For Your Business",
+      "description": "Automate repetitive tasks and streamline workflows with intelligent AI solutions. Save hours of manual work and focus on what matters most to your business growth."
+    },
+    "features": {
+      "title": "Why Choose",
+      "title_highlight": "AI Automation?",
+      "description": "Transform your business operations with intelligent automation that saves time and scales with your growth.",
+      "items": [
+        {
+          "title": "Automate Repetitive Tasks",
+          "description": "Save hours of manual work by automating routine processes. Focus your team on high-value activities that drive business growth."
+        },
+        {
+          "title": "Scale Effortlessly",
+          "description": "AI-powered teams that adapt to your needs. Scale operations without increasing headcount or overhead costs."
+        },
+        {
+          "title": "Reduce Human Error",
+          "description": "Eliminate mistakes with intelligent automation. Ensure consistent, accurate results across all your business processes."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Ready to Automate?",
+      "title": "Building What's Next",
+      "title_highlight": "Together",
+      "description": "We deliver proven results: faster product cycles, more accurate decisions, and measurable growth. We partner with organisations ready to modernise with purpose - solving real problems and unlocking new market opportunities.",
+      "button": "Start Your Project"
+    }
+  },
+  "full_stack_development": {
+    "hero": {
+      "badge": "Full Stack Development",
+      "title": "Complete Full Stack",
+      "title_highlight": "Development Solutions",
+      "description": "Providing complete full stack solutions—from user interfaces to backend APIs and databases—that enable smooth user experiences and reliable, high-performance web applications.",
+      "button_primary": "Start Your Project",
+      "button_secondary": "View Our Work",
+      "status": "Available for new projects"
+    },
+    "features": {
+      "badge": "Our Approach",
+      "title": "Why Choose Our",
+      "title_highlight": "Full Stack Development",
+      "description": "We deliver complete full stack solutions that seamlessly integrate frontend, backend, and database layers for optimal performance and user experience.",
+      "items": [
+        {
+          "title": "Frontend Development",
+          "description": "Modern, responsive interfaces built with React, Vue.js, and Angular to deliver great user experiences on any device."
+        },
+        {
+          "title": "Backend Development",
+          "description": "Robust server-side solutions using Node.js, Python, and Java, including RESTful APIs and microservices."
+        },
+        {
+          "title": "Database Design",
+          "description": "Efficient database architecture with SQL and NoSQL to ensure data accuracy and high performance."
+        },
+        {
+          "title": "API Integration",
+          "description": "Smooth integration with third-party services, payment gateways, and external APIs for added functionality."
+        },
+        {
+          "title": "DevOps & Deployment",
+          "description": "Automated deployment pipelines, containerization with Docker, and cloud management for scalable and reliable applications."
+        },
+        {
+          "title": "Security & Performance",
+          "description": "Strong security practices, performance tuning, and thorough testing for stable and secure software."
+        }
+      ],
+      "tech_title": "Powered by Modern Technology Stack",
+      "tech_description": "Leveraging the latest technologies across the full stack to deliver scalable, maintainable, and high-performance applications.",
+      "tech_stack": [
+        { "name": "React", "description": "Frontend Framework" },
+        { "name": "Node.js", "description": "Backend Runtime" },
+        { "name": "TypeScript", "description": "Type-Safe Development" },
+        { "name": "MongoDB", "description": "NoSQL Database" },
+        { "name": "PostgreSQL", "description": "SQL Database" },
+        { "name": "AWS", "description": "Cloud Infrastructure" },
+        { "name": "Docker", "description": "Containerization" },
+        { "name": "SpringBoot", "description": "Java Backend Framework" }
+      ]
+    },
+    "cta": {
+      "badge": "Ready to Build?",
+      "title": "Let's Build Your",
+      "title_highlight": "Full Stack Application",
+      "description": "Ready to create a powerful, scalable full stack application? Let's discuss your requirements and build something amazing together.",
+      "button_primary": "Start Your Project",
+      "button_secondary": "Schedule Consultation"
+    }
+  },
+  "digital_advertising": {
+    "hero": {
+      "badge": "📢 Digital Advertising • Google Ads • Facebook Ads • Performance Marketing",
+      "title": "Targeted Advertising That",
+      "title_highlight": "Delivers Results",
+      "description": "Reach your ideal customers with precision-targeted advertising campaigns across Google, Facebook, Instagram, and LinkedIn. We optimize for maximum ROI and conversions.",
+      "services": [
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "LinkedIn Ads",
+        "Display Advertising",
+        "YouTube Ads",
+        "Retargeting",
+        "Shopping Campaigns"
+      ],
+      "button_primary": "Start Ad Campaign",
+      "button_secondary": "Free Ad Audit",
+      "status": "Campaign slots available",
+      "stat_roas": "500%+ ROAS Average",
+      "stat_spend": "$2M+ Ad Spend Managed"
+    },
+    "features": {
+      "badge": "Advertising Excellence",
+      "title": "Campaigns That",
+      "title_highlight": "Convert & Scale",
+      "description": "Our data-driven approach to digital advertising combines strategic targeting, compelling creatives, and continuous optimization to deliver exceptional ROI.",
+      "items": [
+        {
+          "title": "Precision Targeting",
+          "description": "Reach your exact audience with advanced demographic, behavioral, and interest-based targeting across all platforms."
+        },
+        {
+          "title": "Performance Analytics",
+          "description": "Real-time campaign monitoring with detailed reporting on ROAS, conversions, and customer acquisition costs."
+        },
+        {
+          "title": "Continuous Optimization",
+          "description": "A/B testing, bid optimization, and creative iteration to maximize your campaign performance over time."
+        },
+        {
+          "title": "Cross-Platform Campaigns",
+          "description": "Unified advertising strategy across Google, Facebook, Instagram, LinkedIn, and YouTube for maximum reach."
+        },
+        {
+          "title": "Conversion Tracking",
+          "description": "Advanced pixel implementation and conversion tracking to measure every interaction and optimize for results."
+        },
+        {
+          "title": "Budget Optimization",
+          "description": "Smart budget allocation and bid management to ensure every dollar is working efficiently for your campaigns."
+        }
+      ],
+      "platforms_title": "Multi-Platform Expertise",
+      "platforms_description": "We manage campaigns across all major advertising platforms to maximize your reach and results.",
+      "platforms": [
+        {
+          "name": "Google Ads",
+          "description": "Search, Display, Shopping, YouTube campaigns",
+          "specialties": ["Search Campaigns", "Shopping Ads", "Display Network", "YouTube Advertising"]
+        },
+        {
+          "name": "Facebook & Instagram",
+          "description": "Social media advertising and retargeting",
+          "specialties": ["Feed Ads", "Stories", "Reels", "Messenger Ads"]
+        },
+        {
+          "name": "LinkedIn Ads",
+          "description": "B2B professional network advertising",
+          "specialties": ["Sponsored Content", "Lead Gen Forms", "Message Ads", "Dynamic Ads"]
+        },
+        {
+          "name": "Microsoft Ads",
+          "description": "Bing search network advertising",
+          "specialties": ["Search Ads", "Shopping Campaigns", "Audience Network", "Import from Google"]
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Ready to Scale?",
+      "title": "Launch Your First Campaign",
+      "title_highlight": "See Results Fast",
+      "description": "Start with a comprehensive audit of your current advertising efforts, then launch optimized campaigns that deliver measurable results from day one.",
+      "button_primary": "Start Ad Campaign",
+      "button_secondary": "Free Strategy Call",
+      "benefits": [
+        {
+          "title": "Launch in 48 Hours",
+          "description": "Get your campaigns live and driving traffic fast"
+        },
+        {
+          "title": "Performance Guarantee",
+          "description": "We guarantee improved performance or money back"
+        },
+        {
+          "title": "24/7 Support",
+          "description": "Dedicated account manager and continuous optimization"
+        }
+      ]
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",

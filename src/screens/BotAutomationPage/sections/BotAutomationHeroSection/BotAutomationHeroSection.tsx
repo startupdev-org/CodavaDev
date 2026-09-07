@@ -1,8 +1,10 @@
 import React from "react";
 import { FadeIn } from "../../../../components/ui/animated-elements";
 import { BiMouse } from "react-icons/bi";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const BotAutomationHeroSection = () => {
+  const { t } = useTranslation();
   return (
     <>
       {/* CSS Animations */}
@@ -97,16 +99,16 @@ export const BotAutomationHeroSection = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-10">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">AI Automation</span>
+              <span className="text-white/80 text-sm font-medium">{t('bot_automation.hero.badge')}</span>
             </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              AI Automation
+              {t('bot_automation.hero.title')}
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                For Your Business
+                {t('bot_automation.hero.title_highlight')}
               </span>
             </h1>
           </FadeIn>
@@ -114,7 +116,7 @@ export const BotAutomationHeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Automate repetitive tasks and streamline workflows with intelligent AI solutions. Save hours of manual work and focus on what matters most to your business growth.
+              {t('bot_automation.hero.description')}
             </p>
           </FadeIn>
 

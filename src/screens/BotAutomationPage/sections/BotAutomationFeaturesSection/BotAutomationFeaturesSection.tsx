@@ -3,36 +3,14 @@ import {
   StaggerContainer,
   StaggerItem
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const BotAutomationFeaturesSection = () => {
-  const features = [
-    {
-      title: "Automate Repetitive Tasks",
-      description: "Save hours of manual work by automating routine processes. Focus your team on high-value activities that drive business growth.",
-      icon: "Zap"
-    },
-    {
-      title: "Scale Effortlessly",
-      description: "AI-powered teams that adapt to your needs. Scale operations without increasing headcount or overhead costs.",
-      icon: "TrendingUp"
-    },
-    {
-      title: "Reduce Human Error",
-      description: "Eliminate mistakes with intelligent automation. Ensure consistent, accurate results across all your business processes.",
-      icon: "Shield"
-    }
-  ];
-
-  const techStack = [
-    { name: "OpenAI GPT", description: "Natural Language Processing" },
-    { name: "Dialogflow", description: "Conversation Management" },
-    { name: "Python", description: "Backend Development" },
-    { name: "Node.js", description: "API Integration" },
-    { name: "MongoDB", description: "Data Storage" },
-    { name: "AWS Lambda", description: "Serverless Functions" },
-    { name: "Webhook APIs", description: "System Integration" },
-    { name: "Analytics", description: "Performance Tracking" }
-  ];
+  const { t } = useTranslation();
+  const features = t('bot_automation.features.items', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+  }>;
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F]">
@@ -42,16 +20,16 @@ export const BotAutomationFeaturesSection = () => {
         <div className="text-center mb-16">
           <FadeIn delay={0.1} direction="up">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose
+              {t('bot_automation.features.title')}
               <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                AI Automation?
+                {t('bot_automation.features.title_highlight')}
               </span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.2} direction="up">
             <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Transform your business operations with intelligent automation that saves time and scales with your growth.
+              {t('bot_automation.features.description')}
             </p>
           </FadeIn>
         </div>

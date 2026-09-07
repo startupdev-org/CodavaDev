@@ -1306,6 +1306,204 @@
       }
     }
   },
+  "bot_automation": {
+    "hero": {
+      "badge": "Automatizare AI",
+      "title": "Automatizare AI",
+      "title_highlight": "Pentru afacerea dumneavoastră",
+      "description": "Automatizați sarcinile repetitive și optimizați fluxurile de lucru cu soluții AI inteligente. Economisiți ore de muncă manuală și concentrați-vă pe ceea ce contează cu adevărat pentru creșterea afacerii dumneavoastră."
+    },
+    "features": {
+      "title": "De ce să alegeți",
+      "title_highlight": "automatizarea AI?",
+      "description": "Transformați operațiunile afacerii dumneavoastră cu automatizare inteligentă care economisește timp și se adaptează creșterii dumneavoastră.",
+      "items": [
+        {
+          "title": "Automatizați sarcinile repetitive",
+          "description": "Economisiți ore de muncă manuală prin automatizarea proceselor de rutină. Direcționați-vă echipa către activități cu valoare ridicată, care stimulează creșterea afacerii."
+        },
+        {
+          "title": "Scalați fără efort",
+          "description": "Echipe susținute de AI care se adaptează nevoilor dumneavoastră. Scalați operațiunile fără a crește numărul de angajați sau costurile administrative."
+        },
+        {
+          "title": "Reduceți erorile umane",
+          "description": "Eliminați greșelile prin automatizare inteligentă. Asigurați rezultate consistente și precise în toate procesele afacerii dumneavoastră."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Sunteți gata să automatizați?",
+      "title": "Construim viitorul",
+      "title_highlight": "împreună",
+      "description": "Oferim rezultate dovedite: cicluri de produs mai rapide, decizii mai precise și creștere măsurabilă. Colaborăm cu organizații pregătite să se modernizeze cu un scop clar - rezolvând probleme reale și deschizând noi oportunități de piață.",
+      "button": "Începeți proiectul"
+    }
+  },
+  "full_stack_development": {
+    "hero": {
+      "badge": "Dezvoltare Full Stack",
+      "title": "Soluții complete de dezvoltare",
+      "title_highlight": "Full Stack",
+      "description": "Oferim soluții full stack complete—de la interfețe de utilizator la API-uri backend și baze de date—care asigură experiențe fluide și aplicații web fiabile, de înaltă performanță.",
+      "button_primary": "Începeți proiectul",
+      "button_secondary": "Vedeți portofoliul nostru",
+      "status": "Disponibili pentru proiecte noi"
+    },
+    "features": {
+      "badge": "Abordarea noastră",
+      "title": "De ce să alegeți",
+      "title_highlight": "dezvoltarea noastră Full Stack",
+      "description": "Oferim soluții full stack complete care integrează perfect straturile frontend, backend și baze de date pentru performanță și experiență de utilizare optime.",
+      "items": [
+        {
+          "title": "Dezvoltare frontend",
+          "description": "Interfețe moderne și responsive, create cu React, Vue.js și Angular, pentru experiențe de utilizare excelente pe orice dispozitiv."
+        },
+        {
+          "title": "Dezvoltare backend",
+          "description": "Soluții robuste pe partea de server, folosind Node.js, Python și Java, inclusiv API-uri RESTful și microservicii."
+        },
+        {
+          "title": "Proiectare baze de date",
+          "description": "Arhitectură eficientă de baze de date cu SQL și NoSQL, pentru acuratețea datelor și performanță ridicată."
+        },
+        {
+          "title": "Integrare API",
+          "description": "Integrare fluidă cu servicii terțe, procesatoare de plăți și API-uri externe pentru funcționalități suplimentare."
+        },
+        {
+          "title": "DevOps și implementare",
+          "description": "Fluxuri automate de implementare, containerizare cu Docker și administrare în cloud pentru aplicații scalabile și fiabile."
+        },
+        {
+          "title": "Securitate și performanță",
+          "description": "Practici solide de securitate, optimizarea performanței și testare riguroasă pentru software stabil și sigur."
+        }
+      ],
+      "tech_title": "Susținut de un stack tehnologic modern",
+      "tech_description": "Folosim cele mai noi tehnologii pe întregul stack pentru a livra aplicații scalabile, ușor de întreținut și de înaltă performanță.",
+      "tech_stack": [
+        { "name": "React", "description": "Framework frontend" },
+        { "name": "Node.js", "description": "Mediu de execuție backend" },
+        { "name": "TypeScript", "description": "Dezvoltare cu tipare sigure" },
+        { "name": "MongoDB", "description": "Bază de date NoSQL" },
+        { "name": "PostgreSQL", "description": "Bază de date SQL" },
+        { "name": "AWS", "description": "Infrastructură cloud" },
+        { "name": "Docker", "description": "Containerizare" },
+        { "name": "SpringBoot", "description": "Framework backend Java" }
+      ]
+    },
+    "cta": {
+      "badge": "Sunteți gata să construiți?",
+      "title": "Să construim",
+      "title_highlight": "aplicația dumneavoastră Full Stack",
+      "description": "Sunteți gata să creați o aplicație full stack puternică și scalabilă? Să discutăm cerințele dumneavoastră și să construim ceva remarcabil împreună.",
+      "button_primary": "Începeți proiectul",
+      "button_secondary": "Programați o consultație"
+    }
+  },
+  "digital_advertising": {
+    "hero": {
+      "badge": "📢 Publicitate digitală • Google Ads • Facebook Ads • Performance Marketing",
+      "title": "Publicitate targetată care",
+      "title_highlight": "produce rezultate",
+      "description": "Ajungeți la clienții ideali cu campanii de publicitate targetate cu precizie pe Google, Facebook, Instagram și LinkedIn. Optimizăm pentru ROI și conversii maxime.",
+      "services": [
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "LinkedIn Ads",
+        "Publicitate display",
+        "YouTube Ads",
+        "Retargeting",
+        "Campanii Shopping"
+      ],
+      "button_primary": "Începeți o campanie",
+      "button_secondary": "Audit gratuit de publicitate",
+      "status": "Locuri disponibile pentru campanii",
+      "stat_roas": "500%+ ROAS mediu",
+      "stat_spend": "Peste 2 mil. $ buget publicitar administrat"
+    },
+    "features": {
+      "badge": "Excelență în publicitate",
+      "title": "Campanii care",
+      "title_highlight": "convertesc și scalează",
+      "description": "Abordarea noastră bazată pe date în publicitatea digitală combină targetarea strategică, materiale creative convingătoare și optimizare continuă pentru un ROI excepțional.",
+      "items": [
+        {
+          "title": "Targetare de precizie",
+          "description": "Ajungeți exact la publicul dumneavoastră cu targetare avansată demografică, comportamentală și pe interese, pe toate platformele."
+        },
+        {
+          "title": "Analiză a performanței",
+          "description": "Monitorizarea campaniilor în timp real, cu rapoarte detaliate privind ROAS, conversiile și costurile de achiziție a clienților."
+        },
+        {
+          "title": "Optimizare continuă",
+          "description": "Testare A/B, optimizarea licitațiilor și iterarea materialelor creative pentru a maximiza performanța campaniilor în timp."
+        },
+        {
+          "title": "Campanii multi-platformă",
+          "description": "Strategie de publicitate unificată pe Google, Facebook, Instagram, LinkedIn și YouTube pentru acoperire maximă."
+        },
+        {
+          "title": "Urmărirea conversiilor",
+          "description": "Implementare avansată de pixeli și urmărirea conversiilor pentru a măsura fiecare interacțiune și a optimiza pentru rezultate."
+        },
+        {
+          "title": "Optimizarea bugetului",
+          "description": "Alocarea inteligentă a bugetului și gestionarea licitațiilor pentru ca fiecare leu să lucreze eficient pentru campaniile dumneavoastră."
+        }
+      ],
+      "platforms_title": "Expertiză multi-platformă",
+      "platforms_description": "Gestionăm campanii pe toate platformele majore de publicitate pentru a maximiza acoperirea și rezultatele dumneavoastră.",
+      "platforms": [
+        {
+          "name": "Google Ads",
+          "description": "Campanii Search, Display, Shopping și YouTube",
+          "specialties": ["Campanii Search", "Reclame Shopping", "Rețea Display", "Publicitate YouTube"]
+        },
+        {
+          "name": "Facebook & Instagram",
+          "description": "Publicitate în social media și retargeting",
+          "specialties": ["Reclame în feed", "Stories", "Reels", "Reclame Messenger"]
+        },
+        {
+          "name": "LinkedIn Ads",
+          "description": "Publicitate în rețeaua profesională B2B",
+          "specialties": ["Conținut sponsorizat", "Formulare de generare lead-uri", "Reclame prin mesaje", "Reclame dinamice"]
+        },
+        {
+          "name": "Microsoft Ads",
+          "description": "Publicitate în rețeaua de căutare Bing",
+          "specialties": ["Reclame Search", "Campanii Shopping", "Rețea de audiență", "Import din Google"]
+        }
+      ]
+    },
+    "cta": {
+      "badge": "Sunteți gata să scalați?",
+      "title": "Lansați prima campanie",
+      "title_highlight": "vedeți rezultate rapid",
+      "description": "Începeți cu un audit complet al eforturilor dumneavoastră actuale de publicitate, apoi lansați campanii optimizate care produc rezultate măsurabile din prima zi.",
+      "button_primary": "Începeți o campanie",
+      "button_secondary": "Apel de strategie gratuit",
+      "benefits": [
+        {
+          "title": "Lansare în 48 de ore",
+          "description": "Campaniile dumneavoastră devin active și aduc trafic rapid"
+        },
+        {
+          "title": "Garanție de performanță",
+          "description": "Garantăm performanță îmbunătățită sau vă returnăm banii"
+        },
+        {
+          "title": "Suport 24/7",
+          "description": "Manager de cont dedicat și optimizare continuă"
+        }
+      ]
+    }
+  },
   "common": {
     "loading": "Se încarcă...",
     "error": "A apărut o eroare",

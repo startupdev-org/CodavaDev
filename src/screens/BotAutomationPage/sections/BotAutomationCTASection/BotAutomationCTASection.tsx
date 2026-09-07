@@ -2,8 +2,10 @@ import {
   FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const BotAutomationCTASection = () => {
+  const { t } = useTranslation();
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       {/* Background Effects */}
@@ -16,22 +18,22 @@ export const BotAutomationCTASection = () => {
         <FadeIn delay={0.1} direction="up">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#194EFF]/10 border border-[#194EFF]/20 rounded-full backdrop-blur-sm mb-8">
             <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse"></div>
-            <span className="text-[#194EFF] text-sm font-medium">Ready to Automate?</span>
+            <span className="text-[#194EFF] text-sm font-medium">{t('bot_automation.cta.badge')}</span>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Building What's Next
+            {t('bot_automation.cta.title')}
             <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent h-20">
-              Together
+              {t('bot_automation.cta.title_highlight')}
             </span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.3} direction="up">
           <p className="text-xl text-white/70 leading-relaxed mb-12 max-w-2xl mx-auto">
-            We deliver proven results: faster product cycles, more accurate decisions, and measurable growth. We partner with organisations ready to modernise with purpose - solving real problems and unlocking new market opportunities.
+            {t('bot_automation.cta.description')}
           </p>
         </FadeIn>
 
@@ -42,7 +44,7 @@ export const BotAutomationCTASection = () => {
               className="group px-10 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <span className="relative z-10">Start Your Project</span>
+              <span className="relative z-10">{t('bot_automation.cta.button')}</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

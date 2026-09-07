@@ -6,10 +6,12 @@ import {
   GlowButton
 } from "../../../../components/ui/animated-elements";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const FullStackDevelopmentHeroSection = () => {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <>
       {/* CSS Animations */}
@@ -104,15 +106,15 @@ export const FullStackDevelopmentHeroSection = () => {
           <FadeIn delay={0.1} direction="up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm mb-12">
               <div className="w-2 h-2 bg-[#194EFF] rounded-full pulse-soft"></div>
-              <span className="text-white/80 text-sm font-medium">Full Stack Development</span>
+              <span className="text-white/80 text-sm font-medium">{t('full_stack_development.hero.badge')}</span>
             </div>
           </FadeIn>
 
           {/* Main Heading */}
           <FadeIn delay={0.2} direction="up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              Complete Full Stack <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
-                Development Solutions
+              {t('full_stack_development.hero.title')} <span className="block bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text text-transparent mt-1">
+                {t('full_stack_development.hero.title_highlight')}
               </span>
             </h1>
           </FadeIn>
@@ -120,7 +122,7 @@ export const FullStackDevelopmentHeroSection = () => {
           {/* Enhanced Description */}
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              Providing complete full stack solutions—from user interfaces to backend APIs and databases—that enable smooth user experiences and reliable, high-performance web applications.
+              {t('full_stack_development.hero.description')}
             </p>
           </FadeIn>
 
@@ -132,7 +134,7 @@ export const FullStackDevelopmentHeroSection = () => {
                 className="group px-9 py-3.5 bg-[#194EFF] text-white font-semibold text-base rounded-lg hover:bg-[#1E40AF] transition-all duration-300 shadow-lg shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 transform hover:scale-105"
               >
                 <span className="flex items-center gap-2.5">
-                  Start Your Project
+                  {t('full_stack_development.hero.button_primary')}
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -143,7 +145,7 @@ export const FullStackDevelopmentHeroSection = () => {
                 onClick={() => navigate('/our-work')}
               >
                 <span className="flex items-center gap-2.5">
-                  View Our Work
+                  {t('full_stack_development.hero.button_secondary')}
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -158,7 +160,7 @@ export const FullStackDevelopmentHeroSection = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/50">
               <div className="flex items-center gap-2.5">
                 <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
-                <span>Available for new projects</span>
+                <span>{t('full_stack_development.hero.status')}</span>
               </div>
             </div>
           </FadeIn>
