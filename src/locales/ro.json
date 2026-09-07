@@ -1508,5 +1508,14 @@
     "loading": "Se încarcă...",
     "error": "A apărut o eroare",
     "retry": "Încercați din nou"
+  },
+  "not_found_page": {
+    "badge": "Pagină negăsită",
+    "code": "404",
+    "heading": "Ups! Pagina",
+    "heading_highlight": "nu a fost găsită",
+    "description": "Pagina pe care o căutați nu există. Este posibil să fi fost mutată sau ștearsă ori ați introdus un URL greșit.",
+    "home_button": "Mergeți la pagina principală",
+    "contact_button": "Contactați echipa de suport"
   }
 }

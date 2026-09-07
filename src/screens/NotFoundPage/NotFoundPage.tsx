@@ -4,9 +4,11 @@ import { Button } from "../../components/ui/button";
 import { HeaderSection } from "../FixedComponents/HeaderSection";
 import { FooterSection } from "../FixedComponents/FooterSection";
 import { FadeIn } from "../../components/ui/animated-elements";
+import { useTranslation } from "../../contexts/LanguageContext";
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -132,7 +134,7 @@ export const NotFoundPage = () => {
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-lg shadow-lg">
                   <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
                   <span className="text-white/80 text-sm font-semibold tracking-wide">
-                    Page Not Found
+                    {t('not_found_page.badge')}
                   </span>
                 </div>
               </FadeIn>
@@ -140,16 +142,16 @@ export const NotFoundPage = () => {
               {/* 404 Number */}
               <FadeIn delay={0.2} direction="up">
                 <div className="text-8xl md:text-6xl lg:text-[10rem] font-black text-transparent bg-gradient-to-r from-[#194EFF] via-[#4169E1] to-[#194EFF] bg-clip-text mb-6 leading-none">
-                  404
+                  {t('not_found_page.code')}
                 </div>
               </FadeIn>
 
               {/* Main Heading */}
               <FadeIn delay={0.3} direction="up">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-                  Oops! Page
+                  {t('not_found_page.heading')}
                   <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-[#4169E1] bg-clip-text mt-1 lg:h-[60px]">
-                    Not Found
+                    {t('not_found_page.heading_highlight')}
                   </span>
                 </h1>
               </FadeIn>
@@ -157,7 +159,7 @@ export const NotFoundPage = () => {
               {/* Description */}
               <FadeIn delay={0.4} direction="up">
                 <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-                  The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+                  {t('not_found_page.description')}
                 </p>
               </FadeIn>
 
@@ -169,7 +171,7 @@ export const NotFoundPage = () => {
                     onClick={() => navigate('/')}
                   >
                     <span className="flex items-center gap-2.5">
-                      Go Home
+                      {t('not_found_page.home_button')}
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
@@ -181,7 +183,7 @@ export const NotFoundPage = () => {
                     onClick={() => navigate('/contact')}
                   >
                     <span className="flex items-center gap-2.5">
-                      Contact Support
+                      {t('not_found_page.contact_button')}
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>

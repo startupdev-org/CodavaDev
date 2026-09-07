@@ -1508,5 +1508,14 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "retry": "Try Again"
+  },
+  "not_found_page": {
+    "badge": "Page Not Found",
+    "code": "404",
+    "heading": "Oops! Page",
+    "heading_highlight": "Not Found",
+    "description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
+    "home_button": "Go Home",
+    "contact_button": "Contact Support"
   }
 }
