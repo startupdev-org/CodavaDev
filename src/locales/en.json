@@ -289,7 +289,14 @@
       "title": "Custom",
       "title_highlight": "Web Development",
       "description": "We build modern, fast, and secure web applications using the latest technologies. Every project delivers exceptional user experiences and drives business growth.",
-      "tech_stack": ["React", "Node.js", "TypeScript", "Next.js", "MongoDB", "AWS"]
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Next.js",
+        "MongoDB",
+        "AWS"
+      ]
     },
     "packages": {
       "title": "Web Development Packages",
@@ -1287,11 +1294,11 @@
         "button": "Get Free Consultation",
         "stats": {
           "projects_completed": {
-            "value": "10+",
+            "value": "50+",
             "label": "Projects Completed"
           },
           "lines_of_code": {
-            "value": "50K+",
+            "value": "100K+",
             "label": "Lines of Code Written"
           },
           "tech_stack_tools": {

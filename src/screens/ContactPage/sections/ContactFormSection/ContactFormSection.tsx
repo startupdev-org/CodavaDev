@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { 
-  FadeIn, 
-  StaggerContainer, 
+import {
+  FadeIn,
+  StaggerContainer,
   StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
@@ -116,7 +116,7 @@ export const ContactFormSection = () => {
               {t('contact_page.form.title')} <span className="bg-gradient-to-r from-[#194EFF] via-[#194EFF]/90 to-[#194EFF]/70 bg-clip-text text-transparent">{t('contact_page.form.title_highlight')}</span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.3} direction="up">
             <p className="text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light"
             >
@@ -233,134 +233,133 @@ export const ContactFormSection = () => {
 
             {/* Contact Form */}
             <FadeIn delay={0.5} direction="up">
-              <div 
+              <div
                 className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-10 backdrop-blur-xl shadow-xl shadow-black/20 hover:shadow-[#194EFF]/10 transition-all duration-500"
               >
-            <form onSubmit={handleSubmit} className="space-y-14">
-              <StaggerContainer staggerDelay={0.1}>
-                {/* Personal Information */}
-                <div className="grid grid-cols-1 gap-6">
-                  {/* Full Name and Email in 2 columns on desktop */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div>
-                      <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.full_name')}</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                        placeholder={t('contact_page.form.placeholders.full_name')}
-                        required
-                        disabled={isLoading}
-                      />
-                    </div>
-                    <div>
-                      <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.email')}</label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                        placeholder={t('contact_page.form.placeholders.email')}
-                        required
-                        disabled={isLoading}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.subject')}</label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      required
-                      disabled={isLoading}
-                    >
-                      <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_service')}</option>
-                      {services.map((category, categoryIndex) => (
-                        <optgroup key={categoryIndex} label={category.category} className="bg-[#00041F] text-white">
-                          {category.items.map((service, serviceIndex) => (
-                            <option 
-                              key={serviceIndex} 
-                              value={service.name}
-                              className="bg-[#00041F] text-white py-2"
-                            >
-                              {t(`contact_page.form.services.${service.translationKey}`)}
-                            </option>
+                <form onSubmit={handleSubmit} className="space-y-14">
+                  <StaggerContainer staggerDelay={0.1}>
+                    {/* Personal Information */}
+                    <div className="grid grid-cols-1 gap-6">
+                      {/* Full Name and Email in 2 columns on desktop */}
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                          <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.full_name')}</label>
+                          <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                            placeholder={t('contact_page.form.placeholders.full_name')}
+                            required
+                            disabled={isLoading}
+                          />
+                        </div>
+                        <div>
+                          <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.email')}</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                            placeholder={t('contact_page.form.placeholders.email')}
+                            required
+                            disabled={isLoading}
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.subject')}</label>
+                        <select
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleInputChange}
+                          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                          required
+                          disabled={isLoading}
+                        >
+                          <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_service')}</option>
+                          {services.map((category, categoryIndex) => (
+                            <optgroup key={categoryIndex} label={category.category} className="bg-[#00041F] text-white">
+                              {category.items.map((service, serviceIndex) => (
+                                <option
+                                  key={serviceIndex}
+                                  value={service.name}
+                                  className="bg-[#00041F] text-white py-2"
+                                >
+                                  {t(`contact_page.form.services.${service.translationKey}`)}
+                                </option>
+                              ))}
+                            </optgroup>
                           ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.how_heard')}</label>
-                    <select
-                      name="howHeard"
-                      value={formData.howHeard}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
-                      required
-                      disabled={isLoading}
-                    >
-                      <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_option')}</option>
-                      <option value="Google">{t('contact_page.form.select_options.how_heard.google')}</option>
-                      <option value="Friend or Colleague">{t('contact_page.form.select_options.how_heard.friend_colleague')}</option>
-                      <option value="Instagram">{t('contact_page.form.select_options.how_heard.instagram')}</option>
-                      <option value="Facebook">{t('contact_page.form.select_options.how_heard.facebook')}</option>
-                      <option value="LinkedIn">{t('contact_page.form.select_options.how_heard.linkedin')}</option>
-                      <option value="Advertisement">{t('contact_page.form.select_options.how_heard.advertisement')}</option>
-                      <option value="Event or Conference">{t('contact_page.form.select_options.how_heard.event_conference')}</option>
-                      <option value="Other">{t('contact_page.form.select_options.how_heard.other')}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.message')}</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px] focus:border-[#194EFF]/50 focus:outline-none transition-colors resize-vertical"
-                      placeholder={t('contact_page.form.placeholders.message')}
-                      required
-                      disabled={isLoading}
-                    ></textarea>
-                  </div>
-                </div>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.how_heard')}</label>
+                        <select
+                          name="howHeard"
+                          value={formData.howHeard}
+                          onChange={handleInputChange}
+                          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-[#194EFF]/50 focus:outline-none transition-colors"
+                          required
+                          disabled={isLoading}
+                        >
+                          <option value="" className="bg-[#00041F] text-white">{t('contact_page.form.select_options.select_option')}</option>
+                          <option value="Google">{t('contact_page.form.select_options.how_heard.google')}</option>
+                          <option value="Friend or Colleague">{t('contact_page.form.select_options.how_heard.friend_colleague')}</option>
+                          <option value="Instagram">{t('contact_page.form.select_options.how_heard.instagram')}</option>
+                          <option value="Facebook">{t('contact_page.form.select_options.how_heard.facebook')}</option>
+                          <option value="LinkedIn">{t('contact_page.form.select_options.how_heard.linkedin')}</option>
+                          <option value="Advertisement">{t('contact_page.form.select_options.how_heard.advertisement')}</option>
+                          <option value="Event or Conference">{t('contact_page.form.select_options.how_heard.event_conference')}</option>
+                          <option value="Other">{t('contact_page.form.select_options.how_heard.other')}</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="text-white font-semibold text-base mb-2 block">{t('contact_page.form.labels.message')}</label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 min-h-[120px] focus:border-[#194EFF]/50 focus:outline-none transition-colors resize-vertical"
+                          placeholder={t('contact_page.form.placeholders.message')}
+                          required
+                          disabled={isLoading}
+                        ></textarea>
+                      </div>
+                    </div>
 
-                {/* Submit Button */}
-                <StaggerItem>
-                  <div className="pt-6">
-                    <button
-                      type="submit"
-                      disabled={isLoading}
-                      className={`w-full px-8 py-4 font-semibold text-base rounded-2xl transition-all duration-300 shadow-xl hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2 ${
-                        isLoading 
-                          ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
-                          : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
-                      }`}
-                    >
-                      {isLoading ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin relative z-10"></div>
-                          <span className="relative z-10">{t('contact_page.form.button.sending')}</span>
-                        </>
-                      ) : (
-                        <>
-                          <span className="relative z-10">{t('contact_page.form.button.send')}</span>
-                          <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </StaggerItem>
-              </StaggerContainer>
-            </form>
+                    {/* Submit Button */}
+                    <StaggerItem>
+                      <div className="pt-6">
+                        <button
+                          type="submit"
+                          disabled={isLoading}
+                          className={`w-full px-8 py-4 font-semibold text-base rounded-2xl transition-all duration-300 shadow-xl hover:scale-105 transform relative overflow-hidden group/btn flex items-center justify-center gap-2 ${isLoading
+                            ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:shadow-[#194EFF]/40'
+                            }`}
+                        >
+                          {isLoading ? (
+                            <>
+                              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin relative z-10"></div>
+                              <span className="relative z-10">{t('contact_page.form.button.sending')}</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="relative z-10">{t('contact_page.form.button.send')}</span>
+                              <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </StaggerItem>
+                  </StaggerContainer>
+                </form>
               </div>
             </FadeIn>
           </div>

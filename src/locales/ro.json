@@ -289,7 +289,14 @@
       "title": "Dezvoltare Web",
       "title_highlight": "Personalizată",
       "description": "Construim aplicații web moderne, rapide și sigure folosind cele mai noi tehnologii. Fiecare proiect oferă experiențe excepționale utilizatorilor și stimulează creșterea afacerii.",
-      "tech_stack": ["React", "Node.js", "TypeScript", "Next.js", "MongoDB", "AWS"]
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Next.js",
+        "MongoDB",
+        "AWS"
+      ]
     },
     "packages": {
       "title": "Pachete Dezvoltare Web",
@@ -1200,11 +1207,11 @@
         "button": "Obține Consultație Gratuită",
         "stats": {
           "projects_completed": {
-            "value": "10+",
+            "value": "50+",
             "label": "Proiecte Finalizate"
           },
           "lines_of_code": {
-            "value": "50K+",
+            "value": "100K+",
             "label": "Linii de Cod Scrise"
           },
           "tech_stack_tools": {

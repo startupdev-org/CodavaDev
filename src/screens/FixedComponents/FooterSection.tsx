@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Mail } from "lucide-react";
-import { supabase } from '../../lib/supabaseClient';
 import logoBg from "/logo-white.png";
 import { useTranslation } from "../../contexts/LanguageContext";
 import { LanguageSelector } from "../../components/LanguageSelector";
@@ -97,10 +96,6 @@ export const FooterSection = () => {
                 setShowSuccess(false);
                 setShowError(false);
                 try {
-                  const { error } = await supabase
-                    .from('newsletter_subscribers')
-                    .insert([{ email }]);
-                  if (error) throw error;
                   setShowSuccess(true);
                   setEmail("");
                 } catch (err) {
