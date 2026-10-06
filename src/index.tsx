@@ -1,5 +1,4 @@
 import "../tailwind.css";
-// Handle GitHub Pages SPA routing
 (function (l) {
   if (l.search[1] === '/') {
     const decoded = l.search.slice(1).split('&').map(function (s) {
@@ -11,7 +10,7 @@ import "../tailwind.css";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Outlet, Routes, Route } from "react-router-dom";
 import { HomePageDesktop } from "./screens/HomePageDesktop";
 import { AboutUsPage } from "./screens/AboutUsPage/AboutUsPage";
 import { WebDevelopmentPage } from "./screens/WebDevelopmentPage";
@@ -28,37 +27,44 @@ import { CaseStudiesPage } from "./screens/CaseStudiesPage/CaseStudiesPage";
 import { NotFoundPage } from "./screens/NotFoundPage/NotFoundPage";
 import { AnalyticsAndTrackingPage } from "./screens/AnalyticsAndTrackingPage/AnalyticsAndTrackingPage";
 import TelegramButton from "./components/TelegramButton";
-
-// Import i18n configuration
-import i18n from "./lib/i18n";
+import { LocaleHead } from "./components/LocaleHead";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
-// Initialize i18n
-i18n.init({});
+const pageRoutes = () => (
+  <>
+    <Route index element={<HomePageDesktop />} />
+    <Route path="about" element={<AboutUsPage />} />
+    <Route path="our-work" element={<PortfolioPage />} />
+    <Route path="case-studies" element={<CaseStudiesPage />} />
+    <Route path="contact" element={<ContactPage />} />
+    <Route path="services/web-development" element={<WebDevelopmentPage />} />
+    <Route path="services/full-stack-development" element={<FullStackDevelopmentPage />} />
+    <Route path="services/design" element={<DesignPage />} />
+    <Route path="services/seo" element={<SEOPage />} />
+    <Route path="services/digital-advertising" element={<DigitalAdvertisingPage />} />
+    <Route path="services/copywriting" element={<CopywritingPage />} />
+    <Route path="services/bot-automation" element={<BotAutomationPage />} />
+    <Route path="services/analytics-tracking" element={<AnalyticsAndTrackingPage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </>
+);
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
-    <LanguageProvider>
     <BrowserRouter>
-      <ScrollToTop />
-      <TelegramButton />
-      <Routes>
-        <Route path="/" element={<HomePageDesktop />} />
-        <Route path="/about" element={<AboutUsPage />} />
-        <Route path="/our-work" element={<PortfolioPage />} />
-        <Route path="/case-studies" element={<CaseStudiesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/services/web-development" element={<WebDevelopmentPage />} />
-        <Route path="/services/full-stack-development" element={<FullStackDevelopmentPage />} />
-        <Route path="/services/design" element={<DesignPage />} />
-        <Route path="/services/seo" element={<SEOPage />} />
-        <Route path="/services/digital-advertising" element={<DigitalAdvertisingPage />} />
-        <Route path="/services/copywriting" element={<CopywritingPage />} />
-        <Route path="/services/bot-automation" element={<BotAutomationPage />} />
-        <Route path="/services/analytics-tracking" element={<AnalyticsAndTrackingPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <LanguageProvider>
+        <ScrollToTop />
+        <TelegramButton />
+        <LocaleHead />
+        <Routes>
+          <Route path="/en" element={<Outlet />}>
+            {pageRoutes()}
+          </Route>
+          <Route path="/" element={<Outlet />}>
+            {pageRoutes()}
+          </Route>
+        </Routes>
+      </LanguageProvider>
     </BrowserRouter>
-    </LanguageProvider>
   </StrictMode>,
 );

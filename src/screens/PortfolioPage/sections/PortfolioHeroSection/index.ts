@@ -1,1 +1,0 @@
-export { PortfolioHeroSection } from './PortfolioHeroSection'; 

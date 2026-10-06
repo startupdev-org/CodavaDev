@@ -1,41 +1,49 @@
-import React from "react";
-import { HeaderSection, FooterSection, } from "../FixedComponents";
+import { HeaderSection, FooterSection } from "../FixedComponents";
 import { PortfolioGridSection } from "./sections/PortfolioGridSection/PortfolioGridSection";
 
 export const PortfolioPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#00041F] via-[#00020F] to-[#00041F] relative overflow-hidden">
-      {/* Enhanced Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        {/* Main gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00041F] via-[#00020F] to-[#00041F] opacity-95"></div>
-
-        {/* Animated blue glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#194EFF]/8 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s', animationDelay: '0s' }}></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#194EFF]/6 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#194EFF]/4 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
-
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.015]">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #194EFF 1px, transparent 0)`,
-            backgroundSize: '80px 80px'
-          }}></div>
-        </div>
-
-        {/* Floating particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#194EFF]/30 rounded-full animate-ping" style={{ animationDuration: '3s', animationDelay: '0s' }}></div>
-        <div className="absolute top-3/4 right-1/4 w-1.5 h-1.5 bg-[#194EFF]/40 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+    <div className="relative min-h-screen overflow-hidden bg-[#00020F]">
+      <div className="pointer-events-none fixed inset-0">
+        <video
+          className="h-full w-full object-cover object-center"
+          style={{ filter: "hue-rotate(20deg) saturate(1.05) brightness(0.73)" }}
+          src="/herobg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-[#00041F]/18" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 75% at 50% 42%, rgba(0,4,31,0.72) 0%, rgba(0,4,31,0.28) 42%, rgba(0,4,31,0.08) 68%, transparent 82%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(25,78,255,0.16) 0%, rgba(25,78,255,0.05) 55%, transparent 80%)",
+          }}
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-[30%]"
+          style={{
+            background: "linear-gradient(to bottom, transparent 0%, #00020F 100%)",
+          }}
+        />
       </div>
 
       <HeaderSection />
-
       <main className="relative z-10">
         <PortfolioGridSection />
       </main>
-
       <FooterSection />
     </div>
   );
-}; 
+};

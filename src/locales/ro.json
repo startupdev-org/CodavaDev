@@ -1,11 +1,12 @@
 {
   "hero": {
-    "badge": "Tu visezi. Noi livrăm.",
-    "title": "Transformă-ți afacerea cu",
-    "title_highlight": "Excelență Digitală",
-    "description": "De la soluții web și design până la marketing și analytics, livrăm soluții adaptate pentru nișa ta astăzi, pregătindu-te totodată pentru viitorul acesteia.",
-    "cta_primary": "Începe proiectul tău",
-    "cta_secondary": "Vezi munca noastră",
+    "badge": "Chișinău · Moldova",
+    "title": "Site-uri, aplicații, automatizări",
+    "title_highlight": "pentru afaceri în creștere",
+    "description": "Ajutăm afacerile să crească online — de la prezență digitală la procese mai eficiente și rezultate clare.",
+    "cta_primary": "Hai să discutăm",
+    "cta_secondary": "Vezi proiectele",
+    "stats": "2 ani de experiență · 15+ proiecte finalizate",
     "status_available": "Disponibili pentru proiecte noi",
     "status_projects": "50+ Proiecte Livrate",
     "status_support": "Suport 24/7"
@@ -14,7 +15,8 @@
     "home": "Acasă",
     "about": "Despre Noi",
     "services": "Servicii",
-    "portfolio": "Lucrările Noastre",
+    "portfolio": "Proiecte",
+    "faq": "FAQ",
     "contact": "Contactați-ne",
     "web_development": "Dezvoltare Web",
     "full_stack_development": "Dezvoltare Full Stack",
@@ -48,9 +50,11 @@
     "copywriting_desc": "Conținut care convertește"
   },
   "footer": {
-    "description": "Creăm experiențe digitale excepționale care ajută brandurile să prospere online.",
+    "description": "Soluții digitale pentru afaceri în creștere — site-uri, aplicații, design și automatizare.",
     "company": "Companie",
     "services": "Servicii",
+    "social": "Social",
+    "location": "Chișinău · Moldova",
     "newsletter": "Newsletter",
     "newsletter_description": "Primește cele mai recente sfaturi digitale în inbox-ul tău.",
     "subscribe": "Abonează-te",
@@ -64,7 +68,7 @@
     "badge": "Recenzii Clienți",
     "title_line1": "Ce Spun",
     "title_line2": "Clienții Noștri",
-    "subtitle": "Încredereați de sute de afaceri din întreaga lume pentru soluții digitale excepționale",
+    "subtitle": "Feedback real de la afaceri cu care am lucrat.",
     "testimonials": [
       {
         "name": "Bors Andrei",
@@ -101,62 +105,62 @@
   "services": {
     "badge": "SERVICII CREATIVE",
     "title_line1": "Soluții",
-    "title_line2": "Digitale Profesionale",
-    "subtitle": "Combinând date, AI, automatizare inteligentă și creativitate, livrăm soluții care generează creștere și înalță brandul tău.",
-    "most_popular": "Cel Mai Popular",
-    "learn_more": "Află Mai Multe",
+    "title_line2": "Digitale",
+    "subtitle": "Site-uri, design, automatizare și creștere — livrate clar și profesional.",
+    "most_popular": "Popular",
+    "learn_more": "Află prețul",
     "ai_automation": {
       "title": "Automatizare AI",
-      "description": "Economisiți timp și creșteți eficiența cu soluții inteligente de automatizare care eficientizează fluxurile de lucru și elimină sarcinile repetitive.",
+      "description": "Automatizăm sarcinile repetitive, astfel încât echipa dumneavoastră să economisească timp și să lucreze mai eficient.",
       "features": [
         "Consultant AI",
-        "Automatizare Sarcini",
+        "Automatizare sarcini",
         "Suport 24/7"
       ]
     },
     "web_development": {
       "title": "Dezvoltare Web",
-      "description": "Construiți site-uri web rapide, sigure și scalabile - de la magazine e-commerce la site-uri de afaceri și aplicații web.",
+      "description": "Site-uri și aplicații rapide, sigure și ușor de scalat — de la prezentare la e-commerce.",
       "features": [
         "Frontend & Backend",
-        "Design Bază de Date",
-        "Aplicații Complexe"
+        "Baze de date",
+        "Aplicații web"
       ]
     },
     "design": {
       "title": "Design",
-      "description": "Creați identități vizuale uimitoare care capturează esența brandului dvs. și se conectează cu publicul.",
+      "description": "Identități vizuale clare care reflectă brandul dumneavoastră și se conectează cu publicul.",
       "features": [
         "Design UI/UX",
-        "Identitate Brand",
-        "Materiale Printate"
+        "Identitate brand",
+        "Materiale print"
       ]
     },
     "seo": {
       "title": "SEO",
-      "description": "Dominați rezultatele căutării și generați trafic organic cu strategiile și tehnicile noastre dovedite SEO.",
+      "description": "Vă ajutăm să fiți găsit mai ușor pe Google și să atrageți clienți relevanți.",
       "features": [
-        "Cercetare Cuvinte Cheie",
-        "Optimizare On-Page",
-        "Link Building"
+        "Cercetare cuvinte cheie",
+        "Optimizare on-page",
+        "Link building"
       ]
     },
     "analytics": {
-      "title": "Analytics și Tracking",
-      "description": "Monitorizați comportamentul utilizatorilor, măsurați performanța și luați decizii bazate pe date pentru creșterea afacerii.",
+      "title": "Analytics & Tracking",
+      "description": "Măsurați ce funcționează, urmăriți conversiile și luați decizii informate pe baza datelor reale.",
       "features": [
         "Google Analytics",
-        "Tracking Conversii",
-        "Rapoarte Performanță"
+        "Tracking conversii",
+        "Rapoarte clare"
       ]
     },
     "copywriting": {
       "title": "Copywriting",
-      "description": "Conținut convingător care se conectează cu publicul și generează acțiune. De la conținutul site-ului până la campanii email.",
+      "description": "Texte clare și convingătoare pentru site, email și campanii care generează acțiune.",
       "features": [
-        "Copywriting Website",
-        "Campanii Email",
-        "Pagini Vânzări"
+        "Conținut website",
+        "Campanii email",
+        "Pagini de vânzări"
       ]
     }
   },
@@ -164,55 +168,50 @@
     "badge": "CENTRU DE SUPORT",
     "title_line1": "Întrebări",
     "title_line2": "Frecvente",
-    "subtitle": "Găsește răspunsuri la întrebările comune despre serviciile noastre IT și soluțiile digitale. Experții noștri te ajută să iei decizii informate.",
+    "subtitle": "Răspunsuri scurte la cele mai comune întrebări despre cum lucrăm.",
     "questions": [
       {
-        "question": "Ce tipuri de servicii IT oferiți?",
-        "answer": "Oferim soluții IT complete, inclusiv dezvoltare web și full stack, design UI/UX, automatizare, SEO, copywriting și suport IT 24/7 - adaptate pentru a crește împreună cu afacerea ta."
+        "question": "Cu ce tipuri de proiecte vă putem ajuta?",
+        "answer": "Site-uri web, aplicații, design, automatizare, SEO, copywriting și analytics — adaptate obiectivelor afacerii dumneavoastră."
       },
       {
-        "question": "Cât durează un proiect tipic?",
-        "answer": "Termenele proiectelor depind de amploare. Proiectele mici durează 1-2 săptămâni, în timp ce transformările digitale mai mari pot dura până la 3 luni. Oferim termene detaliate în timpul consultării."
+        "question": "Oferiți suport după lansare?",
+        "answer": "Da. Asigurăm mentenanță, actualizări și optimizări. Primele 14 zile după lansare sunt gratuite."
       },
       {
-        "question": "Oferiți suport continuu după lansare?",
-        "answer": "Da! Oferim suport și mentenanță 24/7 - inclusiv monitorizare, actualizări, depanare și optimizare continuă. Acest serviciu este gratuit în primele 14 zile după finalizarea proiectului."
+        "question": "Puteți prelua și partea de conținut?",
+        "answer": "Da. Redactăm texte pentru site, email, pagini de vânzări și materiale care vorbesc clar cu publicul dumneavoastră."
       },
       {
-        "question": "Ne puteți ajuta cu conținut și copywriting?",
-        "answer": "Absolut. Copywriterii noștri experți creează conținut convingător pentru site-uri web, email-uri, pagini de vânzări și articole de blog pentru a angaja audiența și a genera conversii."
+        "question": "Cum arată procesul de design?",
+        "answer": "Pornim de la utilizator: interfețe clare, intuitive și aliniate cu brandul dumneavoastră."
       },
       {
-        "question": "Cum abordați designul UI/UX?",
-        "answer": "Folosim o abordare centrată pe utilizator, creând interfețe intuitive și vizual atractive care îmbunătățesc experiența utilizatorului și reflectă identitatea brandului tău."
+        "question": "Puteți automatiza procese din afacere?",
+        "answer": "Da. Construim automatizări și boți care reduc munca repetitivă și îmbunătățesc răspunsul către clienți."
       },
       {
-        "question": "Puteți automatiza procesele de afaceri sau suportul pentru clienți?",
-        "answer": "Da. Construim soluții inteligente de automatizare și bot pentru a eficientiza sarcinile, pentru a îmbunătăți serviciul clienți și pentru a crește eficiența."
-      },
-      {
-        "question": "Veți lucra cu stiva noastră de tehnologie existentă?",
-        "answer": "Absolut. Ne integrăm perfect cu sistemele existente, folosind o evaluare amănunțită pentru a asigura compatibilitatea și funcționarea fără probleme."
-      },
-      {
-        "question": "Ce face Codava diferită de alți furnizori de servicii IT?",
-        "answer": "Combinăm tehnologia de ultimă generație cu serviciul personalizat, concentrându-ne mai întâi pe obiectivele afacerii tale. Soluțiile noastre personalizate oferă rezultate măsurabile, susținute de asistență 24/7."
+        "question": "Vă integrați cu sistemele pe care le avem deja?",
+        "answer": "Da. Analizăm stiva existentă și ne integrăm astfel încât totul să funcționeze fără întreruperi."
       }
     ]
   },
   "telegram": {
-    "notification_title": "Reducere 50% la proiect!",
-    "notification_description": "Ofertă limitată! Discutați acum pentru prețuri exclusive.",
-    "claim_discount": "Solicitați Reducerea",
+    "notification_title": "Reducere 50% la proiect",
+    "notification_description": "Ofertă limitată. Discutați acum pentru un preț exclusiv.",
+    "claim_discount": "Solicitați reducerea",
     "chat_with_us": "Discutați cu noi"
   },
+  "whatsapp": {
+    "chat_with_us": "Discutați pe WhatsApp"
+  },
   "cta": {
-    "title": "Începe-ți",
-    "title_highlight": "Transformarea Digitală Astăzi",
-    "subtitle": "Ești pregătit să modernizezi infrastructura IT? Experții noștri sunt gata să te ajute să începi cu o soluție cuprinzătoare adaptată nevoilor afacerii tale.",
-    "primary_button": "Obține Consultație Gratuită",
+    "title": "Hai să construim",
+    "title_highlight": "împreună",
+    "subtitle": "Spune-ne ce vrei să crești — îți propunem un plan clar, fără jargon inutil.",
+    "primary_button": "Obține consultație gratuită",
     "support_title": "Mai ai întrebări?",
-    "support_description": "Echipa noastră de suport este disponibilă 24/7 pentru a te ajuta să găsești soluția potrivită pentru afacerea ta.",
+    "support_description": "Scrie-ne și îți răspundem rapid.",
     "contact_email": "codava.dev@gmail.com"
   },
   "cta_section": {
@@ -231,27 +230,27 @@
   "about": {
     "badge_mobile": "Soluții IT Complete",
     "badge_desktop": "Construim vieți mai bune cu tehnologia",
-    "hero_title": "Transformați-vă Afacerea cu",
-    "hero_title_highlight": "Excelență Digitală",
-    "hero_description": "Suntem o companie de soluții IT orientată spre viitor, dedicată să împuternicească afacerile cu tehnologie inovatoare și să conducă transformarea digitală.",
+    "hero_title": "Construim digitalul",
+    "hero_title_highlight": "care crește afaceri",
+    "hero_description": "Companie IT din Chișinău — site-uri, aplicații și automatizări pentru afaceri care vor rezultate clare.",
     "mission_title": "Misiunea Noastră",
     "mission_description": "Crearea unui impact pozitiv pentru angajați, clienți, comunități și mediu.",
-    "mission_card_title": "Împuternicirea Progresului",
-    "mission_card_description": "Construim soluții tech transformative care ajută afacerile să crească și să prospere într-o lume digitală.",
+    "mission_card_title": "Creștere practică",
+    "mission_card_description": "Construim soluții digitale care ajută afacerile să lucreze mai bine și să crească.",
     "vision_title": "Viziunea Noastră",
     "vision_description": "Crearea de soluții inteligente, centrate pe utilizator, care redefinește standardele și deblochează noi posibilități.",
-    "vision_card_title": "Inovație Globală",
-    "vision_card_description": "Modelarea viitorului prin idei îndrăznețe și tehnologie avansată.",
+    "vision_card_title": "Tehnologie clară",
+    "vision_card_description": "Idei solide, livrare curată și focus pe ce contează pentru business.",
     "values_title": "Valorile Noastre",
     "values_description": "Principiile care ghidează munca noastră și definesc cultura noastră de excelență și inovație.",
     "values": {
       "human_centered": {
-        "title": "Inovație Centrată pe Om",
-        "description": "Tehnologie care îmbunătățește potențialul uman, creativitatea și colaborarea în loc să le înlocuiască."
+        "title": "Centrat pe oameni",
+        "description": "Tehnologie care ajută echipele să lucreze mai bine — nu să le înlocuiască."
       },
       "outcome_driven": {
-        "title": "Execuție Orientată spre Rezultate",
-        "description": "Succesul măsurat prin rezultate: livrare mai rapidă, decizii mai bune și creștere măsurabilă."
+        "title": "Orientat pe rezultate",
+        "description": "Succes măsurat prin livrare mai rapidă, decizii mai bune și creștere reală."
       },
       "agility": {
         "title": "Agilitate și Adaptabilitate",
@@ -266,8 +265,8 @@
         "description": "Oameni, proces și tehnologie care evoluează împreună cu guvernanță și metrici măsurabile."
       },
       "collaboration": {
-        "title": "Colaborare și Parteneriat",
-        "description": "Lucrul alături de experți pentru a co-crea soluții care rezolvă probleme reale și deblochează piețe."
+        "title": "Parteneriat real",
+        "description": "Lucrăm alături de tine ca să rezolvăm probleme concrete, nu doar să livrăm un proiect."
       }
     },
     "typing_texts": [
@@ -289,7 +288,14 @@
       "title": "Dezvoltare Web",
       "title_highlight": "Personalizată",
       "description": "Construim aplicații web moderne, rapide și sigure folosind cele mai noi tehnologii. Fiecare proiect oferă experiențe excepționale utilizatorilor și stimulează creșterea afacerii.",
-      "tech_stack": ["React", "Node.js", "TypeScript", "Next.js", "MongoDB", "AWS"]
+      "tech_stack": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "Next.js",
+        "MongoDB",
+        "AWS"
+      ]
     },
     "packages": {
       "title": "Pachete Dezvoltare Web",
@@ -668,10 +674,10 @@
       }
     },
     "grid": {
-      "badge": "PORTFOLIO",
-      "title": "Proiectele Noastre",
-      "title_highlight": "Prezentate",
-      "description": "Descoperă cele mai recente lucrări ale noastre și vezi cum am ajutat afaceri să-și atingă obiectivele digitale prin soluții inovatoare și tehnologie de ultimă generație.",
+      "badge": "PROIECTE",
+      "title": "Proiecte",
+      "title_highlight": "livrate",
+      "description": "Site-uri și produse livrate pentru logistică, turism și e-commerce.",
       "filters": {
         "all": "Toate",
         "fullstack": "Dezvoltare FullStack",
@@ -680,14 +686,14 @@
         "ecommerce": "Dezvoltare E-commerce"
       },
       "empty_state": {
-        "title": "Nimic pentru acest filtru specific",
-        "description": "Poate proiectul tău ar putea fi primul aici? Contactează-ne pentru a-l prezenta!",
-        "button": "Să începem"
+        "title": "Nimic pentru acest filtru",
+        "description": "Proiectul dumneavoastră ar putea fi primul aici. Contactați-ne pentru a-l prezenta.",
+        "button": "Hai să discutăm"
       },
-      "view_details": "Vezi Detalii",
+      "view_details": "Vezi",
       "detail": {
-        "breadcrumb": "Portfolio",
-        "gallery": "Galerie Proiect",
+        "breadcrumb": "Înapoi la proiecte",
+        "gallery": "Galerie",
         "challenge": "Provocare",
         "solution": "Soluție",
         "impact": "Impact",
@@ -1164,39 +1170,65 @@
   },
   "contact_page": {
     "hero": {
-      "badge": "CONTACTEAZĂ-NE",
-      "title_line1": "Să Construim",
-      "title_highlight": "Ceva Uimitor",
-      "title_line2": "Împreună",
-      "description": "Gata să-ți transformi afacerea cu tehnologie de ultimă generație? Echipa noastră de experți este aici pentru a te ajuta să-ți aduci viziunea la viață. Să începem conversația astăzi.",
+      "badge": "Contact",
+      "title_line1": "Hai să discutăm despre",
+      "title_highlight": "proiectul dvs.",
+      "title_line2": "",
+      "description": "Spuneți-ne de ce aveți nevoie — site, design, automatizare sau creștere. Răspundem în câteva ore.",
       "button": "Începe Proiectul",
       "stats": {
         "support_24_7": {
           "title": "Suport 24/7",
-          "description": "Asistență non-stop pentru toate nevoile tale"
+          "description": "Asistență non-stop pentru toate nevoile dumneavoastră"
         },
         "quick_response": {
           "title": "Răspuns Rapid",
-          "description": "Îți răspundem în 2 ore pentru a răspunde la întrebările tale"
+          "description": "Vă răspundem în 2 ore"
         },
         "secure_private": {
           "title": "Sigur & Privat",
-          "description": "Datele tale sunt protejate și sigure la noi"
+          "description": "Datele dumneavoastră sunt protejate"
         },
         "expert_team": {
           "title": "Echipă Expertă",
-          "description": "Profesioniști dedicați la serviciul tău"
+          "description": "Profesioniști dedicați"
         }
+      }
+    },
+    "meta": {
+      "response": "Răspuns în câteva ore",
+      "quote": "Ofertă fixă înainte de start",
+      "free_call": "Consultație gratuită"
+    },
+    "social": {
+      "title": "Social"
+    },
+    "process": {
+      "title": "Cum funcționează",
+      "step1": "Trimiteți formularul sau scrieți-ne pe canalul preferat.",
+      "step2": "Clarificăm împreună scopul, termenul și bugetul.",
+      "step3": "Primiți o ofertă clară — apoi începem lucrul."
+    },
+    "channels": {
+      "email": {
+        "label": "Email"
+      },
+      "telegram": {
+        "label": "Telegram"
+      },
+      "call": {
+        "label": "Apel",
+        "value": "Programează o consultație gratuită"
       }
     },
     "form": {
       "badge": "FORMULAR CONTACT",
       "title": "Ia Legătura",
       "title_highlight": "Cu Noi",
-      "description": "Gata să începi următorul tău proiect? Completează formularul de mai jos.",
+      "description": "Completați formularul de mai jos.",
       "left_side": {
-        "title": "Gata să Începi Următorul Tău Proiect?",
-        "description": "Să discutăm despre cum te putem ajuta să-ți atingi obiectivele de afaceri cu soluții tehnologice de ultimă generație. Echipa noastră este pregătită să-ți aducă viziunea la viață.",
+        "title": "Preferați alt canal?",
+        "description": "Scrieți-ne pe email, pe Telegram sau programați un apel scurt. Alegeți ce vi se potrivește.",
         "button": "Obține Consultație Gratuită",
         "stats": {
           "projects_completed": {
@@ -1214,74 +1246,75 @@
         }
       },
       "labels": {
-        "full_name": "Nume Complet *",
-        "email": "Adresă Email *",
-        "subject": "Subiect *",
-        "how_heard": "Cum ai auzit despre noi?",
+        "full_name": "Nume complet *",
+        "email": "Email *",
+        "subject": "Serviciu *",
+        "how_heard": "Cum ați aflat de noi?",
         "message": "Mesaj *"
       },
       "placeholders": {
-        "full_name": "Introdu numele tău complet",
-        "email": "Introdu adresa ta de email",
-        "message": "Introdu mesajul tău"
+        "full_name": "Numele dumneavoastră",
+        "email": "dumneavoastra@companie.com",
+        "message": "Descrieți pe scurt proiectul sau întrebarea"
       },
       "select_options": {
-        "select_service": "Selectează un serviciu",
-        "select_option": "Selectează o opțiune",
+        "select_service": "Selectați un serviciu",
+        "select_option": "Selectați o opțiune",
         "how_heard": {
           "google": "Google",
-          "friend_colleague": "Prieten sau Coleg",
+          "friend_colleague": "Prieten sau coleg",
           "instagram": "Instagram",
           "facebook": "Facebook",
           "linkedin": "LinkedIn",
           "advertisement": "Reclamă",
-          "event_conference": "Eveniment sau Conferință",
+          "event_conference": "Eveniment sau conferință",
           "other": "Altul"
         }
       },
       "service_categories": {
-        "development_design": "DEZVOLTARE & DESIGN",
-        "marketing_content": "MARKETING & CONȚINUT",
-        "analytics_tracking": "ANALYTICS & TRACKING"
+        "development_design": "Dezvoltare & Design",
+        "marketing_content": "Marketing & Conținut",
+        "analytics_tracking": "Analytics & Tracking"
       },
       "services": {
-        "web_development": "Dezvoltare Web - Site-uri web și aplicații personalizate",
-        "design": "Design - UI/UX și identitate brand",
-        "bot_automation": "Automatizare Bot - Chatbot-uri AI și automatizare",
-        "seo": "SEO - Optimizare motoare de căutare",
-        "copywriting": "Copywriting - Conținut care convertește",
-        "analytics_tracking": "Analytics și Tracking - Track user behavior. Improve results."
+        "web_development": "Dezvoltare Web",
+        "design": "Design",
+        "bot_automation": "Automatizare AI",
+        "seo": "SEO",
+        "copywriting": "Copywriting",
+        "analytics_tracking": "Analytics & Tracking"
       },
       "button": {
-        "send": "Trimite Mesaj",
-        "sending": "Se trimite mesajul..."
+        "send": "Trimite mesajul",
+        "sending": "Se trimite..."
       },
+      "privacy": "Trimițând formularul, acceptați să vă contactăm în legătură cu solicitarea.",
       "messages": {
         "success": {
-          "title": "Mesaj Trimis cu Succes!",
-          "description": "Mulțumim pentru mesaj. Te vom contacta în curând!"
+          "title": "Mesaj trimis",
+          "description": "Mulțumim. Vă vom contacta în curând."
         },
         "error": {
-          "title": "Eroare la Trimiterea Mesajului",
-          "default": "Nu s-a putut trimite mesajul. Te rugăm să încerci din nou."
+          "title": "A apărut o eroare",
+          "default": "Mesajul nu a putut fi trimis. Încercați din nou."
         }
       }
     },
     "info": {
       "title": "Ia Legătura",
       "title_highlight": "Cu Noi",
-      "description": "Gata să începi următorul tău proiect? Suntem aici pentru a te ajuta să-ți aduci viziunea la viață. Contactează-ne prin oricare dintre canalele de mai jos.",
+      "description": "Suntem aici pentru a vă ajuta să vă aduceți proiectul la viață.",
       "email": {
         "label": "Email",
-        "description": "Trimite-ne un email oricând",
+        "description": "Trimiteți-ne un email oricând",
         "value": "codava.dev@gmail.com"
       },
       "why_choose_us": {
         "title": "De Ce Să Ne Alegi?",
         "items": {
-          "support": "Suport și mentenanță 24/7",
-          "response": "Timp de răspuns rapid (în 2 ore)",
-          "secure": "Comunicare sigură și confidențială"
+          "support": "Scop clar și ofertă fixă înainte de start",
+          "response": "Răspuns în câteva ore în zilele lucrătoare",
+          "secure": "Comunicare confidențială"
         }
       }
     }

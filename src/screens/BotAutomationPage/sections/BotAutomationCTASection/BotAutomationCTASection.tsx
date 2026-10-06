@@ -2,8 +2,10 @@ import {
   FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
+import { useLocaleNavigate } from "../../../../lib/localePath";
 
 export const BotAutomationCTASection = () => {
+  const navigate = useLocaleNavigate();
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       {/* Background Effects */}
@@ -38,7 +40,7 @@ export const BotAutomationCTASection = () => {
         <FadeIn delay={0.4} direction="up">
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <GlowButton
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => navigate('/contact')}
               className="group px-10 py-4 bg-[#194EFF] hover:bg-[#194EFF]/90 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 shadow-2xl hover:shadow-[#194EFF]/30 hover:scale-105 transform relative overflow-hidden text-white"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

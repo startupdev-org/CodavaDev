@@ -43,7 +43,7 @@ export const WebDevelopmentHeroSection = () => {
         `
       }} />
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}

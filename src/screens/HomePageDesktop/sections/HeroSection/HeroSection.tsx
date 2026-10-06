@@ -1,180 +1,135 @@
-import {
-  FadeIn,
-  GlowButton
-} from "../../../../components/ui/animated-elements";
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useLocaleNavigate } from "../../../../lib/localePath";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const HeroSection = () => {
-  const navigate = useNavigate();
+  const navigate = useLocaleNavigate();
   const { t } = useTranslation();
+  const overlay = "absolute inset-0";
+
   return (
-    <>
-      {/* CSS Animations */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-15px) translateX(8px); }
-            50% { transform: translateY(-8px) translateX(-8px); }
-            75% { transform: translateY(-12px) translateX(4px); }
-          }
-          
-          @keyframes gradientShift {
-            0%, 100% { transform: translateX(0) translateY(0) scale(1); }
-            33% { transform: translateX(20px) translateY(-10px) scale(1.05); }
-            66% { transform: translateX(-15px) translateY(15px) scale(0.95); }
-          }
-          
-          @keyframes pulse-soft {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-          }
-          
-          .float-animation {
-            animation: float 6s ease-in-out infinite;
-          }
-          
-          .gradient-shift {
-            animation: gradientShift 15s ease-in-out infinite;
-          }
-          
-          .pulse-soft {
-            animation: pulse-soft 3s ease-in-out infinite;
-          }
-        `
-      }} />
+    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden">
+      <div
+        className="absolute inset-0"
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to bottom, #000 0, #000 calc(100% - 180px), transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, #000 0, #000 calc(100% - 180px), transparent 100%)",
+        }}
+      >
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          style={{ filter: "hue-rotate(20deg) saturate(1.05) brightness(0.73)" }}
+          src="/herobg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+        />
+        <div className={`${overlay} bg-[#00041F]/12`} />
+        <div
+          className={overlay}
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 75% at 50% 42%, rgba(0,4,31,0.97) 0%, rgba(0,4,31,0.45) 38%, rgba(0,4,31,0.12) 62%, transparent 78%)",
+          }}
+        />
+        <div
+          className={overlay}
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(25,78,255,0.20) 0%, rgba(25,78,255,0.08) 55%, transparent 80%)",
+          }}
+        />
+      </div>
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
-        {/* Live Background Elements */}
-        <div className="absolute inset-0">
-          {/* Main animated gradient - similar to Arise */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-6 pt-32 pb-10 md:pt-36 md:pb-12 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-7"
+        >
+          <p className="inline-flex items-center justify-center gap-1.5 text-xs md:text-sm tracking-[0.2em] uppercase text-[#6BA3FF]/90">
+            <FaMapMarkerAlt className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0" aria-hidden />
+            {t("hero.badge")}
+          </p>
+        </motion.div>
 
-          {/* Secondary animated gradient */}
-          <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-4xl text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold tracking-tight leading-[1.1] text-white mb-5 drop-shadow-[0_2px_28px_rgba(0,0,0,0.75)]"
+        >
+          {t("hero.title")}
+          <span className="mt-1 block text-[#C8DBFF]">
+            {t("hero.title_highlight")}
+          </span>
+        </motion.h1>
 
-          {/* Floating particles */}
-          {Array.from({ length: 15 }, (_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-[#194EFF]/40 rounded-full pulse-soft"
-              style={{
-                left: `${20 + Math.random() * 60}%`,
-                top: `${20 + Math.random() * 60}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
-              }}
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-2xl text-base md:text-lg text-white/90 leading-relaxed mb-10 drop-shadow-[0_2px_16px_rgba(0,0,0,0.55)]"
+        >
+          {t("hero.description")}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
+        >
+          <button
+            onClick={() => navigate("/contact")}
+            className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 px-7 py-3.5 text-sm md:text-base font-semibold text-white transition-all duration-300 hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 hover:scale-105"
+          >
+            <span className="relative z-10">{t("hero.cta_primary")}</span>
+            <svg className="relative z-10 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
+          </button>
+
+          <button
+            onClick={() => navigate("/our-work")}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#194EFF]/35 bg-[#194EFF]/10 px-7 py-3.5 text-sm md:text-base font-semibold text-white transition-all duration-300 hover:border-[#194EFF]/60 hover:bg-[#194EFF]/18"
+          >
+            {t("hero.cta_secondary")}
+          </button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.28 }}
+          className="mt-10 inline-flex items-center justify-center gap-2.5 text-sm text-white/60"
+        >
+          <svg
+            className="h-5 w-5 shrink-0"
+            viewBox="0 0 22 22"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816z"
+              fill="#1D9BF0"
             />
-          ))}
-
-          {/* Floating elements */}
-          {Array.from({ length: 8 }, (_, i) => (
-            <div
-              key={`float-${i}`}
-              className="absolute w-2 h-2 bg-gradient-to-r from-[#194EFF]/20 to-[#4169E1]/20 rounded-full float-animation"
-              style={{
-                left: `${10 + Math.random() * 80}%`,
-                top: `${15 + Math.random() * 70}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${4 + Math.random() * 4}s`
-              }}
+            <path
+              d="M9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"
+              fill="#fff"
             />
-          ))}
-
-          {/* Subtle moving grid */}
-          <div className="absolute inset-0 opacity-[0.008]">
-            <div className="w-full h-full gradient-shift" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(25, 78, 255, 0.2) 1px, transparent 0)`,
-              backgroundSize: '120px 120px',
-              animationDelay: '10s'
-            }}></div>
-          </div>
-        </div>
-
-        {/* Navigation space */}
-        <div className="absolute top-0 left-0 right-0 h-20"></div>
-
-        {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-6 text-center below400:pt-[170px] pt-[100px] pb-16">
-
-          {/* IT Agency Badge */}
-          <FadeIn delay={0.1} direction="up">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10  rounded-full mb-8 backdrop-blur-lg shadow-lg ">
-              <div className="w-2 h-2 bg-[#194EFF] rounded-full animate-pulse shadow-sm shadow-[#194EFF]/50"></div>
-              {/* Mobile: shorter text */}
-              <span className="text-white/80 text-sm font-semibold tracking-wide block md:hidden">
-                {t('hero.badge')}
-              </span>
-              {/* Desktop: full text */}
-              <span className="text-white/80 text-sm font-semibold tracking-wide hidden md:block">
-                {t('hero.badge')}
-              </span>
-            </div>
-          </FadeIn>
-
-          {/* Main Heading */}
-          <FadeIn delay={0.2} direction="up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-7">
-              {t('hero.title')} <span className="block text-transparent bg-gradient-to-r from-[#194EFF] to-blue-400 bg-clip-text mt-1 lg:h-[90px]">
-                {t('hero.title_highlight')}
-              </span>
-            </h1>
-          </FadeIn>
-
-          {/* Enhanced Description */}
-          <FadeIn delay={0.3} direction="up">
-            <p className="text-base lg:text-lg text-white/70 leading-relaxed max-w-3xl mx-auto mb-12">
-              {t('hero.description')}
-            </p>
-          </FadeIn>
-
-          {/* CTA Buttons */}
-          <FadeIn delay={0.4} direction="up">
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
-              <GlowButton
-                disableGlow={true}
-                className="px-8 py-4 bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white font-semibold text-base rounded-2xl hover:from-[#194EFF]/90 hover:to-[#194EFF]/80 transition-all duration-300 shadow-xl shadow-[#194EFF]/25 hover:shadow-[#194EFF]/40 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
-                onClick={() => navigate('/contact')}
-              >
-                <span className="relative z-10">{t('hero.cta_primary')}</span>
-                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-              </GlowButton>
-
-              <GlowButton
-                disableGlow={true}
-                className="px-8 py-4 bg-white/10 text-white font-semibold text-base rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm shadow-xl shadow-white/5 hover:shadow-white/10 hover:scale-105 transform relative overflow-hidden group/btn flex items-center gap-2"
-                onClick={() => navigate('/our-work')}
-              >
-                <span className="relative z-10">{t('hero.cta_secondary')}</span>
-                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"></div>
-              </GlowButton>
-            </div>
-          </FadeIn>
-
-          {/* Status & Stats */}
-          <FadeIn delay={0.5} direction="up">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/50">
-              <div className="flex items-center gap-2.5">
-                <div className="w-2.5 h-2.5 bg-green-500 rounded-full pulse-soft"></div>
-                <span>{t('hero.status_available')}</span>
-              </div>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span className=" below400:hidden">{t('hero.status_projects')}</span>
-              <div className="hidden sm:block w-1 h-1 bg-white/30 rounded-full"></div>
-              <span className="below400:hidden">{t('hero.status_support')}</span>
-            </div>
-          </FadeIn>
-
-        </div>
-      </section>
-    </>
+          </svg>
+          <span>{t("hero.stats")}</span>
+        </motion.div>
+      </div>
+    </section>
   );
 };
