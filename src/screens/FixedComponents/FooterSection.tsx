@@ -1,168 +1,175 @@
-import { useState } from "react";
-import { Mail } from "lucide-react";
-import { supabase } from '../../lib/supabaseClient';
+import { Link, useLocation } from "react-router-dom";
+import { localeFromPath, useLocaleNavigate, withLocale } from "../../lib/localePath";
+import type { MouseEvent } from "react";
+import { FaInstagram, FaTelegramPlane, FaLinkedinIn, FaMapMarkerAlt } from "react-icons/fa";
 import logoBg from "/logo-white.png";
 import { useTranslation } from "../../contexts/LanguageContext";
 import { LanguageSelector } from "../../components/LanguageSelector";
+import { goToHash } from "../../lib/smoothScroll";
 
+const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    handle: "@codava.dev",
+    href: "https://www.instagram.com/codava.dev/",
+    icon: FaInstagram,
+  },
+  {
+    label: "Telegram",
+    handle: "@codavadev",
+    href: "https://t.me/codavadev",
+    icon: FaTelegramPlane,
+  },
+  {
+    label: "LinkedIn",
+    handle: "CodavaDev",
+    href: "https://www.linkedin.com/company/codavadev/",
+    icon: FaLinkedinIn,
+  },
+] as const;
+
+const SERVICE_KEYS = [
+  "services.web_development.title",
+  "services.design.title",
+  "services.ai_automation.title",
+  "services.seo.title",
+  "services.copywriting.title",
+  "services.analytics.title",
+] as const;
 
 export const FooterSection = () => {
   const { t } = useTranslation();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [email, setEmail] = useState("");
+  const location = useLocation();
+  const navigate = useLocaleNavigate();
+  const localize = (path: string) => withLocale(path, localeFromPath(location.pathname));
+
+  const companyLinks = [
+    { label: t("navigation.home"), href: "/" },
+    { label: t("navigation.services"), href: "/#services" },
+    { label: t("navigation.portfolio"), href: "/our-work" },
+    { label: t("navigation.contact"), href: "/contact" },
+  ];
+
+  const onServicesClick = (e: MouseEvent) => {
+    e.preventDefault();
+    goToHash("services", location.pathname, navigate);
+  };
 
   return (
-    <footer className="relative w-full bg-[#00020F] border-t border-[#194EFF]/20">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#194EFF]/3 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#194EFF]/5 rounded-full blur-3xl"></div>
-      </div>
+    <footer className="relative w-full border-t border-white/10">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#194EFF]/10 to-transparent" />
 
-      {/* Main Footer Content */}
-      <div className="relative max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 items-start">
-          {/* Column 1: Logo, Description, Contact, Socials */}
-          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <div className="flex items-center gap-3 mb-2 group cursor-pointer">
+      <div className="relative mx-auto w-[72%] px-6 pt-16 pb-10 md:w-[64%] md:px-8">
+        <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-8">
+          <div className="flex max-w-md flex-col gap-5 sm:col-span-2 lg:col-span-1">
+            <Link to={localize("/")} className="group inline-flex w-fit">
               <img
                 src={logoBg}
                 alt="CodavaDev logo"
-                className="w-auto h-8 lg:w-54 lg:h-8 group-hover:scale-110 transition-transform duration-300"
+                className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-            <p className="text-white/60 text-base leading-relaxed">
-              {t('footer.description')}
+            </Link>
+            <p className="text-[15px] leading-relaxed text-white/55">
+              {t("footer.description")}
             </p>
-            <div className="flex items-center gap-2 mt-2">
-              <Mail className="w-5 h-5 text-[#194EFF] drop-shadow-glow" />
-              <a href="mailto:codava.dev@gmail.com" className="text-sm font-semibold text-[#194EFF] hover:underline focus:outline-none transition-all duration-300">
-                codava.dev@gmail.com
-              </a>
-            </div>
-            {/* <div className="flex gap-4 mt-4">
-              {socialLinks.map((social, idx) => (
+            <a
+              href="mailto:codava.dev@gmail.com"
+              className="inline-flex w-fit items-center gap-2.5 text-sm font-medium text-[#8EB6FF] transition-colors duration-200 hover:text-white"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              codava.dev@gmail.com
+            </a>
+            <div className="flex items-center gap-3 pt-1">
+              {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
                 <a
-                  key={social.name}
-                  href={social.href}
-                  aria-label={social.name}
-                  className="text-white/70 hover:text-[#194EFF] transition-colors duration-200"
+                  key={href}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all duration-200 hover:border-[#194EFF]/45 hover:bg-[#194EFF]/15 hover:text-white"
                 >
-                  {social.icon}
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
-            </div> */}
-          </div>
-
-          {/* Column 2: Company */}
-          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.company')}
-              <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
-            </h4>
-            <div className="flex flex-col gap-2">
-              <a href="/about" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.about')}</a>
-              <a href="/our-work" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.portfolio')}</a>
-              <a href="/contact" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">{t('navigation.contact')}</a>
             </div>
           </div>
 
-          {/* Column 3: Services */}
-          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.services')}
-              <div className="absolute bottom-0 left-0 w-16 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
+          <div>
+            <h4 className="mb-4 text-sm font-semibold tracking-wide uppercase text-white/40">
+              {t("footer.company")}
             </h4>
-            <div className="flex flex-col gap-2">
-              <a href="/services/ai-consultant" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">AI Consultant</a>
-              <a href="/services/digital-engineering" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Digital Engineering</a>
-              <a href="/services/design" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Design</a>
-              <a href="/services/copywriting" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Copywriting</a>
-              <a href="/services/analytics-tracking" className="text-white/60 hover:text-[#194EFF] text-sm transition-colors duration-200">Analytics & Tracking</a>
+            <nav className="flex flex-col gap-3">
+              {companyLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={localize(link.href)}
+                  onClick={link.href === "/#services" ? onServicesClick : undefined}
+                  className="w-fit text-[15px] text-white/65 transition-colors duration-200 hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h4 className="mb-4 text-sm font-semibold tracking-wide uppercase text-white/40">
+              {t("footer.services")}
+            </h4>
+            <div className="flex flex-col gap-3">
+              {SERVICE_KEYS.map((key) => (
+                <a
+                  key={key}
+                  href={localize("/#services")}
+                  onClick={onServicesClick}
+                  className="w-fit text-[15px] text-white/65 transition-colors duration-200 hover:text-white"
+                >
+                  {t(key)}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Column 4: Newsletter Signup */}
-          <div className="flex flex-col gap-6 lg:items-start items-start text-left">
-            <h4 className="font-semibold text-white text-lg mb-2 relative">{t('footer.newsletter')}
-              <div className="absolute bottom-0 left-0 w-24 top-7 h-0.5 bg-[#194EFF] rounded-full"></div>
+          <div>
+            <h4 className="mb-4 text-sm font-semibold tracking-wide uppercase text-white/40">
+              {t("footer.social")}
             </h4>
-            <p className="text-white/60 text-sm mb-4 max-w-xs lg:max-w-none">{t('footer.newsletter_description')}</p>
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                setIsSubmitting(true);
-                setShowSuccess(false);
-                setShowError(false);
-                try {
-                  const { error } = await supabase
-                    .from('newsletter_subscribers')
-                    .insert([{ email }]);
-                  if (error) throw error;
-                  setShowSuccess(true);
-                  setEmail("");
-                } catch (err) {
-                  setShowError(true);
-                } finally {
-                  setIsSubmitting(false);
-                }
-              }}
-              className="w-full space-y-3"
-            >
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3.5 text-white placeholder-white/50 focus:border-[#194EFF] focus:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#194EFF]/20 text-sm transition-all duration-300"
-                  placeholder={t('footer.email_placeholder')}
-                  required
-                  disabled={isSubmitting}
-                  aria-label="Email address"
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full px-6 py-3.5 font-semibold text-sm rounded-lg transition-all duration-300 shadow-lg ${isSubmitting
-                  ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
-                  : 'bg-[#194EFF] text-white hover:bg-[#194EFF]/90 hover:shadow-[#194EFF]/30 hover:scale-[1.02]'
-                  }`}
-              >
-                {isSubmitting ? (
-                  <div className="flex items-center gap-2 justify-center">
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>{t('footer.subscribing')}</span>
-                  </div>
-                ) : (
-                  <span>{t('footer.subscribe')}</span>
-                )}
-              </button>
-            </form>
-            {showSuccess && (
-              <div className="mt-2 p-2 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm w-full">{t('footer.success_message')}</div>
-            )}
-            {showError && (
-              <div className="mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm w-full">{t('footer.error_message')}</div>
-            )}
+            <div className="flex flex-col gap-4">
+              {SOCIAL_LINKS.map(({ href, label, handle, icon: Icon }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex w-fit items-center gap-3"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[#8EB6FF] transition-colors duration-200 group-hover:border-[#194EFF]/45 group-hover:bg-[#194EFF]/15">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="flex flex-col">
+                    <span className="text-sm font-medium text-white/80 transition-colors duration-200 group-hover:text-white">
+                      {label}
+                    </span>
+                    <span className="text-xs text-white/40">{handle}</span>
+                  </span>
+                </a>
+              ))}
+              <p className="flex items-center gap-1.5 pt-1 text-sm leading-relaxed text-white/45">
+                <FaMapMarkerAlt className="h-3.5 w-3.5 shrink-0 text-[#8EB6FF]" aria-hidden />
+                {t("footer.location")}
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="pt-10 border-t border-[#194EFF]/20">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            {/* Copyright - Left */}
-            <p className="text-white/80 text-base font-medium text-center sm:text-left">
-              {t('footer.copyright').replace('2024', '2026')}
-            </p>
-            {/* Language Selector - Right */}
-            <div className="flex justify-center sm:justify-end">
-              <LanguageSelector />
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-center text-sm text-white/40 sm:text-left">
+            {t("footer.copyright")}
+          </p>
+          <LanguageSelector />
         </div>
       </div>
     </footer>

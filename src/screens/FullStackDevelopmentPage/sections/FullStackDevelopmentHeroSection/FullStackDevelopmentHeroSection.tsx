@@ -5,11 +5,11 @@ import {
   StaggerItem,
   GlowButton
 } from "../../../../components/ui/animated-elements";
-import { useNavigate } from "react-router-dom";
+import { useLocaleNavigate } from "../../../../lib/localePath";
 
 export const FullStackDevelopmentHeroSection = () => {
 
-  const navigate = useNavigate();
+  const navigate = useLocaleNavigate();
   return (
     <>
       {/* CSS Animations */}
@@ -47,7 +47,7 @@ export const FullStackDevelopmentHeroSection = () => {
         `
       }} />
 
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center mb-2">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#001122] overflow-hidden flex items-center justify-center mb-2">
         {/* Live Background Elements */}
         <div className="absolute inset-0">
           {/* Main animated gradient */}

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLocaleNavigate } from "../../lib/localePath";
 import { Button } from "../../components/ui/button";
 import { HeaderSection } from "../FixedComponents/HeaderSection";
 import { FooterSection } from "../FixedComponents/FooterSection";
 import { FadeIn } from "../../components/ui/animated-elements";
 
 export const NotFoundPage = () => {
-  const navigate = useNavigate();
+  const navigate = useLocaleNavigate();
 
   return (
     <>
@@ -74,7 +74,7 @@ export const NotFoundPage = () => {
 
         <main className="relative z-10">
           {/* 404 Content */}
-          <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+          <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#001122] overflow-hidden flex items-center justify-center">
             {/* Live Background Elements */}
             <div className="absolute inset-0">
               {/* Main animated gradient - similar to Arise */}

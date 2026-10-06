@@ -5,7 +5,7 @@ import {
 
 export const DigitalAdvertisingHeroSection = () => {
   return (
-    <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#001122] overflow-hidden flex items-center justify-center">
       <div className="absolute top-0 left-0 right-0 h-20"></div>
 
       <div className="relative max-w-6xl mx-auto px-6 text-center pt-12 pb-16">

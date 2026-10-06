@@ -34,7 +34,7 @@ export const AnalyticsAndTrackingHeroSection = () => {
           }
         `
       }} />
-      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#000818] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
+      <section className="relative w-full h-screen bg-gradient-to-br from-[#00020F] via-[#00041F] to-[#001122] overflow-hidden flex items-center justify-center pt-36">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#194EFF]/15 via-[#194EFF]/8 to-transparent rounded-full blur-3xl gradient-shift"></div>
           <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-[#4169E1]/10 to-transparent rounded-full blur-3xl gradient-shift" style={{ animationDelay: '5s' }}></div>

@@ -1,31 +1,24 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useLayoutEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import i18n from '../lib/i18n';
+import { localeFromPath } from '../lib/localePath';
 
-// Custom useTranslation hook that works with our basic i18n
 export const useTranslation = () => {
   const [, forceUpdate] = useState(0);
 
   useEffect(() => {
-    // Subscribe to language changes
-    const unsubscribe = i18n.onLanguageChange(() => {
+    return i18n.onLanguageChange(() => {
       forceUpdate(prev => prev + 1);
     });
-
-    return unsubscribe;
   }, []);
 
   return {
     t: (key: string, options?: any) => i18n.t(key, options),
-    i18n: {
-      changeLanguage: (lang: string) => i18n.changeLanguage(lang)
-    }
   };
 };
 
 interface LanguageContextType {
   language: string;
-  setLanguage: (lang: string) => void;
-  isLoading: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -38,34 +31,17 @@ export const useLanguage = () => {
   return context;
 };
 
-interface LanguageProviderProps {
-  children: React.ReactNode;
-}
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { pathname } = useLocation();
+  const language = localeFromPath(pathname);
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguageState] = useState<string>('ro');
-
-  // Initialize language from localStorage or default to Romanian
-  useEffect(() => {
-    const storedLang = localStorage.getItem('preferred-language') || 'ro';
-    setLanguageState(storedLang);
-    i18n.changeLanguage(storedLang);
-  }, []);
-
-  const setLanguage = async (lang: string) => {
-    setLanguageState(lang);
-    await i18n.changeLanguage(lang);
-    localStorage.setItem('preferred-language', lang);
-  };
-
-  const value: LanguageContextType = {
-    language,
-    setLanguage,
-    isLoading: false, // No loading since we don't detect IP
-  };
+  useLayoutEffect(() => {
+    document.documentElement.lang = language;
+    i18n.changeLanguage(language);
+  }, [language]);
 
   return (
-    <LanguageContext.Provider value={value}>
+    <LanguageContext.Provider value={{ language }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -7,13 +7,13 @@ import {
   GlowButton,
 } from "../../../../components/ui/animated-elements";
 import { Mail } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useLocaleNavigate } from "../../../../lib/localePath";
 import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const AboutCallToActionSection = () => {
   const { t } = useTranslation();
 
-  const navigate = useNavigate();
+  const navigate = useLocaleNavigate();
 
   // Contact methods data
   const contactMethods = [

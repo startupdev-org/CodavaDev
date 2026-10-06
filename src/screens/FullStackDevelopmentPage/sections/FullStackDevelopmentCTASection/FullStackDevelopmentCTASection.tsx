@@ -3,11 +3,11 @@ import {
   FadeIn,
   GlowButton
 } from "../../../../components/ui/animated-elements";
-import { useNavigate } from "react-router-dom";
+import { useLocaleNavigate } from "../../../../lib/localePath";
 
 export const FullStackDevelopmentCTASection = () => {
 
-  const navigate = useNavigate();
+  const navigate = useLocaleNavigate();
   return (
     <section className="relative py-24 bg-gradient-to-b from-[#00041F] to-[#00020F]">
       {/* Background Effects */}

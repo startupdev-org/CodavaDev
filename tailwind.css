@@ -101,29 +101,49 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    color-scheme: dark;
+  }
+
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.35);
+    opacity: 1;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0 1000px #0b1438 inset;
+    box-shadow: 0 0 0 1000px #0b1438 inset;
+    caret-color: #ffffff;
+    transition: background-color 99999s ease-in-out 0s;
+  }
+
+  select option,
+  select optgroup {
+    background-color: #0b1438;
+    color: #ffffff;
+  }
 }
 
-/* Custom dropdown animations */
-@layer utilities {
-  .dropdown-enter {
-    animation: fade-in 0.2s ease-out, zoom-in 0.2s ease-out;
-  }
-  
-  .dropdown-exit {
-    animation: fade-out 0.2s ease-out, zoom-out 0.2s ease-out;
-  }
-  
-  .dropdown-item-hover {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(0);
-  }
-  
-  .dropdown-item-hover:hover {
-    transform: translateX(4px);
-    background: linear-gradient(135deg, rgba(112, 59, 247, 0.1), rgba(166, 133, 250, 0.1));
-  }
+.contact-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238EB6FF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
 
-  /* Marquee animations */
+@layer utilities {
   .animate-marquee {
     animation: marquee var(--duration) infinite linear;
   }
@@ -147,28 +167,6 @@
     }
     to {
       transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
-
-  /* Falling stars animation */
-  .animate-falling-star {
-    animation: falling-star var(--duration, 3s) linear infinite;
-  }
-  
-  @keyframes falling-star {
-    0% {
-      transform: translateY(-100vh) translateX(0) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100vh) translateX(50px) rotate(180deg);
-      opacity: 0;
     }
   }
 }
