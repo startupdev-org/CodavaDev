@@ -128,7 +128,7 @@ export const ContactFormSection = () => {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-[150px] pb-[calc(2rem+50px)] text-center md:px-8 md:pb-8">
+      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-[250px] pb-[calc(2rem+50px)] text-center md:px-8 md:pb-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
