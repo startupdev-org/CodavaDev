@@ -734,8 +734,15 @@
             }
           }
         },
+        "civic_ai": {
+          "description": "We created a bilingual civic assistant that finds answers in official sources, cites its evidence, and refuses to invent information it cannot verify.",
+          "review": {
+            "quote": "We wanted to thank Codava for the late nights, the bold ideas, the pitches, and the energy it brought to Deeptech GigaHack 2026.",
+            "note": "We are satisfied with the work, project, and idea developed for the event."
+          }
+        },
         "senda_courier": {
-          "description": "We redesigned Senda Courier’s digital booking experience so sending a parcel feels straightforward. Users can move from request to tracking with clearer actions, a cleaner layout, and a flow built for speed on every device.\n\nThe work covered UI/UX, brand touchpoints such as logo and cards, and a visual system that makes the courier service look modern and easy to trust.\n\nRead the client's review to learn more about their experience.",
+          "description": "We redesigned Senda Courier's digital booking experience so sending a parcel feels straightforward. Users can move from request to tracking with clearer actions, a cleaner layout, and a flow built for speed on every device.\n\nThe work covered UI/UX, brand touchpoints such as logo and cards, and a visual system that makes the courier service look modern and easy to trust.\n\nRead the client's review to learn more about their experience.",
           "review": {
             "quote": "I worked with Codava on redesign, logo, and cards; the site's innovative and results were fast, professional."
           },
