@@ -5,7 +5,7 @@ import { stripLocale } from "../lib/localePath";
 import { useTranslation } from "../contexts/LanguageContext";
 import TelegramPlaneIcon from "./TelegramPlaneIcon";
 
-const WHATSAPP_NUMBER = "40700000000";
+const WHATSAPP_NUMBER = "37360958145";
 const TELEGRAM_USERNAME = "codavadev";
 
 const ContactButton = ({

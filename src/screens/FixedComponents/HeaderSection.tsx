@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useLocaleNavigate } from "../../lib/localePath";
 import { motion } from "framer-motion";
@@ -13,6 +13,19 @@ export const HeaderSection = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [overlayTop, setOverlayTop] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const header = headerRef.current;
+    if (!header) return;
+
+    const updateOverlayTop = () => setOverlayTop(header.getBoundingClientRect().bottom);
+    updateOverlayTop();
+    window.addEventListener("resize", updateOverlayTop);
+    return () => window.removeEventListener("resize", updateOverlayTop);
+  }, [isMobileMenuOpen]);
 
   const navItems = [
     { name: t("navigation.home"), path: "/" },
@@ -57,12 +70,14 @@ export const HeaderSection = () => {
     <>
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 bg-black/60 lg:hidden"
+          style={{ top: overlayTop }}
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
       <header
+        ref={headerRef}
         className={`fixed top-4 left-1/2 z-50 w-[90%] -translate-x-1/2 md:top-6 md:w-[64%] py-1 bg-[#0B1438]/92 backdrop-blur-2xl border border-white/15 shadow-[0_10px_40px_rgba(0,0,0,0.55)] ${
           isMobileMenuOpen ? "rounded-3xl" : "rounded-full"
         }`}

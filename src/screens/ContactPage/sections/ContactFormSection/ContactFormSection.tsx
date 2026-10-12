@@ -78,6 +78,7 @@ export const ContactFormSection = () => {
       category: t("contact_page.form.service_categories.development_design"),
       items: [
         { name: "Web Development", translationKey: "web_development" },
+        { name: "Meta Ads", translationKey: "analytics_tracking" },
         { name: "Design", translationKey: "design" },
         { name: "Bot Automation", translationKey: "bot_automation" },
       ],
@@ -89,16 +90,12 @@ export const ContactFormSection = () => {
         { name: "Copywriting", translationKey: "copywriting" },
       ],
     },
-    {
-      category: t("contact_page.form.service_categories.analytics_tracking"),
-      items: [{ name: "Analytics & Tracking", translationKey: "analytics_tracking" }],
-    },
   ];
 
   const overlay = "absolute inset-0";
 
   return (
-    <section className="relative flex h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden">
+    <section className="relative h-full w-full overflow-y-auto overflow-x-hidden">
       <div className="absolute inset-0">
         <video
           className="absolute inset-0 h-full w-full object-cover object-center"
@@ -128,7 +125,8 @@ export const ContactFormSection = () => {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-[250px] pb-[calc(2rem+50px)] text-center md:px-8 md:pb-8">
+      <div className="relative z-10 flex min-h-full w-full items-start justify-center md:items-center">
+      <div className="w-full max-w-3xl mx-auto px-6 pt-[150px] pb-[calc(2rem+50px)] text-center md:translate-y-[50px] md:px-8 md:py-8">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,9 +143,11 @@ export const ContactFormSection = () => {
           transition={{ duration: 0.7, delay: 0.06, ease }}
           className="mx-auto max-w-3xl text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white mb-4 drop-shadow-[0_2px_28px_rgba(0,0,0,0.75)]"
         >
-          {t("contact_page.hero.title_line1")}
+          <span className="md:hidden">{t("contact_page.hero.title_line1_mobile")}</span>
+          <span className="hidden md:inline">{t("contact_page.hero.title_line1")}</span>
           <span className="mt-1 block text-[#C8DBFF]">
-            {t("contact_page.hero.title_highlight")}
+            <span className="md:hidden">{t("contact_page.hero.title_highlight_mobile")}</span>
+            <span className="hidden md:inline">{t("contact_page.hero.title_highlight")}</span>
           </span>
         </motion.h1>
 
@@ -314,6 +314,7 @@ export const ContactFormSection = () => {
             codava.dev@gmail.com
           </a>
         </motion.div>
+      </div>
       </div>
     </section>
   );

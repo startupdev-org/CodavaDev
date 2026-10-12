@@ -2,6 +2,7 @@
   "hero": {
     "badge": "Chișinău · Moldova",
     "title": "Site-uri, aplicații, automatizări",
+    "title_mobile": "Soluții Digitale",
     "title_highlight": "pentru afaceri în creștere",
     "description": "Ajutăm afacerile să crească online — de la prezență digitală la procese mai eficiente și rezultate clare.",
     "cta_primary": "Hai să discutăm",
@@ -18,6 +19,8 @@
     "portfolio": "Proiecte",
     "faq": "FAQ",
     "contact": "Contactați-ne",
+    "language_ro": "Română",
+    "language_en": "Engleză",
     "web_development": "Dezvoltare Web",
     "full_stack_development": "Dezvoltare Full Stack",
     "design": "Design",
@@ -25,7 +28,7 @@
     "digital_advertising": "Publicitate Digitală",
     "copywriting": "Copywriting",
     "bot_automation": "Automatizare Bot",
-    "analytics_tracking": "Analytics și Tracking"
+    "analytics_tracking": "Meta Ads"
   },
   "header": {
     "marketing_content": "Marketing și Conținut",
@@ -146,12 +149,12 @@
       ]
     },
     "analytics": {
-      "title": "Analytics & Tracking",
-      "description": "Măsurați ce funcționează, urmăriți conversiile și luați decizii informate pe baza datelor reale.",
+      "title": "Meta Ads",
+      "description": "Configurăm campanii pe Facebook și Instagram — pixel, audiențe și reclame — ca afacerea dumneavoastră să ajungă la clienții potriviți.",
       "features": [
-        "Google Analytics",
-        "Tracking conversii",
-        "Rapoarte clare"
+        "Configurare pixel",
+        "Audiențe",
+        "Lansare campanii"
       ]
     },
     "copywriting": {
@@ -172,7 +175,7 @@
     "questions": [
       {
         "question": "Cu ce tipuri de proiecte vă putem ajuta?",
-        "answer": "Site-uri web, aplicații, design, automatizare, SEO, copywriting și analytics — adaptate obiectivelor afacerii dumneavoastră."
+        "answer": "Site-uri web, aplicații, design, automatizare, SEO, copywriting și reclame Meta — adaptate obiectivelor afacerii dumneavoastră."
       },
       {
         "question": "Oferiți suport după lansare?",
@@ -693,166 +696,158 @@
       "view_details": "Vezi",
       "detail": {
         "breadcrumb": "Înapoi la proiecte",
-        "gallery": "Galerie",
-        "challenge": "Provocare",
-        "solution": "Soluție",
-        "impact": "Impact",
-        "design_process": "Proces de Design",
-        "core_features": "Funcții Principale",
-        "technologies_tools": "Tehnologii și Instrumente",
-        "results_impact": "Rezultate și Impact",
-        "key_achievements": "Realizări Cheie"
+        "visit_site": "Vezi site-ul",
+        "previous": "Anterior",
+        "next": "Următorul",
+        "close": "Închide"
       },
       "projects": {
-        "senda_courier": {
-          "description": "Un design web modern și prietenos pentru SendACourier, concentrându-se pe UI/UX intuitiv pentru rezervarea și urmărirea fără probleme a serviciilor de curierat.",
-          "challenge": "Proiectează o interfață simplă și eficientă pentru ca utilizatorii să rezerve și să urmărească rapid serviciile de curierat online.",
-          "solution": "Am dezvoltat o interfață curată și responsivă cu call-to-actions clare și un proces de rezervare simplificat, asigurând accesibilitate și ușurință în utilizare.",
-          "impact": "Am îmbunătățit implicarea utilizatorilor și am redus timpul de rezervare, rezultând o satisfacție mai mare a clienților și o adoptare crescută a serviciului.",
-          "features": {
-            "0": "Design Web Responsiv",
-            "1": "Flux de Rezervare Intuitiv",
-            "2": "Interfață de Urmărire în Timp Real"
+        "level_auto_rental": {
+          "description": "Am ajutat Level Auto Rental să își transforme prezența online, de la rețelele sociale și o pagină simplă realizată în Canva, într-o platformă profesionistă de închirieri auto. Clienții pot acum explora flota, selecta datele închirierii și vedea prețurile calculate automat.\n\nSite-ul include și un panou de administrare dedicat, prin care proprietarul poate gestiona vehiculele, urmări cererile de rezervare și disponibilitatea și monitoriza traficul pe site.\n\nCitiți recenzia clientului pentru a afla mai multe despre experiența sa.",
+          "review": {
+            "quote": "Întregul proces a fost bine organizat și eficient, cu o abordare profesională și o mare atenție la detalii. Totul a fost livrat la timp, iar rezultatul final mi-a îndeplinit așteptările atât la calitate, cât și la funcționalitate.",
+            "note": "Sunt foarte mulțumit de lucrul realizat și de site-ul dezvoltat pentru compania mea."
           },
-          "design_process": {
-            "0": {
-              "phase": "Cercetare și Planificare",
-              "details": "Am analizat nevoile utilizatorilor și platformele concurente pentru a defini funcțiile cheie și fluxurile utilizatorilor."
+          "groups": {
+            "home": {
+              "title": "Pagina principală",
+              "description": "Pagina se deschide pe flotă, cu apel, intrare spre mașini și căutare după marcă, model și locație. Pe mobil oferta devine un card: poze, specificații, prețul pe zi în MDL și buton de închiriere."
             },
-            "1": {
-              "phase": "Wireframing și Prototipare",
-              "details": "Am creat wireframe-uri și prototipuri interactive pentru a valida experiența de rezervare și urmărire."
+            "admin": {
+              "title": "Panou de administrare",
+              "description": "Vânzările, comenzile, prețul mediu și starea flotei stau sus, apoi mașinile disponibile sau închiriate. Pe mobil aceleași cifre se așază una sub alta, iar cererile, mașinile și calendarul rămân la un tap."
             },
-            "2": {
-              "phase": "Design Vizual",
-              "details": "Am proiectat o interfață modernă, aliniată cu brandul, cu accent pe claritate și ușurință în utilizare."
+            "catalog": {
+              "title": "Catalogul flotei",
+              "description": "O grilă filtrabilă. Fiecare mașină arată disponibilitatea, anul, kilometrajul, transmisia, combustibilul, tracțiunea și prețul pe zi, cu închirierea ca pas următor."
+            },
+            "car": {
+              "title": "Pagina mașinii",
+              "description": "Pozele și specificațiile stau lângă rezervare. Datele și orele calculează totalul, cu telefon și Telegram dacă vizitatorul preferă să vorbească."
+            },
+            "reviews": {
+              "title": "Recenzii",
+              "description": "Nota, cuvintele clientului și sursa Google stau pe pagină, astfel încât dovada este lângă mașini."
+            },
+            "pricing": {
+              "title": "Calculator de preț",
+              "description": "Preluarea și returnarea devin un total în MDL. Vizitatorul poate suna, scrie pe Telegram sau rezerva din același panou."
             }
+          }
+        },
+        "senda_courier": {
+          "description": "Am redesenat experiența digitală de rezervare pentru Senda Courier, astfel încât trimiterea unui colet să fie clară și rapidă. Utilizatorii pot trece de la solicitare la urmărire cu acțiuni mai clare, un layout mai curat și un flux gândit pentru viteză pe orice dispozitiv.\n\nLucrarea a acoperit UI/UX, elemente de brand precum logo și cărți de vizită, și un sistem vizual care face serviciul de curierat să arate modern și demn de încredere.\n\nCitiți recenzia clientului pentru a afla mai multe despre experiența sa.",
+          "review": {
+            "quote": "Am lucrat cu Codava la redesign, logo și cărți; site-ul este inovator și rezultatele au fost rapide, profesionale."
           },
-          "results": "A permis rezervări rapide și prietenoase pentru curierat și a îmbunătățit satisfacția clienților.",
-          "achievements": {
-            "0": "Proces de rezervare mai rapid",
-            "1": "Feedback pozitiv de la utilizatori",
-            "2": "Rezervări online în creștere"
+          "groups": {
+            "interface": {
+              "title": "Interfața completă",
+              "description": "O privire pe lungime asupra UI-ului de rezervare și urmărire curierat, de la primul pas până la statusul livrării."
+            }
           }
         },
         "epic_trans_logistics": {
-          "description": "Un site web modern pentru o companie de logistică și transport cu urmărire în timp real, managementul rezervărilor și informații complete despre servicii. Designul pune accent pe încredere, fiabilitate și acces ușor la serviciile cheie de transport.",
-          "challenge": "Proiectează o prezență digitală profesională și de încredere pentru o companie de logistică care gestionează transportul internațional de marfă, făcând serviciile complexe accesibile și ușor de înțeles pentru clienți.",
-          "solution": "Am creat un site web modern și prietenos cu prezentare clară a serviciilor, integrare de urmărire în timp real și suport multilingv. Designul se concentrează pe construirea încrederii prin transparență și acces ușor la informațiile cheie.",
-          "impact": "Am obținut îmbunătățiri semnificative în prezența online și achiziționarea de clienți, cu o implicare sporită a utilizatorilor și un proces de rezervare a serviciilor optimizat.",
-          "features": {
-            "0": "Urmărire GPS în Timp Real",
-            "1": "Suport Multilingv",
-            "2": "Sistem de Rezervare Servicii",
-            "3": "Hărți de Rute Interactive",
-            "4": "Testimoniale Clienți",
-            "5": "Statistici Performanță",
-            "6": "Management Contacte"
+          "description": "Am ajutat Epic Trans Logistics să își construiască o prezență online profesională pentru cargo și logistică internațională. Clienții pot vedea serviciile, înțelege acoperirea și contacta echipa fără să caute prin pagini neclare.\n\nSite-ul pune accent pe încredere și fiabilitate — detaliile serviciilor, contextul de urmărire și căile de contact sunt ușor de găsit, astfel încât solicitările de transport se transformă mai rapid în lucrări rezervate.\n\nCitiți recenzia clientului pentru a afla mai multe despre experiența sa.",
+          "review": {
+            "quote": "Recomand Codava! Au ajutat afacerea noastră de logistică cu un logo, cărți de vizită și un site web atractiv pentru clienți."
           },
-          "design_process": {
-            "0": {
-              "phase": "Cercetare și Analiză",
-              "details": "Am efectuat analiză competitivă și cercetare a utilizatorilor pentru a identifica funcțiile cheie și așteptările utilizatorilor în site-urile de logistică."
+          "groups": {
+            "home": {
+              "title": "Pagina principală",
+              "description": "Un punct clar de intrare pentru servicii de logistică, cu semnale de încredere și drum direct spre rezervare sau contact."
             },
-            "1": {
-              "phase": "Strategie UX",
-              "details": "Am dezvoltat fluxuri de utilizatori și arhitectură informațională concentrându-ne pe accesul ușor la serviciile de urmărire și rezervare."
+            "services": {
+              "title": "Servicii",
+              "description": "Opțiunile de transport sunt prezentate simplu, ca clienții să înțeleagă acoperirea și să aleagă serviciul potrivit."
             },
-            "2": {
-              "phase": "Design Vizual",
-              "details": "Am creat un limbaj vizual profesional cu accent pe încredere și fiabilitate prin layout-uri curate și tipografie clară."
+            "tracking": {
+              "title": "Urmărire",
+              "description": "Statusul expedierii și contextul rutei rămân în față pentru clienții care au nevoie de actualizări rapide."
             },
-            "3": {
-              "phase": "Implementare",
-              "details": "Am construit layout-uri responsive și am integrat funcții de urmărire în timp real cu accent pe performanță și ușurință în utilizare."
+            "contact": {
+              "title": "Contact",
+              "description": "Modalități directe de a ajunge la echipă, astfel încât solicitările să se transforme ușor în transport rezervat."
             }
-          },
-          "results": "Am îmbunătățit semnificativ prezența online, achiziționarea de clienți și implicarea utilizatorilor pentru serviciile de logistică.",
-          "achievements": {
-            "0": "Rating 100% Calitate Serviciu",
-            "1": "Acoperire 50+ Orașe",
-            "2": "150+ Clienți Mulțumiți",
-            "3": "Experiență Utilizator Optimizată"
           }
         },
         "eurotour_moldova": {
-          "description": "Un proiect complet de design UI/UX pentru un serviciu de transport care conectează Moldova cu destinații europene. Sistemul de design prioritizează experiența utilizatorului cu navigare intuitivă, call-to-actions clare și flux de rezervare fără probleme.",
-          "challenge": "Creează o platformă de rezervare intuitivă și accesibilă care servește grupuri diverse de utilizatori în mai multe limbi, menținând în același timp o identitate de brand consistentă și o experiență optimă a utilizatorului pe toate dispozitivele.",
-          "solution": "Am dezvoltat un sistem de design cuprinzător în Figma cu componente modulare, tipografie consistentă și o schemă de culori care îmbunătățește lizibilitatea. Am implementat funcții centrate pe utilizator bazate pe cercetare și testare extinsă a utilizatorilor.",
-          "impact": "Noul design a rezultat într-o creștere de 150% a rezervărilor online, o îmbunătățire de 80% a implicării utilizatorilor și o reducere semnificativă a ratelor de abandonare a rezervărilor. Interfața intuitivă a primit un rating de satisfacție a utilizatorilor de 4.9/5.",
-          "features": {
-            "0": "Sistem de Design Personalizat",
-            "1": "Prototipuri Interactive",
-            "2": "Optimizare Flux Utilizator",
-            "3": "Ghiduri Accesibilitate",
-            "4": "Layout-uri Responsive",
-            "5": "Design de Animație",
-            "6": "Identitate Vizuală"
+          "description": "Am ajutat EuroTour Moldova să transforme serviciul de transport internațional într-o experiență digitală de rezervare clară. Pasagerii pot înțelege rutele dintre Moldova și destinațiile europene, urma un flux scurt de rezervare și acționa pe call-to-actions clare, fără să ghicească următorul pas.\n\nSistemul UI/UX acoperă navigarea, layout-urile și identitatea vizuală, astfel încât brandul rămâne consistent pe fiecare ecran, de la prima vizită până la confirmarea călătoriei.\n\nCitiți recenzia clientului pentru a afla mai multe despre experiența sa.",
+          "review": {
+            "quote": "Site-ul modern și de înaltă calitate pe care l-au construit pentru compania noastră de transport este rapid, se clasează bine, atrage clienți și crește vizibilitatea."
           },
-          "design_process": {
-            "0": {
-              "phase": "Cercetare și Descoperire",
-              "details": "Am efectuat interviuri cu utilizatorii, analiză competitivă și am creat personaje de utilizatori pentru a înțelege nevoile publicului țintă."
+          "groups": {
+            "overview": {
+              "title": "Prezentare brand",
+              "description": "Identitatea vizuală și ecranele principale pentru serviciul de transport Moldova–Europa, construite în jurul rezervării clare."
             },
-            "1": {
-              "phase": "Arhitectură Informațională",
-              "details": "Am dezvoltat structură de navigare intuitivă și fluxuri de utilizatori optimizate pentru procesul de rezervare."
-            },
-            "2": {
-              "phase": "Wireframing",
-              "details": "Am creat wireframe-uri de joasă și înaltă fidelitate cu accent pe călătoria utilizatorului și optimizarea conversiei."
-            },
-            "3": {
-              "phase": "Sistem de Design",
-              "details": "Am construit un sistem de design cuprinzător cu componente reutilizabile, tipografie și scheme de culori."
-            },
-            "4": {
-              "phase": "Prototipare",
-              "details": "Am dezvoltat prototipuri interactive pentru testarea utilizatorilor și feedback-ul părților interesate."
-            },
-            "5": {
-              "phase": "Testare și Iterare",
-              "details": "Am efectuat testare de utilizabilitate și îmbunătățiri iterative bazate pe feedback-ul utilizatorilor."
+            "booking": {
+              "title": "Experiența de rezervare",
+              "description": "Un layout concentrat pe rezervare, cu selectarea rutei și call-to-actions care țin fluxul scurt."
             }
-          },
-          "results": "Creștere de 150% a rezervărilor online, îmbunătățire de 80% a implicării și rating de satisfacție a utilizatorilor de 4.9/5.",
-          "achievements": {
-            "0": "Reducere cu 40% a pașilor procesului de rezervare",
-            "1": "Creștere cu 95% a ratei de conversie pe mobil",
-            "2": "Îmbunătățire a scorului de accesibilitate la 98",
-            "3": "Rating de satisfacție a utilizatorilor 4.9/5",
-            "4": "Prezentat pe Behance și Dribbble"
           }
         },
         "pure_bmwm_ecommerce": {
-          "description": "Platformă modernă de e-commerce pentru mărfuri auto cu inventar în timp real, plăți sigure și o experiență de cumpărare fără probleme.",
-          "challenge": "Construirea unei platforme de e-commerce scalabile cu urmărire a inventarului în timp real, multiple opțiuni de plată și un design responsive care menține performanță ridicată pe toate dispozitivele.",
-          "solution": "Echipa noastră a implementat:\n\n• Next.js pentru renderizare server-side și SEO optim\n• Management inventar în timp real cu MongoDB și Redis\n• Integrare Stripe cu multiple metode de plată\n• Flux personalizat de coș și checkout\n• Notificări email automate cu SendGrid\n• AWS S3 pentru optimizare și livrare imagini produse\n• Design responsive cu Tailwind CSS\n• Optimizare performanță cu lazy loading imagini și caching",
-          "impact": "Realizări tehnice:\n\n• Scor Google PageSpeed 98/100\n• Timp mediu de încărcare pagină 0.8s\n• Uptime 99.9% pe deployment Vercel\n• Imagini optimizate reducând timpul de încărcare cu 60%\n• Caching eficient implementat reducând încărcarea serverului\n• Design responsive mobile-first",
-          "features": {
-            "0": "Renderizare Server-side",
-            "1": "Inventar în Timp Real",
-            "2": "Gateway Multi-plăți",
-            "3": "Optimizare Imagini",
-            "4": "Automatizare Email",
-            "5": "Caching Performanță"
-          },
-          "results": "Am lansat o platformă de e-commerce de înaltă performanță cu sisteme avansate de inventar și plăți."
+          "description": "Am construit PURE.BMWM ca o platformă modernă de e-commerce pentru mărfuri auto. Cumpărătorii pot răsfoi colecții, verifica carduri de produs cu stoc actualizat și finaliza cumpărăturile printr-un checkout sigur pe desktop și mobil.\n\nÎn spatele magazinului, stiva tehnologică susține inventar în timp real, multiple opțiuni de plată, media de produs optimizată și o experiență responsivă care rămâne rapidă pe măsură ce catalogul crește.",
+          "groups": {
+            "storefront": {
+              "title": "Magazin",
+              "description": "Magazinul desktop se deschide pe produse evidențiate, colecții și un drum clar spre catalog."
+            },
+            "catalog": {
+              "title": "Catalog produse",
+              "description": "Răsfoire pe grilă pentru mărfuri auto, cu carduri care țin cont de stoc și intrare rapidă în produs."
+            },
+            "checkout": {
+              "title": "Checkout",
+              "description": "Un flux de cumpărare concentrat, cu plăți sigure și un drum scurt de la coș la confirmare."
+            },
+            "mobile_home": {
+              "title": "Magazin mobil",
+              "description": "Aceeași ofertă pe telefon: produse evidențiate, navigare și acțiuni de cumpărare pentru o mână."
+            },
+            "mobile_product": {
+              "title": "Produs mobil",
+              "description": "Detaliile produsului și acțiunile de cumpărare se așază clar pentru shopping din mers."
+            },
+            "mobile_cart": {
+              "title": "Coș mobil",
+              "description": "Revizuirea coșului și checkout-ul rămân compacte, ca utilizatorul să termine fără zoom sau căutări."
+            },
+            "mobile_profile": {
+              "title": "Cont mobil",
+              "description": "Contul și punctele de contact pentru comenzi rămân accesibile după cumpărare."
+            },
+            "mobile_extra": {
+              "title": "Răsfoire mobilă",
+              "description": "Ecrane mobile suplimentare pentru explorarea produselor pe ecrane mici."
+            }
+          }
         },
         "rollwithdraw_platform": {
-          "description": "O platformă completă de tranzacționare cu plăți sigure în criptomonede, integrare WebSocket în timp real și sisteme automate de tranzacționare.",
-          "challenge": "Dezvoltarea unei platforme de tranzacționare sigure și de înaltă performanță care ar putea gestiona mii de utilizatori simultani menținând în același timp sincronizarea datelor în timp real și procesarea sigură a plăților.",
-          "solution": "Echipa noastră a implementat:\n\n• Sistem de autentificare utilizator sigur cu JWT și 2FA\n• Integrare gateway de plată criptomonede (USDC, ETH, USDT)\n• Comunicare WebSocket în timp real pentru actualizări date live\n• Strat de caching Redis pentru acces la date de înaltă performanță\n• Sistem automat de tranzacționare cu algoritmi personalizați\n• Sistem Discord OAuth și notificări webhook\n• Arhitectură server cu load balancing pentru disponibilitate ridicată",
-          "impact": "Realizări tehnice:\n\n• Timp mediu de răspuns 50ms pentru operațiuni în timp real\n• Uptime sistem 99.9%\n• Procesat cu succes peste 1M$ în tranzacții crypto\n• Scalat pentru a gestiona peste 10.000 de utilizatori simultani\n• Redus costurile serverului cu 40% prin optimizare\n• Atins conformitate PCI DSS pentru procesarea plăților",
-          "features": {
-            "0": "Autentificare JWT și 2FA",
-            "1": "Plăți Crypto Multi-monedă",
-            "2": "Actualizări WebSocket în Timp Real",
-            "3": "Caching Performanță Redis",
-            "4": "Motor Automat de Tranzacționare",
-            "5": "Integrare Discord"
-          },
-          "results": "Am livrat o platformă de tranzacționare sigură și scalabilă cu plăți crypto în timp real și automatizare."
+          "description": "Am dezvoltat RollWithdraw ca o platformă de tranzacționare gândită pentru activitate crypto în timp real. Utilizatorii pot urmări solduri, date de piață și statusul plăților într-un singur loc, iar actualizările WebSocket țin interfața sincronizată.\n\nProdusul acoperă și autentificare sigură, fluxuri de plată crypto și o arhitectură orientată pe performanță, astfel încât platforma rămâne responsivă sub utilizare concurentă.",
+          "groups": {
+            "dashboard": {
+              "title": "Panou de tranzacționare",
+              "description": "Solduri live, activitate și statusul plăților crypto stau într-o singură vedere desktop pentru traderi activi."
+            },
+            "trading": {
+              "title": "Vedere tranzacționare",
+              "description": "Datele de piață și acțiunile rămân sincronizate prin interfața bazată pe WebSocket."
+            },
+            "payments": {
+              "title": "Plăți",
+              "description": "Fluxuri sigure de checkout și retragere crypto, prezentate clar pe desktop."
+            },
+            "mobile_home": {
+              "title": "Panou mobil",
+              "description": "Soldurile și acțiunile cheie se comprimă pe telefon fără a pierde contextul de tranzacționare."
+            },
+            "mobile_trade": {
+              "title": "Tranzacționare mobilă",
+              "description": "Controalele de tranzacționare și plată rămân ușor de atins pe ecrane mici."
+            }
+          }
         }
       }
     }
@@ -1171,8 +1166,10 @@
   "contact_page": {
     "hero": {
       "badge": "Contact",
-      "title_line1": "Hai să discutăm despre",
-      "title_highlight": "proiectul dvs.",
+      "title_line1": "Hai să discutăm",
+      "title_highlight": "despre proiectul dvs.",
+      "title_line1_mobile": "Hai să discutăm",
+      "title_highlight_mobile": "despre proiectul dvs.",
       "title_line2": "",
       "description": "Spuneți-ne de ce aveți nevoie — site, design, automatizare sau creștere. Răspundem în câteva ore.",
       "button": "Începe Proiectul",
@@ -1274,7 +1271,7 @@
       "service_categories": {
         "development_design": "Dezvoltare & Design",
         "marketing_content": "Marketing & Conținut",
-        "analytics_tracking": "Analytics & Tracking"
+        "analytics_tracking": "Meta Ads"
       },
       "services": {
         "web_development": "Dezvoltare Web",
@@ -1282,7 +1279,7 @@
         "bot_automation": "Automatizare AI",
         "seo": "SEO",
         "copywriting": "Copywriting",
-        "analytics_tracking": "Analytics & Tracking"
+        "analytics_tracking": "Meta Ads"
       },
       "button": {
         "send": "Trimite mesajul",

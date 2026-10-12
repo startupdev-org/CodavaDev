@@ -2,6 +2,7 @@
   "hero": {
     "badge": "Chișinău · Moldova",
     "title": "Websites, apps, automation",
+    "title_mobile": "Digital Solutions",
     "title_highlight": "for growing businesses",
     "description": "We help businesses grow online — from a strong digital presence to smoother operations and clearer results.",
     "cta_primary": "Let's talk",
@@ -18,6 +19,8 @@
     "portfolio": "Our Work",
     "faq": "FAQ",
     "contact": "Contact",
+    "language_ro": "Romanian",
+    "language_en": "English",
     "web_development": "Web Development",
     "full_stack_development": "Full Stack Development",
     "design": "Design",
@@ -25,7 +28,7 @@
     "digital_advertising": "Digital Advertising",
     "copywriting": "Copywriting",
     "bot_automation": "Bot Automation",
-    "analytics_tracking": "Analytics & Tracking"
+    "analytics_tracking": "Meta Ads"
   },
   "header": {
     "marketing_content": "Marketing & Content",
@@ -146,12 +149,12 @@
       ]
     },
     "analytics": {
-      "title": "Analytics & Tracking",
-      "description": "See what works, measure results, and make decisions based on real data.",
+      "title": "Meta Ads",
+      "description": "Facebook and Instagram campaigns, set up and ready to run — tracking, audiences, and ads.",
       "features": [
-        "Google Analytics",
-        "Conversion Tracking",
-        "Clear Reports"
+        "Pixel setup",
+        "Audiences",
+        "Campaign launch"
       ]
     },
     "copywriting": {
@@ -172,7 +175,7 @@
     "questions": [
       {
         "question": "What types of projects can we help you with?",
-        "answer": "Websites, apps, design, automation, SEO, copywriting, and analytics — tailored to your business goals."
+        "answer": "Websites, apps, design, automation, SEO, copywriting, and Meta ads — tailored to your business goals."
       },
       {
         "question": "Do you offer support after launch?",
@@ -692,166 +695,158 @@
       "view_details": "View",
       "detail": {
         "breadcrumb": "Back to projects",
-        "gallery": "Gallery",
-        "challenge": "Challenge",
-        "solution": "Solution",
-        "impact": "Impact",
-        "design_process": "Design Process",
-        "core_features": "Core Features",
-        "technologies_tools": "Technologies & Tools",
-        "results_impact": "Results & Impact",
-        "key_achievements": "Key Achievements"
+        "visit_site": "Visit site",
+        "previous": "Previous",
+        "next": "Next",
+        "close": "Close"
       },
       "projects": {
-        "senda_courier": {
-          "description": "A modern, user-friendly web design for SendACourier, focusing on intuitive UI/UX for seamless courier service booking and tracking.",
-          "challenge": "Design a simple and effective interface for users to quickly book and track courier services online.",
-          "solution": "Developed a clean, responsive UI with clear call-to-actions and a streamlined booking process, ensuring accessibility and ease of use.",
-          "impact": "Improved user engagement and reduced booking time, resulting in higher customer satisfaction and increased service adoption.",
-          "features": {
-            "0": "Responsive Web Design",
-            "1": "Intuitive Booking Flow",
-            "2": "Real-time Tracking UI"
+        "level_auto_rental": {
+          "description": "We helped Level Auto Rental transform its online presence from social media and a basic Canva page into a professional car rental platform. Customers can now explore the vehicle fleet, select rental dates, and view automatically calculated rental prices.\n\nThe website also features a dedicated admin dashboard, allowing the owner to manage vehicles, monitor booking requests and availability, and track website traffic.\n\nRead the client's review to learn more about their experience.",
+          "review": {
+            "quote": "The entire process was well-organized and efficient, with a professional approach and great attention to detail. Everything was delivered on time, and the final result met my expectations in terms of both quality and functionality.",
+            "note": "I'm very satisfied with the work and the website developed for my company."
           },
-          "design_process": {
-            "0": {
-              "phase": "Research & Planning",
-              "details": "Analyzed user needs and competitor platforms to define key features and user flows."
+          "groups": {
+            "home": {
+              "title": "Homepage",
+              "description": "The page opens on the fleet, with a call, a way into the cars, and search by brand, model, and location. On mobile the offer becomes a card: photos, specs, the daily price in MDL, and a rent button."
             },
-            "1": {
-              "phase": "Wireframing & Prototyping",
-              "details": "Created wireframes and interactive prototypes to validate the booking and tracking experience."
+            "admin": {
+              "title": "Admin dashboard",
+              "description": "Sales, orders, average price, and fleet status sit at the top, then which cars are available or out. On mobile the same numbers stack, and requests, cars, and the calendar stay one tap away."
             },
-            "2": {
-              "phase": "Visual Design",
-              "details": "Designed a modern, brand-aligned interface with a focus on clarity and usability."
+            "catalog": {
+              "title": "Fleet catalog",
+              "description": "A filterable grid. Each car shows availability, year, mileage, transmission, fuel, drivetrain, and the daily price, with rent as the next step."
+            },
+            "car": {
+              "title": "Car page",
+              "description": "Photos and specs sit next to the booking. Dates and times calculate the total, with phone and Telegram if the visitor would rather talk."
+            },
+            "reviews": {
+              "title": "Reviews",
+              "description": "A rating, the customer's words, and the Google source sit on the page, so the proof is next to the cars."
+            },
+            "pricing": {
+              "title": "Rental price calculator",
+              "description": "Pickup and return become a total in MDL. The visitor can call, write on Telegram, or book from the same panel."
             }
+          }
+        },
+        "senda_courier": {
+          "description": "We redesigned Senda Courier’s digital booking experience so sending a parcel feels straightforward. Users can move from request to tracking with clearer actions, a cleaner layout, and a flow built for speed on every device.\n\nThe work covered UI/UX, brand touchpoints such as logo and cards, and a visual system that makes the courier service look modern and easy to trust.\n\nRead the client's review to learn more about their experience.",
+          "review": {
+            "quote": "I worked with Codava on redesign, logo, and cards; the site's innovative and results were fast, professional."
           },
-          "results": "Enabled fast, user-friendly courier bookings and improved customer satisfaction.",
-          "achievements": {
-            "0": "Faster booking process",
-            "1": "Positive user feedback",
-            "2": "Increased online bookings"
+          "groups": {
+            "interface": {
+              "title": "Full interface",
+              "description": "A long-form look at the courier booking and tracking UI, from first action through delivery status."
+            }
           }
         },
         "epic_trans_logistics": {
-          "description": "A modern logistics and transportation company website featuring real-time tracking, booking management, and comprehensive service information. The design emphasizes trust, reliability, and ease of access to key transportation services.",
-          "challenge": "Design a professional and trustworthy digital presence for a logistics company that handles international cargo transportation, making complex services accessible and easy to understand for clients.",
-          "solution": "Created a modern, user-friendly website with clear service presentation, real-time tracking integration, and multilingual support. The design focuses on building trust through transparency and easy access to key information.",
-          "impact": "Achieved significant improvements in online presence and client acquisition, with enhanced user engagement and streamlined service booking process.",
-          "features": {
-            "0": "Real-time GPS Tracking",
-            "1": "Multi-language Support",
-            "2": "Service Booking System",
-            "3": "Interactive Route Maps",
-            "4": "Client Testimonials",
-            "5": "Performance Statistics",
-            "6": "Contact Management"
+          "description": "We helped Epic Trans Logistics build a professional online presence for international cargo and logistics. Clients can review services, understand coverage, and reach the team without hunting through unclear pages.\n\nThe website emphasizes trust and reliability—service details, tracking context, and contact paths are easy to find, so freight inquiries turn into booked work faster.\n\nRead the client's review to learn more about their experience.",
+          "review": {
+            "quote": "I recommend Codava! They helped our logistics business with a logo, business cards, and a client-attracting website."
           },
-          "design_process": {
-            "0": {
-              "phase": "Research & Analysis",
-              "details": "Conducted competitor analysis and user research to identify key features and user expectations in logistics websites."
+          "groups": {
+            "home": {
+              "title": "Homepage",
+              "description": "A clear entry point for logistics services, with trust signals and a direct path to booking or contact."
             },
-            "1": {
-              "phase": "UX Strategy",
-              "details": "Developed user flows and information architecture focusing on easy access to tracking and booking services."
+            "services": {
+              "title": "Services",
+              "description": "Transport options presented simply so clients can understand coverage and choose the right service."
             },
-            "2": {
-              "phase": "Visual Design",
-              "details": "Created a professional visual language with emphasis on trust and reliability through clean layouts and clear typography."
+            "tracking": {
+              "title": "Tracking",
+              "description": "Shipment status and route context stay front and center for clients who need updates fast."
             },
-            "3": {
-              "phase": "Implementation",
-              "details": "Built responsive layouts and integrated real-time tracking features with focus on performance and usability."
+            "contact": {
+              "title": "Contact",
+              "description": "Direct ways to reach the team, so inquiries turn into booked freight without friction."
             }
-          },
-          "results": "Significantly improved online presence, client acquisition, and user engagement for logistics services.",
-          "achievements": {
-            "0": "100% Service Quality Rating",
-            "1": "50+ Cities Coverage",
-            "2": "150+ Satisfied Clients",
-            "3": "Optimized User Experience"
           }
         },
         "eurotour_moldova": {
-          "description": "A comprehensive UI/UX design project for a transportation service connecting Moldova with European destinations. The design system prioritizes user experience with intuitive navigation, clear call-to-actions, and seamless booking flow.",
-          "challenge": "Create an intuitive and accessible booking platform that caters to diverse user groups across multiple languages while maintaining a consistent brand identity and optimal user experience across all devices.",
-          "solution": "Developed a comprehensive design system in Figma with modular components, consistent typography, and a color scheme that enhances readability. Implemented user-centric features based on extensive user research and testing.",
-          "impact": "The new design resulted in a 150% increase in online bookings, 80% improvement in user engagement, and significantly reduced booking abandonment rates. The intuitive interface received a 4.9/5 user satisfaction rating.",
-          "features": {
-            "0": "Custom Design System",
-            "1": "Interactive Prototypes",
-            "2": "User Flow Optimization",
-            "3": "Accessibility Guidelines",
-            "4": "Responsive Layouts",
-            "5": "Motion Design",
-            "6": "Visual Identity"
+          "description": "We helped EuroTour Moldova turn its cross-border transport service into a clear digital booking experience. Passengers can understand routes between Moldova and European destinations, follow a short booking flow, and act on clear calls to action without guessing the next step.\n\nThe UI/UX system covers navigation, layouts, and visual identity so the brand stays consistent on every screen, from first visit to confirmed trip.\n\nRead the client's review to learn more about their experience.",
+          "review": {
+            "quote": "The modern, high-quality website they built for our transport company is fast, ranks high, attracts clients, and elevates visibility."
           },
-          "design_process": {
-            "0": {
-              "phase": "Research & Discovery",
-              "details": "Conducted user interviews, competitive analysis, and created user personas to understand target audience needs."
+          "groups": {
+            "overview": {
+              "title": "Brand overview",
+              "description": "The visual identity and main screens for the Moldova–Europe transport service, built around clear booking actions."
             },
-            "1": {
-              "phase": "Information Architecture",
-              "details": "Developed intuitive navigation structure and user flows optimized for the booking process."
-            },
-            "2": {
-              "phase": "Wireframing",
-              "details": "Created low and high-fidelity wireframes with focus on user journey and conversion optimization."
-            },
-            "3": {
-              "phase": "Design System",
-              "details": "Built a comprehensive design system with reusable components, typography, and color schemes."
-            },
-            "4": {
-              "phase": "Prototyping",
-              "details": "Developed interactive prototypes for user testing and stakeholder feedback."
-            },
-            "5": {
-              "phase": "Testing & Iteration",
-              "details": "Conducted usability testing and iterative improvements based on user feedback."
+            "booking": {
+              "title": "Booking experience",
+              "description": "A focused booking layout with route selection and call-to-actions that keep the trip flow short."
             }
-          },
-          "results": "150% increase in online bookings, 80% improvement in engagement, and 4.9/5 user satisfaction.",
-          "achievements": {
-            "0": "Reduced booking process steps by 40%",
-            "1": "Increased mobile conversion rate by 95%",
-            "2": "Improved accessibility score to 98",
-            "3": "4.9/5 user satisfaction rating",
-            "4": "Featured on Behance and Dribbble"
           }
         },
         "pure_bmwm_ecommerce": {
-          "description": "Modern e-commerce platform for automotive merchandise featuring real-time inventory, secure payments, and a seamless shopping experience.",
-          "challenge": "Building a scalable e-commerce platform with real-time inventory tracking, multiple payment options, and a responsive design that maintains high performance across all devices.",
-          "solution": "Our team implemented:\n\n• Next.js for server-side rendering and optimal SEO\n• Real-time inventory management with MongoDB and Redis\n• Stripe integration with multiple payment methods\n• Custom cart and checkout flow\n• Automated email notifications with SendGrid\n• AWS S3 for product image optimization and delivery\n• Responsive design with Tailwind CSS\n• Performance optimization with image lazy loading and caching",
-          "impact": "Technical achievements:\n\n• 98/100 Google PageSpeed score\n• 0.8s average page load time\n• 99.9% uptime on Vercel deployment\n• Optimized images reducing load time by 60%\n• Implemented efficient caching reducing server load\n• Mobile-first responsive design",
-          "features": {
-            "0": "Server-side Rendering",
-            "1": "Real-time Inventory",
-            "2": "Multi-payment Gateway",
-            "3": "Image Optimization",
-            "4": "Email Automation",
-            "5": "Performance Caching"
-          },
-          "results": "Launched a high-performance e-commerce platform with advanced inventory and payment systems."
+          "description": "We built PURE.BMWM as a modern e-commerce platform for automotive merchandise. Shoppers can browse collections, check inventory-aware product cards, and complete purchases through a secure checkout on desktop and mobile.\n\nBehind the storefront, the stack supports real-time inventory, multiple payment options, optimized product media, and a responsive experience that stays fast as the catalog grows.",
+          "groups": {
+            "storefront": {
+              "title": "Storefront",
+              "description": "The desktop store opens on featured merchandise, collections, and a clear path into the catalog."
+            },
+            "catalog": {
+              "title": "Product catalog",
+              "description": "Grid browsing for automotive merchandise with inventory-aware cards and quick product entry."
+            },
+            "checkout": {
+              "title": "Checkout",
+              "description": "A focused purchase flow with secure payments and a short path from cart to confirmation."
+            },
+            "mobile_home": {
+              "title": "Mobile storefront",
+              "description": "The same offer on phone: featured items, navigation, and shop actions sized for one hand."
+            },
+            "mobile_product": {
+              "title": "Mobile product",
+              "description": "Product details and buy actions stack cleanly for shopping on the go."
+            },
+            "mobile_cart": {
+              "title": "Mobile cart",
+              "description": "Cart review and checkout stay compact so buyers can finish without zooming or hunting."
+            },
+            "mobile_profile": {
+              "title": "Mobile account",
+              "description": "Account and order touchpoints stay reachable after purchase."
+            },
+            "mobile_extra": {
+              "title": "Mobile browsing",
+              "description": "Additional mobile screens for browsing and product discovery on smaller viewports."
+            }
+          }
         },
         "rollwithdraw_platform": {
-          "description": "A comprehensive trading platform featuring secure cryptocurrency payments, real-time WebSocket integration, and automated trading systems.",
-          "challenge": "Developing a secure, high-performance trading platform that could handle thousands of concurrent users while maintaining real-time data synchronization and secure payment processing.",
-          "solution": "Our team implemented:\n\n• Secure user authentication system with JWT and 2FA\n• Cryptocurrency payment gateway integration (USDC, ETH, USDT)\n• Real-time WebSocket communication for live data updates\n• Redis caching layer for high-performance data access\n• Automated trading system with custom algorithms\n• Discord OAuth and webhook notifications system\n• Load-balanced server architecture for high availability",
-          "impact": "Technical achievements:\n\n• 50ms average response time for real-time operations\n• 99.9% system uptime\n• Successfully processed $1M+ in crypto transactions\n• Scaled to handle 10,000+ concurrent users\n• Reduced server costs by 40% through optimization\n• Achieved PCI DSS compliance for payment processing",
-          "features": {
-            "0": "JWT Authentication & 2FA",
-            "1": "Multi-Currency Crypto Payments",
-            "2": "WebSocket Real-time Updates",
-            "3": "Redis Performance Caching",
-            "4": "Automated Trading Engine",
-            "5": "Discord Integration"
-          },
-          "results": "Delivered a secure, scalable trading platform with real-time crypto payments and automation."
+          "description": "We developed RollWithdraw as a trading platform built for real-time crypto activity. Users can follow balances, market data, and payment status in one place, with WebSocket updates keeping the interface in sync.\n\nThe product also covers secure authentication, crypto payment flows, and performance-focused architecture so the platform stays responsive under concurrent use.",
+          "groups": {
+            "dashboard": {
+              "title": "Trading dashboard",
+              "description": "Live balances, activity, and crypto payment status sit in one desktop view for active traders."
+            },
+            "trading": {
+              "title": "Trading view",
+              "description": "Real-time market data and actions stay synchronized through the WebSocket-backed interface."
+            },
+            "payments": {
+              "title": "Payments",
+              "description": "Secure crypto checkout and withdrawal flows presented clearly on desktop."
+            },
+            "mobile_home": {
+              "title": "Mobile dashboard",
+              "description": "Key balances and actions compress into a phone layout without losing the trading context."
+            },
+            "mobile_trade": {
+              "title": "Mobile trading",
+              "description": "Trading and payment controls remain reachable on smaller screens."
+            }
+          }
         }
       }
     }
@@ -1172,6 +1167,8 @@
       "badge": "Contact",
       "title_line1": "Let's talk about",
       "title_highlight": "your project",
+      "title_line1_mobile": "Let's talk",
+      "title_highlight_mobile": "about your project",
       "title_line2": "",
       "description": "Tell us what you need — a website, design, automation, or growth. We reply within a few hours.",
       "button": "Start Your Project",
@@ -1273,7 +1270,7 @@
       "service_categories": {
         "development_design": "Development & Design",
         "marketing_content": "Marketing & Content",
-        "analytics_tracking": "Analytics & Tracking"
+        "analytics_tracking": "Meta Ads"
       },
       "services": {
         "web_development": "Web Development",
@@ -1281,7 +1278,7 @@
         "bot_automation": "AI Automation",
         "seo": "SEO",
         "copywriting": "Copywriting",
-        "analytics_tracking": "Analytics & Tracking"
+        "analytics_tracking": "Meta Ads"
       },
       "button": {
         "send": "Send message",

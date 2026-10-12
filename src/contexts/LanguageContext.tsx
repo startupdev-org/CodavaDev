@@ -34,6 +34,7 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { pathname } = useLocation();
   const language = localeFromPath(pathname);
+  i18n.applyLanguage(language);
 
   useLayoutEffect(() => {
     document.documentElement.lang = language;
