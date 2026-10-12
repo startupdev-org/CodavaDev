@@ -11,6 +11,10 @@ class BasicI18n {
   };
   private listeners: Array<() => void> = [];
 
+  applyLanguage(lang: string) {
+    this.currentLanguage = lang;
+  }
+
   changeLanguage(lang: string) {
     if (this.currentLanguage === lang) return Promise.resolve();
     this.currentLanguage = lang;

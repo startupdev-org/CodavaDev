@@ -7,8 +7,7 @@ import {
   StaggerItem,
 } from "../../../../components/ui/animated-elements";
 import { MdOutlinePalette } from "react-icons/md";
-import { LuPen } from "react-icons/lu";
-import { ChartBarIcon } from "@heroicons/react/24/outline";
+import { LuPen, LuMegaphone } from "react-icons/lu";
 import { useTranslation } from "../../../../contexts/LanguageContext";
 
 export const FeaturedPropertiesSection = () => {
@@ -18,11 +17,11 @@ export const FeaturedPropertiesSection = () => {
 
   const serviceKeys = [
     "web_development",
+    "analytics",
     "ai_automation",
     "design",
     "seo",
     "copywriting",
-    "analytics",
   ] as const;
 
   const serviceIcons: Record<(typeof serviceKeys)[number], ReactNode> = {
@@ -43,7 +42,7 @@ export const FeaturedPropertiesSection = () => {
       </svg>
     ),
     copywriting: <LuPen className="h-6 w-6" />,
-    analytics: <ChartBarIcon className="h-6 w-6" />,
+    analytics: <LuMegaphone className="h-6 w-6" />,
   };
 
   const services = serviceKeys.map((key) => ({

@@ -1,13 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useLanguage } from "../contexts/LanguageContext";
+import { useLocation } from "react-router-dom";
+import { useLanguage, useTranslation } from "../contexts/LanguageContext";
 import { withLocale } from "../lib/localePath";
 import globeIcon from "/globe-black.png";
 
 const OPTIONS = [
-  { code: "ro", label: "RO" },
-  { code: "en", label: "EN" },
+  { code: "ro", labelKey: "navigation.language_ro" },
+  { code: "en", labelKey: "navigation.language_en" },
 ] as const;
 
 type LanguageSelectorProps = {
@@ -20,35 +20,43 @@ export const LanguageSelector = ({
   className = "",
 }: LanguageSelectorProps) => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
+  const { t } = useTranslation();
   const location = useLocation();
   const [open, setOpen] = useState(false);
-  const [coords, setCoords] = useState({ top: 0, left: 0 });
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const isNav = variant === "nav";
 
   const updatePosition = () => {
     const trigger = rootRef.current;
-    if (!trigger) return;
+    const menu = menuRef.current;
+    if (!trigger || !menu) return;
 
     const rect = trigger.getBoundingClientRect();
-    const menu = menuRef.current;
-    const menuWidth = menu?.offsetWidth ?? 96;
-    const menuHeight = menu?.offsetHeight ?? 40;
+    const menuWidth = menu.offsetWidth || 132;
+    const menuHeight = menu.offsetHeight || 88;
     const gap = 10;
-
-    setCoords({
+    const next = {
       left: Math.min(
         Math.max(8, rect.left + rect.width / 2 - menuWidth / 2),
         window.innerWidth - menuWidth - 8
       ),
-      top: isNav ? rect.bottom + gap : rect.top - menuHeight - gap,
-    });
+      top: isNav ? rect.bottom + gap : Math.max(8, rect.top - menuHeight - gap),
+    };
+
+    menu.style.top = `${next.top}px`;
+    menu.style.left = `${next.left}px`;
+    menu.style.visibility = "visible";
+    setCoords(next);
   };
 
   useLayoutEffect(() => {
-    if (open) updatePosition();
+    if (!open) {
+      setCoords(null);
+      return;
+    }
+    updatePosition();
   }, [open, isNav]);
 
   useEffect(() => {
@@ -96,7 +104,7 @@ export const LanguageSelector = ({
           src={globeIcon}
           alt=""
           aria-hidden
-          className={`${isNav ? "w-[18px] h-[18px]" : "w-4 h-4"} brightness-0 invert`}
+          className={`${isNav ? "h-[18px] w-[18px]" : "h-4 w-4"} brightness-0 invert`}
         />
       </button>
 
@@ -106,10 +114,14 @@ export const LanguageSelector = ({
             ref={menuRef}
             role="listbox"
             aria-label="Language"
-            style={{ top: coords.top, left: coords.left }}
-            className="fixed z-[100] flex items-center gap-0.5 rounded-full border border-white/15 bg-[#0B1438]/85 p-1 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.55)]"
+            style={{
+              top: coords?.top ?? 0,
+              left: coords?.left ?? 0,
+              visibility: coords ? "visible" : "hidden",
+            }}
+            className="fixed z-[100] flex flex-col rounded-3xl border border-white/15 bg-[#0B1438]/92 py-1 shadow-[0_10px_40px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
           >
-            {OPTIONS.map((option) => {
+            {OPTIONS.map((option, index) => {
               const selected = language === option.code;
               return (
                 <button
@@ -122,18 +134,22 @@ export const LanguageSelector = ({
                       `${location.pathname}${location.hash}`,
                       option.code
                     );
-                    if (`${location.pathname}${location.hash}` !== next) {
-                      navigate(next);
+                    const current = `${window.location.pathname}${window.location.hash}`;
+                    if (current === next) {
+                      window.location.reload();
+                      return;
                     }
-                    setOpen(false);
+                    window.location.assign(next);
                   }}
-                  className={`min-w-[2.5rem] rounded-full px-3 py-1.5 font-['Urbanist',Helvetica] text-xs font-semibold tracking-[0.08em] transition-all duration-200 ${
+                  className={`px-5 py-2.5 text-center font-['Urbanist',Helvetica] text-[15px] font-medium leading-none transition-colors duration-200 ${
+                    index > 0 ? "border-t border-white/15" : ""
+                  } ${
                     selected
-                      ? "bg-[#194EFF] text-white"
-                      : "text-white/55 hover:text-white"
+                      ? "text-white"
+                      : "text-white/45 hover:text-[#6BA3FF]"
                   }`}
                 >
-                  {option.label}
+                  {t(option.labelKey)}
                 </button>
               );
             })}

@@ -23,9 +23,7 @@ export const HomePageDesktop = () => {
           <ReviewsMarqueeSection />
         </div>
         <FeaturedPropertiesSection />
-        <section className="max-w-7xl mx-auto px-8">
-          <FAQSection />
-        </section>
+        <FAQSection />
       </main>
 
       <FooterSection />

@@ -16,7 +16,7 @@ export const FAQSection: React.FC = () => {
     <section id="faq" className="relative py-24 scroll-mt-28">
       <div className="absolute right-0 top-1/3 w-72 h-72 bg-[#194EFF]/10 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-5 md:px-8 relative z-10">
+      <div className="relative z-10 mx-auto max-w-6xl px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 mb-16">
           <FadeIn delay={0.1} direction="up">
             <div className="lg:sticky lg:top-32 lg:self-start">

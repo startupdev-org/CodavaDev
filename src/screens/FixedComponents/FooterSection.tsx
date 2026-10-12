@@ -30,11 +30,11 @@ const SOCIAL_LINKS = [
 
 const SERVICE_KEYS = [
   "services.web_development.title",
+  "services.analytics.title",
   "services.design.title",
   "services.ai_automation.title",
   "services.seo.title",
   "services.copywriting.title",
-  "services.analytics.title",
 ] as const;
 
 export const FooterSection = () => {
@@ -56,10 +56,10 @@ export const FooterSection = () => {
   };
 
   return (
-    <footer className="relative w-full border-t border-white/10">
+    <footer className="relative w-full border-t border-white/10 bg-[#00041F]">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#194EFF]/10 to-transparent" />
 
-      <div className="relative mx-auto w-[72%] px-6 pt-16 pb-10 md:w-[64%] md:px-8">
+      <div className="relative mx-auto w-full max-w-6xl px-8 pt-16 pb-10 text-left">
         <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-8">
           <div className="flex max-w-md flex-col gap-5 sm:col-span-2 lg:col-span-1">
             <Link to={localize("/")} className="group inline-flex w-fit">
@@ -165,11 +165,11 @@ export const FooterSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="text-center text-sm text-white/40 sm:text-left">
+        <div className="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+          <p className="text-left text-sm text-white/40">
             {t("footer.copyright")}
           </p>
-          <LanguageSelector />
+          <LanguageSelector className="hidden md:block" />
         </div>
       </div>
     </footer>

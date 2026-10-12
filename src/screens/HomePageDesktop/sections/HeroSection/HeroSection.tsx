@@ -66,7 +66,8 @@ export const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-4xl text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold tracking-tight leading-[1.1] text-white mb-5 drop-shadow-[0_2px_28px_rgba(0,0,0,0.75)]"
         >
-          {t("hero.title")}
+          <span className="md:hidden">{t("hero.title_mobile")}</span>
+          <span className="hidden md:inline">{t("hero.title")}</span>
           <span className="mt-1 block text-[#C8DBFF]">
             {t("hero.title_highlight")}
           </span>
