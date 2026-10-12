@@ -15,7 +15,8 @@ type GalleryGroup = {
 
 const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => string }> = ({ groups, t }) => {
   const slides = groups.flatMap((group) => {
-    if (group.desktop && group.mobile) {
+    // If both desktop and mobile images exist, show each once.
+    if (group.desktop?.trim() && group.mobile?.trim()) {
       return [
         {
           id: `${group.id}-desktop`,
@@ -33,16 +34,32 @@ const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => str
         },
       ];
     }
+
+    // Otherwise, use whichever single image exists.
+    const src = group.desktop?.trim()
+      ? group.desktop
+      : group.mobile?.trim()
+        ? group.mobile
+        : group.image?.trim()
+          ? group.image
+          : "";
+
+    // Don't render a frame when no image exists.
+    if (!src) {
+      return [];
+    }
+
     return [
       {
         id: group.id,
-        src: group.image || "",
+        src,
         title: group.title,
         description: group.description,
-        desktopShot: group.frame === "wide",
+        desktopShot: group.frame === "wide" || !!group.desktop?.trim(),
       },
     ];
   });
+
   const [desktopLayout, setDesktopLayout] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches
   );
@@ -93,19 +110,10 @@ const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => str
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setCarouselMoving(true);
-      setCarouselIndex((current) => current + 1);
+      setCarouselIndex((current) => (current + 1) % previewSlides.length);
     }, 3200);
     return () => window.clearInterval(timer);
   }, [autoplay, open, previewSlides.length]);
-
-  useEffect(() => {
-    if (carouselIndex < previewSlides.length) return;
-    const timer = window.setTimeout(() => {
-      setCarouselMoving(false);
-      setCarouselIndex(0);
-    }, 700);
-    return () => window.clearTimeout(timer);
-  }, [carouselIndex, previewSlides.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -134,10 +142,8 @@ const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => str
       dragRef.current.moved = true;
       setAutoplay(false);
       setCarouselIndex((current) => {
-        const next = current + (delta < 0 ? 1 : -1);
-        if (next < 0) return 0;
-        if (next > previewSlides.length) return previewSlides.length;
-        return next;
+        const step = delta < 0 ? 1 : -1;
+        return (current + step + previewSlides.length) % previewSlides.length;
       });
       return;
     }
@@ -151,78 +157,78 @@ const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => str
 
   const viewer = open
     ? createPortal(
-        <div
-          className="fixed inset-0 z-[80] bg-black"
-          role="dialog"
-          aria-modal="true"
-          aria-label={slide.title}
-          onClick={() => {
-            if (Date.now() - openedAt.current < 400) return;
-            setOpen(false);
+      <div
+        className="fixed inset-0 z-[80] bg-black"
+        role="dialog"
+        aria-modal="true"
+        aria-label={slide.title}
+        onClick={() => {
+          if (Date.now() - openedAt.current < 400) return;
+          setOpen(false);
+        }}
+        onTouchStart={(event) => {
+          touchX.current = event.touches[0].clientX;
+        }}
+        onTouchEnd={(event) => {
+          const delta = event.changedTouches[0].clientX - touchX.current;
+          if (delta > 48) go(-1);
+          if (delta < -48) go(1);
+        }}
+      >
+        <img
+          src={slide.src}
+          alt={slide.title}
+          onClick={(event) => event.stopPropagation()}
+          className="absolute inset-0 h-full w-full object-contain"
+        />
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-3">
+          <p className="text-xs tracking-[0.14em] text-white/70">
+            {index + 1} / {previewSlides.length}
+          </p>
+          <button
+            type="button"
+            aria-label={t("portfolio.grid.detail.close")}
+            onClick={() => setOpen(false)}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <button
+          type="button"
+          aria-label={t("portfolio.grid.detail.previous")}
+          onClick={(event) => {
+            event.stopPropagation();
+            go(-1);
           }}
-          onTouchStart={(event) => {
-            touchX.current = event.touches[0].clientX;
-          }}
-          onTouchEnd={(event) => {
-            const delta = event.changedTouches[0].clientX - touchX.current;
-            if (delta > 48) go(-1);
-            if (delta < -48) go(1);
-          }}
+          className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black"
         >
-          <img
-            src={slide.src}
-            alt={slide.title}
-            onClick={(event) => event.stopPropagation()}
-            className="absolute inset-0 h-full w-full object-contain"
-          />
-          <div className="absolute inset-x-0 top-0 flex items-center justify-between px-4 py-3">
-            <p className="text-xs tracking-[0.14em] text-white/70">
-              {index + 1} / {previewSlides.length}
-            </p>
-            <button
-              type="button"
-              aria-label={t("portfolio.grid.detail.close")}
-              onClick={() => setOpen(false)}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black"
-            >
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <button
-            type="button"
-            aria-label={t("portfolio.grid.detail.previous")}
-            onClick={(event) => {
-              event.stopPropagation();
-              go(-1);
-            }}
-            className="absolute top-1/2 left-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black"
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            aria-label={t("portfolio.grid.detail.next")}
-            onClick={(event) => {
-              event.stopPropagation();
-              go(1);
-            }}
-            className="absolute top-1/2 right-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black"
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pt-16 pb-5">
-            <p className="text-base font-medium text-white">{slide.title}</p>
-            <p className="mt-1 line-clamp-2 max-w-2xl text-sm leading-relaxed text-white/60">{slide.description}</p>
-          </div>
-        </div>,
-        document.body
-      )
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label={t("portfolio.grid.detail.next")}
+          onClick={(event) => {
+            event.stopPropagation();
+            go(1);
+          }}
+          className="absolute top-1/2 right-3 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-black"
+        >
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-6 pt-16 pb-5">
+          <p className="text-base font-medium text-white">{slide.title}</p>
+          <p className="mt-1 line-clamp-2 max-w-2xl text-sm leading-relaxed text-white/60">{slide.description}</p>
+        </div>
+      </div>,
+      document.body
+    )
     : null;
 
   return (
@@ -261,32 +267,30 @@ const ProjectGallery: React.FC<{ groups: GalleryGroup[]; t: (key: string) => str
             transition: carouselMoving ? "transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)" : "none",
           }}
         >
-          {[0, 1].map((copy) =>
-            previewSlides.map((item, itemIndex) => (
-              <button
-                key={`${item.id}-${copy}`}
-                type="button"
-                aria-label={item.title}
-                onClick={() => {
-                  if (dragRef.current.moved) {
-                    dragRef.current.moved = false;
-                    return;
-                  }
-                  openedAt.current = Date.now();
-                  setIndex(itemIndex);
-                  setOpen(true);
-                }}
-                className="relative h-48 w-72 shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-white/10 md:aspect-[1920/1054] md:h-auto md:w-[28rem]"
-              >
-                <img
-                  src={item.src}
-                  alt=""
-                  draggable={false}
-                  className="pointer-events-none h-full w-full object-cover object-top select-none"
-                />
-              </button>
-            ))
-          )}
+          {previewSlides.map((item, itemIndex) => (
+            <button
+              key={item.id}
+              type="button"
+              aria-label={item.title}
+              onClick={() => {
+                if (dragRef.current.moved) {
+                  dragRef.current.moved = false;
+                  return;
+                }
+                openedAt.current = Date.now();
+                setIndex(itemIndex);
+                setOpen(true);
+              }}
+              className="relative h-48 w-72 shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-white/10 md:aspect-[1920/1054] md:h-auto md:w-[28rem]"
+            >
+              <img
+                src={item.src}
+                alt=""
+                draggable={false}
+                className="pointer-events-none h-full w-full object-cover object-top select-none"
+              />
+            </button>
+          ))}
         </div>
       </div>
       {viewer}
@@ -383,6 +387,39 @@ export const PortfolioGridSection: React.FC = () => {
         quote: "The entire process was well-organized and efficient, with a professional approach and great attention to detail. Everything was delivered on time, and the final result met my expectations in terms of both quality and functionality.",
         note: "I'm very satisfied with the work and the website developed for my company.",
         avatar: "/avatars/user-05.JPG",
+      },
+    },
+    {
+      id: 5,
+      title: "Civic AI",
+      description: "We created a bilingual civic assistant that finds answers in official sources, cites its evidence, and refuses to invent information it cannot verify.",
+      images: [
+        "/portfolio/civicai/CivicAI-Banner.png",
+      ],
+      groups: [
+        {
+          id: "banner",
+          title: "The Idea",
+          description: "The idea was simple, something developed in Chișinău, built for any city.",
+          desktop: "/portfolio/civicai/CivicAI-Banner-02-Desktop.png",
+          mobile: "",
+        },
+        {
+          id: "solution",
+          title: "The solution",
+          description: "The solution we deliver is a easy to use assistant that can help you with any question relateed to the public domain.",
+          desktop: "/portfolio/civicai/CivicAI-Solution-Desktop.png",
+          mobile: "",
+        },
+      ],
+      category: "AI Engineering",
+      url: "",
+      review: {
+        author: "GigaHack 2026",
+        company: "GigaHack 2026 ",
+        quote: "We wanted to thank Codava for the late nights, the bold ideas, the pitches, and the energy it brought to Deeptech GigaHack 2026.",
+        note: "We are satisfied with the work, project and idea developed for the event.",
+        avatar: "/avatars/gigahack-01.png",
       },
     },
     {
@@ -631,17 +668,19 @@ export const PortfolioGridSection: React.FC = () => {
   const filteredProjects = activeFilters.includes('ALL')
     ? projects
     : projects.filter(project => {
-        const filterKey = categoryToFilterKey[project.category];
-        return filterKey && activeFilters.includes(filterKey);
-      });
+      const filterKey = categoryToFilterKey[project.category];
+      return filterKey && activeFilters.includes(filterKey);
+    });
 
+  // all the projects
   const projectTitleToKey: Record<string, string> = {
     "Epic Trans Logistics": "epic_trans_logistics",
     "EuroTour Moldova": "eurotour_moldova",
     "PURE.BMWM E-Commerce": "pure_bmwm_ecommerce",
     "RollWithdraw Platform": "rollwithdraw_platform",
     "Senda Courier": "senda_courier",
-    "Level Auto Rental": "level_auto_rental"
+    "Level Auto Rental": "level_auto_rental",
+    "Civic AI": "civic_ai"
   };
 
   const getTranslatedProject = (project: any) => {
@@ -659,10 +698,10 @@ export const PortfolioGridSection: React.FC = () => {
       description: getTranslation(`${baseKey}.description`, project.description),
       review: project.review
         ? {
-            ...project.review,
-            quote: getTranslation(`${baseKey}.review.quote`, project.review.quote),
-            note: getTranslation(`${baseKey}.review.note`, project.review.note),
-          }
+          ...project.review,
+          quote: getTranslation(`${baseKey}.review.quote`, project.review.quote),
+          note: getTranslation(`${baseKey}.review.note`, project.review.note),
+        }
         : project.review,
       groups: project.groups?.map((group: GalleryGroup) => ({
         ...group,
@@ -704,11 +743,10 @@ export const PortfolioGridSection: React.FC = () => {
                       if (filterKey === "ALL") setActiveFilters(["ALL"]);
                       else handleFilterToggle(filterKey);
                     }}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
-                      isActive
-                        ? "bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white"
-                        : "border border-[#194EFF]/35 bg-[#194EFF]/10 text-white hover:border-[#194EFF]/60 hover:bg-[#194EFF]/18"
-                    }`}
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${isActive
+                      ? "bg-gradient-to-r from-[#194EFF] to-[#194EFF]/90 text-white"
+                      : "border border-[#194EFF]/35 bg-[#194EFF]/10 text-white hover:border-[#194EFF]/60 hover:bg-[#194EFF]/18"
+                      }`}
                   >
                     {filterLabels[filterKey]}
                   </button>
@@ -741,9 +779,8 @@ export const PortfolioGridSection: React.FC = () => {
                         key={project.id}
                         type="button"
                         onClick={() => openProjectDetail(project)}
-                        className={`group relative w-full overflow-hidden rounded-[1.75rem] border border-white/10 text-left ${
-                          featured ? "aspect-[16/10] md:col-span-2 md:aspect-[16/8]" : "aspect-[16/11]"
-                        }`}
+                        className={`group relative w-full overflow-hidden rounded-[1.75rem] border border-white/10 text-left ${featured ? "aspect-[16/10] md:col-span-2 md:aspect-[16/8]" : "aspect-[16/11]"
+                          }`}
                       >
                         <div
                           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.03]"
@@ -770,11 +807,10 @@ export const PortfolioGridSection: React.FC = () => {
                     );
                   })}
                   <div
-                    className={`relative flex overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-[#194EFF]/14 via-white/[0.03] to-transparent backdrop-blur-xl ${
-                      fillCtaSlot
-                        ? "aspect-[16/11] flex-col justify-between p-5 md:p-6"
-                        : "min-h-[16rem] flex-col justify-between gap-6 p-6 md:col-span-2 md:min-h-0 md:flex-row md:items-center md:px-10 md:py-10"
-                    }`}
+                    className={`relative flex overflow-hidden rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-[#194EFF]/14 via-white/[0.03] to-transparent backdrop-blur-xl ${fillCtaSlot
+                      ? "aspect-[16/11] flex-col justify-between p-5 md:p-6"
+                      : "min-h-[16rem] flex-col justify-between gap-6 p-6 md:col-span-2 md:min-h-0 md:flex-row md:items-center md:px-10 md:py-10"
+                      }`}
                   >
                     <div className="pointer-events-none absolute -top-20 right-0 h-40 w-40 rounded-full bg-[#194EFF]/25 blur-[70px]" />
                     <div className={`relative z-10 ${fillCtaSlot ? "" : "max-w-xl"}`}>
@@ -800,9 +836,8 @@ export const PortfolioGridSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => window.open("https://calendly.com/codava-dev/30min", "_blank")}
-                      className={`group/btn relative z-10 inline-flex shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#194EFF] to-[#3B6FFF] text-sm font-semibold text-white transition-all duration-300 hover:scale-105 ${
-                        fillCtaSlot ? "mt-4 w-full px-5 py-3" : "self-start px-8 py-3.5 md:self-center"
-                      }`}
+                      className={`group/btn relative z-10 inline-flex shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#194EFF] to-[#3B6FFF] text-sm font-semibold text-white transition-all duration-300 hover:scale-105 ${fillCtaSlot ? "mt-4 w-full px-5 py-3" : "self-start px-8 py-3.5 md:self-center"
+                        }`}
                     >
                       <span className="relative z-10">{t("cta.primary_button")}</span>
                       <svg className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -735,6 +735,23 @@
             }
           }
         },
+        "civic_ai": {
+          "description": "Am creat un asistent bilingv care găsește răspunsul în surse oficiale, citează dovezile și refuză să inventeze ceea ce nu poate verifica.",
+          "review": {
+            "quote": "Le mulțumim celor de la Codava pentru nopțile lungi, ideile îndrăznețe, prezentările și energia pe care le-au adus la Deeptech GigaHack 2026.",
+            "note": "Suntem mulțumiți de munca, proiectul și ideea dezvoltate pentru eveniment."
+          },
+          "groups": {
+            "banner": {
+              "title": "Idea",
+              "description": "Ideea era simplă: ceva dezvoltat la Chișinău, creat pentru orice oraș."
+            },
+            "solution": {
+              "title": "Soluția",
+              "description": "Soluția pe care o oferim este un asistent ușor de utilizat, care vă poate ajuta cu orice întrebare legată de domeniul public."
+            }
+          }
+        },
         "senda_courier": {
           "description": "Am redesenat experiența digitală de rezervare pentru Senda Courier, astfel încât trimiterea unui colet să fie clară și rapidă. Utilizatorii pot trece de la solicitare la urmărire cu acțiuni mai clare, un layout mai curat și un flux gândit pentru viteză pe orice dispozitiv.\n\nLucrarea a acoperit UI/UX, elemente de brand precum logo și cărți de vizită, și un sistem vizual care face serviciul de curierat să arate modern și demn de încredere.\n\nCitiți recenzia clientului pentru a afla mai multe despre experiența sa.",
           "review": {
