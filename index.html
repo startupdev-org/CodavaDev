@@ -50,12 +50,30 @@
   <meta property="twitter:image" content="https://codava.dev/og-image.jpg" />
 
   <link rel="canonical" href="https://codava.dev/" />
-  <script type="module" crossorigin src="/assets/index-DtqnZxLp.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CJX0KBIf.css">
+  <script type="module" crossorigin src="/assets/index-BdzEEoB9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CQPrcoSb.css">
 </head>
 
 <body>
   <div id="app"></div>
+  <script>
+    (function (l) {
+      if (l.search[1] === "/") {
+        var decoded = l.search
+          .slice(1)
+          .split("&")
+          .map(function (s) {
+            return s.replace(/~and~/g, "&");
+          })
+          .join("?");
+        window.history.replaceState(
+          null,
+          "",
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    })(window.location);
+  </script>
 </body>
 
 </html>
